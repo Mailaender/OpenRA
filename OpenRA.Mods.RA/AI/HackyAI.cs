@@ -137,7 +137,7 @@ namespace OpenRA.Mods.RA.AI
             {
                 if (unit.Info.Name == "e6")
                 {
-                    var capture = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * 6).Where(a1 => !a1.Destroyed && a1.HasTrait<ITargetable>() && a1.HasTrait<Capturable>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy);
+                    var capture = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * 6).Where(a1 => !a1.Destroyed && !a1.IsDead() && a1.HasTrait<ITargetable>() && a1.HasTrait<Capturable>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy);
 
                     if (!capture.Any())
                         continue;
@@ -162,7 +162,7 @@ namespace OpenRA.Mods.RA.AI
                     world.IssueOrder(new Order("Disguise", unit, false) { TargetActor = t_disguise });
 
                     // INFILTRATE
-                    var hijack = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * 6).Where(a1 => !a1.Destroyed && a1.HasTrait<ITargetable>() && a1.HasTrait<IAcceptSpy>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy);
+                    var hijack = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * 6).Where(a1 => !a1.Destroyed && !a1.IsDead() && a1.HasTrait<ITargetable>() && a1.HasTrait<IAcceptSpy>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy);
 
                     if (!hijack.Any())
                         continue;
@@ -177,12 +177,12 @@ namespace OpenRA.Mods.RA.AI
 
                 else if (unit.Info.Name == "e1" || unit.Info.Name == "e2" || unit.Info.Name == "e3")
                 {
-                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange() * 3;
+                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange();
 
                     if (range == 0)
                         continue;
 
-                    enemys = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed).ToList();
+                    enemys = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed && !a1.IsDead()).ToList();
                     enemynearby = enemys.Where(a1 => a1.HasTrait<ITargetable>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy).ToList();
 
                     if (!enemynearby.Any())
@@ -215,12 +215,12 @@ namespace OpenRA.Mods.RA.AI
 
                 else if (unit.Info.Name == "1tnk" || unit.Info.Name == "2tnk" || unit.Info.Name == "3tnk" || unit.Info.Name == "4tnk" || unit.Info.Name == "ttnk")
                 {
-                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange() * 3;
+                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange();
 
                     if (range == 0)
                         continue;
 
-                    enemys = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed).ToList();
+                    enemys = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed && !a1.IsDead()).ToList();
                     enemynearby = enemys.Where(a1 => a1.HasTrait<ITargetable>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy).ToList();
 
                     if (!enemynearby.Any())
@@ -246,12 +246,12 @@ namespace OpenRA.Mods.RA.AI
 
                 else if (unit.Info.Name == "ftrk")
                 {
-                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange() * 3;
+                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange();
 
                     if (range == 0)
                         continue;
 
-                    enemys = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed).ToList();
+                    enemys = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed && !a1.IsDead()).ToList();
                     enemynearby = enemys.Where(a1 => a1.HasTrait<ITargetable>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy).ToList();
 
                     if (!enemynearby.Any())
@@ -280,12 +280,12 @@ namespace OpenRA.Mods.RA.AI
 
                 else if (unit.Info.Name == "jeep" || unit.Info.Name == "apc")
                 {
-                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange() * 3;
+                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange();
 
                     if (range == 0)
                         continue;
 
-                    enemys = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed).ToList();
+                    enemys = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed && !a1.IsDead()).ToList();
                     enemynearby = enemys.Where(a1 => a1.HasTrait<ITargetable>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy).ToList();
 
                     if (!enemynearby.Any())
@@ -303,20 +303,66 @@ namespace OpenRA.Mods.RA.AI
                     if (target == null)
                         continue;
 
-                    if (target.HasTrait<CrushableInfantry>())
-                        world.IssueOrder(new Order("Move", unit, false) { TargetLocation = target.CenterLocation.ToCPos() });
-                    else
+                    world.IssueOrder(new Order("Attack", unit, false) { TargetActor = target });
+                }
+
+                else if (unit.Info.Name == "hind" || unit.Info.Name == "yak" || unit.Info.Name == "mig" || unit.Info.Name == "heli")
+                {
+                    if (unit.TraitOrDefault<LimitedAmmo>().HasAmmo())
+                    {
+                        range = unit.TraitOrDefault<AttackBase>().GetMaximumRange();
+                        if (range == 0)
+                            continue;
+
+                        enemynearby = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed && !a1.IsDead() && a1.HasTrait<ITargetable>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy).ToList();
+                        if (!enemynearby.Any())
+                            continue;
+
+                        // handle afinities
+                        enemynearby_vehicle = enemynearby.Where(a => vehicles.Contains(a.Info.Name)).ToList();
+                        enemynearby_infantry = enemynearby.Where(a => infantry.Contains(a.Info.Name)).ToList();
+                        enemynearby_artillery = enemynearby.Where(a => vehicles.Contains(a.Info.Name) && artillery.Contains(a.Info.Name)).ToList();
+
+                        if (unit.Info.Name == "hind" || unit.Info.Name == "yak")
+                        {
+                            if (enemynearby_artillery.Any())
+                                target = enemynearby_artillery.ClosestTo(unit.CenterLocation);
+                            else if (enemynearby_infantry.Any())
+                                target = enemynearby_infantry.ClosestTo(unit.CenterLocation);
+                            else if (enemynearby_vehicle.Any())
+                                target = enemynearby_vehicle.ClosestTo(unit.CenterLocation);
+                        }
+
+                        if (unit.Info.Name == "heli" || unit.Info.Name == "mig")
+                        {
+                            if (enemynearby_artillery.Any())
+                                target = enemynearby_artillery.ClosestTo(unit.CenterLocation);
+                            else if (enemynearby_vehicle.Any())
+                                target = enemynearby_vehicle.ClosestTo(unit.CenterLocation);
+                            else if (enemynearby_infantry.Any())
+                                target = enemynearby_infantry.ClosestTo(unit.CenterLocation);
+                        }
+
+                        if (target == null)
+                            continue;
+
                         world.IssueOrder(new Order("Attack", unit, false) { TargetActor = target });
+                    }
+                    else
+                        if (!unit.GetCurrentActivity().ToString().Contains("Land") && unit.HasTrait<Helicopter>())
+                            world.IssueOrder(new Order("ReturnToBase", unit, false));
+                        else if (unit.HasTrait<Plane>())
+                            world.IssueOrder(new Order("ReturnToBase", unit, false));
                 }
 
                 else
                 {
-                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange() * 3;
+                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange();
 
                     if (range == 0)
                         continue;
 
-                    enemys = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed).ToList();
+                    enemys = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed && !a1.IsDead()).ToList();
                     enemynearby = enemys.Where(a1 => a1.HasTrait<ITargetable>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy).ToList();
 
                     if (!enemynearby.Any())
@@ -332,58 +378,6 @@ namespace OpenRA.Mods.RA.AI
             }
         }
 
-        public void ReactAir()
-        {
-            foreach (var unit in units)
-            {
-                if (unit.TraitOrDefault<LimitedAmmo>().HasAmmo())
-                {
-                    range = unit.TraitOrDefault<AttackBase>().GetMaximumRange() * 3;
-                    if (range == 0)
-                        continue;
-
-                    enemynearby = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * (int)range).Where(a1 => !a1.Destroyed && a1.HasTrait<ITargetable>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy).ToList();
-                    if (!enemynearby.Any())
-                        continue;
-
-                    // handle afinities
-                    enemynearby_vehicle = enemynearby.Where(a => vehicles.Contains(a.Info.Name)).ToList();
-                    enemynearby_infantry = enemynearby.Where(a => infantry.Contains(a.Info.Name)).ToList();
-                    enemynearby_artillery = enemynearby.Where(a => vehicles.Contains(a.Info.Name) && artillery.Contains(a.Info.Name)).ToList();
-
-                    if (unit.Info.Name == "hind" || unit.Info.Name == "yak")
-                    {
-                        if (enemynearby_artillery.Any())
-                            target = enemynearby_artillery.ClosestTo(unit.CenterLocation);
-                        else if (enemynearby_infantry.Any())
-                            target = enemynearby_infantry.ClosestTo(unit.CenterLocation);
-                        else if (enemynearby_vehicle.Any())
-                            target = enemynearby_vehicle.ClosestTo(unit.CenterLocation);
-                    }
-
-                    if (unit.Info.Name == "heli" || unit.Info.Name == "mig")
-                    {
-                        if (enemynearby_artillery.Any())
-                            target = enemynearby_artillery.ClosestTo(unit.CenterLocation);
-                        else if (enemynearby_vehicle.Any())
-                            target = enemynearby_vehicle.ClosestTo(unit.CenterLocation);
-                        else if (enemynearby_infantry.Any())
-                            target = enemynearby_infantry.ClosestTo(unit.CenterLocation);
-                    }
-
-                    if (target == null)
-                        continue;
-
-                    world.IssueOrder(new Order("Attack", unit, false) { TargetActor = target });
-                }
-                else
-                    if (!unit.GetCurrentActivity().ToString().Contains("Land") && unit.HasTrait<Helicopter>())
-                        world.IssueOrder(new Order("ReturnToBase", unit, false));
-                    else if (unit.HasTrait<Plane>())
-                        world.IssueOrder(new Order("ReturnToBase", unit, false));
-            }
-        }
-
         public void MoveShip(CPos targetloc, Actor enemy)
         {
             if (targetloc == null)
@@ -395,7 +389,7 @@ namespace OpenRA.Mods.RA.AI
             {
                 if (!world.GetTerrainType(nearestloc).Equals("Water")) /* If land unit */
                 {
-                    float range = unit.TraitOrDefault<AttackBase>().GetMaximumRange() * 3;
+                    float range = unit.TraitOrDefault<AttackBase>().GetMaximumRange();
                     var tiles = world.FindTilesInCircle(nearestloc, (int)range);
 
                     var tiless = tiles.OrderBy(a => (new PPos(a.X, a.Y) - enemy.CenterLocation).LengthSquared);
@@ -462,7 +456,7 @@ namespace OpenRA.Mods.RA.AI
             if (ownUnits.Count < units.Count)
             {
                 world.IssueOrder(new Order("Stop", leader, false));
-                foreach (var unit in units.Where(a => a != leader))
+                foreach (var unit in units.Where(a => !ownUnits.Contains(a)))
                     world.IssueOrder(new Order("Move", unit, false) { TargetLocation = leader.CenterLocation.ToCPos() });
             }
             else
@@ -721,27 +715,34 @@ namespace OpenRA.Mods.RA.AI
             if (bi == null)
                 return null;
 
-            Actor owner = ChooseEnemyTarget("nuke");
-
-            for (var k = 0; k < MaxBaseDistance; k++)
+            if (defense)
             {
-                var tlist = world.FindTilesInCircle(baseCenter, k);
-
-                if (defense && owner != null)
+                Actor owner = ChooseEnemyTarget("nuke");
+                for (var k = MaxBaseDistance; k >= 0; k--)
                 {
-                    Actor rand = world.Actors.Where(b => b.Info.Name == "fact" && b.Owner == owner.Owner).FirstOrDefault();
-                    if (rand != null)
-                        tlist.OrderBy(a => (new PPos(a.X, a.Y) - rand.CenterLocation).LengthSquared);
+                    if (owner != null)
+                    {
+                        //CPos defenseCenter = world.ActorsWithTrait<RepairableBuilding>().Select(a => a.Actor).ClosestTo(owner.CenterLocation).CenterLocation.ToCPos();
+                        var tlist = world.FindTilesInCircle(baseCenter, k).OrderBy(a => (new PPos(a.ToPPos().X, a.ToPPos().Y) - owner.CenterLocation).LengthSquared);
+                        foreach (var t in tlist)
+                            if (world.CanPlaceBuilding(actorType, bi, t, null))
+                                if (bi.IsCloseEnoughToBase(world, p, actorType, t))
+                                    if (NoBuildingsUnder(Util.ExpandFootprint(FootprintUtils.Tiles(actorType, bi, t), false)))
+                                        return t;
+                    }
                 }
-
-                foreach (var t in tlist)
-                    if (world.CanPlaceBuilding(actorType, bi, t, null))
-                        if (bi.IsCloseEnoughToBase(world, p, actorType, t) || firstbuild)
-                            if (NoBuildingsUnder(Util.ExpandFootprint(FootprintUtils.Tiles(actorType, bi, t), false)))
-                            {
-                                firstbuild = false;
-                                return t;
-                            }
+            }
+            else
+            {
+                for (var k = 0; k < MaxBaseDistance; k++)
+                    foreach (var t in world.FindTilesInCircle(baseCenter, k))
+                        if (world.CanPlaceBuilding(actorType, bi, t, null))
+                            if (bi.IsCloseEnoughToBase(world, p, actorType, t) || firstbuild)
+                                if (NoBuildingsUnder(Util.ExpandFootprint(FootprintUtils.Tiles(actorType, bi, t), false)))
+                                {
+                                    firstbuild = false;
+                                    return t;
+                                }
             }
 
             tried.Add(Rules.Info[actorType].Name);
@@ -994,7 +995,7 @@ namespace OpenRA.Mods.RA.AI
         void cleanSquads()
         {
             foreach (Squad squad in squads)
-                squad.units.RemoveAll(a => a.Destroyed);
+                squad.units.RemoveAll(a => a.Destroyed || a.IsDead());
         }
 
         void AssignRolesToUnits(Actor playeractor)
@@ -1022,7 +1023,9 @@ namespace OpenRA.Mods.RA.AI
                 }
             }
 
-            /* Squad react */
+            foreach (Squad squad in squads.Where(a => a.type != "harvest"))
+                squad.React();
+
             foreach (Squad squad in squads.Where(a => a.isFull()))
             {
                 attackTarget = ChooseEnemyTarget(squad.type);
@@ -1033,17 +1036,17 @@ namespace OpenRA.Mods.RA.AI
                     continue;
                 switch (squad.type)
                 {
-                    case "rush":
                     case "infantry":
+                        squad.Move(attackTargetLocation, true, 2);
+                        break;
+                    case "rush":
                     case "assault":
                     case "long":
                         squad.Move(attackTargetLocation, true, 4);
-                        squad.React();
                         break;
 
                     case "Air":
                         squad.MoveAir(attackTargetLocation, attackTarget, true, 10);
-                        squad.ReactAir();
                         break;
 
                     case "ship":
@@ -1146,10 +1149,7 @@ namespace OpenRA.Mods.RA.AI
 
             if (self.Info.Name == "harv")
                 if (e.Attacker.HasTrait<CrushableInfantry>())
-                {
                     world.IssueOrder(new Order("Move", self, false) { TargetLocation = e.Attacker.CenterLocation.ToCPos() });
-                    world.IssueOrder(new Order("Harvest", self, true));
-                }
         }
     }
 }

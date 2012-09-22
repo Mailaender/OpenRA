@@ -37,8 +37,8 @@ Player:
 		InitialCash: 5000
 	ActorGroupProxy:
 	DeveloperMode:
-	BetaAI@ZhukovAI:
-		Name:Zhukov AI
+	BetaAI@NormalAI:
+		Name:Normal AI
 		SquadSize:
 			assault: 4
 			infantry: 5
@@ -116,7 +116,7 @@ Player:
 			2tnk: 40%
 			3tnk: 30%
 			4tnk: 20%
-			harv: 10%
+			harv: 75%
 			ttnk: 12%
 			ca: 10%
 			pt: 10%
