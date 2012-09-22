@@ -15,7 +15,7 @@ using OpenRA.FileFormats;
 using OpenRA.Mods.RA.Buildings;
 using OpenRA.Traits;
 using OpenRA.Mods.RA.Activities;
-using XRandom = OpenRA.Thirdparty.Random;
+using System.Threading;
 
 namespace OpenRA.Mods.RA.AI
 {
@@ -25,11 +25,11 @@ namespace OpenRA.Mods.RA.AI
 
 		BuildState state = BuildState.WaitForFeedback;
 		string category;
-		HackyAI ai;
+		BetaAI ai;
 		int lastThinkTick;
 		Func<ProductionQueue, ActorInfo> chooseItem;
 
-		public BaseBuilder(HackyAI ai, string category, Func<ProductionQueue, ActorInfo> chooseItem)
+		public BaseBuilder(BetaAI ai, string category, Func<ProductionQueue, ActorInfo> chooseItem)
 		{
 			this.ai = ai;
 			this.category = category;
@@ -56,15 +56,17 @@ namespace OpenRA.Mods.RA.AI
 						}
 						else
 						{
-							HackyAI.BotDebug("AI: Starting production of {0}".F(item.Name));
-							state = BuildState.WaitForProduction;
-							ai.world.IssueOrder(Order.StartProduction(queue.self, item.Name, 1));
+                            if (ai.HasAdequateNumber(item.Name, ai.p)) /* C'mon... */
+                            {
+                                state = BuildState.WaitForProduction;
+                                ai.world.IssueOrder(Order.StartProduction(queue.self, item.Name, 1));
+                            }
 						}
 					}
 					break;
 
 				case BuildState.WaitForProduction:
-					if (currentBuilding == null) return;	/* let it happen.. */
+                    if (currentBuilding == null) return;	/* let it happen.. */
 
 					else if (currentBuilding.Paused)
 						ai.world.IssueOrder(Order.PauseProduction(queue.self, currentBuilding.Item, false));
@@ -74,25 +76,37 @@ namespace OpenRA.Mods.RA.AI
 						lastThinkTick = ai.ticks;
 
 						/* place the building */
-						var location = ai.ChooseBuildLocation(currentBuilding.Item);
-						if (location == null)
+                        bool defense = false;
+                        if (currentBuilding.Item.Equals("ftur") || currentBuilding.Item.Equals("tsla") || currentBuilding.Item.Equals("gun") || currentBuilding.Item.Equals("hbox") || currentBuilding.Item.Equals("pbox"))
+                            defense = true;
+						CPos? location = ai.ChooseBuildLocation(currentBuilding.Item,defense);
+
+                        if (location == null) /* C'mon... */
 						{
-							HackyAI.BotDebug("AI: Nowhere to place {0}".F(currentBuilding.Item));
+							BetaAI.BotDebug("AI: Nowhere to place or no adequate number {0}".F(currentBuilding.Item));
 							ai.world.IssueOrder(Order.CancelProduction(queue.self, currentBuilding.Item, 1));
 						}
 						else
 						{
+                            //Thread t = new Thread( _ =>
 							ai.world.IssueOrder(new Order("PlaceBuilding", ai.p.PlayerActor, false)
 								{
 									TargetLocation = location.Value,
 									TargetString = currentBuilding.Item
 								});
+                            //t.Start();
 						}
 					}
+
+                    if (!ai.HasAdequateNumber(currentBuilding.Item, ai.p))
+                        ai.world.IssueOrder(Order.CancelProduction(queue.self, currentBuilding.Item, 1));
+
+                    if (!ai.HasAdequateProc() && currentBuilding.Item != "proc")
+                        ai.world.IssueOrder(Order.CancelProduction(queue.self, currentBuilding.Item, 1));
 					break;
 
 				case BuildState.WaitForFeedback:
-					if (ai.ticks - lastThinkTick > HackyAI.feedbackTime)
+					if (ai.ticks - lastThinkTick > BetaAI.feedbackTime)
 						state = BuildState.ChooseItem;
 					break;
 			}
