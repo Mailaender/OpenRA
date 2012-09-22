@@ -38,7 +38,20 @@ namespace OpenRA.Mods.RA.AI
         public readonly int AssignRolesInterval = 40;
         public readonly int AssignRolesInterval2 = 400;
         public readonly string RallypointTestBuilding = "fact";         // temporary hack to maintain previous rallypoint behavior.
+
         public readonly string[] UnitQueues = { "Vehicle", "Infantry", "Plane", "Ship" };
+        public readonly Dictionary<string, string> generality = new Dictionary<string, string>()
+        {
+            {"weap", "Vehicle"},
+            {"tent", "Infantry"},
+            {"barr", "Infantry"},
+            {"spen", "Ship"},
+            {"syrd", "Ship"},
+            {"dome", "Plane"},
+            {"hpad", "Plane"},
+            {"afld", "Plane"}
+        };
+
         public readonly bool ShouldRepairBuildings = true;
 
         string IBotInfo.Name { get { return this.Name; } }
@@ -355,6 +368,21 @@ namespace OpenRA.Mods.RA.AI
                             world.IssueOrder(new Order("ReturnToBase", unit, false));
                 }
 
+                else if (unit.Info.Name == "harv")
+                {
+                        var harv = unit.TraitOrDefault<Harvester>();
+                        if (!unit.IsIdle)
+                        {
+                            Activity act = unit.GetCurrentActivity();
+                            if ((act.GetType() != typeof(OpenRA.Mods.RA.Activities.Wait)) &&
+                                (act.NextActivity == null || act.NextActivity.GetType() != typeof(OpenRA.Mods.RA.Activities.FindResources)))
+                                continue;
+                        }
+                        if (!harv.IsEmpty) continue;
+
+                        world.IssueOrder(new Order("Harvest", unit, false));
+                }
+
                 else
                 {
                     range = unit.TraitOrDefault<AttackBase>().GetMaximumRange();
@@ -460,25 +488,10 @@ namespace OpenRA.Mods.RA.AI
                     world.IssueOrder(new Order("Move", unit, false) { TargetLocation = leader.CenterLocation.ToCPos() });
             }
             else
-                foreach (Actor unit in units)
-                    world.IssueOrder(new Order("Move", unit, queue) { TargetLocation = target });
-        }
-
-        internal void Harvest()
-        {
-            foreach (Actor unit in units)
             {
-                var harv = unit.TraitOrDefault<Harvester>();
-                if (!unit.IsIdle)
-                {
-                    Activity act = unit.GetCurrentActivity();
-                    if ((act.GetType() != typeof(OpenRA.Mods.RA.Activities.Wait)) &&
-                        (act.NextActivity == null || act.NextActivity.GetType() != typeof(OpenRA.Mods.RA.Activities.FindResources)))
-                        continue;
-                }
-                if (!harv.IsEmpty) continue;
-
-                world.IssueOrder(new Order("Harvest", unit, false));
+                world.IssueOrder(new Order("Move", leader, queue) { TargetLocation = target });
+                foreach (Actor unit in units.Where(a => a != leader))
+                    world.IssueOrder(new Order("Move", unit, queue) { TargetLocation = leader.CenterLocation.ToCPos() });
             }
         }
     };
@@ -499,13 +512,14 @@ namespace OpenRA.Mods.RA.AI
         Cache<Player, Enemy> aggro = new Cache<Player, Enemy>(_ => new Enemy());
 
         CPos baseCenter;
-        List<CPos> baseArea;
 
-        XRandom random = new XRandom();
+        XRandom random;
         BaseBuilder[] builders;
 
         const int MaxBaseDistance = 40;
         public const int feedbackTime = 60;
+
+        public string general;
 
         public World world { get { return p.PlayerActor.World; } }
         IBotInfo IBot.Info { get { return this.Info; } }
@@ -538,7 +552,9 @@ namespace OpenRA.Mods.RA.AI
 
             random = new XRandom((int)p.PlayerActor.ActorID);
 
-            p.World.IssueOrder(Order.Chat(false, "BetaAI: " + p.PlayerName));
+            general = Info.UnitQueues[random.Next(0, Info.UnitQueues.Length - 1)];
+
+            p.World.IssueOrder(Order.Chat(false, "BetaAI: " + p.PlayerName + ", General:" + general));
         }
 
         int GetPowerProvidedBy(ActorInfo building)
@@ -550,14 +566,19 @@ namespace OpenRA.Mods.RA.AI
 
         ActorInfo ChooseRandomUnitToBuild(ProductionQueue queue)
         {
+            float value;         
+
             var buildableThings = queue.BuildableItems();
             if (!buildableThings.Any()) return null;
 
             var myUnits = world.ActorsWithTrait<IMove>().Where(a => a.Actor.Owner == p).Select(a => a.Actor).ToList();
             foreach (var frac in Info.UnitsToBuild)
+            {
+                if (Info.generality.ContainsKey(frac.Key) && Info.generality[frac.Key] == general) value = 0.2F; else value = -0.2F;
                 if (buildableThings.Any(b => b.Name == frac.Key))
-                    if (myUnits.Count(a => a.Info.Name == frac.Key) < frac.Value * myUnits.Count())
+                    if (myUnits.Count(a => a.Info.Name == frac.Key) < (frac.Value + value) * myUnits.Count())
                         return buildableThings.Where(b => b.Name == frac.Key).FirstOrDefault();
+            }
             return null;
         }
 
@@ -670,6 +691,8 @@ namespace OpenRA.Mods.RA.AI
 
         ActorInfo ChooseBuildingToBuild(ProductionQueue queue, bool buildPower)
         {
+            float value;
+
             var buildableThings = queue.BuildableItems();
 
             if (!HasAdequatePower())    /* try to maintain 20% excess power */
@@ -687,10 +710,13 @@ namespace OpenRA.Mods.RA.AI
             var myBuildings = world.ActorsWithTrait<Building>().Where(a => a.Actor.Owner == p).ToArray();
 
             foreach (var frac in Info.BuildingFractions)
+            {
+                if (Info.generality.ContainsKey(frac.Key) && Info.generality[frac.Key] == general) value = 0.2F; else value = -0.2F;
                 if (buildableThings.Any(b => b.Name == frac.Key))
-                    if (myBuildings.Count(a => a.Actor.Info.Name == frac.Key) < frac.Value * myBuildings.Length && playerPower.ExcessPower >= Rules.Info[frac.Key].Traits.Get<BuildingInfo>().Power)
+                    if (myBuildings.Count(a => a.Actor.Info.Name == frac.Key) < (frac.Value + value) * myBuildings.Length && playerPower.ExcessPower >= Rules.Info[frac.Key].Traits.Get<BuildingInfo>().Power)
                         if (HasAdequateNumber(frac.Key, p)) /* C'mon... */
                             return Rules.Info[frac.Key];
+            }
 
             return null;
         }
@@ -722,7 +748,7 @@ namespace OpenRA.Mods.RA.AI
                 {
                     if (owner != null)
                     {
-                        //CPos defenseCenter = world.ActorsWithTrait<RepairableBuilding>().Select(a => a.Actor).ClosestTo(owner.CenterLocation).CenterLocation.ToCPos();
+                        // CPos defenseCenter = world.ActorsWithTrait<RepairableBuilding>().Select(a => a.Actor).ClosestTo(owner.CenterLocation).CenterLocation.ToCPos();
                         var tlist = world.FindTilesInCircle(baseCenter, k).OrderBy(a => (new PPos(a.ToPPos().X, a.ToPPos().Y) - owner.CenterLocation).LengthSquared);
                         foreach (var t in tlist)
                             if (world.CanPlaceBuilding(actorType, bi, t, null))
@@ -1023,7 +1049,7 @@ namespace OpenRA.Mods.RA.AI
                 }
             }
 
-            foreach (Squad squad in squads.Where(a => a.type != "harvest"))
+            foreach (Squad squad in squads.Where(a => a.type != "sub" || a.type != "ship"))
                 squad.React();
 
             foreach (Squad squad in squads.Where(a => a.isFull()))
@@ -1034,11 +1060,13 @@ namespace OpenRA.Mods.RA.AI
                 attackTargetLocation = attackTarget.CenterLocation.ToCPos();
                 if (attackTargetLocation == null)
                     continue;
+
                 switch (squad.type)
                 {
                     case "infantry":
                         squad.Move(attackTargetLocation, true, 2);
                         break;
+
                     case "rush":
                     case "assault":
                     case "long":
@@ -1050,15 +1078,8 @@ namespace OpenRA.Mods.RA.AI
                         break;
 
                     case "ship":
-                    case "lightShip":
-                        squad.MoveShip(attackTargetLocation, attackTarget);
-                        break;
-
                     case "sub":
-                        break;
-
-                    case "harvest":
-                        squad.Harvest();
+                        squad.MoveShip(attackTargetLocation, attackTarget);
                         break;
                 }
             }
@@ -1108,7 +1129,6 @@ namespace OpenRA.Mods.RA.AI
             if (mcv != null)
             {
                 baseCenter = mcv.Location;
-                baseArea = world.FindTilesInCircle(baseCenter, MaxBaseDistance).ToList();
                 //Don't transform the mcv if it is a fact
                 if (mcv.HasTrait<Mobile>())
                 {
@@ -1146,10 +1166,6 @@ namespace OpenRA.Mods.RA.AI
 
             if (e.Attacker != null && e.Damage > 0 && p.Stances[e.Attacker.Owner] == Stance.Enemy)
                 aggro[e.Attacker.Owner].Aggro += e.Damage;
-
-            if (self.Info.Name == "harv")
-                if (e.Attacker.HasTrait<CrushableInfantry>())
-                    world.IssueOrder(new Order("Move", self, false) { TargetLocation = e.Attacker.CenterLocation.ToCPos() });
         }
     }
 }

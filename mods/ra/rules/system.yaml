@@ -48,8 +48,8 @@ Player:
 			infiltrate: 2
 			rush: 3
 			harvest: 1
-			ship: 1
-			lightship: 2
+			ship: 3
+			sub: 1
 		BuildingLimits:
 			dome: 1
 			proc: 4
@@ -65,18 +65,16 @@ Player:
 			pdox: 1
 			iron: 1
 		BuildingFractions:
-			proc: 20%
+			proc: 30%
 			powr: 35%
 			apwr: 15%
-			tent: 1%
-			barr: 1%
-			hpad: 1%
-			afld: 1%
-			weap: 1%
-			pbox: 4%
+			tent: 10%
+			barr: 10%
+			hpad: 30%
+			afld: 30%
+			weap: 30%
 			pbox.e1: 4%
 			hbox.e1: 3%
-			hpox: 3%
 			gun: 10%
 			ftur: 10%
 			tsla: 5%
@@ -149,8 +147,8 @@ Player:
 			4tnk: assault
 			ttnk: assault
 			ca: ship
-			dd: lightship
-			pt: lightship
+			dd: ship
+			pt: ship
 			msub: ship
 			ss: sub
 	PlayerColorPalette:
