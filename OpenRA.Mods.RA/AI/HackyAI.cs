@@ -22,7 +22,7 @@ using OpenRA.Mods.RA.Air;
 /*
 
  * BetaAI
- * Contributors: JamesDunne, Earthpig, Mart0258, Mailender, Chrisforbes, Valkirie
+ * Contributors: JamesDunne, Earthpig, Mart0258, Mailaender, Chrisforbes, Valkirie
  * 
  * TODO:
  *  - Build units according to enemies behaviors.
@@ -68,11 +68,14 @@ namespace OpenRA.Mods.RA.AI
         [FieldLoader.LoadUsing("LoadBuildingLimits")]
         public readonly Dictionary<string, int> BuildingLimits = null;
 
-        //[FieldLoader.LoadUsing("LoadTicketsLimits")]
-        //public readonly Dictionary<string, int> TicketsLimits = null;
+        [FieldLoader.LoadUsing("LoadTweaks")]
+        public readonly Dictionary<string, float> Tweaks = null;
 
         [FieldLoader.LoadUsing("LoadAffinities")]
         public readonly Dictionary<string, string[]> Affinities = null;
+
+        [FieldLoader.LoadUsing("LoadTicketsLimits")]
+        public readonly Dictionary<string, int> TicketsLimits = null;
 
         static object LoadActorList(MiniYaml y, string field)
         {
@@ -97,10 +100,11 @@ namespace OpenRA.Mods.RA.AI
 
         static object LoadAffinities(MiniYaml y) { return LoadListList(y, "Affinities"); }
         static object LoadBuildingLimits(MiniYaml y) { return LoadOtherList(y, "BuildingLimits"); }
-        //static object LoadTicketsLimits(MiniYaml y) { return LoadOtherList(y, "TicketsLimits"); }
+        static object LoadTweaks(MiniYaml y) { return LoadActorList(y, "Tweaks"); }
         static object LoadSquadSize(MiniYaml y) { return LoadOtherList(y, "SquadSize"); }
         static object LoadUnits(MiniYaml y) { return LoadActorList(y, "UnitsToBuild"); }
         static object LoadBuildings(MiniYaml y) { return LoadActorList(y, "BuildingFractions"); }
+        static object LoadTicketsLimits(MiniYaml y) { return LoadOtherList(y, "TicketsLimits"); }
 
         public object Create(ActorInitializer init) { return new BetaAI(this); }
     }
@@ -545,16 +549,16 @@ namespace OpenRA.Mods.RA.AI
             playerResource = p.PlayerActor.Trait<PlayerResources>();
             builders = new BaseBuilder[] {
                                 new BaseBuilder( this, "Building", q => ChooseBuildingToBuild(q, true) ),
-                                new BaseBuilder( this, "Defense", q => ChooseBuildingToBuild(q, true) ) };
+                                new BaseBuilder( this, "Defense", q => ChooseBuildingToBuild(q, false) ) };
 
             assignRolesTicks = Info.AssignRolesInterval;
             assignRolesTicks2 = Info.AssignRolesInterval2;
 
-            random = new XRandom((int)p.PlayerActor.ActorID);
+            random = new XRandom((int)p.PlayerActor.ActorID + 100 * (int)p.PlayerActor.ActorID);
 
             general = Info.UnitQueues[random.Next(0, Info.UnitQueues.Length - 1)];
 
-            p.World.IssueOrder(Order.Chat(false, "BetaAI: " + p.PlayerName + ", General:" + general));
+            // p.World.IssueOrder(Order.Chat(false, "BetaAI: " + p.PlayerName + ", General:" + general));
         }
 
         int GetPowerProvidedBy(ActorInfo building)
@@ -566,7 +570,7 @@ namespace OpenRA.Mods.RA.AI
 
         ActorInfo ChooseRandomUnitToBuild(ProductionQueue queue)
         {
-            float value;
+            float value = 0.0F;
 
             var buildableThings = queue.BuildableItems();
             if (!buildableThings.Any()) return null;
@@ -574,7 +578,14 @@ namespace OpenRA.Mods.RA.AI
             var myUnits = world.ActorsWithTrait<IMove>().Where(a => a.Actor.Owner == p).Select(a => a.Actor).ToList();
             foreach (var frac in Info.UnitsToBuild)
             {
-                if (Info.generality.ContainsKey(frac.Key) && Info.generality[frac.Key] == general) value = 0.2F; else value = -0.2F;
+                float tweak = (float)random.NextDouble() * Info.Tweaks["value"];
+                if (Info.generality.ContainsKey(frac.Key) && Info.generality[frac.Key] == general)
+                    value = tweak;
+                else if (Info.generality.ContainsKey(frac.Key))
+                    value = -tweak;
+                else
+                    value = 0.0F;
+
                 if (buildableThings.Any(b => b.Name == frac.Key))
                     if (myUnits.Count(a => a.Info.Name == frac.Key) < (frac.Value + value) * myUnits.Count())
                         return buildableThings.Where(b => b.Name == frac.Key).FirstOrDefault();
@@ -607,7 +618,7 @@ namespace OpenRA.Mods.RA.AI
                     return false;
 
             if (Info.BuildingLimits.ContainsKey(frac))
-                if (count < Info.BuildingLimits[frac]) // && ticks >= Info.TicketsLimits["iteration" + count])
+                if (count < Info.BuildingLimits[frac] && ticks >= Info.TicketsLimits["iteration" + count])
                     return true;
                 else
                     return false;
@@ -691,7 +702,7 @@ namespace OpenRA.Mods.RA.AI
 
         ActorInfo ChooseBuildingToBuild(ProductionQueue queue, bool buildPower)
         {
-            float value;
+            float value = 0.0F;
 
             var buildableThings = queue.BuildableItems();
 
@@ -711,7 +722,14 @@ namespace OpenRA.Mods.RA.AI
 
             foreach (var frac in Info.BuildingFractions)
             {
-                if (Info.generality.ContainsKey(frac.Key) && Info.generality[frac.Key] == general) value = 0.2F; else value = -0.2F;
+                float tweak = (float)random.NextDouble() * Info.Tweaks["value"];
+                if (Info.generality.ContainsKey(frac.Key) && Info.generality[frac.Key] == general)
+                    value = tweak;
+                else if (Info.generality.ContainsKey(frac.Key))
+                    value = -tweak;
+                else
+                    value = 0.0F;
+
                 if (buildableThings.Any(b => b.Name == frac.Key))
                     if (myBuildings.Count(a => a.Actor.Info.Name == frac.Key) < (frac.Value + value) * myBuildings.Length && playerPower.ExcessPower >= Rules.Info[frac.Key].Traits.Get<BuildingInfo>().Power)
                         if (HasAdequateNumber(frac.Key, p)) /* C'mon... */
@@ -744,7 +762,7 @@ namespace OpenRA.Mods.RA.AI
 
             if (defense)
             {
-                Actor owner = ChooseEnemyTarget("nuke");
+                Actor owner = ChooseEnemyTarget("base");
                 for (var k = MaxBaseDistance; k >= 0; k--)
                 {
                     if (owner != null)
@@ -958,6 +976,10 @@ namespace OpenRA.Mods.RA.AI
 
             switch (type)
             {
+                case "base":
+                    targets = world.Actors.Where(a => a.Owner == enemy && a.HasTrait<IHasLocation>() && !a.Destroyed && a.Info.Name == "fact").ToList();
+                    break;
+
                 case "nuke":
                     targets = world.Actors.Where(a => a.Owner == enemy && a.HasTrait<IHasLocation>() && !a.Destroyed && a.HasTrait<RepairableBuilding>()).ToList();
                     break;
@@ -1062,6 +1084,7 @@ namespace OpenRA.Mods.RA.AI
 
                 switch (squad.type)
                 {
+                    case "infiltrate":
                     case "infantry":
                         squad.Move(attackTargetLocation, true, 2);
                         break;
@@ -1072,7 +1095,7 @@ namespace OpenRA.Mods.RA.AI
                         squad.Move(attackTargetLocation, true, 4);
                         break;
 
-                    case "Air":
+                    case "air":
                         squad.MoveAir(attackTargetLocation, attackTarget, true, 10);
                         break;
 

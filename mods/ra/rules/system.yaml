@@ -39,6 +39,13 @@ Player:
 	DeveloperMode:
 	BetaAI@NormalAI:
 		Name:Normal AI
+		Tweaks:
+			value: 0%
+		TicketsLimits:
+			iteration0: 0
+			iteration1: 4000
+			iteration2: 8000
+			iteration3: 12000
 		SquadSize:
 			assault: 4
 			infantry: 5
@@ -46,7 +53,7 @@ Player:
 			air: 1
 			defense: 2
 			infiltrate: 1
-			rush: 3
+			rush: 2
 			harvest: 1
 			ship: 3
 			sub: 1
@@ -65,62 +72,62 @@ Player:
 			pdox: 1
 			iron: 1
 		BuildingFractions:
-			proc: 30%
-			powr: 35%
-			apwr: 15%
-			tent: 10%
-			barr: 10%
-			hpad: 30%
-			afld: 30%
-			weap: 30%
-			pbox.e1: 4%
-			hbox.e1: 3%
-			gun: 10%
-			ftur: 10%
-			tsla: 5%
+			proc: 0.4%
+			powr: 10%
+			apwr: 10%
+			tent: 0.1%
+			barr: 0.1%
+			hpad: 0.4%
+			afld: 0.4%
+			weap: 0.1%
+			pbox.e1: 0.4%
+			hbox.e1: 0.4%
+			gun: 0.4%
+			ftur: 0.4%
+			tsla: 0.4%
 			fix: 0.1%
-			dome: 10%
-			agun: 7%
-			sam: 7%
-			atek: 1%
-			stek: 1%
-			spen: 1%
-			syrd: 1%
-			mslo: 90%
-			pdox: 90%
-			iron: 90%
+			dome: 0.1%
+			agun: 0.4%
+			sam: 0.4%
+			atek: 10.1%
+			stek: 10.1%
+			spen: 0.1%
+			syrd: 0.1%
+			mslo: 10.1%
+			pdox: 10.1%
+			iron: 10.1%
 		UnitsToBuild:
 			dog: 1%
-			e1: 60%
-			e2: 30%
-			e3: 20%
+			e1: 50%
+			e2: 1%
+			e3: 10%
 			e6: 1%
 			e7: 1%
-			shok: 10%
+			shok: 1%
 			e4: 1%
-			spy: 1%
+			spy: 2%
 			medi: 1%
 			yak: 25%
 			mig: 25%
 			heli: 25%
 			hind: 25%
 			tran: 0%
-			apc: 1%
-			jeep: 15%
-			arty: 25%
-			v2rl: 25%
-			ftrk: 1%
-			1tnk: 50%
-			2tnk: 40%
-			3tnk: 30%
-			4tnk: 20%
-			harv: 75%
+			apc: 10%
+			jeep: 10%
+			arty: 30%
+			v2rl: 30%
+			ftrk: 25%
+			1tnk: 25%
+			2tnk: 50%
+			3tnk: 75%
+			4tnk: 100%
+			harv: 50%
 			ttnk: 12%
-			ca: 10%
-			pt: 10%
-			dd: 10%
-			msub: 10%
-			ss: 10%
+			ca: 11%
+			pt: 11%
+			dd: 11%
+			msub: 11%
+			ss: 11%
 		Affinities:
 			e1: infantry
 			e3: infantry
@@ -136,8 +143,8 @@ Player:
 			heli: air
 			mig: air
 			hind: air
-			arty: long
-			v2rl: long
+			arty: long,assault
+			v2rl: long,assault
 			apc: assault
 			jeep: rush
 			ftrk: assault,long
