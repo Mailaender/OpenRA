@@ -45,7 +45,7 @@ Player:
 			long: 2
 			air: 1
 			defense: 2
-			infiltrate: 2
+			infiltrate: 1
 			rush: 3
 			harvest: 1
 			ship: 3
@@ -98,7 +98,7 @@ Player:
 			e7: 1%
 			shok: 10%
 			e4: 1%
-			spy: 10%
+			spy: 1%
 			medi: 1%
 			yak: 25%
 			mig: 25%
@@ -126,7 +126,7 @@ Player:
 			e3: infantry
 			e4: infantry
 			dog: defense
-			e6: infantry,defense
+			e6: infiltrate,defense
 			medi: infantry,defense
 			e7: infantry
 			spy: infiltrate

@@ -370,17 +370,17 @@ namespace OpenRA.Mods.RA.AI
 
                 else if (unit.Info.Name == "harv")
                 {
-                        var harv = unit.TraitOrDefault<Harvester>();
-                        if (!unit.IsIdle)
-                        {
-                            Activity act = unit.GetCurrentActivity();
-                            if ((act.GetType() != typeof(OpenRA.Mods.RA.Activities.Wait)) &&
-                                (act.NextActivity == null || act.NextActivity.GetType() != typeof(OpenRA.Mods.RA.Activities.FindResources)))
-                                continue;
-                        }
-                        if (!harv.IsEmpty) continue;
+                    var harv = unit.TraitOrDefault<Harvester>();
+                    if (!unit.IsIdle)
+                    {
+                        Activity act = unit.GetCurrentActivity();
+                        if ((act.GetType() != typeof(OpenRA.Mods.RA.Activities.Wait)) &&
+                            (act.NextActivity == null || act.NextActivity.GetType() != typeof(OpenRA.Mods.RA.Activities.FindResources)))
+                            continue;
+                    }
+                    if (!harv.IsEmpty) continue;
 
-                        world.IssueOrder(new Order("Harvest", unit, false));
+                    world.IssueOrder(new Order("Harvest", unit, false));
                 }
 
                 else
@@ -566,7 +566,7 @@ namespace OpenRA.Mods.RA.AI
 
         ActorInfo ChooseRandomUnitToBuild(ProductionQueue queue)
         {
-            float value;         
+            float value;
 
             var buildableThings = queue.BuildableItems();
             if (!buildableThings.Any()) return null;
@@ -730,6 +730,7 @@ namespace OpenRA.Mods.RA.AI
         // AI improvement, should reduce lag
         List<string> tried = new List<string>();
         bool firstbuild = true;
+        CPos defenseCenter;
 
         public CPos? ChooseBuildLocation(string actorType, bool defense)
         {
@@ -748,8 +749,7 @@ namespace OpenRA.Mods.RA.AI
                 {
                     if (owner != null)
                     {
-                        // CPos defenseCenter = world.ActorsWithTrait<RepairableBuilding>().Select(a => a.Actor).ClosestTo(owner.CenterLocation).CenterLocation.ToCPos();
-                        var tlist = world.FindTilesInCircle(baseCenter, k).OrderBy(a => (new PPos(a.ToPPos().X, a.ToPPos().Y) - owner.CenterLocation).LengthSquared);
+                        var tlist = world.FindTilesInCircle(defenseCenter, k).OrderBy(a => (new PPos(a.ToPPos().X, a.ToPPos().Y) - owner.CenterLocation).LengthSquared);
                         foreach (var t in tlist)
                             if (world.CanPlaceBuilding(actorType, bi, t, null))
                                 if (bi.IsCloseEnoughToBase(world, p, actorType, t))
@@ -931,7 +931,6 @@ namespace OpenRA.Mods.RA.AI
 
         Actor attackTarget;
         CPos attackTargetLocation;
-        CPos defendTargetLocation;
         Actor repairTarget;
 
         Actor ChooseEnemyTarget(string type)
@@ -1129,6 +1128,7 @@ namespace OpenRA.Mods.RA.AI
             if (mcv != null)
             {
                 baseCenter = mcv.Location;
+                defenseCenter = baseCenter;
                 //Don't transform the mcv if it is a fact
                 if (mcv.HasTrait<Mobile>())
                 {
@@ -1156,9 +1156,12 @@ namespace OpenRA.Mods.RA.AI
             {
                 if (e.DamageState > DamageState.Light && e.PreviousDamageState <= DamageState.Light)
                 {
-                    defendTargetLocation = e.Attacker.CenterLocation.ToCPos(); /* may be used for counter attack */
-                    foreach (Squad squad in squads.Where(a => !a.isFull() && a.units.Count > 0))
-                        squad.Move(defendTargetLocation, true, 4);
+                    if (e.Attacker.HasTrait<IHasLocation>())
+                    {
+                        defenseCenter = e.Attacker.CenterLocation.ToCPos(); /* may be used for counter attack */
+                        foreach (Squad squad in squads.Where(a => !a.isFull() && a.units.Count > 0))
+                            squad.Move(defenseCenter, true, 4);
+                    }
                     repairTarget = self; /* may be used by engineers */
                     world.IssueOrder(new Order("RepairBuilding", self.Owner.PlayerActor, false) { TargetActor = self });
                 }
