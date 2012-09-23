@@ -40,7 +40,8 @@ Player:
 	BetaAI@NormalAI:
 		Name:Normal AI
 		Tweaks:
-			value: 0%
+			rand_b: 5%
+			rand_u: 10%
 		TicketsLimits:
 			iteration0: 0
 			iteration1: 4000
@@ -72,7 +73,7 @@ Player:
 			pdox: 1
 			iron: 1
 		BuildingFractions:
-			proc: 0.4%
+			proc: 14%
 			powr: 10%
 			apwr: 10%
 			tent: 0.1%
@@ -98,7 +99,7 @@ Player:
 			iron: 10.1%
 		UnitsToBuild:
 			dog: 1%
-			e1: 50%
+			e1: 12%
 			e2: 1%
 			e3: 10%
 			e6: 1%

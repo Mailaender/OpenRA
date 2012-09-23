@@ -556,7 +556,7 @@ namespace OpenRA.Mods.RA.AI
 
             random = new XRandom((int)p.PlayerActor.ActorID + 100 * (int)p.PlayerActor.ActorID);
 
-            general = Info.UnitQueues[random.Next(0, Info.UnitQueues.Length - 1)];
+            general = Info.UnitQueues[random.Next(0, Info.UnitQueues.Length - 2)];
 
             // p.World.IssueOrder(Order.Chat(false, "BetaAI: " + p.PlayerName + ", General:" + general));
         }
@@ -578,7 +578,7 @@ namespace OpenRA.Mods.RA.AI
             var myUnits = world.ActorsWithTrait<IMove>().Where(a => a.Actor.Owner == p).Select(a => a.Actor).ToList();
             foreach (var frac in Info.UnitsToBuild)
             {
-                float tweak = (float)random.NextDouble() * Info.Tweaks["value"];
+                float tweak = (float)random.NextDouble() * Info.Tweaks["rand_u"];
                 if (Info.generality.ContainsKey(frac.Key) && Info.generality[frac.Key] == general)
                     value = tweak;
                 else if (Info.generality.ContainsKey(frac.Key))
@@ -722,7 +722,7 @@ namespace OpenRA.Mods.RA.AI
 
             foreach (var frac in Info.BuildingFractions)
             {
-                float tweak = (float)random.NextDouble() * Info.Tweaks["value"];
+                float tweak = (float)random.NextDouble() * Info.Tweaks["rand_b"];
                 if (Info.generality.ContainsKey(frac.Key) && Info.generality[frac.Key] == general)
                     value = tweak;
                 else if (Info.generality.ContainsKey(frac.Key))

@@ -77,7 +77,7 @@ namespace OpenRA.Mods.RA.AI
 
 						/* place the building */
                         bool defense = false;
-                        if (currentBuilding.Item.Equals("ftur") || currentBuilding.Item.Equals("tsla") || currentBuilding.Item.Equals("gun") || currentBuilding.Item.Equals("hbox") || currentBuilding.Item.Equals("pbox"))
+                        if (currentBuilding.Item.Equals("sam") || currentBuilding.Item.Equals("agun") || currentBuilding.Item.Equals("ftur") || currentBuilding.Item.Equals("tsla") || currentBuilding.Item.Equals("gun") || currentBuilding.Item.Contains("hbox") || currentBuilding.Item.Contains("pbox"))
                             defense = true;
 						CPos? location = ai.ChooseBuildLocation(currentBuilding.Item,defense);
 
