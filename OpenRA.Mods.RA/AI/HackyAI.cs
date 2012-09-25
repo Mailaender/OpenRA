@@ -549,7 +549,7 @@ namespace OpenRA.Mods.RA.AI
             playerResource = p.PlayerActor.Trait<PlayerResources>();
             builders = new BaseBuilder[] {
                                 new BaseBuilder( this, "Building", q => ChooseBuildingToBuild(q, true) ),
-                                new BaseBuilder( this, "Defense", q => ChooseBuildingToBuild(q, false) ) };
+                                new BaseBuilder( this, "Defense", q => ChooseDefenseToBuild(q, false) ) };
 
             assignRolesTicks = Info.AssignRolesInterval;
             assignRolesTicks2 = Info.AssignRolesInterval2;
@@ -700,6 +700,41 @@ namespace OpenRA.Mods.RA.AI
             }
         }
 
+        ActorInfo ChooseDefenseToBuild(ProductionQueue queue, bool buildPower)
+        {
+            float value = 0.0F;
+
+            var buildableThings = queue.BuildableItems();
+
+            if (!HasAdequatePower())    /* try to maintain 20% excess power */
+            {
+                if (!buildPower) return null;
+
+                /* find the best thing we can build which produces power */
+                return buildableThings.Where(a => GetPowerProvidedBy(a) > 0)
+                    .OrderByDescending(a => GetPowerProvidedBy(a)).FirstOrDefault();
+            }
+
+            var myBuildings = world.ActorsWithTrait<Building>().Where(a => a.Actor.Owner == p).ToArray();
+            foreach (var frac in Info.BuildingFractions)
+            {
+                float tweak = (float)random.NextDouble() * Info.Tweaks["rand_b"];
+                if (Info.generality.ContainsKey(frac.Key) && Info.generality[frac.Key] == general)
+                    value = tweak;
+                else if (Info.generality.ContainsKey(frac.Key))
+                    value = -tweak;
+                else
+                    value = 0.0F;
+
+                if (buildableThings.Any(b => b.Name == frac.Key))
+                    if (myBuildings.Count(a => a.Actor.Info.Name == frac.Key) < (frac.Value + value) * myBuildings.Length && playerPower.ExcessPower >= Rules.Info[frac.Key].Traits.Get<BuildingInfo>().Power)
+                        if (HasAdequateNumber(frac.Key, p)) /* C'mon... */
+                            return Rules.Info[frac.Key];
+            }
+
+            return null;
+        }
+
         ActorInfo ChooseBuildingToBuild(ProductionQueue queue, bool buildPower)
         {
             float value = 0.0F;
@@ -719,6 +754,8 @@ namespace OpenRA.Mods.RA.AI
                 return Rules.Info["silo"]; /* Force silo construction on Alert */
 
             var myBuildings = world.ActorsWithTrait<Building>().Where(a => a.Actor.Owner == p).ToArray();
+            float r = 0.0F;
+            string ret = "";
 
             foreach (var frac in Info.BuildingFractions)
             {
@@ -731,10 +768,20 @@ namespace OpenRA.Mods.RA.AI
                     value = 0.0F;
 
                 if (buildableThings.Any(b => b.Name == frac.Key))
-                    if (myBuildings.Count(a => a.Actor.Info.Name == frac.Key) < (frac.Value + value) * myBuildings.Length && playerPower.ExcessPower >= Rules.Info[frac.Key].Traits.Get<BuildingInfo>().Power)
+                    if (playerPower.ExcessPower >= Rules.Info[frac.Key].Traits.Get<BuildingInfo>().Power)
                         if (HasAdequateNumber(frac.Key, p)) /* C'mon... */
-                            return Rules.Info[frac.Key];
+                        {
+                            float r2 = (float)random.NextDouble() * (frac.Value + value) * 100;
+                            if (r2 > r)
+                            {
+                                r = r2;
+                                ret = frac.Key;
+                            }
+                        }
             }
+
+            if (Rules.Info.ContainsKey(ret))
+                return Rules.Info[ret];
 
             return null;
         }

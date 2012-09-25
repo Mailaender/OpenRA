@@ -40,8 +40,8 @@ Player:
 	BetaAI@NormalAI:
 		Name:Normal AI
 		Tweaks:
-			rand_b: 5%
-			rand_u: 10%
+			rand_b: 20%
+			rand_u: 5%
 		TicketsLimits:
 			iteration0: 0
 			iteration1: 4000
@@ -73,57 +73,57 @@ Player:
 			pdox: 1
 			iron: 1
 		BuildingFractions:
-			proc: 14%
+			proc: 50%
 			powr: 10%
 			apwr: 10%
-			tent: 0.1%
-			barr: 0.1%
-			hpad: 0.4%
-			afld: 0.4%
-			weap: 0.1%
-			pbox.e1: 0.4%
-			hbox.e1: 0.4%
-			gun: 0.4%
-			ftur: 0.4%
-			tsla: 0.4%
-			fix: 0.1%
-			dome: 0.1%
-			agun: 0.4%
-			sam: 0.4%
-			atek: 10.1%
-			stek: 10.1%
-			spen: 0.1%
-			syrd: 0.1%
-			mslo: 10.1%
-			pdox: 10.1%
-			iron: 10.1%
+			tent: 30%
+			barr: 30%
+			hpad: 30%
+			afld: 30%
+			weap: 30%
+			pbox.e1: 4%
+			hbox.e1: 4%
+			gun: 4%
+			ftur: 4%
+			tsla: 4%
+			fix: 1%
+			dome: 30%
+			agun: 4%
+			sam: 4%
+			atek: 10%
+			stek: 10%
+			spen: 20%
+			syrd: 20%
+			mslo: 50%
+			pdox: 50%
+			iron: 50%
 		UnitsToBuild:
-			dog: 1%
-			e1: 12%
-			e2: 1%
-			e3: 10%
-			e6: 1%
-			e7: 1%
-			shok: 1%
-			e4: 1%
-			spy: 2%
-			medi: 1%
+			dog: 11%
+			e1: 22%
+			e2: 22%
+			e3: 22%
+			e6: 11%
+			e7: 6%
+			shok: 11%
+			e4: 11%
+			spy: 11%
+			medi: 11%
 			yak: 25%
 			mig: 25%
 			heli: 25%
 			hind: 25%
 			tran: 0%
-			apc: 10%
-			jeep: 10%
-			arty: 30%
-			v2rl: 30%
-			ftrk: 25%
-			1tnk: 25%
+			apc: 50%
+			jeep: 50%
+			arty: 50%
+			v2rl: 50%
+			ftrk: 50%
+			1tnk: 50%
 			2tnk: 50%
-			3tnk: 75%
-			4tnk: 100%
+			3tnk: 50%
+			4tnk: 50%
 			harv: 50%
-			ttnk: 12%
+			ttnk: 50%
 			ca: 11%
 			pt: 11%
 			dd: 11%
