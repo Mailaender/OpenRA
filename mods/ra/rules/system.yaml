@@ -41,7 +41,7 @@ Player:
 		Name:Normal AI
 		Tweaks:
 			rand_b: 20%
-			rand_u: 5%
+			rand_u: 10%
 		TicketsLimits:
 			iteration0: 0
 			iteration1: 4000
@@ -73,7 +73,7 @@ Player:
 			pdox: 1
 			iron: 1
 		BuildingFractions:
-			proc: 50%
+			proc: 80%
 			powr: 10%
 			apwr: 10%
 			tent: 30%
@@ -86,12 +86,12 @@ Player:
 			gun: 4%
 			ftur: 4%
 			tsla: 4%
-			fix: 1%
+			fix: 15%
 			dome: 30%
 			agun: 4%
 			sam: 4%
-			atek: 10%
-			stek: 10%
+			atek: 30%
+			stek: 30%
 			spen: 20%
 			syrd: 20%
 			mslo: 50%
@@ -102,36 +102,36 @@ Player:
 			e1: 22%
 			e2: 22%
 			e3: 22%
-			e6: 11%
+			e6: 6%
 			e7: 6%
 			shok: 11%
 			e4: 11%
-			spy: 11%
+			spy: 6%
 			medi: 11%
 			yak: 25%
 			mig: 25%
 			heli: 25%
 			hind: 25%
 			tran: 0%
-			apc: 50%
-			jeep: 50%
-			arty: 50%
-			v2rl: 50%
-			ftrk: 50%
-			1tnk: 50%
-			2tnk: 50%
-			3tnk: 50%
-			4tnk: 50%
+			apc: 25%
+			jeep: 30%
+			arty: 25%
+			v2rl: 25%
+			ftrk: 40%
+			1tnk: 40%
+			2tnk: 40%
+			3tnk: 30%
+			4tnk: 20%
 			harv: 50%
-			ttnk: 50%
+			ttnk: 25%
 			ca: 11%
 			pt: 11%
 			dd: 11%
 			msub: 11%
 			ss: 11%
 		Affinities:
-			e1: infantry
-			e3: infantry
+			e1: infantry,assault
+			e3: infantry,assault
 			e4: infantry
 			dog: defense
 			e6: infiltrate,defense
@@ -147,7 +147,7 @@ Player:
 			arty: long,assault
 			v2rl: long,assault
 			apc: assault
-			jeep: rush
+			jeep: rush,assault
 			ftrk: assault,long
 			1tnk: assault,long
 			2tnk: assault,long

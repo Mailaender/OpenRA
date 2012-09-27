@@ -35,8 +35,7 @@ namespace OpenRA.Mods.RA.AI
     class BetaAIInfo : IBotInfo, ITraitInfo
     {
         public readonly string Name = "Unnamed Bot";
-        public readonly int AssignRolesInterval = 40;
-        public readonly int AssignRolesInterval2 = 400;
+        public readonly int AssignRolesInterval = 20;
         public readonly string RallypointTestBuilding = "fact";         // temporary hack to maintain previous rallypoint behavior.
 
         public readonly string[] UnitQueues = { "Vehicle", "Infantry", "Plane", "Ship" };
@@ -150,7 +149,7 @@ namespace OpenRA.Mods.RA.AI
 
         public void React()
         {
-            foreach (var unit in units.Where(a => !a.Destroyed))
+            foreach (var unit in units.Where(a => !a.Destroyed && !a.IsDead()))
             {
                 if (unit.Info.Name == "e6")
                 {
@@ -170,7 +169,7 @@ namespace OpenRA.Mods.RA.AI
                 else if (unit.Info.Name == "spy")
                 {
                     // DISGUISE
-                    var disguise = world.Actors.Where(a1 => unit.Info.Name.Equals("e6") || a1.Info.Name.Equals("e1") || a1.Info.Name.Equals("e3")).ToList();
+                    var disguise = world.Actors.Where(a1 => unit.Info.Name.Equals("e6") || a1.Info.Name.Equals("e1") || a1.Info.Name.Equals("e3") && !a1.IsDead() && !a1.Destroyed).ToList();
 
                     if (!disguise.Any())
                         continue;
@@ -505,7 +504,6 @@ namespace OpenRA.Mods.RA.AI
         bool enabled;
         public int ticks;
         public int assignRolesTicks = 0;
-        public int assignRolesTicks2 = 0;
         public Player p;
         PowerManager playerPower;
         SupportPowerManager playerSupport;
@@ -552,13 +550,12 @@ namespace OpenRA.Mods.RA.AI
                                 new BaseBuilder( this, "Defense", q => ChooseDefenseToBuild(q, false) ) };
 
             assignRolesTicks = Info.AssignRolesInterval;
-            assignRolesTicks2 = Info.AssignRolesInterval2;
 
-            random = new XRandom((int)p.PlayerActor.ActorID + 100 * (int)p.PlayerActor.ActorID);
+            random = new XRandom((int)p.PlayerActor.ActorID);
 
             general = Info.UnitQueues[random.Next(0, Info.UnitQueues.Length - 2)];
 
-            // p.World.IssueOrder(Order.Chat(false, "BetaAI: " + p.PlayerName + ", General:" + general));
+            BotChat(p.PlayerActor, false, "I am proudly using BetaAI.");
         }
 
         int GetPowerProvidedBy(ActorInfo building)
@@ -836,7 +833,8 @@ namespace OpenRA.Mods.RA.AI
                                 }
             }
 
-            tried.Add(Rules.Info[actorType].Name);
+            if (actorType == "syrd" || actorType == "spen")
+                tried.Add(Rules.Info[actorType].Name);
 
             return null;
         }
@@ -968,6 +966,12 @@ namespace OpenRA.Mods.RA.AI
                         break;
                 }
             }
+        }
+
+        public void BotChat(Actor self, bool team, string str)
+        {
+            var t = new Order(team ? "TeamChat" : "Chat", self, false) { IsImmediate = false, TargetString = str };
+            self.World.IssueOrder(t);
         }
 
         public void Tick(Actor self)

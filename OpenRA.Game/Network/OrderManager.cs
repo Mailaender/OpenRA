@@ -183,7 +183,7 @@ namespace OpenRA.Network
 
 			foreach( var order in frameData.OrdersForFrame( world, NetFrameNumber) )
 			{
-				UnitOrders.ProcessOrder( this, world, order.Client, order.Order );
+				UnitOrders.ProcessOrder( this, world, order.Order.Player.ClientIndex, order.Order );
 				sync.Add( world.SyncHash() );
 			}
 
