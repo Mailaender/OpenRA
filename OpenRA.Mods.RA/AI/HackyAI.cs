@@ -24,9 +24,6 @@ using OpenRA.Mods.RA.Air;
  * BetaAI
  * Contributors: JamesDunne, Earthpig, Mart0258, Mailaender, Chrisforbes, Valkirie
  * 
- * TODO:
- *  - Build units according to enemies behaviors.
- *  - Build and use superpowers.
 
  */
 
@@ -36,7 +33,6 @@ namespace OpenRA.Mods.RA.AI
     {
         public readonly string Name = "Unnamed Bot";
         public readonly int AssignRolesInterval = 20;
-        public readonly string RallypointTestBuilding = "fact";         // temporary hack to maintain previous rallypoint behavior.
 
         public readonly string[] UnitQueues = { "Vehicle", "Infantry", "Plane", "Ship" };
         public readonly Dictionary<string, string> generality = new Dictionary<string, string>()
@@ -113,10 +109,12 @@ namespace OpenRA.Mods.RA.AI
     class Squad
     {
 
-        readonly List<string> infantry = new List<string> { "dog", "e1", "e2", "e3", "e4", "e6", "spy", "e7", "medi", "c1", "c2", "shok" };
+        readonly List<string> infantry = new List<string> { "e1", "e2", "e3", "e4", "e6", "spy", "e7", "medi", "c1", "c2", "shok" };
         readonly List<string> vehicles = new List<string> { "v2rl", "1tnk", "2tnk", "3tnk", "4tnk", "arty", "harv", "mcv", "jeep", "truk", "ttnk", "ftrk" };
         readonly List<string> artillery = new List<string> { "v2rl", "arty" };
         readonly List<string> aircraft = new List<string> { "yak", "mig", "heli", "hind" };
+
+        readonly List<string> tocapture = new List<string> { "proc", "barr", "tent", "weap", "stek", "atek" };
 
         public List<Actor> units = new List<Actor>();
         public string type;
@@ -169,7 +167,7 @@ namespace OpenRA.Mods.RA.AI
                 else if (unit.Info.Name == "spy")
                 {
                     // DISGUISE
-                    var disguise = world.Actors.Where(a1 => unit.Info.Name.Equals("e6") || a1.Info.Name.Equals("e1") || a1.Info.Name.Equals("e3") && !a1.IsDead() && !a1.Destroyed).ToList();
+                    var disguise = world.Actors.Where(a1 => unit.Owner.Stances[a1.Owner] == Stance.Enemy && infantry.Contains(a1.Info.Name) && !a1.IsDead() && !a1.Destroyed).ToList();
 
                     if (!disguise.Any())
                         continue;
@@ -178,7 +176,7 @@ namespace OpenRA.Mods.RA.AI
                     world.IssueOrder(new Order("Disguise", unit, false) { TargetActor = t_disguise });
 
                     // INFILTRATE
-                    var hijack = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * 6).Where(a1 => !a1.Destroyed && !a1.IsDead() && a1.HasTrait<ITargetable>() && a1.HasTrait<IAcceptSpy>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy);
+                    var hijack = world.FindUnitsInCircle(unit.CenterLocation, Game.CellSize * 6).Where(a1 => !a1.Destroyed && !a1.IsDead() && a1.HasTrait<ITargetable>() && a1.HasTrait<IAcceptSpy>() && unit.Owner.Stances[a1.Owner] == Stance.Enemy && tocapture.Contains(a1.Info.Name));
 
                     if (!hijack.Any())
                         continue;
@@ -660,6 +658,12 @@ namespace OpenRA.Mods.RA.AI
 
             var unit = ChooseRandomUnitToBuild(queue);
 
+            // should work
+            int t = countBuilding("proc", p);
+            var u = world.Actors.Where(a => a.Owner == p && a.Info.Name == "harv").Count();
+            if (t > u)
+                unit = Rules.Info["harv"];
+
             if (!HasAdequateFact())
                 unit = Rules.Info["mcv"];
 
@@ -749,6 +753,8 @@ namespace OpenRA.Mods.RA.AI
 
             if (playerResource.AlertSilo)
                 return Rules.Info["silo"]; /* Force silo construction on Alert */
+            if (!HasAdequateProc())
+                return Rules.Info["proc"];
 
             var myBuildings = world.ActorsWithTrait<Building>().Where(a => a.Actor.Owner == p).ToArray();
             float r = 0.0F;
@@ -794,7 +800,7 @@ namespace OpenRA.Mods.RA.AI
         bool firstbuild = true;
         CPos defenseCenter;
 
-        public CPos? ChooseBuildLocation(string actorType, bool defense)
+        public CPos? ChooseBuildLocation(string actorType, string type)
         {
             if (tried.Contains(Rules.Info[actorType].Name))
                 return null;
@@ -804,7 +810,7 @@ namespace OpenRA.Mods.RA.AI
             if (bi == null)
                 return null;
 
-            if (defense)
+            if (type == "defense")
             {
                 Actor owner = ChooseEnemyTarget("base");
                 for (var k = MaxBaseDistance; k >= 0; k--)
@@ -812,6 +818,22 @@ namespace OpenRA.Mods.RA.AI
                     if (owner != null)
                     {
                         var tlist = world.FindTilesInCircle(defenseCenter, k).OrderBy(a => (new PPos(a.ToPPos().X, a.ToPPos().Y) - owner.CenterLocation).LengthSquared);
+                        foreach (var t in tlist)
+                            if (world.CanPlaceBuilding(actorType, bi, t, null))
+                                if (bi.IsCloseEnoughToBase(world, p, actorType, t))
+                                    if (NoBuildingsUnder(Util.ExpandFootprint(FootprintUtils.Tiles(actorType, bi, t), false)))
+                                        return t;
+                    }
+                }
+            }
+            else if (type == "resource") // dirty piece of shit
+            {
+                var owner = world.FindTilesInCircle(baseCenter, MaxBaseDistance).Where(a => world.GetTerrainType(new CPos(a.X, a.Y)) == "Ore" || world.GetTerrainType(new CPos(a.X, a.Y)) == "Gems").First();
+                for (var k = MaxBaseDistance; k >= 0; k--)
+                {
+                    if (owner != null)
+                    {
+                        var tlist = world.FindTilesInCircle(defenseCenter, k).OrderBy(a => (new PPos(a.ToPPos().X, a.ToPPos().Y) - new CPos(owner.X, owner.Y).ToPPos()).LengthSquared);
                         foreach (var t in tlist)
                             if (world.CanPlaceBuilding(actorType, bi, t, null))
                                 if (bi.IsCloseEnoughToBase(world, p, actorType, t))

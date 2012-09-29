@@ -73,7 +73,7 @@ Player:
 			pdox: 1
 			iron: 1
 		BuildingFractions:
-			proc: 80%
+			proc: 100%
 			powr: 10%
 			apwr: 10%
 			tent: 30%

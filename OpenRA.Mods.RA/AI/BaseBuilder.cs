@@ -76,10 +76,12 @@ namespace OpenRA.Mods.RA.AI
                         lastThinkTick = ai.ticks;
 
                         /* place the building */
-                        bool defense = false;
+                        string type = "";
                         if (currentBuilding.Item.Equals("sam") || currentBuilding.Item.Equals("agun") || currentBuilding.Item.Equals("ftur") || currentBuilding.Item.Equals("tsla") || currentBuilding.Item.Equals("gun") || currentBuilding.Item.Contains("hbox") || currentBuilding.Item.Contains("pbox"))
-                            defense = true;
-                        CPos? location = ai.ChooseBuildLocation(currentBuilding.Item, defense);
+                            type = "defense";
+                        else if (currentBuilding.Item.Equals("proc"))
+                            type = "resource";
+                        CPos? location = ai.ChooseBuildLocation(currentBuilding.Item, type);
 
                         if (location == null) /* C'mon... */
                         {
