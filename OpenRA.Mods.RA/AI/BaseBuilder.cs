@@ -15,88 +15,98 @@ using OpenRA.FileFormats;
 using OpenRA.Mods.RA.Buildings;
 using OpenRA.Traits;
 using OpenRA.Mods.RA.Activities;
-using XRandom = OpenRA.Thirdparty.Random;
+using System.Threading;
 
 namespace OpenRA.Mods.RA.AI
 {
-	class BaseBuilder
-	{
-		enum BuildState	{ ChooseItem, WaitForProduction, WaitForFeedback }
+    class BaseBuilder
+    {
+        enum BuildState { ChooseItem, WaitForProduction, WaitForFeedback }
 
-		BuildState state = BuildState.WaitForFeedback;
-		string category;
-		HackyAI ai;
-		int lastThinkTick;
-		Func<ProductionQueue, ActorInfo> chooseItem;
+        BuildState state = BuildState.WaitForFeedback;
+        string category;
+        BetaAI ai;
+        int lastThinkTick;
+        Func<ProductionQueue, ActorInfo> chooseItem;
 
-		public BaseBuilder(HackyAI ai, string category, Func<ProductionQueue, ActorInfo> chooseItem)
-		{
-			this.ai = ai;
-			this.category = category;
-			this.chooseItem = chooseItem;
-		}
+        public BaseBuilder(BetaAI ai, string category, Func<ProductionQueue, ActorInfo> chooseItem)
+        {
+            this.ai = ai;
+            this.category = category;
+            this.chooseItem = chooseItem;
+        }
 
-		public void Tick()
-		{
-			// Pick a free queue
-			var queue = ai.FindQueues( category ).FirstOrDefault();
-			if (queue == null)
-				return;
+        public void Tick()
+        {
+            // Pick a free queue
+            var queue = ai.FindQueues(category).FirstOrDefault();
+            if (queue == null)
+                return;
 
-			var currentBuilding = queue.CurrentItem();
-			switch (state)
-			{
-				case BuildState.ChooseItem:
-					{
-						var item = chooseItem(queue);
-						if (item == null)
-						{
-							state = BuildState.WaitForFeedback;
-							lastThinkTick = ai.ticks;
-						}
-						else
-						{
-							HackyAI.BotDebug("AI: Starting production of {0}".F(item.Name));
-							state = BuildState.WaitForProduction;
-							ai.world.IssueOrder(Order.StartProduction(queue.self, item.Name, 1));
-						}
-					}
-					break;
+            var currentBuilding = queue.CurrentItem();
+            switch (state)
+            {
+                case BuildState.ChooseItem:
+                    {
+                        var item = chooseItem(queue);
+                        if (item == null)
+                        {
+                            state = BuildState.WaitForFeedback;
+                            lastThinkTick = ai.ticks;
+                        }
+                        else
+                        {
+                            if (ai.HasAdequateNumber(item.Name, ai.p)) /* C'mon... */
+                            {
+                                state = BuildState.WaitForProduction;
+                                ai.world.IssueOrder(Order.StartProduction(queue.self, item.Name, 1));
+                            }
+                        }
+                    }
+                    break;
 
-				case BuildState.WaitForProduction:
-					if (currentBuilding == null) return;	/* let it happen.. */
+                case BuildState.WaitForProduction:
+                    if (currentBuilding == null) return;	/* let it happen.. */
 
-					else if (currentBuilding.Paused)
-						ai.world.IssueOrder(Order.PauseProduction(queue.self, currentBuilding.Item, false));
-					else if (currentBuilding.Done)
-					{
-						state = BuildState.WaitForFeedback;
-						lastThinkTick = ai.ticks;
+                    else if (currentBuilding.Paused)
+                        ai.world.IssueOrder(Order.PauseProduction(queue.self, currentBuilding.Item, false));
+                    else if (currentBuilding.Done)
+                    {
+                        state = BuildState.WaitForFeedback;
+                        lastThinkTick = ai.ticks;
 
-						/* place the building */
-						var location = ai.ChooseBuildLocation(currentBuilding.Item);
-						if (location == null)
-						{
-							HackyAI.BotDebug("AI: Nowhere to place {0}".F(currentBuilding.Item));
-							ai.world.IssueOrder(Order.CancelProduction(queue.self, currentBuilding.Item, 1));
-						}
-						else
-						{
-							ai.world.IssueOrder(new Order("PlaceBuilding", ai.p.PlayerActor, false)
-								{
-									TargetLocation = location.Value,
-									TargetString = currentBuilding.Item
-								});
-						}
-					}
-					break;
+                        /* place the building */
+                        string type = "";
+                        if (currentBuilding.Item.Equals("sam") || currentBuilding.Item.Equals("agun") || currentBuilding.Item.Equals("ftur") || currentBuilding.Item.Equals("tsla") || currentBuilding.Item.Equals("gun") || currentBuilding.Item.Contains("hbox") || currentBuilding.Item.Contains("pbox"))
+                            type = "defense";
+                        else if (currentBuilding.Item.Equals("proc"))
+                            type = "resource";
+                        CPos? location = ai.ChooseBuildLocation(currentBuilding.Item, type);
 
-				case BuildState.WaitForFeedback:
-					if (ai.ticks - lastThinkTick > HackyAI.feedbackTime)
-						state = BuildState.ChooseItem;
-					break;
-			}
-		}
-	}
+                        if (location == null) /* C'mon... */
+                        {
+                            BetaAI.BotDebug("AI: Nowhere to place or no adequate number {0}".F(currentBuilding.Item));
+                            ai.world.IssueOrder(Order.CancelProduction(queue.self, currentBuilding.Item, 1));
+                        }
+                        else
+                            ai.world.IssueOrder(new Order("PlaceBuilding", ai.p.PlayerActor, false)
+                                {
+                                    TargetLocation = location.Value,
+                                    TargetString = currentBuilding.Item
+                                });
+                    }
+
+                    if (!ai.HasAdequateNumber(currentBuilding.Item, ai.p))
+                        ai.world.IssueOrder(Order.CancelProduction(queue.self, currentBuilding.Item, 1));
+
+                    break;
+
+                case BuildState.WaitForFeedback:
+                    if (ai.ticks - lastThinkTick > BetaAI.feedbackTime)
+                        state = BuildState.ChooseItem;
+                    break;
+            }
+        }
+    }
 }
 

@@ -356,8 +356,12 @@ namespace OpenRA.Mods.RA
 						var resType = resLayer.GetResource(loc);
 
 						if (resType == null) return 1;
+
 						// Can the harvester collect this kind of resource?
 						if (!harvInfo.Resources.Contains(resType.info.Name)) return 1;
+
+                        // Is it usefull?
+                        if (!(resLayer.GetResourceDensity(loc) / resLayer.GetMaxResourceDensity(loc) > 0.4)) return 1;
 
 						// Another harvester has claimed this resource:
 						if (territory != null)

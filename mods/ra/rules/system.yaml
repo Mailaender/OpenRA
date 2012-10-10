@@ -37,150 +37,128 @@ Player:
 		InitialCash: 5000
 	ActorGroupProxy:
 	DeveloperMode:
-	HackyAI@EasyAI:
-		Name:Easy AI
+	BetaAI@NormalAI:
+		Name:Normal AI
+		Tweaks:
+			rand_b: 20%
+			rand_u: 10%
+		TicketsLimits:
+			iteration0: 0
+			iteration1: 4000
+			iteration2: 8000
+			iteration3: 12000
+		SquadSize:
+			assault: 4
+			infantry: 5
+			long: 2
+			air: 1
+			defense: 2
+			infiltrate: 1
+			rush: 2
+			harvest: 1
+			ship: 3
+			sub: 1
+		BuildingLimits:
+			dome: 1
+			proc: 4
+			stek: 1
+			atek: 1
+			fix: 1
+			barr: 1
+			tent: 1
+			weap: 1
+			spen: 1
+			syrd: 1
+			mslo: 1
+			pdox: 1
+			iron: 1
 		BuildingFractions:
-			proc: 30%
-			powr: 35%
-			barr: 1%
-			tent: 1%
-			weap: 1%
-			pbox.e1: 7%
-			gun: 7%
-			tsla: 5%
-			ftur: 10%
-			agun: 5%
-			sam: 5%
-			atek: 1%
-			stek: 1%
-			fix: 0.1%
-			dome: 10%
-		UnitsToBuild:
-			e1: 50%
-			e3: 10%
-			apc: 30%
-			jeep: 40%
-			arty: 15%
-			v2rl: 40%
-			ftrk: 50%
-			1tnk: 70%
-			2tnk: 25%
-			3tnk: 50%
-		SquadSize: 20
-	HackyAI@HardAI:
-		Name:Hard AI
-		BuildingFractions:
-			proc: 30%
-			powr: 35%
-			tent: 1%
-			barr: 1%
-			weap: 1%
-			pbox.e1: 7%
-			gun: 7%
-			ftur: 10%
-			tsla: 5%
-			fix: 0.1%
-			dome: 10%
-			agun: 5%
-			sam: 1%
-			atek: 1%
-			stek: 1%
-		UnitsToBuild:
-			e1: 50%
-			e3: 10%
-			harv: 10%
-			apc: 30%
-			jeep: 40%
-			ftrk: 50%
-			1tnk: 70%
-			2tnk: 25%
-			3tnk: 50%
-		SquadSize: 10
-	HackyAI@OptiAI:
-		Name:Eisenhower AI
-		BuildingFractions:
-			proc: 25.1%
-			powr: 35%
-			tent: 0.1%
-			barr: 0.1%
-			weap: 0.1%
-			fix: 0.1%
-			dome: 0.1%
-			atek: 0.1%
-			stek: 0.1%
-		UnitsToBuild:
-			e1: 50%
-			e2: 1%
-			e3: 10%
-			medi: 0.01%
-			e7: 0.01%
-			apc: 10%
-			jeep: 10%
-			ftrk: 25%
-			1tnk: 25%
-			2tnk: 50%
-			3tnk: 75%
-			4tnk: 100%
-			arty: 30%
-			v2rl: 30%
-		SquadSize: 10
-	HackyAI@ZhukovAI:
-		Name:Zhukov AI
-		BuildingFractions:
-			proc: 20%
-			powr: 35%
-			tent: 1%
-			barr: 1%
-			weap: 1%
+			proc: 100%
+			powr: 10%
+			apwr: 10%
+			tent: 30%
+			barr: 30%
+			hpad: 30%
+			afld: 30%
+			weap: 30%
 			pbox.e1: 4%
-			hbox.e1: 3%
-			gun: 10%
-			ftur: 10%
-			tsla: 5%
-			dome: 10%
-			fix: 0.1%
-			agun: 7%
-			sam: 7%
-			atek: 1%
-			stek: 1%
+			hbox.e1: 4%
+			gun: 4%
+			ftur: 4%
+			tsla: 4%
+			fix: 15%
+			dome: 30%
+			agun: 4%
+			sam: 4%
+			atek: 30%
+			stek: 30%
+			spen: 20%
+			syrd: 20%
+			mslo: 50%
+			pdox: 50%
+			iron: 50%
 		UnitsToBuild:
-			e1: 4%
-			e3: 1%
-			harv: 10%
-			ftrk: 5%
-			v2rl: 40%
-			arty: 40%
-			1tnk: 15%
-			2tnk: 15%
-			3tnk: 15%
-		SquadSize: 25
-	HackyAI@RommelAI:
-		Name:Rommel AI
-		BuildingFractions:
-			proc: 30%
-			powr: 35%
-			tent: 1%
-			barr: 1%
-			weap: 1%
-			pbox.e1: 7%
-			gun: 7%
-			ftur: 10%
-			tsla: 5%
-			fix: 0.1%
-			dome: 10%
-			agun: 5%
-			sam: 1%
-			atek: 1%
-			stek: 1%
-		UnitsToBuild:
-			e1: 5%
-			e3: 10%
-			3tnk: 75%
-			2tnk: 75%
-			v2rl: 15%
-			arty: 15%
-			harv: 10%
-		SquadSize: 7
+			dog: 11%
+			e1: 22%
+			e2: 22%
+			e3: 22%
+			e6: 6%
+			e7: 6%
+			shok: 11%
+			e4: 11%
+			spy: 6%
+			medi: 11%
+			yak: 25%
+			mig: 25%
+			heli: 25%
+			hind: 25%
+			tran: 0%
+			apc: 25%
+			jeep: 30%
+			arty: 25%
+			v2rl: 25%
+			ftrk: 40%
+			1tnk: 40%
+			2tnk: 40%
+			3tnk: 30%
+			4tnk: 20%
+			harv: 50%
+			ttnk: 25%
+			ca: 11%
+			pt: 11%
+			dd: 11%
+			msub: 11%
+			ss: 11%
+		Affinities:
+			e1: infantry,assault
+			e3: infantry,assault
+			e4: infantry
+			dog: defense
+			e6: infiltrate,defense
+			medi: infantry,defense
+			e7: infantry
+			spy: infiltrate
+			shok: infantry
+			harv: harvest
+			yak: air
+			heli: air
+			mig: air
+			hind: air
+			arty: long,assault
+			v2rl: long,assault
+			apc: assault
+			jeep: rush,assault
+			ftrk: assault,long
+			1tnk: assault,long
+			2tnk: assault,long
+			3tnk: assault,long
+			4tnk: assault
+			ttnk: assault
+			ca: ship
+			dd: ship
+			pt: ship
+			msub: ship
+			ss: sub
 	PlayerColorPalette:
 		BasePalette: terrain
 		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
