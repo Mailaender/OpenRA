@@ -11,6 +11,7 @@ MSLO:
 		BuildPaletteOrder: 130
 		Prerequisites: techcenter
 		Owner: soviet,allies
+		Hotkey: u
 	Building:
 		Power: -100
 		Footprint: xx
@@ -51,6 +52,7 @@ GAP:
 		BuildPaletteOrder: 100
 		Prerequisites: atek
 		Owner: allies
+		Hotkey: o
 	Building:
 		Power: -60
 		Footprint: _ x
@@ -80,7 +82,7 @@ SPEN:
 		BuildPaletteOrder: 30
 		Prerequisites: anypower
 		Owner: soviet
-		Hotkey: y
+		Hotkey: d
 	TargetableBuilding:
 		TargetTypes: Ground, Water
 	Building:
@@ -120,6 +122,8 @@ SPEN:
 	RepairsUnits:
 	RallyPoint:
 	ProductionBar:
+	ProductionBuilding:
+		BuildingType: DockType
 
 SYRD:
 	Inherits: ^Building
@@ -130,7 +134,7 @@ SYRD:
 		BuildPaletteOrder: 40
 		Prerequisites: anypower
 		Owner: allies
-		Hotkey: y
+		Hotkey: d
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -175,6 +179,8 @@ SYRD:
 	RepairsUnits:
 	RallyPoint:
 	ProductionBar:
+	ProductionBuilding:
+		BuildingType: DockType
 
 IRON:
 	CanPowerDown:
@@ -185,7 +191,7 @@ IRON:
 		BuildPaletteOrder: 120
 		Prerequisites: stek
 		Owner: soviet
-		Hotkey: c
+		Hotkey: y
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -223,7 +229,7 @@ PDOX:
 		BuildPaletteOrder: 120
 		Prerequisites: atek
 		Owner: allies
-		Hotkey: o
+		Hotkey: y
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -263,7 +269,7 @@ TSLA:
 		BuildPaletteOrder: 70
 		Prerequisites: weap
 		Owner: soviet
-		Hotkey: u
+		Hotkey: e
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -301,7 +307,7 @@ AGUN:
 		BuildPaletteOrder: 50
 		Prerequisites: dome
 		Owner: allies
-		Hotkey: g
+		Hotkey: r
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -432,7 +438,7 @@ PBOX.E1:
 		BuildPaletteOrder: 20
 		Prerequisites: tent
 		Owner: allies
-		Hotkey: p
+		Hotkey: q
 	Tooltip:
 		Name: Pillbox (Guns)
 		Description: Basic defensive structure.\n  Strong vs Infantry, Light Vehicles\n  Weak vs Tanks, Aircraft
@@ -679,7 +685,7 @@ GUN:
 		BuildPaletteOrder: 40
 		Prerequisites: tent
 		Owner: allies
-		Hotkey: t
+		Hotkey: e
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -714,7 +720,7 @@ FTUR:
 		BuildPaletteOrder: 20
 		Prerequisites: barr
 		Owner: soviet
-		Hotkey: t
+		Hotkey: q
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -748,7 +754,7 @@ SAM:
 		BuildPaletteOrder: 90
 		Prerequisites: dome
 		Owner: soviet
-		Hotkey: y
+		Hotkey: r
 	Valued:
 		Cost: 750
 	Tooltip:
@@ -789,7 +795,7 @@ ATEK:
 		BuildPaletteOrder: 100
 		Prerequisites: weap,dome
 		Owner: allies
-		Hotkey: t
+		Hotkey: i
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -826,7 +832,7 @@ WEAP:
 		BuildPaletteOrder: 50
 		Prerequisites: proc
 		Owner: soviet,allies
-		Hotkey: w
+		Hotkey: s
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -854,6 +860,8 @@ WEAP:
 	PrimaryBuilding:
 	IronCurtainable:
 	ProductionBar:
+	ProductionBuilding:
+		BuildingType: WarFactoryType
 
 FACT:
 	Inherits: ^Building
@@ -877,13 +885,15 @@ FACT:
 		Name: Construction Yard
 	CustomSellValue:
 		Value: 2500
-	BaseBuilding:
 	Transforms:
 		IntoActor: mcv
 		Offset:1,1
 		Facing: 96
 	ProductionBar:
-		
+	BaseBuilding:
+	ProductionBuilding:
+		BuildingType: BaseType
+
 PROC:
 	Inherits: ^Building
 	Buildable:
@@ -933,7 +943,7 @@ SILO:
 		BuildPaletteOrder: 40
 		Prerequisites: proc
 		Owner: allies,soviet
-		Hotkey: o
+		Hotkey: u
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -963,7 +973,7 @@ HPAD:
 		BuildPaletteOrder: 90
 		Prerequisites: dome
 		Owner: allies
-		Hotkey: i
+		Hotkey: f
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -985,11 +995,13 @@ HPAD:
 		ExitCell: 0,0
 	Production:
 		Produces: Plane
+	PrimaryBuilding:
 	BelowUnits:
 	Reservable:
 	IronCurtainable:
 	ProductionBar:
-	PrimaryBuilding:
+	ProductionBuilding:
+		BuildingType: AirportType
 
 AFLD:
 	Inherits: ^Building
@@ -998,7 +1010,7 @@ AFLD:
 		BuildPaletteOrder: 50
 		Prerequisites: dome
 		Owner: soviet
-		Hotkey: g
+		Hotkey: f
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1020,6 +1032,7 @@ AFLD:
 		Facing:192
 	Production:
 		Produces: Plane
+	PrimaryBuilding:
 	BelowUnits:
 	Reservable:
 	IronCurtainable:
@@ -1040,15 +1053,16 @@ AFLD:
 		SelectTargetSound: slcttgt1.aud
 	ProductionBar:
 	SupportPowerChargeBar:
-	PrimaryBuilding:
-	
+	ProductionBuilding:
+		BuildingType: AirportType
+
 POWR:
 	Inherits: ^Building
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 0
 		Owner: allies,soviet
-		Hotkey: p
+		Hotkey: q
 	Valued:
 		Cost: 300
 	Tooltip:
@@ -1076,7 +1090,7 @@ APWR:
 		BuildPaletteOrder: 20
 		Prerequisites: dome
 		Owner: allies,soviet
-		Hotkey: l
+		Hotkey: w
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1104,7 +1118,7 @@ STEK:
 		BuildPaletteOrder: 60
 		Prerequisites: weap,dome
 		Owner: soviet
-		Hotkey: t
+		Hotkey: i
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -1132,7 +1146,7 @@ BARR:
 		BuildPaletteOrder: 30
 		Prerequisites: anypower
 		Owner: soviet
-		Hotkey: b
+		Hotkey: a
 	Valued:
 		Cost: 400
 	Tooltip:
@@ -1161,6 +1175,8 @@ BARR:
 	PrimaryBuilding:
 	IronCurtainable:
 	ProductionBar:
+	ProductionBuilding:
+		BuildingType: BarracksType
 
 TENT:
 	Inherits: ^Building
@@ -1169,7 +1185,7 @@ TENT:
 		BuildPaletteOrder: 30
 		Prerequisites: anypower
 		Owner: allies
-		Hotkey: b
+		Hotkey: a
 	Valued:
 		Cost: 400
 	Tooltip:
@@ -1198,7 +1214,9 @@ TENT:
 	PrimaryBuilding:
 	IronCurtainable:
 	ProductionBar:
-	
+	ProductionBuilding:
+		BuildingType: BarracksType
+
 KENN:
 	Inherits: ^Building
 	Tooltip:
@@ -1223,7 +1241,7 @@ FIX:
 		BuildPaletteOrder: 30
 		Prerequisites: weap
 		Owner: allies,soviet
-		Hotkey: d
+		Hotkey: y
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -1386,7 +1404,7 @@ SBAG:
 		BuildPaletteOrder: 1000
 		Prerequisites: fact
 		Owner: allies
-		Hotkey: b
+		Hotkey: i
 	Valued:
 		Cost: 25
 	CustomSellValue:
@@ -1406,7 +1424,7 @@ FENC:
 		BuildPaletteOrder: 1000
 		Prerequisites: fact
 		Owner: soviet
-		Hotkey: n
+		Hotkey: o
 	Valued:
 		Cost: 25
 	CustomSellValue:
