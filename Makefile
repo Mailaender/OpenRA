@@ -132,6 +132,7 @@ ralint_TARGET			= RALint.exe
 ralint_KIND			= exe
 ralint_DEPS			= $(fileformats_TARGET) $(game_TARGET)
 ralint_LIBS			= $(COMMON_LIBS) $(ralint_DEPS)
+ralint_EXTRA_CMDS		= cp thirdparty/Mono.Nat.dll .
 PROGRAMS 			+= ralint
 ralint: $(ralint_TARGET)
 
