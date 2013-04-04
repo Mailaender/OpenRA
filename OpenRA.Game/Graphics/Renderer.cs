@@ -73,11 +73,11 @@ namespace OpenRA.Graphics
 			LineRenderer.SetViewportParams(Resolution, 1f, float2.Zero);
 		}
 
-		public void SetPalette(ITexture paletteTexture)
+		public void SetPalette(HardwarePalette palette)
 		{
-			RgbaSpriteRenderer.SetPalette(paletteTexture);
-			SpriteRenderer.SetPalette(paletteTexture);
-			WorldSpriteRenderer.SetPalette(paletteTexture);
+			RgbaSpriteRenderer.SetPalette(palette.texture);
+			SpriteRenderer.SetPalette(palette.texture);
+			WorldSpriteRenderer.SetPalette(palette.texture);
 		}
 
 		public void EndFrame(IInputHandler inputHandler)
