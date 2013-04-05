@@ -47,9 +47,7 @@ namespace OpenRA.Graphics
 			foreach (var pal in world.traitDict.ActorsWithTraitMultiple<IPalette>(world))
 				pal.Trait.InitPalette(this);
 
-			// Generate initial palette texture
-			palette.ApplyModifiers(new IPaletteModifier[] {});
-			Game.Renderer.SetPalette(palette);
+			palette.Initialize();
 
 			terrainRenderer = new TerrainRenderer(world, this);
 			shroudRenderer = new ShroudRenderer(world);
