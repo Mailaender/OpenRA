@@ -22,7 +22,7 @@ namespace OpenRA.Graphics
 		public const int MaxPalettes = 256;
 		int allocated = 0;
 
-		public ITexture texture { get; private set; }
+		public ITexture Texture { get; private set; }
 		Dictionary<string, Palette> palettes;
 		Dictionary<string, int> indices;
 		Dictionary<string, bool> allowsMods;
@@ -32,7 +32,7 @@ namespace OpenRA.Graphics
 			palettes = new Dictionary<string, Palette>();
 			indices = new Dictionary<string, int>();
 			allowsMods = new Dictionary<string, bool>();
-			texture = Game.Renderer.Device.CreateTexture();
+			Texture = Game.Renderer.Device.CreateTexture();
 		}
 
 		public Palette GetPalette(string name)
@@ -78,8 +78,12 @@ namespace OpenRA.Graphics
 					data[j,i] = c[i];
 			}
 
-			// TODO: Doesn't work (why?)
-			texture.SetData(data);
+			Texture.SetData(data);
+		}
+
+		public void Initialize()
+		{
+			ApplyModifiers(new IPaletteModifier[] {});
 		}
 	}
 }

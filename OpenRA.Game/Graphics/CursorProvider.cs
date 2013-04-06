@@ -42,8 +42,7 @@ namespace OpenRA.Graphics
 			foreach (var s in sequences.NodesDict["Cursors"].Nodes)
 				LoadSequencesForCursor(s.Key, s.Value);
 
-			Palette.ApplyModifiers(new IPaletteModifier[] {});
-			Game.Renderer.SetPalette(Palette);
+			Palette.Initialize();
 		}
 
 		static void LoadSequencesForCursor(string cursorSrc, MiniYaml cursor)
@@ -64,7 +63,7 @@ namespace OpenRA.Graphics
 			var cursorSequence = GetCursorSequence(cursorName);
 			var cursorSprite = cursorSequence.GetSprite(cursorFrame);
 
-			renderer.SpriteRenderer.SetPalette(Palette.texture); //TODO: the build menu flickers you move the mouse
+			renderer.SetPalette(Palette);
 			renderer.SpriteRenderer.DrawSprite(cursorSprite,
 			                                   lastMousePos - cursorSequence.Hotspot,
 			                                   Palette.GetPaletteIndex(cursorSequence.Palette),
