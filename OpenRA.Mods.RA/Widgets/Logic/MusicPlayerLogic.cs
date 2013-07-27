@@ -43,10 +43,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 		{
 			bg = Ui.Root.Get("MUSIC_MENU");
 
-			if (!Rules.Music.ContainsKey(Game.Settings.Sound.CurrentSong))
-				Game.Settings.Sound.CurrentSong = null;
-
-			if (Game.Settings.Sound.CurrentSong == null)
+			if (Game.Settings.Sound.CurrentSong == null || !Rules.Music.ContainsKey(Game.Settings.Sound.CurrentSong))
 				Game.Settings.Sound.CurrentSong = GetNextSong();
 
 			bg.Get("BUTTON_PAUSE").IsVisible = () => Sound.MusicPlaying;
