@@ -21,6 +21,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 	public class MusicPlayerLogic
 	{
 		Widget bg;
+		ScrollPanelWidget ml;
 
 		public void Play(string song)
 		{
@@ -33,6 +34,8 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 				return;
 			}
 
+			ml.ScrollToItem(Game.Settings.Sound.CurrentSong);
+
 			Sound.PlayMusicThen(
 				Rules.Music[Game.Settings.Sound.CurrentSong],
 				() => Play(Game.Settings.Sound.Repeat ? Game.Settings.Sound.CurrentSong : GetNextSong()));
@@ -42,6 +45,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 		public MusicPlayerLogic(Action onExit)
 		{
 			bg = Ui.Root.Get("MUSIC_MENU");
+			ml = bg.Get<ScrollPanelWidget>("MUSIC_LIST");
 
 			if (Game.Settings.Sound.CurrentSong == null || !Rules.Music.ContainsKey(Game.Settings.Sound.CurrentSong))
 				Game.Settings.Sound.CurrentSong = GetNextSong();
@@ -77,7 +81,6 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 					WidgetUtils.FormatTimeSeconds(Rules.Music[Game.Settings.Sound.CurrentSong].Length));
 			};
 
-			var ml = bg.Get<ScrollPanelWidget>("MUSIC_LIST");
 			var itemTemplate = ml.Get<ScrollItemWidget>("MUSIC_TEMPLATE");
 
 			if (!Rules.InstalledMusic.Any())
@@ -91,6 +94,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			{
 				var song = kv.Key;
 				var item = ScrollItemWidget.Setup(
+					song,
 					itemTemplate,
 					() => Game.Settings.Sound.CurrentSong == song,
 					() => Play(song));
@@ -99,6 +103,8 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 					() => WidgetUtils.FormatTimeSeconds(Rules.Music[song].Length);
 				ml.AddChild(item);
 			}
+
+			ml.ScrollToItem(Game.Settings.Sound.CurrentSong);
 		}
 
 		string ChooseSong(IEnumerable<string> songs)
