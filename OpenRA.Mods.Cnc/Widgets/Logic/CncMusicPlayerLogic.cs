@@ -49,7 +49,6 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 
 			Action afterInstall = () =>
 			{
-				// Mount the new mixfile and rebuild the scores list
 				try
 				{
 					var path = new string[] { Platform.SupportDir, "Content", "cnc" }.Aggregate(Path.Combine);
@@ -57,7 +56,10 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 					FileSystem.Mount(Path.Combine(path, "transit.mix"));
 					Rules.Music.Do(m => m.Value.Reload());
 				}
-				catch (Exception) { }
+				catch (Exception e)
+				{
+					Log.Write("debug", "Mounting the new mixfile and rebuild of scores list failed:\n{0}", e);
+				}
 
 				installed = Rules.InstalledMusic.Any();
 				BuildMusicTable(musicList);
