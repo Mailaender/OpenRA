@@ -157,7 +157,8 @@ namespace OpenRA
 			StopMusic();
 
 			var sound = sounds[m.Filename];
-			if (sound == null) return;
+			if (sound == null)
+				return;
 
 			music = soundEngine.Play2D(sound, false, true, float2.Zero, MusicVolume, false);
 			currentMusic = m;

@@ -140,7 +140,6 @@ namespace OpenRA.Mods.RA.Missions
 		static void PlayMusic()
 		{
 			var track = Rules.InstalledMusic.Random(Game.CosmeticRandom);
-			Game.Settings.Sound.CurrentSong = track.Key;
 			Sound.PlayMusicThen(track.Value, PlayMusic);
 		}
 

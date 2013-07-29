@@ -104,7 +104,6 @@ namespace OpenRA.GameRules
 		public bool Shuffle = false;
 		public bool Repeat = false;
 		public bool MapMusic = true;
-		public string CurrentSong = null;
 
 		public string Engine = "AL";
 
