@@ -77,13 +77,15 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 			var playButton = panel.Get<ButtonWidget>("BUTTON_PLAY");
 			playButton.OnClick = Play;
 			playButton.IsDisabled = noMusic;
+			playButton.IsVisible = () => !Sound.MusicPlaying;
 
 			var pauseButton = panel.Get<ButtonWidget>("BUTTON_PAUSE");
-			pauseButton.OnClick = Pause;
+			pauseButton.OnClick = Sound.PauseMusic;
 			pauseButton.IsDisabled = noMusic;
+			pauseButton.IsVisible = () => Sound.MusicPlaying;
 
 			var stopButton = panel.Get<ButtonWidget>("BUTTON_STOP");
-			stopButton.OnClick = Stop;
+			stopButton.OnClick = Sound.StopMusic;
 			stopButton.IsDisabled = noMusic;
 
 			var nextButton = panel.Get<ButtonWidget>("BUTTON_NEXT");
@@ -144,23 +146,6 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 					currentSong = GetNextSong();
 				Play();
 			});
-
-			panel.Get("BUTTON_PLAY").Visible = false;
-			panel.Get("BUTTON_PAUSE").Visible = true;
-		}
-
-		void Pause()
-		{
-			Sound.PauseMusic();
-			panel.Get("BUTTON_PAUSE").Visible = false;
-			panel.Get("BUTTON_PLAY").Visible = true;
-		}
-
-		void Stop()
-		{
-			Sound.StopMusic();
-			panel.Get("BUTTON_PAUSE").Visible = false;
-			panel.Get("BUTTON_PLAY").Visible = true;
 		}
 
 		string SongLengthLabel(MusicInfo song)
