@@ -45,7 +45,7 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 			installed = Rules.InstalledMusic.Any();
 			Func<bool> noMusic = () => !installed;
 
-			panel.Get<ButtonWidget>("BACK_BUTTON").OnClick = () => { Ui.CloseWindow(); onExit(); };
+			panel.Get<ButtonWidget>("BACK_BUTTON").OnClick = () => { Game.Settings.Save(); Ui.CloseWindow(); onExit(); };
 
 			Action afterInstall = () =>
 			{
