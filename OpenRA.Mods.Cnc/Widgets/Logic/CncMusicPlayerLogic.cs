@@ -25,6 +25,7 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 		Widget panel;
 		MusicInfo[] music;
 		MusicInfo[] random;
+		ScrollPanelWidget musicList;
 
 		ScrollItemWidget itemTemplate;
 
@@ -33,12 +34,14 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 		{
 			panel = widget.Get("MUSIC_PANEL");
 
-			var ml = panel.Get<ScrollPanelWidget>("MUSIC_LIST");
-			itemTemplate = ml.Get<ScrollItemWidget>("MUSIC_TEMPLATE");
+			musicList = panel.Get<ScrollPanelWidget>("MUSIC_LIST");
+			itemTemplate = musicList.Get<ScrollItemWidget>("MUSIC_TEMPLATE");
 
-			BuildMusicTable(ml);
+			BuildMusicTable(musicList);
 
 			currentSong = Sound.CurrentMusic ?? GetNextSong();
+			musicList.ScrollToItem(currentSong.Filename);
+
 			installed = Rules.Music.Where(m => m.Value.Exists).Any();
 			Func<bool> noMusic = () => !installed;
 
@@ -57,7 +60,7 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 				catch (Exception) { }
 
 				installed = Rules.Music.Where(m => m.Value.Exists).Any();
-				BuildMusicTable(ml);
+				BuildMusicTable(musicList);
 			};
 
 			var installButton = panel.Get<ButtonWidget>("INSTALL_BUTTON");
@@ -121,7 +124,7 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 				if (currentSong == null)
 					currentSong = song;
 
-				var item = ScrollItemWidget.Setup(itemTemplate, () => currentSong == song, () => { currentSong = song; Play(); });
+				var item = ScrollItemWidget.Setup(song.Filename, itemTemplate, () => currentSong == song, () => { currentSong = song; Play(); });
 				item.Get<LabelWidget>("TITLE").GetText = () => song.Title;
 				item.Get<LabelWidget>("LENGTH").GetText = () => SongLengthLabel(song);
 				list.AddChild(item);
@@ -132,6 +135,8 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 		{
 			if (currentSong == null)
 				return;
+
+			musicList.ScrollToItem(currentSong.Filename);
 
 			Sound.PlayMusicThen(currentSong, () =>
 			{
