@@ -1,5 +1,5 @@
 Container@MUSIC_PANEL:
-	Logic:CncMusicPlayerLogic
+	Logic:MusicPlayerLogic
 	X:(WINDOW_RIGHT - WIDTH)/2
 	Y:(WINDOW_BOTTOM - 400)/2
 	Width:360
@@ -39,15 +39,6 @@ Container@MUSIC_PANEL:
 									X:PARENT_RIGHT-60
 									Align:Right
 									Height:25
-				Label@NO_MUSIC_LABEL:
-					X:15
-					Y:147
-					Width:330
-					Height:25
-					Font:Bold
-					Align:Center
-					Visible:false
-					Text:No Music Installed
 				Container@LABEL_CONTAINER:
 					X:25
 					Y:5
@@ -130,23 +121,16 @@ Container@MUSIC_PANEL:
 									Width:16
 									Height:16
 									ImageCollection:music
-									ImageName:next									
+									ImageName:next
 						Slider@MUSIC_SLIDER:
 							X:145
 							Y:3
 							Width:185
 							Height:20
 							Ticks:5
-				Label@TITLE_LABEL:
-					X:(PARENT_RIGHT-WIDTH)/2
-					Y:305
-					Width:140
-					Height:25
-					Align:Center
-					Font:Bold
 				Label@TIME_LABEL:
 					X:(PARENT_RIGHT-WIDTH)/2
-					Y:325
+					Y:315
 					Width:140
 					Height:25
 					Align:Center
@@ -170,6 +154,50 @@ Container@MUSIC_PANEL:
 			Width:140
 			Height:35
 			Text:Back
+
+Container@MUSIC_INSTALL_PANEL:
+	Logic:CncInstallMusicLogic
+	X:(WINDOW_RIGHT - WIDTH)/2
+	Y:(WINDOW_BOTTOM - 400)/2
+	Width:360
+	Height:435
+	Children:
+		Background@bg:
+			Width:360
+			Height:400
+			Background:panel-black
+			Children:
+				ScrollPanel@MUSIC_LIST:
+					X:15
+					Y:30
+					Width:330
+					Height:275
+					Children:
+						ScrollItem@MUSIC_TEMPLATE:
+							Width:PARENT_RIGHT-27
+							Height:25
+							X:2
+							Y:0
+							Visible:false
+							Children:
+								Label@TITLE:
+									X:10
+									Width:PARENT_RIGHT-50
+									Height:25
+								Label@LENGTH:
+									Width:50
+									X:PARENT_RIGHT-60
+									Align:Right
+									Height:25
+				Label@NO_MUSIC_LABEL:
+					X:15
+					Y:147
+					Width:330
+					Height:25
+					Font:Bold
+					Align:Center
+					Visible:false
+					Text:No Music Installed
 		Button@INSTALL_BUTTON:
 			X:220
 			Y:399
@@ -249,3 +277,4 @@ Container@INSTALL_MUSIC_PANEL:
 			Width:140
 			Height:35
 			Text:Retry
+
