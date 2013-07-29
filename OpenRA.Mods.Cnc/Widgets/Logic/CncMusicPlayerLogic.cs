@@ -42,7 +42,7 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 			currentSong = Sound.CurrentMusic ?? GetNextSong();
 			musicList.ScrollToItem(currentSong.Filename);
 
-			installed = Rules.Music.Where(m => m.Value.Exists).Any();
+			installed = Rules.InstalledMusic.Any();
 			Func<bool> noMusic = () => !installed;
 
 			panel.Get<ButtonWidget>("BACK_BUTTON").OnClick = () => { Ui.CloseWindow(); onExit(); };
@@ -59,7 +59,7 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 				}
 				catch (Exception) { }
 
-				installed = Rules.Music.Where(m => m.Value.Exists).Any();
+				installed = Rules.InstalledMusic.Any();
 				BuildMusicTable(musicList);
 			};
 
@@ -116,7 +116,7 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 
 		void BuildMusicTable(Widget list)
 		{
-			music = Rules.Music.Where(a => a.Value.Exists).Select(a => a.Value).ToArray();
+			music = Rules.InstalledMusic.Select(a => a.Value).ToArray();
 			random = music.Shuffle(Game.CosmeticRandom).ToArray();
 
 			list.RemoveChildren();
