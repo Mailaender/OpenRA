@@ -40,7 +40,9 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			BuildMusicTable(musicList);
 
 			currentSong = Sound.CurrentMusic ?? GetNextSong();
-			musicList.ScrollToItem(currentSong.Filename);
+
+			if (currentSong != null)
+				musicList.ScrollToItem(currentSong.Filename);
 
 			installed = Rules.InstalledMusic.Any();
 			Func<bool> noMusic = () => !installed;
