@@ -25,7 +25,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 		Widget panel;
 		MusicInfo[] music;
 		MusicInfo[] random;
-		ScrollPanelWidget musicList;
+		public ScrollPanelWidget MusicList;
 
 		ScrollItemWidget itemTemplate;
 
@@ -34,18 +34,20 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 		{
 			panel = widget.Get("MUSIC_PANEL");
 
-			musicList = panel.Get<ScrollPanelWidget>("MUSIC_LIST");
-			itemTemplate = musicList.Get<ScrollItemWidget>("MUSIC_TEMPLATE");
+			MusicList = panel.Get<ScrollPanelWidget>("MUSIC_LIST");
+			itemTemplate = MusicList.Get<ScrollItemWidget>("MUSIC_TEMPLATE");
 
-			BuildMusicTable(musicList);
+			BuildMusicTable(MusicList);
 
 			currentSong = Sound.CurrentMusic ?? GetNextSong();
 
 			if (currentSong != null)
-				musicList.ScrollToItem(currentSong.Filename);
+				MusicList.ScrollToItem(currentSong.Filename);
 
 			installed = Rules.InstalledMusic.Any();
 			Func<bool> noMusic = () => !installed;
+
+			panel.Get("NO_MUSIC_LABEL").IsVisible = noMusic;
 
 			var playButton = panel.Get<ButtonWidget>("BUTTON_PLAY");
 			playButton.OnClick = Play;
@@ -88,7 +90,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			panel.Get<ButtonWidget>("BACK_BUTTON").OnClick = () => { Game.Settings.Save(); Ui.CloseWindow(); onExit(); };
 		}
 
-		void BuildMusicTable(Widget list)
+		public void BuildMusicTable(Widget list)
 		{
 			music = Rules.InstalledMusic.Select(a => a.Value).ToArray();
 			random = music.Shuffle(Game.CosmeticRandom).ToArray();
@@ -112,7 +114,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			if (currentSong == null)
 				return;
 
-			musicList.ScrollToItem(currentSong.Filename);
+			MusicList.ScrollToItem(currentSong.Filename);
 
 			Sound.PlayMusicThen(currentSong, () =>
 			                    {

@@ -147,6 +147,15 @@ Container@MUSIC_PANEL:
 					Width:70
 					Height:20
 					Text:Loop
+				Label@NO_MUSIC_LABEL:
+					X:15
+					Y:147
+					Width:330
+					Height:25
+					Font:Bold
+					Align:Center
+					Visible:false
+					Text:No Music Installed
 		Button@BACK_BUTTON:
 			Key:escape
 			X:0
@@ -162,42 +171,6 @@ Container@MUSIC_INSTALL_PANEL:
 	Width:360
 	Height:435
 	Children:
-		Background@bg:
-			Width:360
-			Height:400
-			Background:panel-black
-			Children:
-				ScrollPanel@MUSIC_LIST:
-					X:15
-					Y:30
-					Width:330
-					Height:275
-					Children:
-						ScrollItem@MUSIC_TEMPLATE:
-							Width:PARENT_RIGHT-27
-							Height:25
-							X:2
-							Y:0
-							Visible:false
-							Children:
-								Label@TITLE:
-									X:10
-									Width:PARENT_RIGHT-50
-									Height:25
-								Label@LENGTH:
-									Width:50
-									X:PARENT_RIGHT-60
-									Align:Right
-									Height:25
-				Label@NO_MUSIC_LABEL:
-					X:15
-					Y:147
-					Width:330
-					Height:25
-					Font:Bold
-					Align:Center
-					Visible:false
-					Text:No Music Installed
 		Button@INSTALL_BUTTON:
 			X:220
 			Y:399

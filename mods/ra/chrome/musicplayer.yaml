@@ -139,6 +139,15 @@ Container@MUSIC_PANEL:
 					Width:70
 					Height:20
 					Text:Loop
+				Label@NO_MUSIC_LABEL:
+					X:15
+					Y:147
+					Width:330
+					Height:25
+					Font:Bold
+					Align:Center
+					Visible:false
+					Text:No Music Installed
 		Button@BACK_BUTTON:
 			X:PARENT_RIGHT - 180
 			Y:PARENT_BOTTOM - 45

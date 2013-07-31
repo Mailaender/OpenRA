@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using OpenRA.FileFormats;
 using OpenRA.GameRules;
+using OpenRA.Mods.RA.Widgets.Logic;
 using OpenRA.Traits;
 using OpenRA.Widgets;
 
@@ -20,45 +21,41 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 {
 	public class CncInstallMusicLogic
 	{
-		bool installed;
-		Widget panel;
+		ButtonWidget installButton;
 
 		[ObjectCreator.UseCtor]
 		public CncInstallMusicLogic(Widget widget, Action onExit)
 		{
-			panel = widget.Get("MUSIC_INSTALL_PANEL");
-
-			installed = Rules.InstalledMusic.Any();
-			Func<bool> noMusic = () => !installed;
-
-			Action afterInstall = () =>
+			installButton = widget.GetOrNull<ButtonWidget>("INSTALL_BUTTON");
+			if (installButton != null)
 			{
-				try
+				Action afterInstall = () =>
 				{
-					var path = new string[] { Platform.SupportDir, "Content", "cnc" }.Aggregate(Path.Combine);
-					FileSystem.Mount(Path.Combine(path, "scores.mix"));
-					FileSystem.Mount(Path.Combine(path, "transit.mix"));
-					Rules.Music.Do(m => m.Value.Reload());
-				}
-				catch (Exception e)
-				{
-					Log.Write("debug", "Mounting the new mixfile and rebuild of scores list failed:\n{0}", e);
-				}
+					try
+					{
+						var path = new string[] { Platform.SupportDir, "Content", WidgetUtils.ActiveModId() }.Aggregate(Path.Combine);
+						FileSystem.Mount(Path.Combine(path, "scores.mix"));
+						FileSystem.Mount(Path.Combine(path, "transit.mix"));
 
-				installed = Rules.InstalledMusic.Any();
-				// TODO: MusicPlayerLogic.BuildMusicTable(musicList);
-			};
+						Rules.Music.Do(m => m.Value.Reload());
 
-			var installButton = panel.Get<ButtonWidget>("INSTALL_BUTTON");
-			installButton.OnClick = () =>
-				Ui.OpenWindow("INSTALL_MUSIC_PANEL", new WidgetArgs() {
-					{ "afterInstall", afterInstall },
-					{ "filesToCopy", new [] { "SCORES.MIX" } },
-					{ "filesToExtract", new [] { "transit.mix" } },
-				});
-			installButton.IsVisible = () => Rules.InstalledMusic.ToArray().Length < 3; // Hack around music being split between transit.mix and scores.mix
+						var musicPlayerLogic = (MusicPlayerLogic)installButton.Parent.LogicObject;
+						musicPlayerLogic.BuildMusicTable(musicPlayerLogic.MusicList);
+					}
+					catch (Exception e)
+					{
+						Log.Write("debug", "Mounting the new mixfile and rebuild of scores list failed:\n{0}", e);
+					}
+				};
 
-			panel.Get("NO_MUSIC_LABEL").IsVisible = noMusic;
+				installButton.OnClick = () =>
+					Ui.OpenWindow("INSTALL_MUSIC_PANEL", new WidgetArgs() {
+						{ "afterInstall", afterInstall },
+						{ "filesToCopy", new [] { "SCORES.MIX" } },
+						{ "filesToExtract", new [] { "transit.mix" } },
+					});
+				installButton.IsVisible = () => Rules.InstalledMusic.ToArray().Length < 3; // HACK around music being split between transit.mix and scores.mix
+			}
 		}
 	}
 }
