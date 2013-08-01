@@ -40,7 +40,7 @@ namespace OpenRA.Mods.Cnc.Widgets.Logic
 						Rules.Music.Do(m => m.Value.Reload());
 
 						var musicPlayerLogic = (MusicPlayerLogic)installButton.Parent.LogicObject;
-						musicPlayerLogic.BuildMusicTable(musicPlayerLogic.MusicList);
+						musicPlayerLogic.BuildMusicTable();
 					}
 					catch (Exception e)
 					{

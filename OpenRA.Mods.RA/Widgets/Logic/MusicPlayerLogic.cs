@@ -25,7 +25,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 		Widget panel;
 		MusicInfo[] music;
 		MusicInfo[] random;
-		public ScrollPanelWidget MusicList;
+		ScrollPanelWidget musicList;
 
 		ScrollItemWidget itemTemplate;
 
@@ -34,15 +34,15 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 		{
 			panel = widget.Get("MUSIC_PANEL");
 
-			MusicList = panel.Get<ScrollPanelWidget>("MUSIC_LIST");
-			itemTemplate = MusicList.Get<ScrollItemWidget>("MUSIC_TEMPLATE");
+			musicList = panel.Get<ScrollPanelWidget>("MUSIC_LIST");
+			itemTemplate = musicList.Get<ScrollItemWidget>("MUSIC_TEMPLATE");
 
-			BuildMusicTable(MusicList);
+			BuildMusicTable();
 
 			currentSong = Sound.CurrentMusic ?? GetNextSong();
 
 			if (currentSong != null)
-				MusicList.ScrollToItem(currentSong.Filename);
+				musicList.ScrollToItem(currentSong.Filename);
 
 			Func<bool> noMusic = () => !installed;
 			panel.Get("NO_MUSIC_LABEL").IsVisible = noMusic;
@@ -88,12 +88,12 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			panel.Get<ButtonWidget>("BACK_BUTTON").OnClick = () => { Game.Settings.Save(); Ui.CloseWindow(); onExit(); };
 		}
 
-		public void BuildMusicTable(Widget list)
+		public void BuildMusicTable()
 		{
 			music = Rules.InstalledMusic.Select(a => a.Value).ToArray();
 			random = music.Shuffle(Game.CosmeticRandom).ToArray();
 
-			list.RemoveChildren();
+			musicList.RemoveChildren();
 			foreach (var s in music)
 			{
 				var song = s;
@@ -103,7 +103,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 				var item = ScrollItemWidget.Setup(song.Filename, itemTemplate, () => currentSong == song, () => { currentSong = song; Play(); });
 				item.Get<LabelWidget>("TITLE").GetText = () => song.Title;
 				item.Get<LabelWidget>("LENGTH").GetText = () => SongLengthLabel(song);
-				list.AddChild(item);
+				musicList.AddChild(item);
 			}
 
 			installed = Rules.InstalledMusic.Any();
@@ -114,7 +114,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			if (currentSong == null)
 				return;
 
-			MusicList.ScrollToItem(currentSong.Filename);
+			musicList.ScrollToItem(currentSong.Filename);
 
 			Sound.PlayMusicThen(currentSong, () =>
 			{
