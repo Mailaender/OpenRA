@@ -163,15 +163,8 @@ Container@MUSIC_PANEL:
 			Width:140
 			Height:35
 			Text:Back
-
-Container@MUSIC_INSTALL_PANEL:
-	Logic:CncInstallMusicLogic
-	X:(WINDOW_RIGHT - WIDTH)/2
-	Y:(WINDOW_BOTTOM - 400)/2
-	Width:360
-	Height:435
-	Children:
 		Button@INSTALL_BUTTON:
+			Logic:CncInstallMusicLogic
 			X:220
 			Y:399
 			Width:140
