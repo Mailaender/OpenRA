@@ -3,7 +3,7 @@ Container@MUSIC_PANEL:
 	X:(WINDOW_RIGHT - WIDTH)/2
 	Y:(WINDOW_BOTTOM - 400)/2
 	Width:360
-	Height:460
+	Height:450
 	Children:
 		Background@bg:
 			Width:360
@@ -150,7 +150,7 @@ Container@MUSIC_PANEL:
 					Text:No Music Installed
 		Button@BACK_BUTTON:
 			X:PARENT_RIGHT - 180
-			Y:PARENT_BOTTOM - 45
+			Y:PARENT_BOTTOM - 40
 			Width:160
 			Height:25
 			Text:Close
