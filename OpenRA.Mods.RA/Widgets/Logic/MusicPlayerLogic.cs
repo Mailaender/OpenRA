@@ -44,9 +44,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			if (currentSong != null)
 				MusicList.ScrollToItem(currentSong.Filename);
 
-			installed = Rules.InstalledMusic.Any();
 			Func<bool> noMusic = () => !installed;
-
 			panel.Get("NO_MUSIC_LABEL").IsVisible = noMusic;
 
 			var playButton = panel.Get<ButtonWidget>("BUTTON_PLAY");
@@ -107,6 +105,8 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 				item.Get<LabelWidget>("LENGTH").GetText = () => SongLengthLabel(song);
 				list.AddChild(item);
 			}
+
+			installed = Rules.InstalledMusic.Any();
 		}
 
 		void Play()
@@ -117,7 +117,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			MusicList.ScrollToItem(currentSong.Filename);
 
 			Sound.PlayMusicThen(currentSong, () =>
-			                    {
+			{
 				if (!Game.Settings.Sound.Repeat)
 					currentSong = GetNextSong();
 				Play();
