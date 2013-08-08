@@ -239,6 +239,13 @@ namespace OpenRA.Server
 
 				var handshake = HandshakeResponse.Deserialize(data);
 
+				if (!string.IsNullOrEmpty(Game.Settings.Server.Password) && handshake.Password != Game.Settings.Server.Password)
+				{
+					SendOrderTo(newConn, "ServerError", "Authentication failed: wrong password.");
+					DropClient(newConn);
+					return;
+				}
+
 				var client = new Session.Client()
 				{
 					Name = handshake.Client.Name,

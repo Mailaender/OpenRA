@@ -136,7 +136,7 @@ Background@DIRECTCONNECT_BG:
 	X:(WINDOW_RIGHT - WIDTH)/2
 	Y:(WINDOW_BOTTOM - HEIGHT)/2
 	Width:400
-	Height:155
+	Height:195
 	Children:
 		Label@DIRECTCONNECT_LABEL_TITLE:
 			X:0
@@ -165,6 +165,26 @@ Background@DIRECTCONNECT_BG:
 			Width:55
 			MaxLength:5
 			Height:25
+		Label@PASSWORD_LABEL:
+			X:50
+			Y:94
+			Width:95
+			Height:25
+			Align:Right
+			Text:Password:
+		PasswordField@PASSWORD:
+			X:150
+			Y:95
+			Width:155
+			MaxLength:20
+			Height:25
+		Label@AFTER_PASSWORD_LABEL:
+			X:310
+			Y:94
+			Width:95
+			Height:25
+			Align:Left
+			Text:(optional)
 		Button@JOIN_BUTTON:
 			X:130
 			Y:PARENT_BOTTOM - 45
@@ -186,7 +206,7 @@ Background@CONNECTIONFAILED_PANEL:
 	X:(WINDOW_RIGHT - WIDTH)/2
 	Y:(WINDOW_BOTTOM - HEIGHT)/2
 	Width:450
-	Height:150
+	Height:200
 	Children:
 		Label@CONNECTION_FAILED_TITLE:
 			X:0
@@ -203,6 +223,28 @@ Background@CONNECTIONFAILED_PANEL:
 			Height:25
 			Text:Could not connect to AAA.BBB.CCC.DDD:EEEE
 			Align:Center
+		Label@CONNECTION_ERROR:
+			X:0
+			Y:85
+			Width:PARENT_RIGHT
+			Height:25
+			Text:ServerError
+			Align:Center
+			Font:Bold
+		Label@PASSWORD_LABEL:
+			X:80
+			Y:109
+			Width:95
+			Height:25
+			Align:Right
+			Text:Password:
+			Font:Bold
+		PasswordField@PASSWORD:
+			X:180
+			Y:110
+			Width:155
+			MaxLength:20
+			Height:25
 		Button@RETRY_BUTTON:
 			X:PARENT_RIGHT - 360
 			Y:PARENT_BOTTOM - 45

@@ -75,15 +75,35 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 
 	public class ConnectionFailedLogic
 	{
+		PasswordFieldWidget passwordField;
+
 		[ObjectCreator.UseCtor]
 		public ConnectionFailedLogic(Widget widget, OrderManager orderManager, Action onRetry, Action onAbort)
 		{
 			var panel = widget;
 			panel.Get<ButtonWidget>("ABORT_BUTTON").OnClick = () => { Ui.CloseWindow(); onAbort(); };
-			panel.Get<ButtonWidget>("RETRY_BUTTON").OnClick = () => { Ui.CloseWindow(); onRetry(); };
+			panel.Get<ButtonWidget>("RETRY_BUTTON").OnClick = () => 
+			{ 
+				Ui.CloseWindow();
+				if (passwordField != null)
+					Game.Settings.Server.Password = passwordField.Text;
+				onRetry();
+			};
 
 			widget.Get<LabelWidget>("CONNECTING_DESC").GetText = () =>
-				"Could not connect to {0}:{1}\n{2}".F(orderManager.Host, orderManager.Port, orderManager.ServerError);
+				"Could not connect to {0}:{1}".F(orderManager.Host, orderManager.Port);
+
+			var connectionError = widget.Get<LabelWidget>("CONNECTION_ERROR");
+			connectionError.GetText = () => orderManager.ServerError;
+
+			passwordField = panel.GetOrNull<PasswordFieldWidget>("PASSWORD");
+			if (passwordField != null)
+			{
+				var currentPassword = Game.Settings.Server.Password;
+				passwordField.Text = currentPassword;
+				passwordField.IsVisible = () => orderManager.ServerError.Contains("password");
+				widget.Get<LabelWidget>("PASSWORD_LABEL").IsVisible = () => orderManager.ServerError.Contains("password");;
+			}
 		}
 	}
 }
