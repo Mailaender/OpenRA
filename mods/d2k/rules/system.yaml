@@ -300,7 +300,7 @@ World:
 		AllowModifiers: false
 	PaletteFromFile@effect:
 		Name: effect
-		Filename: temperat.pal
+		Filename: d2k.pal
 		ShadowIndex: 4
 	PaletteFromFile@colorpicker:
 		Name: colorpicker
