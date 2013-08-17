@@ -38,8 +38,8 @@ namespace OpenRA.Mods.RA.Widgets
 
 		bool paletteOpen = false;
 
-		float2 paletteOpenOrigin = new float2(Game.viewport.Width - 215, 280);
-		float2 paletteClosedOrigin = new float2(Game.viewport.Width - 16, 280);
+		float2 paletteOpenOrigin;
+		float2 paletteClosedOrigin;
 		float2 paletteOrigin;
 
 		int paletteAnimationLength = 7;
@@ -66,6 +66,13 @@ namespace OpenRA.Mods.RA.Widgets
 			paletteOrigin = paletteClosedOrigin;
 			VisibleQueues = new List<ProductionQueue>();
 			CurrentQueue = null;
+		}
+
+		public override void Initialize(WidgetArgs args)
+		{
+			base.Initialize(args);
+			paletteOpenOrigin = new float2(Game.viewport.Width - Columns*IconWidth - 23, 280);
+			paletteClosedOrigin = new float2(Game.viewport.Width - 16, 280);
 		}
 
 		public override Rectangle EventBounds
