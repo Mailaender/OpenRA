@@ -51,9 +51,11 @@ namespace OpenRA.Network
 							Game.AddChatLine(Color.White, "(player {0})".F(clientId), order.TargetString);
 						break;
 					}
+
 				case "Message": // Server message
 						Game.AddChatLine(Color.White, "Server", order.TargetString);
 					break;
+
 				case "Disconnected": /* reports that the target player disconnected */
 					{
 						var client = orderManager.LobbyInfo.ClientWithIndex(clientId);
@@ -156,6 +158,14 @@ namespace OpenRA.Network
 				case "ServerError":
 					{
 						orderManager.ServerError = order.TargetString;
+						orderManager.AuthentificationFailed = false;
+						break;
+					}
+
+				case "AuthenticationError":
+					{
+						orderManager.ServerError = order.TargetString;
+						orderManager.AuthentificationFailed = true;
 						break;
 					}
 
@@ -195,11 +205,13 @@ namespace OpenRA.Network
 
 						break;
 					}
+
 				case "Ping":
 					{
 						orderManager.IssueOrder(Order.Pong(order.TargetString));
 						break;
 					}
+
 				default:
 					{
 						if (!order.IsImmediate)

@@ -387,7 +387,7 @@ namespace OpenRA
 				var idealFrameTime = 1.0 / Settings.Graphics.MaxFramerate;
 				var sw = new Stopwatch();
 
-				Tick( orderManager, viewport );
+				Tick(orderManager, viewport);
 
 				if (Settings.Graphics.CapFramerate)
 				{

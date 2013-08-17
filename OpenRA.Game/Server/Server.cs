@@ -241,7 +241,7 @@ namespace OpenRA.Server
 
 				if (!string.IsNullOrEmpty(Game.Settings.Server.Password) && handshake.Password != Game.Settings.Server.Password)
 				{
-					SendOrderTo(newConn, "ServerError", "Authentication failed: wrong password.");
+					SendOrderTo(newConn, "AuthenticationError", "Authentication failed: wrong password.");
 					DropClient(newConn);
 					return;
 				}

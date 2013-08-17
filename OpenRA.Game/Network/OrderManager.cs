@@ -29,6 +29,7 @@ namespace OpenRA.Network
 		public readonly int Port;
 
 		public string ServerError = "Server is not responding.";
+		public bool AuthentificationFailed = false;
 
 		public int NetFrameNumber { get; private set; }
 		public int LocalFrameNumber;

@@ -61,6 +61,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 
 		public static void Connect(string host, int port, Action onConnect, Action onAbort)
 		{
+
 			Game.JoinServer(host, port);
 			Ui.OpenWindow("CONNECTING_PANEL", new WidgetArgs()
 			{
@@ -104,10 +105,10 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			{
 				var currentPassword = Game.Settings.Server.Password;
 				passwordField.Text = currentPassword;
-				passwordField.IsVisible = () => orderManager.ServerError.Contains("password");
+				passwordField.IsVisible = () => orderManager.AuthentificationFailed;
 				var passwordLabel = widget.Get<LabelWidget>("PASSWORD_LABEL");
 				passwordLabel.IsVisible = () => passwordField.IsVisible();
-				if (passwordField.IsVisible()) // TODO: this works in just 10 % of the cases
+				if (passwordField.IsVisible()) // FIXME: does not work
 				{
 					var offset = passwordField.Bounds.Y - connectionError.Bounds.Y;
 					abortButton.Bounds.Y += offset;
