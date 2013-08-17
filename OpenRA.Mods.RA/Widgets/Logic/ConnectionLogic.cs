@@ -81,9 +81,12 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 		public ConnectionFailedLogic(Widget widget, OrderManager orderManager, Action onRetry, Action onAbort)
 		{
 			var panel = widget;
-			panel.Get<ButtonWidget>("ABORT_BUTTON").OnClick = () => { Ui.CloseWindow(); onAbort(); };
-			panel.Get<ButtonWidget>("RETRY_BUTTON").OnClick = () => 
-			{ 
+			var abortButton = panel.Get<ButtonWidget>("ABORT_BUTTON");
+			var retryButton = panel.Get<ButtonWidget>("RETRY_BUTTON");
+
+			abortButton.OnClick = () => { Ui.CloseWindow(); onAbort(); };
+			retryButton.OnClick = () => 
+			{
 				Ui.CloseWindow();
 				if (passwordField != null)
 					Game.Settings.Server.Password = passwordField.Text;
@@ -102,7 +105,16 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 				var currentPassword = Game.Settings.Server.Password;
 				passwordField.Text = currentPassword;
 				passwordField.IsVisible = () => orderManager.ServerError.Contains("password");
-				widget.Get<LabelWidget>("PASSWORD_LABEL").IsVisible = () => orderManager.ServerError.Contains("password");;
+				var passwordLabel = widget.Get<LabelWidget>("PASSWORD_LABEL");
+				passwordLabel.IsVisible = () => passwordField.IsVisible();
+				if (passwordField.IsVisible()) // TODO: this works in just 10 % of the cases
+				{
+					var offset = passwordField.Bounds.Y - connectionError.Bounds.Y;
+					abortButton.Bounds.Y += offset;
+					retryButton.Bounds.Y += offset;
+					panel.Bounds.Height += offset;
+					panel.Bounds.Y -= offset / 2;
+				}
 			}
 		}
 	}
