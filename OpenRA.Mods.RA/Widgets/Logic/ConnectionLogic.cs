@@ -61,7 +61,6 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 
 		public static void Connect(string host, int port, Action onConnect, Action onAbort)
 		{
-
 			Game.JoinServer(host, port);
 			Ui.OpenWindow("CONNECTING_PANEL", new WidgetArgs()
 			{
@@ -77,6 +76,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 	public class ConnectionFailedLogic
 	{
 		PasswordFieldWidget passwordField;
+		bool passwordOffsetAdjusted;
 
 		[ObjectCreator.UseCtor]
 		public ConnectionFailedLogic(Widget widget, OrderManager orderManager, Action onRetry, Action onAbort)
@@ -108,14 +108,25 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 				passwordField.IsVisible = () => orderManager.AuthentificationFailed;
 				var passwordLabel = widget.Get<LabelWidget>("PASSWORD_LABEL");
 				passwordLabel.IsVisible = () => passwordField.IsVisible();
-				if (passwordField.IsVisible()) // FIXME: does not work
+			}
+
+			passwordOffsetAdjusted = false;
+			var connectionFailedTicker = panel.GetOrNull<LogicTickerWidget>("CONNECTION_FAILED_TICKER");
+			if (connectionFailedTicker != null)
+			{
+				connectionFailedTicker.OnTick = () =>
 				{
-					var offset = passwordField.Bounds.Y - connectionError.Bounds.Y;
-					abortButton.Bounds.Y += offset;
-					retryButton.Bounds.Y += offset;
-					panel.Bounds.Height += offset;
-					panel.Bounds.Y -= offset / 2;
-				}
+					// Adjust the dialog once the AuthenticationError is parsed.
+					if (passwordField.IsVisible() && !passwordOffsetAdjusted)
+					{
+						var offset = passwordField.Bounds.Y - connectionError.Bounds.Y;
+						abortButton.Bounds.Y += offset;
+						retryButton.Bounds.Y += offset;
+						panel.Bounds.Height += offset;
+						panel.Bounds.Y -= offset / 2;
+						passwordOffsetAdjusted = true;
+					}
+				};
 			}
 		}
 	}
