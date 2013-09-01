@@ -37,8 +37,9 @@ Container@CONNECTIONFAILED_PANEL:
 	X:(WINDOW_RIGHT - WIDTH)/2
 	Y:(WINDOW_BOTTOM - 90)/2
 	Width:370
-	Height:125
+	Height:129
 	Children:
+		LogicTicker@CONNECTION_FAILED_TICKER:
 		Label@TITLE:
 			Width:PARENT_RIGHT
 			Y:0-25
@@ -48,23 +49,37 @@ Container@CONNECTIONFAILED_PANEL:
 			Text:Connection Failed
 		Background@bg:
 			Width:370
-			Height:90
+			Height:124
 			Background:panel-black
 			Children:
 				Label@CONNECTING_DESC:
-					Y:(PARENT_BOTTOM-HEIGHT)/2 - 10
+					Y:20
 					Width:PARENT_RIGHT
 					Height:25
 					Text:Failed to connect
 					Font:Bold
 					Align:Center
 				Label@CONNECTION_ERROR:
-					Y:(PARENT_BOTTOM-HEIGHT)/2 + 10
+					Y:40
 					Width:PARENT_RIGHT
 					Height:25
 					Text:ServerError
 					Align:Center
 					Font:Bold
+				Label@PASSWORD_LABEL:
+					X:40
+					Y:74
+					Width:95
+					Height:25
+					Align:Right
+					Text:Password:
+					Font:Bold
+				PasswordField@PASSWORD:
+					X:140
+					Y:75
+					Width:155
+					MaxLength:20
+					Height:25
 		Button@RETRY_BUTTON:
 			Key:return
 			Y:89

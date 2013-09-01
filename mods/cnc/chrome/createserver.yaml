@@ -50,6 +50,26 @@ Container@CREATESERVER_PANEL:
 					MaxLength:50
 					Height:25
 					Text:My OpenRA Server
+				Label@PASSWORD_LABEL:
+					X:10
+					Y:89
+					Width:95
+					Height:25
+					Align:Right
+					Text:Password:
+				PasswordField@PASSWORD:
+					X:110
+					Y:90
+					Width:145
+					MaxLength:20
+					Height:25
+				Label@AFTER_PASSWORD_LABEL:
+					X:260
+					Y:89
+					Width:95
+					Height:25
+					Align:Left
+					Text:(optional)
 				Label@LISTEN_PORT_LABEL:
 					X:15
 					Y:119
