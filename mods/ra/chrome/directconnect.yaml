@@ -42,11 +42,11 @@ Background@DIRECTCONNECT_BG:
 		PasswordField@PASSWORD:
 			X:150
 			Y:95
-			Width:155
+			Width:160
 			MaxLength:20
 			Height:25
 		Label@AFTER_PASSWORD_LABEL:
-			X:310
+			X:315
 			Y:94
 			Width:95
 			Height:25
