@@ -32,26 +32,6 @@ Background@DIRECTCONNECT_BG:
 			Width:55
 			MaxLength:5
 			Height:25
-		Label@PASSWORD_LABEL:
-			X:50
-			Y:94
-			Width:95
-			Height:25
-			Align:Right
-			Text:Password:
-		PasswordField@PASSWORD:
-			X:150
-			Y:95
-			Width:160
-			MaxLength:20
-			Height:25
-		Label@AFTER_PASSWORD_LABEL:
-			X:315
-			Y:94
-			Width:95
-			Height:25
-			Align:Left
-			Text:(optional)
 		Button@JOIN_BUTTON:
 			X:130
 			Y:PARENT_BOTTOM - 45

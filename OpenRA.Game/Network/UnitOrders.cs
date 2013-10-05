@@ -148,7 +148,7 @@ namespace OpenRA.Network
 						{
 							Client = info,
 							Mods = localMods,
-							Password = Game.Settings.Server.Password
+							Password = orderManager.Password
 						};
 
 						orderManager.IssueOrder(Order.HandshakeResponse(response.Serialize()));

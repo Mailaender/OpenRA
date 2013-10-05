@@ -106,7 +106,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			// Create and join the server
 			Game.CreateServer(settings);
 			Ui.CloseWindow();
-			ConnectionLogic.Connect(IPAddress.Loopback.ToString(), Game.Settings.Server.ListenPort, onCreate, onExit);
+			ConnectionLogic.Connect(IPAddress.Loopback.ToString(), Game.Settings.Server.ListenPort, password, onCreate, onExit);
 		}
 	}
 }

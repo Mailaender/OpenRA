@@ -41,26 +41,6 @@ Container@DIRECTCONNECT_PANEL:
 					Y:50
 					Width:200
 					Height:25
-				Label@PASSWORD_LABEL:
-					X:50
-					Y:84
-					Width:95
-					Height:25
-					Align:Right
-					Text:Password:
-				PasswordField@PASSWORD:
-					X:150
-					Y:85
-					Width:145
-					MaxLength:20
-					Height:25
-				Label@AFTER_PASSWORD_LABEL:
-					X:300
-					Y:84
-					Width:95
-					Height:25
-					Align:Left
-					Text:(optional)
 		Button@BACK_BUTTON:
 			Key:escape
 			X:0
