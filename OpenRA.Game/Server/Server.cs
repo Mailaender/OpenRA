@@ -239,9 +239,10 @@ namespace OpenRA.Server
 
 				var handshake = HandshakeResponse.Deserialize(data);
 
-				if (!string.IsNullOrEmpty(Game.Settings.Server.Password) && handshake.Password != Game.Settings.Server.Password)
+				if (!string.IsNullOrEmpty(Settings.Password) && handshake.Password != Settings.Password)
 				{
-					SendOrderTo(newConn, "AuthenticationError", "Authentication failed: wrong password.");
+					var message = string.IsNullOrEmpty(handshake.Password) ? "Server requires a password" : "Incorrect password";
+					SendOrderTo(newConn, "AuthenticationError", message);
 					DropClient(newConn);
 					return;
 				}
@@ -277,7 +278,7 @@ namespace OpenRA.Server
 					Log.Write("server", "Rejected connection from {0}; mods do not match.",
 						newConn.socket.RemoteEndPoint);
 
-					SendOrderTo(newConn, "ServerError", "Your mods don't match the server");
+					SendOrderTo(newConn, "ServerError", "Server is running an incompatible mod");
 					DropClient(newConn);
 					return;
 				}
@@ -290,7 +291,7 @@ namespace OpenRA.Server
 					Log.Write("server", "Rejected connection from {0}; Not running the same version.",
 						newConn.socket.RemoteEndPoint);
 
-					SendOrderTo(newConn, "ServerError", "Not running the same version.");
+					SendOrderTo(newConn, "ServerError", "Server is running an incompatible version");
 					DropClient(newConn);
 					return;
 				}
@@ -300,7 +301,7 @@ namespace OpenRA.Server
 				if (bans.Contains(client.IpAddress))
 				{
 					Log.Write("server", "Rejected connection from {0}; Banned.", newConn.socket.RemoteEndPoint);
-					SendOrderTo(newConn, "ServerError", "You are {0} from the server.".F(Settings.Ban.Contains(client.IpAddress) ? "banned" : "temporarily banned"));
+					SendOrderTo(newConn, "ServerError", "You have been {0} from this server".F(Settings.Ban.Contains(client.IpAddress) ? "banned" : "temporarily banned"));
 					DropClient(newConn);
 					return;
 				}

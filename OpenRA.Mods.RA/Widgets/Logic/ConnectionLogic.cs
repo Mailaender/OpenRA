@@ -16,7 +16,8 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 {
 	public class ConnectionLogic
 	{
-		Action onConnect, onRetry, onAbort;
+		Action onConnect, onAbort;
+		Action<string> onRetry;
 
 		void ConnectionStateChanged(OrderManager om)
 		{
@@ -44,11 +45,11 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 		}
 
 		[ObjectCreator.UseCtor]
-		public ConnectionLogic(Widget widget, string host, int port, Action onConnect, Action onRetry, Action onAbort)
+		public ConnectionLogic(Widget widget, string host, int port, Action onConnect, Action onAbort, Action<string> onRetry)
 		{
 			this.onConnect = onConnect;
-			this.onRetry = onRetry;
 			this.onAbort = onAbort;
+			this.onRetry = onRetry;
 
 			Game.ConnectionStateChanged += ConnectionStateChanged;
 
@@ -59,16 +60,18 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 				"Connecting to {0}:{1}...".F(host, port);
 		}
 
-		public static void Connect(string host, int port, Action onConnect, Action onAbort)
+		public static void Connect(string host, int port, string password, Action onConnect, Action onAbort)
 		{
-			Game.JoinServer(host, port);
+			Game.JoinServer(host, port, password);
+			Action<string> onRetry = newPassword => Connect(host, port, newPassword, onConnect, onAbort);
+
 			Ui.OpenWindow("CONNECTING_PANEL", new WidgetArgs()
 			{
 				{ "host", host },
 				{ "port", port },
 				{ "onConnect", onConnect },
 				{ "onAbort", onAbort },
-				{ "onRetry", () => Connect(host, port, onConnect, onAbort) }
+				{ "onRetry", onRetry }
 			});
 		}
 	}
@@ -79,7 +82,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 		bool passwordOffsetAdjusted;
 
 		[ObjectCreator.UseCtor]
-		public ConnectionFailedLogic(Widget widget, OrderManager orderManager, Action onRetry, Action onAbort)
+		public ConnectionFailedLogic(Widget widget, OrderManager orderManager, Action onAbort, Action<String> onRetry)
 		{
 			var panel = widget;
 			var abortButton = panel.Get<ButtonWidget>("ABORT_BUTTON");
@@ -88,10 +91,10 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			abortButton.OnClick = () => { Ui.CloseWindow(); onAbort(); };
 			retryButton.OnClick = () => 
 			{
+				var password = passwordField != null && passwordField.IsVisible() ? passwordField.Text : orderManager.Password;
+
 				Ui.CloseWindow();
-				if (passwordField != null)
-					Game.Settings.Server.Password = passwordField.Text;
-				onRetry();
+				onRetry(password);
 			};
 
 			widget.Get<LabelWidget>("CONNECTING_DESC").GetText = () =>
@@ -103,8 +106,7 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			passwordField = panel.GetOrNull<PasswordFieldWidget>("PASSWORD");
 			if (passwordField != null)
 			{
-				var currentPassword = Game.Settings.Server.Password;
-				passwordField.Text = currentPassword;
+				passwordField.Text = orderManager.Password;
 				passwordField.IsVisible = () => orderManager.AuthentificationFailed;
 				var passwordLabel = widget.Get<LabelWidget>("PASSWORD_LABEL");
 				passwordLabel.IsVisible = () => passwordField.IsVisible();
@@ -124,6 +126,11 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 						retryButton.Bounds.Y += offset;
 						panel.Bounds.Height += offset;
 						panel.Bounds.Y -= offset / 2;
+
+						var background = panel.GetOrNull("CONNECTION_BACKGROUND");
+						if (background != null)
+							background.Bounds.Height += offset;
+
 						passwordOffsetAdjusted = true;
 					}
 				};

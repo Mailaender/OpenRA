@@ -26,23 +26,15 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 			ipField.Text = last.Length > 1 ? last[0] : "localhost";
 			portField.Text = last.Length == 2 ? last[1] : "1234";
 
-			var previousPassword = Game.Settings.Server.Password;
-			var passwordField = panel.GetOrNull<PasswordFieldWidget>("PASSWORD");
-			if (passwordField != null)
-				passwordField.Text = previousPassword;
-
 			panel.Get<ButtonWidget>("JOIN_BUTTON").OnClick = () =>
 			{
 				var port = Exts.WithDefault(1234, () => int.Parse(portField.Text));
-
-				if (passwordField != null)
-					Game.Settings.Server.Password = passwordField.Text;
 
 				Game.Settings.Player.LastServer = "{0}:{1}".F(ipField.Text, port);
 				Game.Settings.Save();
 
 				Ui.CloseWindow();
-				ConnectionLogic.Connect(ipField.Text, port, openLobby, onExit);
+				ConnectionLogic.Connect(ipField.Text, port, "", openLobby, onExit);
 			};
 
 			panel.Get<ButtonWidget>("BACK_BUTTON").OnClick = () => { Ui.CloseWindow(); onExit(); };
