@@ -126,6 +126,11 @@ namespace OpenRA.Mods.RA.Widgets.Logic
 						retryButton.Bounds.Y += offset;
 						panel.Bounds.Height += offset;
 						panel.Bounds.Y -= offset / 2;
+
+						var background = panel.GetOrNull("CONNECTION_BACKGROUND");
+						if (background != null)
+							background.Bounds.Height += offset;
+
 						passwordOffsetAdjusted = true;
 					}
 				};

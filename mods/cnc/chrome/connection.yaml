@@ -47,13 +47,13 @@ Container@CONNECTIONFAILED_PANEL:
 			Contrast:true
 			Align:Center
 			Text:Connection Failed
-		Background@bg:
+		Background@CONNECTION_BACKGROUND:
 			Width:370
-			Height:124
+			Height:85
 			Background:panel-black
 			Children:
 				Label@CONNECTING_DESC:
-					Y:20
+					Y:15
 					Width:PARENT_RIGHT
 					Height:25
 					Text:Failed to connect
@@ -63,12 +63,11 @@ Container@CONNECTIONFAILED_PANEL:
 					Y:40
 					Width:PARENT_RIGHT
 					Height:25
-					Text:ServerError
 					Align:Center
 					Font:Bold
 				Label@PASSWORD_LABEL:
 					X:40
-					Y:74
+					Y:79
 					Width:95
 					Height:25
 					Align:Right
@@ -76,20 +75,20 @@ Container@CONNECTIONFAILED_PANEL:
 					Font:Bold
 				PasswordField@PASSWORD:
 					X:140
-					Y:75
+					Y:80
 					Width:155
 					MaxLength:20
 					Height:25
 		Button@RETRY_BUTTON:
 			Key:return
-			Y:89
+			Y:84
 			Width:140
 			Height:35
 			Text:Retry
 		Button@ABORT_BUTTON:
 			Key:escape
 			X:230
-			Y:89
+			Y:84
 			Width:140
 			Height:35
 			Text:Abort
