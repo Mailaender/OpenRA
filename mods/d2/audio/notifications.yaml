@@ -1,0 +1,57 @@
+Speech:
+	DefaultVariant: .VOC
+	Prefixes:
+		atreides: A
+		ordos: O
+		harkonnen: H
+	Notifications:
+		Repairing:
+		BuildingCannotPlaceAudio:
+		LowPower:
+		SilosNeeded:
+		PrimaryBuildingSelected:
+		NewOptions:
+		Win: WIN
+		Lose: LOSE
+		BaseAttack: ATTACK
+		HarvesterAttack:
+		Leave: LOSE
+		StartGame:
+		UnitReady:
+		NoRoom:
+		Training:
+		OnHold:
+		Cancelled:
+		Building:
+		BuildingReady: CONST
+		OrderPlaced:
+		Reinforce:
+		UnitLost:
+		BuildingLost: DESTROY
+		BuildingCaptured: CAPTURE
+		WormSign: WORMY
+		WormAttack:
+		EnemyUnitsApproaching:
+		EnemyUnitsDetected:
+		UnitRepaired: REPAIR
+		CannotDeploy:
+		Upgrading:
+
+Sounds:
+	DefaultVariant: .VOC
+	Notifications:
+		RadarUp: STATICP
+		RadarDown: STATICP
+#TODO: make faction specific
+		DisablePower: HON
+		EnablePower: HOFF
+		CashTickUp: 
+		CashTickDown:
+		LevelUp:
+		ChatLine:
+		BuildPaletteOpen: BUTTON
+		BuildPaletteClose: BUTTON
+		TabClick:
+		ClickSound: BUTTON
+		ClickDisabledSound:
+		Beacon:

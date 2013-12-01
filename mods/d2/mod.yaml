@@ -1,0 +1,239 @@
+Metadata:
+	Title: Dune II
+	Description: Work in progress
+	Version: {DEV_VERSION}
+	Author: The OpenRA Developers
+
+RequiresMods:
+	modchooser: {DEV_VERSION}
+
+Folders:
+	.
+# Dune II:
+	~^/Content/d2
+	./mods/d2/bits
+	./mods/d2/uibits
+# Dune 2000:
+	./mods/d2k
+	./mods/d2k/bits
+	./mods/d2k/bits/tex
+	./mods/d2k/bits/xmas
+	./mods/d2k/uibits
+	~^Content/d2k
+	~^Content/d2k/GAMESFX
+	~^Content/d2k/Movies
+	~^Content/d2k/Music
+
+MapFolders:
+	./mods/d2k/maps@System
+	~^maps/d2k@User
+
+Packages:
+# Dune 2000:
+	SOUND.RS
+# Dune II:
+	ATRE.PAK
+	DUNE.PAK
+	ENGLISH.PAK
+	FINALE.PAK
+	~FRENCH.PAK
+	~GERMAN.PAK
+	HARK.PAK
+	INTRO.PAK
+	INTROVOC.PAK
+	MENTAT.PAK
+	MERC.PAK
+	ORDOS.PAK
+	SCENARIO.PAK
+	SOUND.PAK
+	VOC.PAK
+
+Rules:
+# Dune II:
+	./mods/d2/rules/system.yaml
+# Dune 2000:
+	./mods/d2k/rules/misc.yaml
+	./mods/d2k/rules/ai.yaml
+	./mods/d2k/rules/player.yaml
+	./mods/d2k/rules/world.yaml
+	./mods/d2k/rules/palettes.yaml
+	./mods/d2k/rules/defaults.yaml
+	./mods/d2k/rules/vehicles.yaml
+	./mods/d2k/rules/starport.yaml
+	./mods/d2k/rules/husks.yaml
+	./mods/d2k/rules/structures.yaml
+	./mods/d2k/rules/aircraft.yaml
+	./mods/d2k/rules/infantry.yaml
+	./mods/d2k/rules/arrakis.yaml
+
+Sequences:
+	./mods/d2k/sequences/aircraft.yaml
+	./mods/d2k/sequences/vehicles.yaml
+	./mods/d2k/sequences/infantry.yaml
+	./mods/d2k/sequences/structures.yaml
+	./mods/d2k/sequences/misc.yaml
+
+TileSets:
+	./mods/d2k/tilesets/arrakis.yaml
+
+MapGrid:
+	TileSize: 32,32
+	Type: Rectangular
+
+Cursors:
+	./mods/d2/cursors.yaml
+
+Chrome:
+	./mods/d2/chrome.yaml
+
+Assemblies:
+	./mods/common/OpenRA.Mods.Common.dll
+	./mods/ra/OpenRA.Mods.RA.dll
+	./mods/cnc/OpenRA.Mods.Cnc.dll
+	./mods/d2k/OpenRA.Mods.D2k.dll
+
+ChromeLayout:
+	./mods/d2k/chrome/ingame.yaml
+	./mods/ra/chrome/ingame-chat.yaml
+	./mods/ra/chrome/ingame-diplomacy.yaml
+	./mods/ra/chrome/ingame-fmvplayer.yaml
+	./mods/d2k/chrome/ingame-menu.yaml
+	./mods/ra/chrome/ingame-info.yaml
+	./mods/ra/chrome/ingame-infoscripterror.yaml
+	./mods/ra/chrome/ingame-infobriefing.yaml
+	./mods/ra/chrome/ingame-infoobjectives.yaml
+	./mods/d2k/chrome/ingame-infostats.yaml
+	./mods/d2k/chrome/ingame-observer.yaml
+	./mods/ra/chrome/ingame-observerstats.yaml
+	./mods/d2k/chrome/ingame-player.yaml
+	./mods/ra/chrome/ingame-perf.yaml
+	./mods/ra/chrome/ingame-debug.yaml
+	./mods/d2k/chrome/mainmenu.yaml
+	./mods/ra/chrome/settings.yaml
+	./mods/ra/chrome/credits.yaml
+	./mods/ra/chrome/lobby.yaml
+	./mods/ra/chrome/lobby-mappreview.yaml
+	./mods/d2k/chrome/lobby-players.yaml
+	./mods/d2k/chrome/lobby-options.yaml
+	./mods/ra/chrome/lobby-music.yaml
+	./mods/ra/chrome/lobby-kickdialogs.yaml
+	./mods/ra/chrome/lobby-globalchat.yaml
+	./mods/d2k/chrome/color-picker.yaml
+	./mods/ra/chrome/map-chooser.yaml
+	./mods/ra/chrome/multiplayer.yaml
+	./mods/ra/chrome/multiplayer-browser.yaml
+	./mods/ra/chrome/multiplayer-createserver.yaml
+	./mods/ra/chrome/multiplayer-directconnect.yaml
+	./mods/ra/chrome/multiplayer-globalchat.yaml
+	./mods/ra/chrome/connection.yaml
+	./mods/d2k/chrome/dropdowns.yaml
+	./mods/ra/chrome/musicplayer.yaml
+	./mods/d2k/chrome/tooltips.yaml
+	./mods/ra/chrome/assetbrowser.yaml
+	./mods/d2k/chrome/missionbrowser.yaml
+	./mods/ra/chrome/confirmation-dialogs.yaml
+	./mods/ra/chrome/editor.yaml
+	./mods/ra/chrome/replaybrowser.yaml
+
+Weapons:
+	./mods/d2k/weapons.yaml
+	./mods/d2k/weapons/debris.yaml
+
+Voices:
+	./mods/d2k/audio/voices.yaml
+
+Notifications:
+	./mods/d2/audio/notifications.yaml
+
+Music:
+	./mods/d2k/audio/music.yaml
+
+Translations:
+	./mods/d2k/languages/english.yaml
+
+LoadScreen: LogoStripeLoadScreen
+	Image: ./mods/d2/uibits/loadscreen.png
+	Text: Lowering resolution
+
+ContentInstaller:
+	TestFiles: ^/Content/d2/DUNE.PAK
+	PackageMirrorList:
+	DiskTestFiles:
+	PackageToExtractFromCD:
+	ExtractFilesFromCD:
+	CopyFilesFromCD:
+	ShippedSoundtracks: 0
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+	LobbySettingsNotification
+	ColorValidator
+
+LobbyDefaults:
+	AllowCheats: false
+	Crates: true
+	StartingUnitsClass: none
+	FragileAlliances: false
+	Shroud: true
+	Fog: true
+	TechLevel: Unrestricted
+
+ChromeMetrics:
+	./mods/d2k/metrics.yaml
+
+Fonts:
+	Regular:
+		Font:./mods/common/FreeSans.ttf
+		Size:14
+	Bold:
+		Font:./mods/common/FreeSansBold.ttf
+		Size:14
+	Title:
+		Font:./mods/d2/Galdeano-Regular.ttf
+		Size:32
+	MediumBold:
+		Font:./mods/common/FreeSansBold.ttf
+		Size:18
+	BigBold:
+		Font:./mods/common/FreeSansBold.ttf
+		Size:24
+	Small:
+		Font:./mods/common/FreeSans.ttf
+		Size:12
+	Tiny:
+		Font:./mods/common/FreeSans.ttf
+		Size:10
+	TinyBold:
+		Font:./mods/common/FreeSansBold.ttf
+		Size:10
+
+Missions:
+	./mods/d2k/missions.yaml
+
+SupportsMapsFrom: d2k
+
+SoundFormats: Voc, Aud, Wav
+
+SpriteFormats: ShpD2, R8, ShpTD, TmpRA
+
+SpriteSequenceFormat: DefaultSpriteSequence
+
+GameSpeeds:
+	slower:
+		Name: Slower
+		Timestep: 50
+		OrderLatency: 3
+	default:
+		Name: Normal
+		Timestep: 40
+		OrderLatency: 3
+	faster:
+		Name: Faster
+		Timestep: 30
+		OrderLatency: 4
+	fastest:
+		Name: Fastest
+		Timestep: 20
+		OrderLatency: 6
