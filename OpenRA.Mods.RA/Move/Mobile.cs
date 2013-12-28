@@ -251,7 +251,7 @@ namespace OpenRA.Mods.RA.Move
 			self.World.ScreenMap.Remove(self);
 		}
 
-		public IEnumerable<IOrderTargeter> Orders { get { yield return new MoveOrderTargeter(Info); } }
+		public IEnumerable<IOrderTargeter> Orders { get { yield return new MoveOrderTargeter(self, Info); } }
 
 		// Note: Returns a valid order even if the unit can't move to the target
 		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
@@ -504,10 +504,13 @@ namespace OpenRA.Mods.RA.Move
 		class MoveOrderTargeter : IOrderTargeter
 		{
 			readonly MobileInfo unitType;
+			readonly bool rejectMove;
 
-			public MoveOrderTargeter(MobileInfo unitType)
+			public MoveOrderTargeter(Actor self, MobileInfo unitType)
 			{
 				this.unitType = unitType;
+				var reject = self.TraitOrDefault<RejectsOrders>();
+				rejectMove = reject != null && !reject.Except.Contains("Move");
 			}
 
 			public string OrderID { get { return "Move"; } }
@@ -516,7 +519,7 @@ namespace OpenRA.Mods.RA.Move
 
 			public bool CanTarget(Actor self, Target target, List<Actor> othersAtTarget, TargetModifiers modifiers, ref string cursor)
 			{
-				if (!target.IsValidFor(self))
+				if (rejectMove || !target.IsValidFor(self))
 					return false;
 
 				var location = target.CenterPosition.ToCPos();
