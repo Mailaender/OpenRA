@@ -2,7 +2,8 @@ Reinforcements = { }
 
 Reinforcements.Insert = function(owner, transportName, passengerNames, enterPath, exitPath)
 	local facing = { Map.GetFacing(CPos.op_Subtraction(enterPath[2], enterPath[1]), 0), "Int32" }
-	local transport = Actor.Create(transportName, { Owner = owner, Location = enterPath[1], Facing = facing })
+	local center = WPos.op_Addition(enterPath[1].CenterPosition, WVec.New(0, 0, Rules.InitialAltitude(transportName)))
+	local transport = Actor.Create(transportName, { Owner = owner, Location = enterPath[1], CenterPosition = center, Facing = facing })
 	local cargo = Actor.Trait(transport, "Cargo")
 	local passengers = { }
 
@@ -23,7 +24,8 @@ end
 
 Reinforcements.Extract = function(owner, transportName, passengerNames, enterPath, exitPath)
 	local facing = { Map.GetFacing(CPos.op_Subtraction(enterPath[2], enterPath[1]), 0), "Int32" }
-	local transport = Actor.Create(transportName, { Owner = owner, Location = enterPath[1], Facing = facing })
+	local center = WPos.op_Addition(enterPath[1].CenterPosition, WVec.New(0, 0, Rules.InitialAltitude(transportName)))
+	local transport = Actor.Create(transportName, { Owner = owner, Location = enterPath[1], CenterPosition = center, Facing = facing })
 	local cargo = Actor.Trait(transport, "Cargo")
 
 	Utils.Do(Utils.Skip(enterPath, 1), function(l) Actor.ScriptedMove(transport, l) end)
