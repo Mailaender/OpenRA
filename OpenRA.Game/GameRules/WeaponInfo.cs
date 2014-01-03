@@ -179,7 +179,9 @@ namespace OpenRA.GameRules
 				if (!world.Map.IsInMap(cell))
 					return false;
 
-				if (InvalidTargets.Contains(world.GetTerrainType(cell)))
+				var cellInfo = world.GetTerrainInfo(cell);
+				if (!ValidTargets.Intersect(cellInfo.TargetTypes).Any()
+				    || InvalidTargets.Intersect(cellInfo.TargetTypes).Any())
 					return false;
 
 				return true;
