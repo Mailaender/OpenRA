@@ -835,7 +835,7 @@ TorpTube:
 		Trail: bubbles
 		ROT: 1
 		RangeLimit: 160
-		WaterBound: yes
+		BoundToTerrainType: Water
 	Warhead:
 		Spread: 426
 		Versus:
