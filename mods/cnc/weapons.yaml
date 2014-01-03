@@ -207,6 +207,7 @@ HeliAAGun:
 	BurstDelay: 0
 	Range: 4c0
 	ValidTargets: Air
+	InvalidTargets: Clear, Water, Road, Rock, Tree, River, Rough, Wall, Beach, Tiberium, BlueTiberium
 	Report: gun5.aud
 	Projectile: Bullet
 		Speed: 1c682
@@ -355,6 +356,7 @@ OrcaAAMissiles:
 	Range: 5c0
 	Report: BAZOOK1.AUD
 	ValidTargets: Air
+	InvalidTargets: Clear, Water, Road, Rock, Tree, River, Rough, Wall, Beach, Tiberium, BlueTiberium
 	Projectile: Missile
 		Arm: 0
 		High: yes
@@ -839,6 +841,7 @@ SAMMissile:
 	Range: 10c0
 	Report: ROCKET2.AUD
 	ValidTargets: Air
+	InvalidTargets: Clear, Water, Road, Rock, Tree, River, Rough, Wall, Beach, Tiberium, BlueTiberium
 	Projectile: Missile
 		Arm: 0
 		High: yes
@@ -926,6 +929,7 @@ APCGun.AA:
 	Range: 7c0
 	Report: gun20.aud
 	ValidTargets: Air
+	InvalidTargets: Clear, Water, Road, Rock, Tree, River, Rough, Wall, Beach, Tiberium, BlueTiberium
 	Projectile: Bullet
 		Speed: 1c682
 		High: true
@@ -944,6 +948,7 @@ Patriot:
 	BurstDelay: 15
 	Report: ROCKET2.AUD
 	ValidTargets: Air
+	InvalidTargets: Clear, Water, Road, Rock, Tree, River, Rough, Wall, Beach, Tiberium, BlueTiberium
 	Projectile: Missile
 		High: yes
 		Shadow: no

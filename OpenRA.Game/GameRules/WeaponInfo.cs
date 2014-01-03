@@ -179,6 +179,9 @@ namespace OpenRA.GameRules
 				if (!world.Map.IsInMap(cell))
 					return false;
 
+				if (InvalidTargets.Contains(world.GetTerrainType(cell)))
+					return false;
+
 				return true;
 			}
 

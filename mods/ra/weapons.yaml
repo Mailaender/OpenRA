@@ -22,6 +22,7 @@ ZSU-23:
 	Range: 10c0
 	Report: AACANON3.AUD
 	ValidTargets: Air
+	InvalidTargets: Clear, Water, Road, Bridge, Rock, Tree, River, Rough, Wall, Beach, Ore, Gems
 	Projectile: Bullet
 		Speed: 1c682
 		High: true
@@ -343,6 +344,7 @@ HellfireAA:
 	Burst: 2
 	BurstDelay: 10
 	ValidTargets: Air
+	InvalidTargets: Clear, Water, Road, Bridge, Rock, Tree, River, Rough, Wall, Beach, Ore, Gems
 	Projectile: Missile
 		Speed: 384
 		Arm: 2
@@ -679,6 +681,7 @@ Nike:
 	Range: 7c512
 	Report: MISSILE1.AUD
 	ValidTargets: Air
+	InvalidTargets: Clear, Water, Road, Bridge, Rock, Tree, River, Rough, Wall, Beach, Ore, Gems
 	Projectile: Missile
 		Arm: 3
 		High: true
@@ -707,6 +710,7 @@ RedEye:
 	Range: 7c512
 	Report: MISSILE1.AUD
 	ValidTargets: Air
+	InvalidTargets: Clear, Water, Road, Bridge, Rock, Tree, River, Rough, Wall, Beach, Ore, Gems
 	Projectile: Missile
 		Arm: 3
 		High: true
@@ -819,7 +823,8 @@ TorpTube:
 	ROF: 100
 	Range: 9c0
 	Report: TORPEDO1.AUD
-	ValidTargets: Water, Underwater
+	ValidTargets: Water, Underwater, Bridge
+	InvalidTargets: Clear, Rock, Road, Tree, River, Rough, Wall, Beach, Ore, Gems
 	Palette: shadow
 	Burst: 2
 	BurstDelay: 20
@@ -872,6 +877,7 @@ DepthCharge:
 	ROF: 60
 	Range: 5c0
 	ValidTargets: Underwater
+	InvalidTargets: Clear, Road, Bridge, Rock, Tree, River, Rough, Wall, Beach, Ore, Gems
 	Projectile: Bullet
 		Speed: 85
 		Image: BOMB
