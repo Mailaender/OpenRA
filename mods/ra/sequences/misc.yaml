@@ -529,6 +529,8 @@ overlay:
 		Start: 2
 	build-valid-temperat:
 		Start: 0
+	build-valid-jungle:
+		Start: 0
 	build-invalid:
 		Start: 1
 	target-select:
@@ -540,6 +542,8 @@ overlay:
 	target-valid-snow:
 		Start: 2
 	target-valid-temperat:
+		Start: 0
+	target-valid-jungle:
 		Start: 0
 	target-invalid:
 		Start: 1

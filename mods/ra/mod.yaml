@@ -9,6 +9,7 @@ Folders:
 	./mods/ra
 	./mods/ra/bits
 	./mods/ra/bits/desert
+	./mods/ra/bits/jungle
 	./mods/ra/uibits
 	~^Content/ra
 
@@ -116,6 +117,7 @@ TileSets:
 	mods/ra/tilesets/interior.yaml
 	mods/ra/tilesets/temperat.yaml
 	mods/ra/tilesets/desert.yaml
+	mods/ra/tilesets/jungle.yaml
 
 Music:
 	mods/ra/music.yaml
