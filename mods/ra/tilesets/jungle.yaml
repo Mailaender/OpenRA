@@ -2,14 +2,14 @@ General:
 	Name: Jungle
 	Id: JUNGLE
 	Extensions: .jun, .tem, .shp
-	Palette: temperat.pal
+	Palette: jungle.pal
 	EditorTemplateOrder: Terrain, Debris, Road, Cliffs, Water Cliffs, Beach, River, Bridge
 
 Terrain:
 	TerrainType@Clear:
 		Type: Clear
 		AcceptsSmudgeType: Crater, Scorch
-		Color: 25, 94, 87
+		Color: 40, 92, 40
 		TargetTypes: Ground
 	TerrainType@Water:
 		Type: Water
