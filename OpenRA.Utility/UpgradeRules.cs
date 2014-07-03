@@ -252,6 +252,12 @@ namespace OpenRA.Utility
 						node.Key = "StoresResources";
 				}
 
+				if (engineVersion < 20140703)
+				{
+					if (depth == 1 && node.Key == "SonarPulsePower")
+						node.Key = "SpawnActorPower";
+				}
+
 				UpgradeActorRules(engineVersion, ref node.Value.Nodes, node, depth + 1);
 			}
 		}
