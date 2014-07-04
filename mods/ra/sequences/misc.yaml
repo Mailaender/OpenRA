@@ -604,5 +604,5 @@ ripple:
 	idle: ripple2
 		Start: 0
 		Length: *
-		Tick: 55
+		Tick: 40
 		ZOffset: -1023
