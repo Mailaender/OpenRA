@@ -225,13 +225,13 @@ Container@PLAYER_WIDGETS:
 							ImageName: background-bottom
 				LogicTicker@PRODUCTION_TICKER:
 				ProductionPalette@PRODUCTION_PALETTE:
-					X: 55
-					Y: 0
+					X: 59
+					Y: 1
 					TooltipContainer: TOOLTIP_CONTAINER
 					ReadyText: READY
 					HoldText: ON HOLD
 					IconSize: 58, 48
-					IconMargin: 1, 0
+					IconMargin: 2, 0
 					IconSpriteOffset: 0, 0
 				Container@PALETTE_FOREGROUND:
 					X: 64
@@ -262,7 +262,7 @@ Container@PLAYER_WIDGETS:
 							Children:
 								Image@ICON:
 									X: 5
-									Y: 4
+									Y: 5
 									ImageCollection: production-icons
 						ProductionTypeButton@INFANTRY:
 							Logic: AddRaceSuffixLogic
@@ -278,7 +278,7 @@ Container@PLAYER_WIDGETS:
 							Children:
 								Image@ICON:
 									X: 5
-									Y: 4
+									Y: 5
 									ImageCollection: production-icons
 						ProductionTypeButton@VEHICLE:
 							Logic: AddRaceSuffixLogic
@@ -294,7 +294,7 @@ Container@PLAYER_WIDGETS:
 							Children:
 								Image@ICON:
 									X: 5
-									Y: 4
+									Y: 5
 									ImageCollection: production-icons
 						ProductionTypeButton@TANKS:
 							Logic: AddRaceSuffixLogic
@@ -310,7 +310,7 @@ Container@PLAYER_WIDGETS:
 							Children:
 								Image@ICON:
 									X: 5
-									Y: 4
+									Y: 5
 									ImageCollection: production-icons
 						ProductionTypeButton@AIRCRAFT:
 							Logic: AddRaceSuffixLogic
@@ -326,7 +326,7 @@ Container@PLAYER_WIDGETS:
 							Children:
 								Image@ICON:
 									X: 5
-									Y: 4
+									Y: 5
 									ImageCollection: production-icons
 						ProductionTypeButton@STARPORT:
 							Logic: AddRaceSuffixLogic
@@ -342,7 +342,7 @@ Container@PLAYER_WIDGETS:
 							Children:
 								Image@ICON:
 									X: 5
-									Y: 4
+									Y: 5
 									ImageCollection: production-icons
 						Button@SCROLL_UP_BUTTON:
 							Logic: AddRaceSuffixLogic
@@ -356,7 +356,7 @@ Container@PLAYER_WIDGETS:
 							Children:
 								Image@ICON:
 									X: 5
-									Y: 4
+									Y: 5
 									ImageCollection: scrollbar
 									ImageName: up_arrow
 						Button@SCROLL_DOWN_BUTTON:
@@ -371,6 +371,6 @@ Container@PLAYER_WIDGETS:
 							Children:
 								Image@ICON:
 									X: 5
-									Y: 4
+									Y: 5
 									ImageCollection: scrollbar
 									ImageName: down_arrow
