@@ -172,7 +172,7 @@ COMBATA.starport:
 SONICTANK:
 	Inherits: ^Vehicle
 	Buildable:
-		Queue: Armor
+		Queue: Vehicle
 		BuildPaletteOrder: 100
 		Prerequisites: ~heavya, research, ~techlevel.high
 	Valued:

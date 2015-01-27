@@ -2,7 +2,7 @@
 	Inherits: ^Vehicle
 	Buildable:
 		Prerequisites: ~heavy, repair, ~techlevel.medium
-		Queue: Armor
+		Queue: Vehicle
 		BuildPaletteOrder: 110
 	Valued:
 		Cost: 2000
@@ -46,7 +46,7 @@ MCV.Husk:
 HARVESTER:
 	Inherits: ^Vehicle
 	Buildable:
-		Queue: Armor
+		Queue: Vehicle
 		Prerequisites: ~heavy, refinery
 		BuildPaletteOrder: 10
 		InitialActivity: FindResources
@@ -198,7 +198,7 @@ QUAD.starport:
 ^COMBAT:
 	Inherits: ^Tank
 	Buildable:
-		Queue: Armor
+		Queue: Vehicle
 		BuildPaletteOrder: 40
 	Valued:
 		Cost: 700
@@ -247,7 +247,7 @@ QUAD.starport:
 SIEGETANK:
 	Inherits: ^Tank
 	Buildable:
-		Queue: Armor
+		Queue: Vehicle
 		Prerequisites: ~heavy, radar, ~techlevel.medium
 		BuildPaletteOrder: 50
 	Valued:
@@ -317,7 +317,7 @@ MISSILETANK:
 		Name: Rocket Tank
 		Description: Rocket Artillery\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
 	Buildable:
-		Queue: Armor
+		Queue: Vehicle
 		Prerequisites: ~heavy, hightech, ~techlevel.high
 		BuildPaletteOrder: 60
 	Mobile:

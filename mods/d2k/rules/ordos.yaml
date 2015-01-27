@@ -226,7 +226,7 @@ DEVIATORTANK:
 		Name: Deviator
 		Description: Fires a warhead which changes\nthe allegiance of enemy vehicles
 	Buildable:
-		Queue: Armor
+		Queue: Vehicle
 		BuildPaletteOrder: 50
 		Prerequisites: ~heavyo, research, ~techlevel.high
 	Mobile:

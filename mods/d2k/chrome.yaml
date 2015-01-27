@@ -2,24 +2,24 @@ sidebar-atreides: chrome.png
 	background-top: 2,0,250,317
 	background-iconrow: 2,317,250,48
 	background-bottom: 2,365,250,13
-	background-supportoverlay: 288,150,60,48
+	background-supportoverlay: 288,148,60,48
 
 sidebar-button-atreides: chrome.png
-	background: 288,284,25,25
+	background: 288,285,25,25
 sidebar-button-atreides-hover: chrome.png
-	background: 313,284,25,25
+	background: 313,285,25,25
 sidebar-button-atreides-pressed: chrome.png
-	background: 313,284,25,25
+	background: 313,285,25,25
 sidebar-button-atreides-highlighted: chrome.png
-	background: 313,284,25,25
+	background: 313,285,25,25
 sidebar-button-atreides-highlighted-hover: chrome.png
-	background: 313,284,25,25
+	background: 313,285,25,25
 sidebar-button-atreides-highlighted-pressed: chrome.png
-	background: 313,284,25,25
+	background: 313,285,25,25
 sidebar-button-atreides-disabled: chrome.png
-	background: 338,284,25,25
+	background: 338,285,25,25
 sidebar-button-atreides-highlighted-disabled: chrome.png
-	background: 338,284,25,25
+	background: 338,285,25,25
 
 sidebar-harkonnen: chrome.png
 	background-top: 2,0,250,317
@@ -48,24 +48,24 @@ sidebar-ordos: chrome.png
 	background-top: 2,0,250,317
 	background-iconrow: 2,317,250,48
 	background-bottom: 2,365,250,13
-	background-supportoverlay: 288,150,60,48
+	background-supportoverlay: 288,148,60,48
 
 sidebar-button-ordos: chrome.png
-	background: 288,309,25,25
+	background: 288,310,25,25
 sidebar-button-ordos-hover: chrome.png
-	background: 288,309,25,25
+	background: 288,310,25,25
 sidebar-button-ordos-pressed: chrome.png
-	background: 288,309,25,25
+	background: 288,310,25,25
 sidebar-button-ordos-highlighted: chrome.png
-	background: 313,309,25,25
+	background: 313,310,25,25
 sidebar-button-ordos-highlighted-hover: chrome.png
-	background: 313,309,25,25
+	background: 313,310,25,25
 sidebar-button-ordos-highlighted-pressed: chrome.png
-	background: 313,309,25,25
+	background: 313,310,25,25
 sidebar-button-ordos-disabled: chrome.png
-	background: 338,309,25,25
+	background: 338,310,25,25
 sidebar-button-ordos-highlighted-disabled: chrome.png
-	background: 338,309,25,25
+	background: 338,310,25,25
 
 sidebar-bits: chrome.png
 	production-tooltip-time: 476,0,16,16
