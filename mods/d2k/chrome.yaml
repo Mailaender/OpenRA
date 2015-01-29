@@ -2,24 +2,24 @@ sidebar-atreides: chrome.png
 	background-top: 2,0,250,317
 	background-iconrow: 2,317,250,48
 	background-bottom: 2,365,250,13
-	background-supportoverlay: 288,150,60,48
+	background-supportoverlay: 288,148,60,48
 
 sidebar-button-atreides: chrome.png
-	background: 288,284,25,25
+	background: 288,285,25,25
 sidebar-button-atreides-hover: chrome.png
-	background: 314,284,25,25
+	background: 313,285,25,25
 sidebar-button-atreides-pressed: chrome.png
-	background: 314,284,25,25
+	background: 313,285,25,25
 sidebar-button-atreides-highlighted: chrome.png
-	background: 314,284,25,25
+	background: 313,285,25,25
 sidebar-button-atreides-highlighted-hover: chrome.png
-	background: 314,284,25,25
+	background: 313,285,25,25
 sidebar-button-atreides-highlighted-pressed: chrome.png
-	background: 314,284,25,25
+	background: 313,285,25,25
 sidebar-button-atreides-disabled: chrome.png
-	background: 339,284,25,25
+	background: 338,285,25,25
 sidebar-button-atreides-highlighted-disabled: chrome.png
-	background: 339,284,25,25
+	background: 338,285,25,25
 
 sidebar-harkonnen: chrome.png
 	background-top: 2,0,250,317
@@ -30,42 +30,42 @@ sidebar-harkonnen: chrome.png
 sidebar-button-harkonnen: chrome.png
 	background: 288,335,25,25
 sidebar-button-harkonnen-hover: chrome.png
-	background: 314,335,25,25
+	background: 313,335,25,25
 sidebar-button-harkonnen-pressed: chrome.png
-	background: 314,335,25,25
+	background: 313,335,25,25
 sidebar-button-harkonnen-highlighted: chrome.png
-	background: 314,335,25,25
+	background: 313,335,25,25
 sidebar-button-harkonnen-highlighted-hover: chrome.png
-	background: 314,335,25,25
+	background: 313,335,25,25
 sidebar-button-harkonnen-highlighted-pressed: chrome.png
-	background: 314,335,25,25
+	background: 313,335,25,25
 sidebar-button-harkonnen-disabled: chrome.png
-	background: 339,335,25,25
+	background: 338,335,25,25
 sidebar-button-harkonnen-highlighted-disabled: chrome.png
-	background: 339,335,25,25
+	background: 338,335,25,25
 
 sidebar-ordos: chrome.png
 	background-top: 2,0,250,317
 	background-iconrow: 2,317,250,48
 	background-bottom: 2,365,250,13
-	background-supportoverlay: 288,150,60,48
+	background-supportoverlay: 288,148,60,48
 
 sidebar-button-ordos: chrome.png
-	background: 288,309,25,25
+	background: 288,310,25,25
 sidebar-button-ordos-hover: chrome.png
-	background: 288,309,25,25
+	background: 288,310,25,25
 sidebar-button-ordos-pressed: chrome.png
-	background: 288,309,25,25
+	background: 288,310,25,25
 sidebar-button-ordos-highlighted: chrome.png
-	background: 314,309,25,25
+	background: 313,310,25,25
 sidebar-button-ordos-highlighted-hover: chrome.png
-	background: 314,309,25,25
+	background: 313,310,25,25
 sidebar-button-ordos-highlighted-pressed: chrome.png
-	background: 314,309,25,25
+	background: 313,310,25,25
 sidebar-button-ordos-disabled: chrome.png
-	background: 339,309,25,25
+	background: 338,310,25,25
 sidebar-button-ordos-highlighted-disabled: chrome.png
-	background: 339,309,25,25
+	background: 338,310,25,25
 
 sidebar-bits: chrome.png
 	production-tooltip-time: 476,0,16,16
@@ -84,9 +84,9 @@ production-icons: chrome.png
 	infantry: 300,0,15,15
 	infantry-disabled: 300,16,15,15
 	infantry-alert: 300,32,15,15
-	vehicle: 364,0,15,15
-	vehicle-disabled: 364,16,15,15
-	vehicle-alert: 36442,32,15,15
+	vehicle: 316,0,15,15
+	vehicle-disabled: 316,16,15,15
+	vehicle-alert: 316,32,15,15
 	armor: 284,0,15,15
 	armor-disabled: 284,16,15,15
 	armor-alert: 284,32,15,15
@@ -98,24 +98,24 @@ production-icons: chrome.png
 	starport-alert: 412,32,15,15
 
 order-icons: chrome.png
-	repair: 48,388,34,35
-	repair-disabled: 48,388,34,35
-	repair-active: 48,468,34,35
-	sell: 87,388,34,35
-	sell-disabled: 87,388,34,35
-	sell-active: 87,468,34,35
-	options: 125,388,40,38
-	options-disabled: 125,388,40,38
-	options-active: 125,468,40,38   
-	diplomacy: 380,388,34,35
-	diplomacy-disabled: 380,388,34,35
-	diplomacy-active: 380,468,34,35
-	beacon: 169,388,36,35
-	beacon-disabled: 169,388,36,35
-	beacon-active: 169,468,36,35
-	power: 208,388,34,35
-	power-disabled: 208,388,36,35
-	power-active: 208,468,36,35
+	repair: 88,388,34,35
+	repair-disabled: 88,388,34,35
+	repair-active: 88,468,34,35
+	sell: 127,388,34,35
+	sell-disabled: 127,388,34,35
+	sell-active: 127,468,34,35
+	options: 165,388,40,38
+	options-disabled: 165,388,40,38
+	options-active: 165,468,40,38   
+	diplomacy: 388,388,34,35
+	diplomacy-disabled: 388,388,34,35
+	diplomacy-active: 388,468,34,35
+	beacon: 209,388,36,35
+	beacon-disabled: 209,388,36,35
+	beacon-active: 209,468,36,35
+	power: 248,388,34,35
+	power-disabled: 248,388,36,35
+	power-active: 248,468,36,35
 
 flags: buttons.png
 	atreides: 0,114,22,21

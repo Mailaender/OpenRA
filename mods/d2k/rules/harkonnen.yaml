@@ -172,7 +172,7 @@ COMBATH.starport:
 DEVAST:
 	Inherits: ^Tank
 	Buildable:
-		Queue: Armor
+		Queue: Vehicle
 		BuildPaletteOrder: 100
 		Prerequisites: ~heavyh, research, ~techlevel.high
 	Valued:
