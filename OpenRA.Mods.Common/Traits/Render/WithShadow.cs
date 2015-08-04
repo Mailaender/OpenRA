@@ -35,12 +35,14 @@ namespace OpenRA.Mods.Common.Traits
 
 		public IEnumerable<IRenderable> ModifyRender(Actor self, WorldRenderer wr, IEnumerable<IRenderable> r)
 		{
+			var height = wr.World.Map.DistanceAboveTerrain(self.CenterPosition).Length;
+
 			// Contrails shouldn't cast shadows
 			var shadowSprites = r.Where(s => !s.IsDecoration)
 				.Select(a => a.WithPalette(wr.Palette(info.Palette))
-				.OffsetBy(new WVec(0, 0, -a.Pos.Z))
-				.WithZOffset(a.ZOffset + a.Pos.Z)
-				.AsDecoration());
+					.OffsetBy(new WVec(0, 0, -height))
+					.WithZOffset(a.ZOffset + height)
+					.AsDecoration());
 
 			return shadowSprites.Concat(r);
 		}
