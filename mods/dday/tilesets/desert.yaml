@@ -1,0 +1,7502 @@
+General:
+	Name: Desert
+	Id: DESERT
+	Palette: isodes.pal
+	HeightDebugColors: 128,0,0,0, 128,0,0,68, 128,0,0,136, 128,0,0,204, 128,0,0,255, 128,68,0,204, 128,136,0,136, 128,204,0,68, 128,255,17,0, 128,255,85,0, 128,255,153,0, 128,255,221,0, 128,221,255,0, 128,153,255,0, 128,85,255,0, 128,17,255,0
+	EditorTemplateOrder: LAT Sand, ZMM Ramps, Obsolete Height Pieces, Ramps, Cliff Set, Shore Pieces, LAT Sandy Grass, GrassThick Idividual, Cliff/Water pieces, DirtRoads Bendy, DirtRoads Junctions, DirtRoads Straight, Bridges, Paved Roads, Water, ZMM Cliff Set, DirtRoads Slopes, ZMM Dirt Road Slopes, Slope Set Pieces, ZSlope Set Pieces, New MM Height Pieces, Waterfalls, LAT Sand Rocky, GrassRough Individual, Farm Crops, Paved Road Ends, Pavement, Pavement Individual, Paved road bits, LAT Sand Beach, Sand Individual, Ramp edge fixup, Ramp edge fixup - Marble Madness, LAT Sand Ruff, Paved Road Slopes, Waterfalls-B, Waterfalls-C, Waterfalls-D, Newest MM Height, Tunnel Floor, Tunnel Side, Destroyable Cliffs, Water Caves, ZMM Bendy Dirt Roads, ZMM Dirt Road Junctions, ZMM Straight Dirt Roads, ZMM Shore Pieces, ZMM Waterfalls, ZMM Waterfalls-B, ZMM Waterfalls-C, ZMM Waterfalls-D, ZMM Water Caves, ZMMCliff/Water pieces, ZMM Water, DirtTunnel Floor, Sand (beach), Sand (beach) Transitions, Water bridge, RA2 rubble farm, RA2 rubble mobile, RA2 rubble mexican, Wood Bridges, RA2 uss arizona, Grass (No LAT), Pavement (No LAT), Cliff Set B, Wood Cliff
+	SheetSize: 2048
+
+Terrain:
+	TerrainType@Clear:
+		Type: Clear
+		Color: 199,201,250
+		TargetTypes: Ground
+	TerrainType@Road:
+		Type: Road
+		Color: 45, 43, 40
+		TargetTypes: Ground
+	TerrainType@Rail:
+		Type: Rail
+		Color: 54,55,57
+		TargetTypes: Ground
+	TerrainType@Impassable:
+		Type: Impassable
+		Color: 102, 109, 118
+		TargetTypes: Ground
+	TerrainType@Water:
+		Type: Water
+		Color: 61, 65, 72
+		TargetTypes: Water
+		IsWater: True
+	TerrainType@DirtRoad:
+		Type: DirtRoad
+		Color: 130,131,143
+		TargetTypes: Ground
+	TerrainType@Rough:
+		Type: Rough
+		Color: 122, 126, 139
+		TargetTypes: Ground
+	TerrainType@Cliff:
+		Type: Cliff
+		Color: 103, 110, 118
+		TargetTypes: Ground
+	TerrainType@Tree:
+		Type: Tree
+		TargetTypes: Ground
+		Color: 255,28,32,36
+	TerrainType@Rock:
+		Type: Rock
+		TargetTypes: Ground
+		Color: 255,68,68,60
+
+# Automatically generated. DO NOT EDIT!
+Templates:
+	Template@0:
+		Category: LAT Sand
+		Id: 0
+		Images: Clear01.des, Clear01a.des, Clear01b.des, Clear01c.des, Clear01d.des, Clear01e.des, Clear01f.des, Clear01g.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 213,179,109
+				RightColor: 213,179,108
+	Template@29:
+		Category: Ramps
+		Id: 29
+		Images: slope01.des, slope01a.des, slope01b.des, slope01c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 1
+				LeftColor: 204,163,88
+				RightColor: 206,166,89
+	Template@30:
+		Category: Ramps
+		Id: 30
+		Images: slope02.des, slope02a.des, slope02b.des, slope02c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 197,152,77
+				RightColor: 197,153,77
+	Template@31:
+		Category: Ramps
+		Id: 31
+		Images: slope03.des, slope03a.des, slope03b.des, slope03c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 3
+				LeftColor: 230,189,111
+				RightColor: 230,189,111
+	Template@32:
+		Category: Ramps
+		Id: 32
+		Images: slope04.des, slope04a.des, slope04b.des, slope04c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 4
+				LeftColor: 234,198,126
+				RightColor: 233,198,126
+	Template@33:
+		Category: Ramps
+		Id: 33
+		Images: slope05.des, slope05a.des, slope05b.des, slope05c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 5
+				LeftColor: 205,166,92
+				RightColor: 200,159,85
+	Template@34:
+		Category: Ramps
+		Id: 34
+		Images: slope06.des, slope06a.des, slope06b.des, slope06c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 6
+				LeftColor: 201,158,85
+				RightColor: 211,175,105
+	Template@35:
+		Category: Ramps
+		Id: 35
+		Images: slope07.des, slope07a.des, slope07b.des, slope07c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 7
+				LeftColor: 227,194,123
+				RightColor: 227,190,112
+	Template@36:
+		Category: Ramps
+		Id: 36
+		Images: slope08.des, slope08a.des, slope08b.des, slope08c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 8
+				LeftColor: 217,183,111
+				RightColor: 224,192,114
+	Template@37:
+		Category: Ramps
+		Id: 37
+		Images: slope09.des, slope09a.des, slope09b.des, slope09c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 9
+				LeftColor: 214,179,109
+				RightColor: 213,177,107
+	Template@38:
+		Category: Ramps
+		Id: 38
+		Images: slope10.des, slope10a.des, slope10b.des, slope10c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 10
+				LeftColor: 208,172,102
+				RightColor: 201,159,86
+	Template@39:
+		Category: Ramps
+		Id: 39
+		Images: slope11.des, slope11a.des, slope11b.des, slope11c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 11
+				LeftColor: 224,188,111
+				RightColor: 226,193,121
+	Template@40:
+		Category: Ramps
+		Id: 40
+		Images: slope12.des, slope12a.des, slope12b.des, slope12c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 12
+				LeftColor: 224,191,114
+				RightColor: 215,181,109
+	Template@41:
+		Category: Ramps
+		Id: 41
+		Images: slope13.des, slope13a.des, slope13b.des, slope13c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 13
+				LeftColor: 154,112,62
+				RightColor: 138,122,60
+	Template@42:
+		Category: Ramps
+		Id: 42
+		Images: slope14.des, slope14a.des, slope14b.des, slope14c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 14
+				LeftColor: 201,159,85
+				RightColor: 201,160,86
+	Template@43:
+		Category: Ramps
+		Id: 43
+		Images: slope15.des, slope15a.des, slope15b.des, slope15c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 15
+				LeftColor: 232,197,122
+				RightColor: 231,197,123
+	Template@44:
+		Category: Ramps
+		Id: 44
+		Images: slope16.des, slope16a.des, slope16b.des, slope16c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 16
+				LeftColor: 224,191,114
+				RightColor: 224,191,114
+	Template@45:
+		Category: Ramps
+		Id: 45
+		Images: slope17.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 17
+				LeftColor: 202,161,87
+				RightColor: 223,190,112
+	Template@46:
+		Category: Ramps
+		Id: 46
+		Images: slope18.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 18
+				LeftColor: 223,190,113
+				RightColor: 203,162,88
+	Template@47:
+		Category: Ramps
+		Id: 47
+		Images: slope19.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 19
+				LeftColor: 231,197,123
+				RightColor: 231,197,123
+	Template@48:
+		Category: Ramps
+		Id: 48
+		Images: slope20.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 20
+				LeftColor: 232,197,122
+				RightColor: 231,198,123
+	Template@49:
+		Category: Cliff Set
+		Id: 49
+		Images: Cliff01.des
+		Size: 2, 3
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 119,87,51
+				RightColor: 134,106,63
+			2: Cliff
+				LeftColor: 184,144,86
+				RightColor: 196,135,75
+			3: Cliff
+				Height: 4
+				LeftColor: 129,96,57
+				RightColor: 136,99,56
+			5: Cliff
+				LeftColor: 206,169,101
+				RightColor: 191,141,75
+	Template@50:
+		Category: Cliff Set
+		Id: 50
+		Images: Cliff02.des
+		Size: 1, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 109,90,58
+				RightColor: 126,104,66
+			1: Cliff
+				LeftColor: 146,116,79
+				RightColor: 131,102,72
+	Template@51:
+		Category: Cliff Set
+		Id: 51
+		Images: Cliff03.des
+		Size: 2, 3
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 147,116,68
+				RightColor: 147,124,77
+			2: Cliff
+				LeftColor: 192,157,92
+				RightColor: 174,126,75
+			3: Cliff
+				Height: 4
+				LeftColor: 127,91,52
+				RightColor: 140,104,59
+			5: Cliff
+				LeftColor: 200,160,93
+				RightColor: 176,132,76
+	Template@52:
+		Category: Cliff Set
+		Id: 52
+		Images: Cliff04.des
+		Size: 2, 3
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 112,93,59
+				RightColor: 145,123,74
+			2: Cliff
+				LeftColor: 198,165,97
+				RightColor: 164,118,68
+			3: Cliff
+				Height: 4
+				LeftColor: 89,70,46
+				RightColor: 120,93,56
+			5: Cliff
+				LeftColor: 206,174,104
+				RightColor: 186,147,83
+	Template@53:
+		Category: Cliff Set
+		Id: 53
+		Images: Cliff05.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 146,117,69
+				RightColor: 135,108,62
+			1: Cliff
+				Height: 4
+				LeftColor: 131,98,57
+				RightColor: 140,115,69
+			2: Cliff
+				LeftColor: 207,176,108
+				RightColor: 205,151,85
+			3: Cliff
+				LeftColor: 207,172,90
+				RightColor: 200,148,83
+	Template@54:
+		Category: Cliff Set
+		Id: 54
+		Images: Cliff06.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 142,116,69
+				RightColor: 130,108,67
+			1: Cliff
+				Height: 4
+				LeftColor: 111,89,61
+				RightColor: 150,121,66
+			2: Cliff
+				LeftColor: 200,166,94
+				RightColor: 179,124,71
+			3: Cliff
+				LeftColor: 181,147,90
+				RightColor: 159,116,70
+	Template@55:
+		Category: Cliff Set
+		Id: 55
+		Images: Cliff07.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 124,101,63
+				RightColor: 121,102,66
+			1: Cliff
+				Height: 4
+				LeftColor: 131,99,57
+				RightColor: 148,124,74
+			2: Cliff
+				LeftColor: 201,170,102
+				RightColor: 174,124,70
+			3: Cliff
+				LeftColor: 197,156,90
+				RightColor: 146,104,61
+	Template@56:
+		Category: Cliff Set
+		Id: 56
+		Images: Cliff08.des
+		Size: 1, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 147,112,63
+				RightColor: 155,130,76
+			1: Cliff
+				LeftColor: 191,135,70
+				RightColor: 206,142,71
+	Template@57:
+		Category: Cliff Set
+		Id: 57
+		Images: Cliff09.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 122,93,54
+				RightColor: 120,94,56
+			1: Cliff
+				LeftColor: 198,162,89
+				RightColor: 177,126,69
+			2: Cliff
+				LeftColor: 188,129,68
+				RightColor: 157,108,62
+	Template@58:
+		Category: Cliff Set
+		Id: 58
+		Images: Cliff10.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 124,101,61
+				RightColor: 123,97,59
+			1: Cliff
+				LeftColor: 188,147,83
+				RightColor: 171,117,62
+			2: Cliff
+				LeftColor: 212,147,75
+				RightColor: 165,113,61
+	Template@59:
+		Category: Cliff Set
+		Id: 59
+		Images: Cliff11.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 150,122,70
+				RightColor: 156,129,78
+			1: Cliff
+				LeftColor: 196,153,85
+				RightColor: 202,148,80
+			2: Cliff
+				LeftColor: 211,154,82
+				RightColor: 196,142,76
+	Template@60:
+		Category: Cliff Set
+		Id: 60
+		Images: Cliff12.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 192,138,76
+				RightColor: 207,147,79
+	Template@61:
+		Category: Cliff Set
+		Id: 61
+		Images: Cliff13.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 202,141,76
+				RightColor: 197,140,77
+	Template@62:
+		Category: Cliff Set
+		Id: 62
+		Images: Cliff14.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 189,145,87
+				RightColor: 169,124,74
+	Template@63:
+		Category: Cliff Set
+		Id: 63
+		Images: Cliff15.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 133,108,66
+				RightColor: 112,90,58
+			1: Cliff
+				LeftColor: 167,131,78
+				RightColor: 150,113,75
+			2: Cliff
+				Height: 4
+				LeftColor: 153,128,78
+				RightColor: 111,91,55
+			3: Cliff
+				LeftColor: 193,154,87
+				RightColor: 181,121,65
+	Template@64:
+		Category: Cliff Set
+		Id: 64
+		Images: Cliff16.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 116,97,63
+				RightColor: 104,88,60
+			1: Cliff
+				LeftColor: 167,132,71
+				RightColor: 175,126,74
+			2: Cliff
+				Height: 4
+				LeftColor: 152,126,74
+				RightColor: 134,99,55
+			3: Cliff
+				LeftColor: 145,123,77
+				RightColor: 176,117,63
+	Template@65:
+		Category: Cliff Set
+		Id: 65
+		Images: Cliff17.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 144,122,74
+				RightColor: 138,109,65
+			1: Cliff
+				LeftColor: 139,116,79
+				RightColor: 186,140,85
+			2: Cliff
+				Height: 4
+				LeftColor: 154,130,80
+				RightColor: 136,103,57
+			3: Cliff
+				LeftColor: 179,140,80
+				RightColor: 203,146,80
+	Template@66:
+		Category: Cliff Set
+		Id: 66
+		Images: Cliff18.des
+		Size: 2, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 149,128,78
+				RightColor: 132,112,66
+			1: Cliff
+				LeftColor: 177,140,80
+				RightColor: 169,120,69
+	Template@67:
+		Category: Cliff Set
+		Id: 67
+		Images: Cliff19.des
+		Size: 3, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 149,124,75
+				RightColor: 136,109,64
+			1: Cliff
+				LeftColor: 170,132,78
+				RightColor: 180,134,80
+			4: Cliff
+				Height: 4
+				LeftColor: 154,124,74
+				RightColor: 96,72,48
+			5: Cliff
+				LeftColor: 199,159,89
+				RightColor: 200,155,90
+	Template@68:
+		Category: Cliff Set
+		Id: 68
+		Images: Cliff20.des
+		Size: 3, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 148,125,77
+				RightColor: 127,102,62
+			1: Cliff
+				LeftColor: 149,124,67
+				RightColor: 152,117,70
+			4: Cliff
+				Height: 4
+				LeftColor: 142,116,66
+				RightColor: 77,58,40
+			5: Cliff
+				LeftColor: 203,171,90
+				RightColor: 203,155,87
+	Template@69:
+		Category: Cliff Set
+		Id: 69
+		Images: Cliff21.des
+		Size: 3, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 154,128,74
+				RightColor: 127,93,52
+			1: Cliff
+				LeftColor: 147,97,57
+				RightColor: 175,118,63
+			4: Cliff
+				Height: 4
+				LeftColor: 151,125,73
+				RightColor: 128,87,46
+			5: Cliff
+				LeftColor: 167,133,76
+				RightColor: 198,147,80
+	Template@70:
+		Category: Cliff Set
+		Id: 70
+		Images: Cliff22.des
+		Size: 2, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 155,130,79
+				RightColor: 135,95,46
+			1: Cliff
+				LeftColor: 183,134,75
+				RightColor: 168,113,61
+	Template@71:
+		Category: Cliff Set
+		Id: 71
+		Images: Cliff23.des
+		Size: 2, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 156,128,74
+				RightColor: 134,97,52
+			1: Cliff
+				Height: 4
+				LeftColor: 152,122,67
+				RightColor: 143,110,62
+	Template@72:
+		Category: Cliff Set
+		Id: 72
+		Images: Cliff24.des
+		Size: 2, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 148,123,70
+				RightColor: 137,103,59
+			1: Cliff
+				Height: 4
+				LeftColor: 133,107,61
+				RightColor: 124,95,56
+	Template@73:
+		Category: Cliff Set
+		Id: 73
+		Images: Cliff25.des
+		Size: 2, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 150,125,72
+				RightColor: 125,99,57
+			1: Cliff
+				Height: 4
+				LeftColor: 118,92,54
+				RightColor: 120,97,60
+	Template@74:
+		Category: Cliff Set
+		Id: 74
+		Images: Cliff26.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 152,125,72
+				RightColor: 134,102,60
+	Template@75:
+		Category: Cliff Set
+		Id: 75
+		Images: Cliff27.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 134,89,46
+				RightColor: 118,88,51
+			1: Cliff
+				Height: 4
+				LeftColor: 131,107,64
+				RightColor: 136,105,59
+			2: Cliff
+				Height: 4
+				LeftColor: 136,103,58
+				RightColor: 153,123,68
+	Template@76:
+		Category: Cliff Set
+		Id: 76
+		Images: Cliff28.des
+		Size: 2, 2
+		Tiles:
+			1: Cliff
+				Height: 4
+				LeftColor: 116,93,54
+				RightColor: 140,108,60
+			2: Cliff
+				Height: 4
+				LeftColor: 138,107,60
+				RightColor: 125,93,49
+			3: Cliff
+				Height: 4
+				LeftColor: 122,97,57
+				RightColor: 141,115,66
+	Template@77:
+		Category: Cliff Set
+		Id: 77
+		Images: Cliff29.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 136,113,69
+				RightColor: 138,117,72
+	Template@78:
+		Category: Cliff Set
+		Id: 78
+		Images: Cliff30.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 148,113,61
+				RightColor: 132,103,57
+	Template@79:
+		Category: Cliff Set
+		Id: 79
+		Images: Cliff31.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 111,83,49
+				RightColor: 143,115,66
+			1: Cliff
+				Height: 4
+				LeftColor: 148,120,72
+				RightColor: 151,122,72
+			2: Cliff
+				Height: 4
+				LeftColor: 153,124,71
+				RightColor: 158,123,70
+	Template@80:
+		Category: Cliff Set
+		Id: 80
+		Images: Cliff32.des
+		Size: 2, 2
+		Tiles:
+			1: Cliff
+				Height: 4
+				LeftColor: 70,61,43
+				RightColor: 127,101,62
+			2: Cliff
+				Height: 4
+				LeftColor: 153,124,70
+				RightColor: 145,105,55
+			3: Cliff
+				Height: 4
+				LeftColor: 160,129,68
+				RightColor: 124,103,62
+	Template@81:
+		Category: Cliff Set
+		Id: 81
+		Images: Cliff33.des, Cliff33a.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 144,117,70
+				RightColor: 149,123,76
+	Template@82:
+		Category: Cliff Set
+		Id: 82
+		Images: Cliff34.des, Cliff34a.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 160,133,77
+				RightColor: 153,127,74
+	Template@83:
+		Category: Cliff Set
+		Id: 83
+		Images: Cliff35.des
+		Size: 1, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 138,106,57
+				RightColor: 145,117,68
+			1: Cliff
+				Height: 4
+				LeftColor: 159,129,72
+				RightColor: 147,117,64
+	Template@84:
+		Category: Cliff Set
+		Id: 84
+		Images: Cliff36.des
+		Size: 1, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 138,109,51
+				RightColor: 156,127,74
+			1: Cliff
+				Height: 4
+				LeftColor: 142,115,62
+				RightColor: 153,127,70
+	Template@85:
+		Category: Cliff Set
+		Id: 85
+		Images: Cliff37.des
+		Size: 1, 2
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 127,104,54
+				RightColor: 155,128,75
+			1: Cliff
+				Height: 4
+				LeftColor: 139,106,56
+				RightColor: 149,123,69
+	Template@86:
+		Category: Cliff Set
+		Id: 86
+		Images: Cliff38.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 117,97,60
+				RightColor: 151,126,77
+	Template@87:
+		Category: Cliff Set
+		Id: 87
+		Images: Cliff39.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 153,123,73
+				RightColor: 159,129,77
+	Template@88:
+		Category: Cliff Set
+		Id: 88
+		Images: Cliff40.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 4
+				LeftColor: 148,123,71
+				RightColor: 145,126,69
+	Template@89:
+		Category: Shore Pieces
+		Id: 89
+		Images: Shore01.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 219,186,123
+				RightColor: 229,191,119
+			1: Rough
+				LeftColor: 221,188,124
+				RightColor: 228,189,117
+			2: Water
+				LeftColor: 79,86,91
+				RightColor: 120,124,93
+			3: Water
+				LeftColor: 81,84,90
+				RightColor: 125,124,93
+	Template@90:
+		Category: Shore Pieces
+		Id: 90
+		Images: Shore02.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 219,186,123
+				RightColor: 229,191,119
+			1: Rough
+				LeftColor: 221,188,124
+				RightColor: 228,189,117
+			2: Water
+				LeftColor: 79,86,91
+				RightColor: 120,124,93
+			3: Water
+				LeftColor: 81,84,90
+				RightColor: 125,124,93
+	Template@91:
+		Category: Shore Pieces
+		Id: 91
+		Images: Shore03.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 219,186,123
+				RightColor: 229,191,119
+			1: Rough
+				LeftColor: 221,188,124
+				RightColor: 228,189,117
+			2: Water
+				LeftColor: 79,86,91
+				RightColor: 120,124,93
+			3: Water
+				LeftColor: 81,84,90
+				RightColor: 125,124,93
+	Template@92:
+		Category: Shore Pieces
+		Id: 92
+		Images: Shore04.des
+		Size: 1, 2
+		Tiles:
+			0: Rough
+				LeftColor: 218,185,121
+				RightColor: 229,189,116
+			1: Water
+				LeftColor: 78,85,91
+				RightColor: 119,121,93
+	Template@93:
+		Category: Shore Pieces
+		Id: 93
+		Images: Shore05.des
+		Size: 2, 3
+		Tiles:
+			0: Rough
+				LeftColor: 219,188,126
+				RightColor: 228,191,120
+			1: Rough
+				LeftColor: 225,192,131
+				RightColor: 231,190,113
+			2: Water
+				LeftColor: 84,92,92
+				RightColor: 121,135,98
+			3: Rough
+				LeftColor: 154,154,110
+				RightColor: 194,170,117
+			4: Water
+				LeftColor: 64,66,88
+				RightColor: 74,79,90
+			5: Water
+				LeftColor: 71,75,89
+				RightColor: 99,111,95
+	Template@94:
+		Category: Shore Pieces
+		Id: 94
+		Images: Shore06.des
+		Size: 2, 3
+		Tiles:
+			0: Rough
+				LeftColor: 191,172,113
+				RightColor: 222,188,121
+			1: Rough
+				LeftColor: 212,185,127
+				RightColor: 227,190,120
+			2: Rough
+				LeftColor: 193,169,109
+				RightColor: 175,166,116
+			3: Water
+				LeftColor: 105,119,97
+				RightColor: 115,125,97
+			4: Water
+				LeftColor: 83,92,93
+				RightColor: 119,134,103
+			5: Water
+				LeftColor: 83,92,93
+				RightColor: 89,101,94
+	Template@95:
+		Category: Shore Pieces
+		Id: 95
+		Images: Shore07.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 220,187,123
+				RightColor: 216,184,121
+			1: Water
+				LeftColor: 118,125,94
+				RightColor: 79,86,92
+			2: Water
+				LeftColor: 78,85,91
+				RightColor: 146,142,97
+			3: Water
+				LeftColor: 107,114,95
+				RightColor: 78,87,91
+	Template@96:
+		Category: Shore Pieces
+		Id: 96
+		Images: Shore08.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 220,187,123
+				RightColor: 216,184,121
+			1: Water
+				LeftColor: 118,125,94
+				RightColor: 79,86,92
+			2: Water
+				LeftColor: 78,85,91
+				RightColor: 146,142,97
+			3: Water
+				LeftColor: 107,114,95
+				RightColor: 78,87,91
+	Template@97:
+		Category: Shore Pieces
+		Id: 97
+		Images: Shore09.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 205,177,114
+				RightColor: 194,171,113
+			1: Water
+				LeftColor: 109,124,99
+				RightColor: 77,84,90
+			2: Rough
+				LeftColor: 226,188,117
+				RightColor: 175,161,113
+			3: Water
+				LeftColor: 114,126,98
+				RightColor: 76,84,90
+	Template@98:
+		Category: Shore Pieces
+		Id: 98
+		Images: Shore10.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 205,177,114
+				RightColor: 194,171,113
+			1: Water
+				LeftColor: 109,124,99
+				RightColor: 77,84,90
+			2: Rough
+				LeftColor: 226,188,117
+				RightColor: 175,161,113
+			3: Water
+				LeftColor: 114,126,98
+				RightColor: 76,84,90
+	Template@99:
+		Category: Shore Pieces
+		Id: 99
+		Images: Shore11.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 205,177,114
+				RightColor: 194,171,113
+			1: Water
+				LeftColor: 109,124,99
+				RightColor: 77,84,90
+			2: Rough
+				LeftColor: 226,188,117
+				RightColor: 175,161,113
+			3: Water
+				LeftColor: 114,126,98
+				RightColor: 76,84,90
+	Template@100:
+		Category: Shore Pieces
+		Id: 100
+		Images: Shore12.des
+		Size: 2, 1
+		Tiles:
+			0: Rough
+				LeftColor: 227,189,119
+				RightColor: 210,179,120
+			1: Water
+				LeftColor: 121,129,96
+				RightColor: 80,88,92
+	Template@101:
+		Category: Shore Pieces
+		Id: 101
+		Images: Shore13.des
+		Size: 3, 2
+		Tiles:
+			0: Rough
+				LeftColor: 226,191,126
+				RightColor: 224,190,125
+			1: Rough
+				LeftColor: 194,177,127
+				RightColor: 180,168,112
+			2: Water
+				LeftColor: 106,120,100
+				RightColor: 78,86,92
+			3: Rough
+				LeftColor: 227,190,120
+				RightColor: 213,185,130
+			4: Water
+				LeftColor: 127,132,97
+				RightColor: 161,157,113
+			5: Water
+				LeftColor: 104,116,99
+				RightColor: 81,89,94
+	Template@102:
+		Category: Shore Pieces
+		Id: 102
+		Images: Shore14.des
+		Size: 3, 2
+		Tiles:
+			0: Rough
+				LeftColor: 225,188,120
+				RightColor: 215,185,125
+			1: Water
+				LeftColor: 119,132,102
+				RightColor: 82,90,93
+			2: Water
+				LeftColor: 65,68,87
+				RightColor: 63,66,87
+			3: Rough
+				LeftColor: 231,190,115
+				RightColor: 204,177,122
+			4: Rough
+				LeftColor: 188,177,129
+				RightColor: 107,122,101
+			5: Water
+				LeftColor: 89,99,93
+				RightColor: 69,73,89
+	Template@103:
+		Category: Shore Pieces
+		Id: 103
+		Images: Shore15.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 117,124,96
+				RightColor: 76,83,90
+			1: Water
+				LeftColor: 70,75,88
+				RightColor: 63,66,87
+			2: Rough
+				LeftColor: 223,188,120
+				RightColor: 190,168,115
+			3: Water
+				LeftColor: 104,111,95
+				RightColor: 73,78,90
+	Template@104:
+		Category: Shore Pieces
+		Id: 104
+		Images: Shore16.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 117,124,96
+				RightColor: 76,83,90
+			1: Water
+				LeftColor: 70,75,88
+				RightColor: 63,66,87
+			2: Rough
+				LeftColor: 223,188,120
+				RightColor: 190,168,115
+			3: Water
+				LeftColor: 104,111,95
+				RightColor: 73,78,90
+	Template@105:
+		Category: Shore Pieces
+		Id: 105
+		Images: Shore17.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 115,126,99
+				RightColor: 80,88,93
+			1: Water
+				LeftColor: 113,126,101
+				RightColor: 84,94,92
+			2: Rough
+				LeftColor: 227,188,118
+				RightColor: 208,180,125
+			3: Rough
+				LeftColor: 222,187,120
+				RightColor: 206,179,121
+	Template@106:
+		Category: Shore Pieces
+		Id: 106
+		Images: Shore18.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 115,126,99
+				RightColor: 80,88,93
+			1: Water
+				LeftColor: 113,126,101
+				RightColor: 84,94,92
+			2: Rough
+				LeftColor: 227,188,118
+				RightColor: 208,180,125
+			3: Rough
+				LeftColor: 222,187,120
+				RightColor: 206,179,121
+	Template@107:
+		Category: Shore Pieces
+		Id: 107
+		Images: Shore19.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 115,126,99
+				RightColor: 80,88,93
+			1: Water
+				LeftColor: 113,126,101
+				RightColor: 84,94,92
+			2: Rough
+				LeftColor: 227,188,118
+				RightColor: 208,180,125
+			3: Rough
+				LeftColor: 222,187,120
+				RightColor: 206,179,121
+	Template@108:
+		Category: Shore Pieces
+		Id: 108
+		Images: Shore20.des
+		Size: 1, 2
+		Tiles:
+			0: Water
+				LeftColor: 113,125,100
+				RightColor: 87,98,93
+			1: Rough
+				LeftColor: 227,189,118
+				RightColor: 207,179,122
+	Template@109:
+		Category: Shore Pieces
+		Id: 109
+		Images: Shore21.des
+		Size: 2, 3
+		Tiles:
+			0: Water
+				LeftColor: 85,94,95
+				RightColor: 83,93,94
+			1: Water
+				LeftColor: 107,120,99
+				RightColor: 77,85,92
+			2: Water
+				LeftColor: 123,136,104
+				RightColor: 131,142,102
+			3: Rough
+				LeftColor: 192,169,112
+				RightColor: 191,169,109
+			4: Rough
+				LeftColor: 225,189,120
+				RightColor: 210,183,125
+			5: Rough
+				LeftColor: 225,191,126
+				RightColor: 222,192,134
+	Template@110:
+		Category: Shore Pieces
+		Id: 110
+		Images: Shore22.des
+		Size: 2, 3
+		Tiles:
+			0: Water
+				LeftColor: 89,100,94
+				RightColor: 65,68,89
+			1: Water
+				LeftColor: 67,71,89
+				RightColor: 66,69,89
+			2: Rough
+				LeftColor: 190,175,125
+				RightColor: 113,131,105
+			3: Water
+				LeftColor: 119,134,103
+				RightColor: 86,96,93
+			4: Rough
+				LeftColor: 231,190,115
+				RightColor: 212,183,127
+			5: Rough
+				LeftColor: 212,182,117
+				RightColor: 205,182,123
+	Template@111:
+		Category: Shore Pieces
+		Id: 111
+		Images: Shore23.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 75,82,89
+				RightColor: 76,83,90
+			1: Water
+				LeftColor: 112,129,100
+				RightColor: 79,86,92
+			2: Water
+				LeftColor: 81,90,92
+				RightColor: 110,122,97
+			3: Rough
+				LeftColor: 210,180,116
+				RightColor: 203,176,116
+	Template@112:
+		Category: Shore Pieces
+		Id: 112
+		Images: Shore24.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 75,82,89
+				RightColor: 76,83,90
+			1: Water
+				LeftColor: 112,129,100
+				RightColor: 79,86,92
+			2: Water
+				LeftColor: 81,90,92
+				RightColor: 110,122,97
+			3: Rough
+				LeftColor: 210,180,116
+				RightColor: 203,176,116
+	Template@113:
+		Category: Shore Pieces
+		Id: 113
+		Images: Shore25.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 77,79,89
+				RightColor: 109,113,94
+			1: Rough
+				LeftColor: 214,182,121
+				RightColor: 227,190,120
+			2: Water
+				LeftColor: 76,82,90
+				RightColor: 120,121,97
+			3: Rough
+				LeftColor: 220,190,131
+				RightColor: 228,191,122
+	Template@114:
+		Category: Shore Pieces
+		Id: 114
+		Images: Shore26.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 77,79,89
+				RightColor: 109,113,94
+			1: Rough
+				LeftColor: 214,182,121
+				RightColor: 227,190,120
+			2: Water
+				LeftColor: 76,82,90
+				RightColor: 120,121,97
+			3: Rough
+				LeftColor: 220,190,131
+				RightColor: 228,191,122
+	Template@115:
+		Category: Shore Pieces
+		Id: 115
+		Images: Shore27.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 77,79,89
+				RightColor: 109,113,94
+			1: Rough
+				LeftColor: 214,182,121
+				RightColor: 227,190,120
+			2: Water
+				LeftColor: 76,82,90
+				RightColor: 120,121,97
+			3: Rough
+				LeftColor: 220,190,131
+				RightColor: 228,191,122
+	Template@116:
+		Category: Shore Pieces
+		Id: 116
+		Images: Shore28.des
+		Size: 2, 1
+		Tiles:
+			0: Water
+				LeftColor: 76,83,90
+				RightColor: 113,122,99
+			1: Rough
+				LeftColor: 212,185,131
+				RightColor: 228,191,124
+	Template@117:
+		Category: Shore Pieces
+		Id: 117
+		Images: Shore29.des
+		Size: 3, 2
+		Tiles:
+			0: Water
+				LeftColor: 68,73,88
+				RightColor: 104,109,93
+			1: Rough
+				LeftColor: 188,168,115
+				RightColor: 221,186,120
+			2: Rough
+				LeftColor: 222,190,132
+				RightColor: 229,190,118
+			3: Water
+				LeftColor: 63,66,87
+				RightColor: 68,72,88
+			4: Water
+				LeftColor: 90,102,93
+				RightColor: 152,157,112
+			5: Rough
+				LeftColor: 215,190,138
+				RightColor: 226,194,132
+	Template@118:
+		Category: Shore Pieces
+		Id: 118
+		Images: Shore30.des
+		Size: 3, 2
+		Tiles:
+			0: Water
+				LeftColor: 74,81,88
+				RightColor: 76,84,89
+			1: Water
+				LeftColor: 122,137,105
+				RightColor: 119,128,101
+			2: Rough
+				LeftColor: 214,185,128
+				RightColor: 227,189,120
+			3: Water
+				LeftColor: 76,82,90
+				RightColor: 118,127,101
+			4: Rough
+				LeftColor: 215,189,137
+				RightColor: 218,189,133
+			5: Rough
+				LeftColor: 226,194,131
+				RightColor: 225,194,134
+	Template@119:
+		Category: Shore Pieces
+		Id: 119
+		Images: Shore31.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 71,76,88
+				RightColor: 115,123,95
+			1: Rough
+				LeftColor: 187,165,108
+				RightColor: 219,184,119
+			2: Water
+				LeftColor: 64,67,88
+				RightColor: 73,79,89
+			3: Water
+				LeftColor: 75,81,90
+				RightColor: 113,123,95
+	Template@120:
+		Category: Shore Pieces
+		Id: 120
+		Images: Shore32.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 71,76,88
+				RightColor: 115,123,95
+			1: Rough
+				LeftColor: 187,165,108
+				RightColor: 219,184,119
+			2: Water
+				LeftColor: 64,67,88
+				RightColor: 73,79,89
+			3: Water
+				LeftColor: 75,81,90
+				RightColor: 113,123,95
+	Template@121:
+		Category: Shore Pieces
+		Id: 121
+		Images: Shore33.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 229,192,123
+				RightColor: 227,194,133
+			1: Rough
+				LeftColor: 218,191,137
+				RightColor: 225,192,129
+			2: Rough
+				LeftColor: 228,189,116
+				RightColor: 220,187,124
+			3: Water
+				LeftColor: 127,129,95
+				RightColor: 118,127,97
+	Template@122:
+		Category: Shore Pieces
+		Id: 122
+		Images: Shore34.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 229,192,123
+				RightColor: 227,194,133
+			1: Rough
+				LeftColor: 218,191,137
+				RightColor: 225,192,129
+			2: Rough
+				LeftColor: 228,189,116
+				RightColor: 220,187,124
+			3: Water
+				LeftColor: 127,129,95
+				RightColor: 118,127,97
+	Template@123:
+		Category: Shore Pieces
+		Id: 123
+		Images: Shore35.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 208,176,111
+				RightColor: 200,174,116
+			1: Water
+				LeftColor: 121,142,104
+				RightColor: 92,104,95
+			2: Rough
+				LeftColor: 229,189,116
+				RightColor: 198,173,115
+			3: Rough
+				LeftColor: 213,181,115
+				RightColor: 194,172,115
+	Template@124:
+		Category: Shore Pieces
+		Id: 124
+		Images: Shore36.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 208,176,111
+				RightColor: 200,174,116
+			1: Water
+				LeftColor: 121,142,104
+				RightColor: 92,104,95
+			2: Rough
+				LeftColor: 229,189,116
+				RightColor: 198,173,115
+			3: Rough
+				LeftColor: 213,181,115
+				RightColor: 194,172,115
+	Template@125:
+		Category: Shore Pieces
+		Id: 125
+		Images: Shore37.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 126,131,97
+				RightColor: 123,130,97
+			1: Rough
+				LeftColor: 217,186,125
+				RightColor: 227,190,120
+			2: Rough
+				LeftColor: 226,193,129
+				RightColor: 219,192,137
+			3: Rough
+				LeftColor: 227,195,133
+				RightColor: 228,193,127
+	Template@126:
+		Category: Shore Pieces
+		Id: 126
+		Images: Shore38.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 126,131,97
+				RightColor: 123,130,97
+			1: Rough
+				LeftColor: 217,186,125
+				RightColor: 227,190,120
+			2: Rough
+				LeftColor: 226,193,129
+				RightColor: 219,192,137
+			3: Rough
+				LeftColor: 227,195,133
+				RightColor: 228,193,127
+	Template@127:
+		Category: Shore Pieces
+		Id: 127
+		Images: Shore39.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 220,198,147
+				RightColor: 227,195,133
+			1: Rough
+				LeftColor: 225,195,139
+				RightColor: 229,194,127
+			2: Water
+				LeftColor: 91,103,94
+				RightColor: 153,155,103
+			3: Rough
+				LeftColor: 219,185,120
+				RightColor: 228,191,120
+	Template@128:
+		Category: Shore Pieces
+		Id: 128
+		Images: Shore40.des
+		Size: 2, 2
+		Tiles:
+			0: Rough
+				LeftColor: 220,198,147
+				RightColor: 227,195,133
+			1: Rough
+				LeftColor: 225,195,139
+				RightColor: 229,194,127
+			2: Water
+				LeftColor: 91,103,94
+				RightColor: 153,155,103
+			3: Rough
+				LeftColor: 219,185,120
+				RightColor: 228,191,120
+	Template@129:
+		Category: Shore Pieces
+		Id: 129
+		Images: Shore41.des
+		Size: 6, 4
+		Tiles:
+			1: Rough
+				LeftColor: 227,189,116
+				RightColor: 229,190,116
+			2: Rough
+				LeftColor: 229,192,124
+				RightColor: 228,190,119
+			3: Rough
+				LeftColor: 224,194,136
+				RightColor: 229,190,114
+			6: Rough
+				LeftColor: 230,192,119
+				RightColor: 229,190,114
+			7: Water
+				LeftColor: 228,195,133
+				RightColor: 227,192,125
+			8: Water
+				LeftColor: 206,180,124
+				RightColor: 201,173,118
+			9: Water
+				LeftColor: 163,155,105
+				RightColor: 182,165,117
+			10: Water
+				LeftColor: 143,146,104
+				RightColor: 195,170,112
+			11: Water
+				LeftColor: 113,126,100
+				RightColor: 78,85,91
+			12: Water
+				LeftColor: 230,191,117
+				RightColor: 228,193,127
+			13: Water
+				LeftColor: 210,187,135
+				RightColor: 214,190,139
+			14: Water
+				LeftColor: 152,158,113
+				RightColor: 147,153,109
+			15: Water
+				LeftColor: 101,122,94
+				RightColor: 109,134,102
+			16: Water
+				LeftColor: 86,98,90
+				RightColor: 113,133,102
+			17: Water
+				LeftColor: 90,101,96
+				RightColor: 76,84,91
+			18: Water
+				LeftColor: 229,190,114
+				RightColor: 222,187,119
+			19: Water
+				LeftColor: 127,129,94
+				RightColor: 122,135,103
+			20: Water
+				LeftColor: 80,89,90
+				RightColor: 85,96,90
+			21: Water
+				LeftColor: 70,74,87
+				RightColor: 71,76,87
+			22: Water
+				LeftColor: 64,68,87
+				RightColor: 65,69,87
+			23: Water
+				LeftColor: 62,65,82
+				RightColor: 64,67,87
+	Template@130:
+		Category: Shore Pieces
+		Id: 130
+		Images: Shore42.des
+		Size: 9, 5
+		Tiles:
+			2: Water
+				LeftColor: 200,173,113
+				RightColor: 166,148,98
+			3: Water
+				LeftColor: 198,173,124
+				RightColor: 225,187,112
+			11: Water
+				LeftColor: 200,170,105
+				RightColor: 160,151,102
+			12: Water
+				LeftColor: 122,136,95
+				RightColor: 192,170,122
+			13: Rough
+				LeftColor: 209,176,119
+				RightColor: 223,185,111
+			18: Rough
+				LeftColor: 220,185,119
+				RightColor: 205,172,109
+			19: Water
+				LeftColor: 163,146,99
+				RightColor: 147,138,91
+			20: Water
+				LeftColor: 97,111,84
+				RightColor: 108,121,87
+			21: Water
+				LeftColor: 95,108,86
+				RightColor: 116,132,92
+			22: Water
+				LeftColor: 153,150,103
+				RightColor: 203,175,117
+			23: Water
+				LeftColor: 180,150,87
+				RightColor: 217,180,109
+			24: Water
+				LeftColor: 174,148,87
+				RightColor: 208,174,104
+			25: Water
+				LeftColor: 193,168,104
+				RightColor: 208,177,113
+			26: Water
+				LeftColor: 113,125,99
+				RightColor: 78,84,90
+			28: Water
+				LeftColor: 216,182,114
+				RightColor: 196,170,110
+			29: Water
+				LeftColor: 115,122,88
+				RightColor: 88,99,85
+			30: Water
+				LeftColor: 82,91,86
+				RightColor: 87,98,87
+			31: Water
+				LeftColor: 82,91,86
+				RightColor: 99,116,90
+			32: Water
+				LeftColor: 90,103,88
+				RightColor: 100,111,82
+			33: Water
+				LeftColor: 92,104,88
+				RightColor: 110,123,85
+			34: Water
+				LeftColor: 95,109,89
+				RightColor: 115,132,98
+			35: Water
+				LeftColor: 80,89,89
+				RightColor: 73,79,89
+			37: Water
+				LeftColor: 225,187,116
+				RightColor: 192,168,113
+			38: Water
+				LeftColor: 119,127,94
+				RightColor: 85,94,91
+			39: Water
+				LeftColor: 65,68,85
+				RightColor: 67,71,85
+			40: Water
+				LeftColor: 64,67,86
+				RightColor: 67,71,86
+			41: Water
+				LeftColor: 64,66,87
+				RightColor: 69,73,87
+			42: Water
+				LeftColor: 67,71,85
+				RightColor: 74,80,85
+			43: Water
+				LeftColor: 66,70,85
+				RightColor: 72,78,85
+			44: Water
+				LeftColor: 66,70,85
+				RightColor: 66,70,87
+	Template@131:
+		Category: LAT Sandy Grass
+		Id: 131
+		Images: Ruff01.des, Ruff01a.des, Ruff01b.des, Ruff01c.des, Ruff01d.des, Ruff01e.des, Ruff01f.des, Ruff01g.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@132:
+		Category: GrassThick Idividual
+		Id: 132
+		Images: clat01.des, clat01a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@133:
+		Category: GrassThick Idividual
+		Id: 133
+		Images: clat02.des, clat02a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@134:
+		Category: GrassThick Idividual
+		Id: 134
+		Images: clat03.des, clat03a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@135:
+		Category: GrassThick Idividual
+		Id: 135
+		Images: clat04.des, clat04a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@136:
+		Category: GrassThick Idividual
+		Id: 136
+		Images: clat05.des, clat05a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@137:
+		Category: GrassThick Idividual
+		Id: 137
+		Images: clat06.des, clat06a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@138:
+		Category: GrassThick Idividual
+		Id: 138
+		Images: clat07.des, clat07a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@139:
+		Category: GrassThick Idividual
+		Id: 139
+		Images: clat08.des, clat08a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@140:
+		Category: GrassThick Idividual
+		Id: 140
+		Images: clat09.des, clat09a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@141:
+		Category: GrassThick Idividual
+		Id: 141
+		Images: clat10.des, clat10a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@142:
+		Category: GrassThick Idividual
+		Id: 142
+		Images: clat11.des, clat11a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@143:
+		Category: GrassThick Idividual
+		Id: 143
+		Images: clat12.des, clat12a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@144:
+		Category: GrassThick Idividual
+		Id: 144
+		Images: clat13.des, clat13a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@145:
+		Category: GrassThick Idividual
+		Id: 145
+		Images: clat14.des, clat14a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@146:
+		Category: GrassThick Idividual
+		Id: 146
+		Images: clat15.des, clat15a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@147:
+		Category: GrassThick Idividual
+		Id: 147
+		Images: clat16.des, clat16a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 159,167,79
+				RightColor: 161,167,79
+	Template@148:
+		Category: DirtRoads Bendy
+		Id: 148
+		Images: Droadc01.des
+		Size: 3, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 213,178,108
+				RightColor: 198,162,96
+			1: DirtRoad
+				LeftColor: 189,154,88
+				RightColor: 187,150,85
+			2: DirtRoad
+				LeftColor: 182,147,83
+				RightColor: 172,134,73
+			4: DirtRoad
+				LeftColor: 212,178,109
+				RightColor: 203,166,98
+			5: DirtRoad
+				LeftColor: 204,169,100
+				RightColor: 199,163,97
+	Template@149:
+		Category: DirtRoads Bendy
+		Id: 149
+		Images: Droadc02.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 212,178,109
+				RightColor: 190,154,88
+			1: DirtRoad
+				LeftColor: 186,150,85
+				RightColor: 190,154,90
+			2: DirtRoad
+				LeftColor: 213,178,109
+				RightColor: 212,177,108
+			3: DirtRoad
+				LeftColor: 211,177,107
+				RightColor: 192,157,89
+	Template@150:
+		Category: DirtRoads Bendy
+		Id: 150
+		Images: Droadc03.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 204,170,101
+				RightColor: 188,153,88
+			1: DirtRoad
+				LeftColor: 193,156,90
+				RightColor: 208,173,104
+			2: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 206,171,102
+			3: DirtRoad
+				LeftColor: 188,153,89
+				RightColor: 199,163,96
+	Template@151:
+		Category: DirtRoads Bendy
+		Id: 151
+		Images: Droadc04.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 195,160,94
+				RightColor: 187,150,85
+			1: DirtRoad
+				LeftColor: 192,157,90
+				RightColor: 208,171,102
+			3: DirtRoad
+				LeftColor: 203,167,99
+				RightColor: 210,174,105
+	Template@152:
+		Category: DirtRoads Bendy
+		Id: 152
+		Images: Droadc05.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 182,147,82
+				RightColor: 187,149,84
+			1: DirtRoad
+				LeftColor: 190,154,88
+				RightColor: 209,174,106
+			2: DirtRoad
+				LeftColor: 202,167,100
+				RightColor: 184,148,84
+			3: DirtRoad
+				LeftColor: 208,172,103
+				RightColor: 210,174,105
+	Template@153:
+		Category: DirtRoads Bendy
+		Id: 153
+		Images: Droadc06.des
+		Size: 3, 2
+		Tiles:
+			1: DirtRoad
+				LeftColor: 199,164,98
+				RightColor: 187,152,88
+			2: DirtRoad
+				LeftColor: 188,152,86
+				RightColor: 205,169,102
+			3: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 204,169,101
+			4: DirtRoad
+				LeftColor: 199,165,98
+				RightColor: 193,158,93
+			5: DirtRoad
+				LeftColor: 207,172,103
+				RightColor: 207,171,102
+	Template@154:
+		Category: DirtRoads Bendy
+		Id: 154
+		Images: Droadc07.des
+		Size: 2, 3
+		Tiles:
+			0: DirtRoad
+				LeftColor: 205,171,103
+				RightColor: 204,168,100
+			1: DirtRoad
+				LeftColor: 188,153,87
+				RightColor: 182,146,83
+			2: DirtRoad
+				LeftColor: 211,177,107
+				RightColor: 204,169,101
+			3: DirtRoad
+				LeftColor: 184,148,84
+				RightColor: 191,153,87
+			5: DirtRoad
+				LeftColor: 213,178,109
+				RightColor: 198,162,96
+	Template@155:
+		Category: DirtRoads Bendy
+		Id: 155
+		Images: Droadc08.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 209,174,106
+				RightColor: 205,171,103
+			1: DirtRoad
+				LeftColor: 179,143,79
+				RightColor: 177,140,79
+			2: DirtRoad
+				LeftColor: 213,178,108
+				RightColor: 200,165,98
+			3: DirtRoad
+				LeftColor: 187,152,87
+				RightColor: 188,151,85
+	Template@156:
+		Category: DirtRoads Bendy
+		Id: 156
+		Images: Droadc09.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 202,168,101
+				RightColor: 201,167,99
+			1: DirtRoad
+				LeftColor: 171,135,73
+				RightColor: 172,135,74
+			2: DirtRoad
+				LeftColor: 201,167,100
+				RightColor: 180,145,82
+			3: DirtRoad
+				LeftColor: 189,154,88
+				RightColor: 201,164,98
+	Template@157:
+		Category: DirtRoads Bendy
+		Id: 157
+		Images: Droadc10.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 187,152,87
+				RightColor: 207,172,103
+			1: DirtRoad
+				LeftColor: 181,146,82
+				RightColor: 180,144,82
+			2: DirtRoad
+				LeftColor: 205,170,101
+				RightColor: 199,163,95
+			3: DirtRoad
+				LeftColor: 206,171,102
+				RightColor: 204,168,99
+	Template@158:
+		Category: DirtRoads Bendy
+		Id: 158
+		Images: Droadc11.des
+		Size: 3, 2
+		Tiles:
+			1: DirtRoad
+				LeftColor: 210,176,107
+				RightColor: 213,179,109
+			2: DirtRoad
+				LeftColor: 186,152,88
+				RightColor: 176,139,77
+			3: DirtRoad
+				LeftColor: 212,177,107
+				RightColor: 200,164,96
+			4: DirtRoad
+				LeftColor: 203,167,99
+				RightColor: 190,154,90
+			5: DirtRoad
+				LeftColor: 202,166,97
+				RightColor: 195,158,91
+	Template@159:
+		Category: DirtRoads Bendy
+		Id: 159
+		Images: Droadc12.des
+		Size: 3, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 214,180,110
+				RightColor: 200,163,95
+			1: DirtRoad
+				LeftColor: 192,157,91
+				RightColor: 190,154,90
+			2: DirtRoad
+				LeftColor: 189,154,90
+				RightColor: 173,136,74
+			4: DirtRoad
+				LeftColor: 213,178,108
+				RightColor: 200,164,96
+			5: DirtRoad
+				LeftColor: 208,173,103
+				RightColor: 202,166,98
+	Template@160:
+		Category: DirtRoads Bendy
+		Id: 160
+		Images: Droadc13.des
+		Size: 2, 3
+		Tiles:
+			0: DirtRoad
+				LeftColor: 206,173,104
+				RightColor: 205,170,102
+			1: DirtRoad
+				LeftColor: 181,145,82
+				RightColor: 200,164,97
+			2: DirtRoad
+				LeftColor: 205,172,103
+				RightColor: 188,153,88
+			3: DirtRoad
+				LeftColor: 196,159,93
+				RightColor: 192,156,90
+			4: DirtRoad
+				LeftColor: 213,178,109
+				RightColor: 207,172,104
+			5: DirtRoad
+				LeftColor: 188,153,87
+				RightColor: 198,162,95
+	Template@161:
+		Category: DirtRoads Bendy
+		Id: 161
+		Images: Droadc14.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 209,175,106
+				RightColor: 209,174,105
+			1: DirtRoad
+				LeftColor: 186,152,87
+				RightColor: 205,170,102
+			2: DirtRoad
+				LeftColor: 207,173,104
+				RightColor: 195,160,94
+			3: DirtRoad
+				LeftColor: 190,154,89
+				RightColor: 192,156,90
+	Template@162:
+		Category: DirtRoads Bendy
+		Id: 162
+		Images: Droadc15.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 202,168,99
+				RightColor: 207,173,104
+			1: DirtRoad
+				LeftColor: 185,150,85
+				RightColor: 202,167,99
+			3: DirtRoad
+				LeftColor: 204,168,100
+				RightColor: 195,158,91
+	Template@163:
+		Category: DirtRoads Bendy
+		Id: 163
+		Images: Droadc16.des
+		Size: 2, 2
+		Tiles:
+			1: DirtRoad
+				LeftColor: 196,162,96
+				RightColor: 202,167,100
+			2: DirtRoad
+				LeftColor: 214,180,110
+				RightColor: 201,165,96
+			3: DirtRoad
+				LeftColor: 204,168,100
+				RightColor: 192,157,91
+	Template@164:
+		Category: DirtRoads Bendy
+		Id: 164
+		Images: Droadc17.des
+		Size: 3, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 208,174,105
+				RightColor: 208,173,104
+			1: DirtRoad
+				LeftColor: 200,166,98
+				RightColor: 212,177,107
+			2: DirtRoad
+				LeftColor: 213,178,108
+				RightColor: 213,177,108
+			3: DirtRoad
+				LeftColor: 205,171,102
+				RightColor: 195,159,92
+			4: DirtRoad
+				LeftColor: 186,150,85
+				RightColor: 183,146,83
+			5: DirtRoad
+				LeftColor: 191,156,91
+				RightColor: 200,164,97
+	Template@165:
+		Category: DirtRoads Bendy
+		Id: 165
+		Images: Droadc18.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 201,167,100
+				RightColor: 209,174,105
+			1: DirtRoad
+				LeftColor: 207,172,104
+				RightColor: 213,177,107
+			3: DirtRoad
+				LeftColor: 188,152,86
+				RightColor: 194,158,93
+	Template@166:
+		Category: DirtRoads Bendy
+		Id: 166
+		Images: Droadc19.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 195,160,94
+				RightColor: 208,173,104
+			1: DirtRoad
+				LeftColor: 209,174,106
+				RightColor: 213,178,108
+			2: DirtRoad
+				LeftColor: 203,169,101
+				RightColor: 183,147,83
+			3: DirtRoad
+				LeftColor: 186,150,86
+				RightColor: 205,168,100
+	Template@167:
+		Category: DirtRoads Bendy
+		Id: 167
+		Images: Droadc20.des
+		Size: 3, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 194,161,95
+				RightColor: 200,165,98
+			1: DirtRoad
+				LeftColor: 195,160,94
+				RightColor: 212,177,108
+			2: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 213,177,108
+			4: DirtRoad
+				LeftColor: 181,144,79
+				RightColor: 175,137,73
+			5: DirtRoad
+				LeftColor: 194,158,92
+				RightColor: 210,174,105
+	Template@168:
+		Category: DirtRoads Bendy
+		Id: 168
+		Images: Droadc21.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 194,160,93
+				RightColor: 211,176,106
+			1: DirtRoad
+				LeftColor: 211,176,107
+				RightColor: 212,177,107
+			2: DirtRoad
+				LeftColor: 191,156,90
+				RightColor: 178,141,77
+			3: DirtRoad
+				LeftColor: 193,157,91
+				RightColor: 212,176,107
+	Template@169:
+		Category: DirtRoads Bendy
+		Id: 169
+		Images: Droadc22.des
+		Size: 2, 2
+		Tiles:
+			1: DirtRoad
+				LeftColor: 211,176,107
+				RightColor: 213,177,107
+			2: DirtRoad
+				LeftColor: 203,169,101
+				RightColor: 189,152,87
+			3: DirtRoad
+				LeftColor: 197,161,94
+				RightColor: 210,174,106
+	Template@170:
+		Category: DirtRoads Bendy
+		Id: 170
+		Images: Droadc23.des
+		Size: 2, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 210,176,107
+				RightColor: 213,179,109
+			2: DirtRoad
+				LeftColor: 195,161,96
+				RightColor: 185,150,85
+			3: DirtRoad
+				LeftColor: 194,157,91
+				RightColor: 208,173,104
+			5: DirtRoad
+				LeftColor: 203,166,98
+				RightColor: 208,172,102
+	Template@171:
+		Category: DirtRoads Bendy
+		Id: 171
+		Images: Droadc24.des
+		Size: 2, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 210,176,106
+				RightColor: 213,177,107
+			2: DirtRoad
+				LeftColor: 183,149,84
+				RightColor: 192,157,92
+			3: DirtRoad
+				LeftColor: 193,156,90
+				RightColor: 208,172,104
+			4: DirtRoad
+				LeftColor: 203,168,100
+				RightColor: 187,150,87
+			5: DirtRoad
+				LeftColor: 207,172,103
+				RightColor: 208,172,102
+	Template@172:
+		Category: DirtRoads Junctions
+		Id: 172
+		Images: Droadj01.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 202,168,100
+				RightColor: 189,154,90
+			1: DirtRoad
+				LeftColor: 174,140,78
+				RightColor: 193,157,92
+			2: DirtRoad
+				LeftColor: 199,165,98
+				RightColor: 181,145,81
+			3: DirtRoad
+				LeftColor: 186,151,87
+				RightColor: 194,157,90
+	Template@173:
+		Category: DirtRoads Junctions
+		Id: 173
+		Images: Droadj02.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 194,158,92
+				RightColor: 203,168,100
+			1: DirtRoad
+				LeftColor: 187,152,88
+				RightColor: 198,163,97
+			2: DirtRoad
+				LeftColor: 189,155,89
+				RightColor: 183,147,84
+			3: DirtRoad
+				LeftColor: 198,163,95
+				RightColor: 193,156,89
+	Template@174:
+		Category: DirtRoads Junctions
+		Id: 174
+		Images: Droadj03.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 183,148,83
+				RightColor: 190,155,90
+			1: DirtRoad
+				LeftColor: 192,156,90
+				RightColor: 210,173,105
+			2: DirtRoad
+				LeftColor: 195,160,95
+				RightColor: 186,150,86
+			3: DirtRoad
+				LeftColor: 192,157,90
+				RightColor: 204,168,100
+	Template@175:
+		Category: DirtRoads Junctions
+		Id: 175
+		Images: Droadj04.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 179,145,81
+				RightColor: 184,149,86
+			1: DirtRoad
+				LeftColor: 184,148,84
+				RightColor: 195,158,93
+			2: DirtRoad
+				LeftColor: 209,174,105
+				RightColor: 196,158,92
+			3: DirtRoad
+				LeftColor: 207,172,102
+				RightColor: 191,154,88
+	Template@176:
+		Category: DirtRoads Junctions
+		Id: 176
+		Images: Droadj05.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 184,149,84
+				RightColor: 188,152,88
+			1: DirtRoad
+				LeftColor: 179,144,79
+				RightColor: 192,155,90
+			2: DirtRoad
+				LeftColor: 193,158,92
+				RightColor: 180,143,78
+			3: DirtRoad
+				LeftColor: 196,159,92
+				RightColor: 198,162,96
+	Template@177:
+		Category: DirtRoads Junctions
+		Id: 177
+		Images: Droadj06.des
+		Size: 3, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 195,160,95
+				RightColor: 195,161,95
+			2: DirtRoad
+				LeftColor: 176,139,77
+				RightColor: 174,137,75
+			3: DirtRoad
+				LeftColor: 196,161,95
+				RightColor: 198,161,95
+			4: DirtRoad
+				LeftColor: 178,142,80
+				RightColor: 175,138,76
+			5: DirtRoad
+				LeftColor: 193,157,90
+				RightColor: 205,168,99
+			7: DirtRoad
+				LeftColor: 199,163,95
+				RightColor: 183,146,82
+			8: DirtRoad
+				LeftColor: 184,147,83
+				RightColor: 199,162,95
+	Template@178:
+		Category: DirtRoads Junctions
+		Id: 178
+		Images: Droadj07.des
+		Size: 3, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 208,173,105
+				RightColor: 213,177,108
+			3: DirtRoad
+				LeftColor: 199,165,98
+				RightColor: 195,159,93
+			4: DirtRoad
+				LeftColor: 184,148,84
+				RightColor: 190,153,87
+			5: DirtRoad
+				LeftColor: 201,166,98
+				RightColor: 210,175,106
+			7: DirtRoad
+				LeftColor: 192,155,89
+				RightColor: 186,150,86
+			8: DirtRoad
+				LeftColor: 188,153,87
+				RightColor: 203,167,99
+	Template@179:
+		Category: DirtRoads Junctions
+		Id: 179
+		Images: Droadj08.des
+		Size: 3, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 192,158,92
+				RightColor: 200,164,97
+			2: DirtRoad
+				LeftColor: 183,148,84
+				RightColor: 175,138,76
+			3: DirtRoad
+				LeftColor: 192,158,92
+				RightColor: 187,151,88
+			4: DirtRoad
+				LeftColor: 186,149,85
+				RightColor: 191,154,90
+			5: DirtRoad
+				LeftColor: 205,170,101
+				RightColor: 203,167,98
+			7: DirtRoad
+				LeftColor: 196,159,91
+				RightColor: 204,168,99
+	Template@180:
+		Category: DirtRoads Junctions
+		Id: 180
+		Images: Droadj09.des
+		Size: 3, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 203,169,101
+				RightColor: 199,163,96
+			2: DirtRoad
+				LeftColor: 182,146,83
+				RightColor: 179,143,80
+			3: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 195,160,94
+			4: DirtRoad
+				LeftColor: 189,153,89
+				RightColor: 183,147,83
+			5: DirtRoad
+				LeftColor: 191,156,89
+				RightColor: 201,164,95
+			7: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 195,159,92
+			8: DirtRoad
+				LeftColor: 191,154,89
+				RightColor: 200,164,96
+	Template@181:
+		Category: DirtRoads Junctions
+		Id: 181
+		Images: Droadj10.des
+		Size: 3, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 188,153,89
+				RightColor: 202,166,99
+			2: DirtRoad
+				LeftColor: 176,141,78
+				RightColor: 175,138,74
+			3: DirtRoad
+				LeftColor: 200,167,100
+				RightColor: 187,150,86
+			4: DirtRoad
+				LeftColor: 184,146,81
+				RightColor: 188,151,87
+			5: DirtRoad
+				LeftColor: 198,163,96
+				RightColor: 206,169,102
+			7: DirtRoad
+				LeftColor: 199,164,97
+				RightColor: 191,154,89
+			8: DirtRoad
+				LeftColor: 192,157,91
+				RightColor: 201,165,96
+	Template@182:
+		Category: DirtRoads Junctions
+		Id: 182
+		Images: Droadj11.des
+		Size: 4, 4
+		Tiles:
+			2: DirtRoad
+				LeftColor: 198,163,97
+				RightColor: 196,161,96
+			3: DirtRoad
+				LeftColor: 179,143,79
+				RightColor: 172,135,72
+			5: DirtRoad
+				LeftColor: 198,164,97
+				RightColor: 195,160,93
+			6: DirtRoad
+				LeftColor: 186,149,85
+				RightColor: 182,144,80
+			7: DirtRoad
+				LeftColor: 204,166,98
+				RightColor: 204,168,99
+			8: DirtRoad
+				LeftColor: 185,149,85
+				RightColor: 202,167,100
+			9: DirtRoad
+				LeftColor: 192,157,92
+				RightColor: 186,151,87
+			10: DirtRoad
+				LeftColor: 187,151,87
+				RightColor: 193,157,91
+			11: DirtRoad
+				LeftColor: 194,159,93
+				RightColor: 193,158,93
+			12: DirtRoad
+				LeftColor: 207,172,103
+				RightColor: 190,153,86
+			13: DirtRoad
+				LeftColor: 204,167,99
+				RightColor: 200,164,98
+			14: DirtRoad
+				LeftColor: 211,176,106
+				RightColor: 208,172,103
+			15: DirtRoad
+				LeftColor: 213,178,108
+				RightColor: 197,160,93
+	Template@183:
+		Category: DirtRoads Straight
+		Id: 183
+		Images: Droads01.des
+		Size: 4, 4
+		Tiles:
+			2: DirtRoad
+				LeftColor: 206,172,103
+				RightColor: 207,172,103
+			3: DirtRoad
+				LeftColor: 179,144,83
+				RightColor: 172,135,73
+			5: DirtRoad
+				LeftColor: 198,165,98
+				RightColor: 199,164,98
+			6: DirtRoad
+				LeftColor: 192,156,90
+				RightColor: 191,155,91
+			7: DirtRoad
+				LeftColor: 204,169,100
+				RightColor: 199,162,94
+			8: DirtRoad
+				LeftColor: 202,168,100
+				RightColor: 202,166,98
+			9: DirtRoad
+				LeftColor: 185,148,84
+				RightColor: 189,152,86
+			10: DirtRoad
+				LeftColor: 208,174,104
+				RightColor: 210,174,105
+			13: DirtRoad
+				LeftColor: 200,164,96
+				RightColor: 208,171,103
+	Template@184:
+		Category: DirtRoads Straight
+		Id: 184
+		Images: Droads02.des
+		Size: 4, 4
+		Tiles:
+			2: DirtRoad
+				LeftColor: 206,172,103
+				RightColor: 207,172,103
+			3: DirtRoad
+				LeftColor: 179,144,83
+				RightColor: 172,135,73
+			5: DirtRoad
+				LeftColor: 198,165,98
+				RightColor: 199,164,98
+			6: DirtRoad
+				LeftColor: 192,156,90
+				RightColor: 191,155,91
+			7: DirtRoad
+				LeftColor: 204,169,100
+				RightColor: 199,162,94
+			8: DirtRoad
+				LeftColor: 202,168,100
+				RightColor: 202,166,98
+			9: DirtRoad
+				LeftColor: 185,148,84
+				RightColor: 189,152,86
+			10: DirtRoad
+				LeftColor: 208,174,104
+				RightColor: 210,174,105
+			13: DirtRoad
+				LeftColor: 200,164,96
+				RightColor: 208,171,103
+	Template@185:
+		Category: DirtRoads Straight
+		Id: 185
+		Images: Droads03.des
+		Size: 4, 4
+		Tiles:
+			2: DirtRoad
+				LeftColor: 206,172,103
+				RightColor: 207,172,103
+			3: DirtRoad
+				LeftColor: 179,144,83
+				RightColor: 172,135,73
+			5: DirtRoad
+				LeftColor: 198,165,98
+				RightColor: 199,164,98
+			6: DirtRoad
+				LeftColor: 192,156,90
+				RightColor: 191,155,91
+			7: DirtRoad
+				LeftColor: 204,169,100
+				RightColor: 199,162,94
+			8: DirtRoad
+				LeftColor: 202,168,100
+				RightColor: 202,166,98
+			9: DirtRoad
+				LeftColor: 185,148,84
+				RightColor: 189,152,86
+			10: DirtRoad
+				LeftColor: 208,174,104
+				RightColor: 210,174,105
+			13: DirtRoad
+				LeftColor: 200,164,96
+				RightColor: 208,171,103
+	Template@186:
+		Category: DirtRoads Straight
+		Id: 186
+		Images: Droads04.des
+		Size: 4, 4
+		Tiles:
+			0: Clear
+				LeftColor: 210,177,108
+				RightColor: 210,175,106
+			1: Clear
+				LeftColor: 199,165,98
+				RightColor: 205,169,101
+			2: DirtRoad
+				LeftColor: 194,158,91
+				RightColor: 197,162,96
+			3: DirtRoad
+				LeftColor: 174,138,76
+				RightColor: 172,135,74
+			4: Clear
+				LeftColor: 204,170,102
+				RightColor: 194,158,92
+			5: DirtRoad
+				LeftColor: 170,134,75
+				RightColor: 167,131,70
+			6: DirtRoad
+				LeftColor: 187,150,84
+				RightColor: 186,147,82
+			7: DirtRoad
+				LeftColor: 200,165,96
+				RightColor: 205,168,99
+			8: DirtRoad
+				LeftColor: 194,160,94
+				RightColor: 184,149,86
+			9: DirtRoad
+				LeftColor: 182,145,81
+				RightColor: 182,144,81
+			10: DirtRoad
+				LeftColor: 206,172,103
+				RightColor: 205,169,100
+			13: DirtRoad
+				LeftColor: 199,162,94
+				RightColor: 201,163,95
+	Template@187:
+		Category: DirtRoads Straight
+		Id: 187
+		Images: Droads05.des
+		Size: 3, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 189,154,90
+				RightColor: 197,160,94
+			2: DirtRoad
+				LeftColor: 178,141,80
+				RightColor: 166,130,69
+			3: DirtRoad
+				LeftColor: 201,167,99
+				RightColor: 193,158,93
+			4: DirtRoad
+				LeftColor: 178,141,78
+				RightColor: 181,143,79
+			5: DirtRoad
+				LeftColor: 202,167,99
+				RightColor: 200,163,95
+			7: DirtRoad
+				LeftColor: 204,167,99
+				RightColor: 204,167,100
+	Template@188:
+		Category: DirtRoads Straight
+		Id: 188
+		Images: Droads06.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 196,162,96
+				RightColor: 198,163,97
+			1: DirtRoad
+				LeftColor: 174,137,75
+				RightColor: 174,136,74
+			3: DirtRoad
+				LeftColor: 201,165,97
+				RightColor: 205,169,101
+	Template@189:
+		Category: DirtRoads Straight
+		Id: 189
+		Images: Droads07.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 195,162,96
+				RightColor: 199,163,96
+			1: DirtRoad
+				LeftColor: 174,137,75
+				RightColor: 175,139,78
+			3: DirtRoad
+				LeftColor: 201,164,96
+				RightColor: 201,163,96
+	Template@190:
+		Category: DirtRoads Straight
+		Id: 190
+		Images: Droads08.des
+		Size: 4, 4
+		Tiles:
+			2: Clear
+				LeftColor: 212,178,108
+				RightColor: 212,177,108
+			5: DirtRoad
+				LeftColor: 203,169,102
+				RightColor: 207,172,103
+			6: Clear
+				LeftColor: 194,159,94
+				RightColor: 202,167,99
+			7: Clear
+				LeftColor: 208,173,104
+				RightColor: 211,176,107
+			8: DirtRoad
+				LeftColor: 193,159,93
+				RightColor: 195,159,93
+			9: DirtRoad
+				LeftColor: 184,148,83
+				RightColor: 193,156,91
+			10: DirtRoad
+				LeftColor: 210,175,106
+				RightColor: 211,176,106
+			13: DirtRoad
+				LeftColor: 200,163,95
+				RightColor: 205,169,101
+	Template@191:
+		Category: DirtRoads Straight
+		Id: 191
+		Images: Droads09.des
+		Size: 4, 3
+		Tiles:
+			1: Clear
+				LeftColor: 199,165,99
+				RightColor: 199,164,97
+			2: Clear
+				LeftColor: 192,157,90
+				RightColor: 207,172,103
+			3: Clear
+				LeftColor: 209,174,105
+				RightColor: 212,177,108
+			4: DirtRoad
+				LeftColor: 195,161,94
+				RightColor: 199,164,98
+			5: DirtRoad
+				LeftColor: 181,145,83
+				RightColor: 189,150,84
+			6: DirtRoad
+				LeftColor: 191,156,91
+				RightColor: 194,158,91
+			7: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 211,176,106
+			9: DirtRoad
+				LeftColor: 192,155,88
+				RightColor: 192,154,90
+			10: Clear
+				LeftColor: 207,173,103
+				RightColor: 204,168,100
+	Template@192:
+		Category: DirtRoads Straight
+		Id: 192
+		Images: Droads10.des
+		Size: 3, 3
+		Tiles:
+			1: Clear
+				LeftColor: 210,176,106
+				RightColor: 211,175,106
+			2: Clear
+				LeftColor: 212,177,108
+				RightColor: 213,178,108
+			3: DirtRoad
+				LeftColor: 197,164,98
+				RightColor: 198,163,96
+			4: DirtRoad
+				LeftColor: 185,150,84
+				RightColor: 200,165,98
+			5: Clear
+				LeftColor: 206,172,103
+				RightColor: 211,176,106
+			7: DirtRoad
+				LeftColor: 200,164,96
+				RightColor: 203,166,98
+	Template@193:
+		Category: DirtRoads Straight
+		Id: 193
+		Images: Droads11.des
+		Size: 4, 4
+		Tiles:
+			2: DirtRoad
+				LeftColor: 202,168,100
+				RightColor: 204,169,101
+			3: DirtRoad
+				LeftColor: 186,150,85
+				RightColor: 178,141,79
+			5: DirtRoad
+				LeftColor: 212,179,109
+				RightColor: 212,176,107
+			6: DirtRoad
+				LeftColor: 201,165,98
+				RightColor: 198,161,94
+			7: DirtRoad
+				LeftColor: 205,170,102
+				RightColor: 202,166,97
+			8: Clear
+				LeftColor: 212,178,108
+				RightColor: 211,175,106
+			9: Clear
+				LeftColor: 208,174,105
+				RightColor: 205,170,102
+			10: DirtRoad
+				LeftColor: 208,174,105
+				RightColor: 206,171,102
+			13: Clear
+				LeftColor: 212,178,108
+				RightColor: 211,175,106
+	Template@194:
+		Category: DirtRoads Straight
+		Id: 194
+		Images: Droads12.des
+		Size: 3, 4
+		Tiles:
+			1: DirtRoad
+				LeftColor: 199,165,98
+				RightColor: 201,165,97
+			2: DirtRoad
+				LeftColor: 183,148,83
+				RightColor: 175,138,76
+			3: Clear
+				LeftColor: 205,171,103
+				RightColor: 207,172,104
+			4: Clear
+				LeftColor: 195,161,94
+				RightColor: 201,165,98
+			5: DirtRoad
+				LeftColor: 210,175,105
+				RightColor: 204,167,98
+			6: Clear
+				LeftColor: 208,174,105
+				RightColor: 199,163,96
+			7: Clear
+				LeftColor: 204,169,101
+				RightColor: 205,169,100
+			9: Clear
+				LeftColor: 212,178,108
+				RightColor: 209,173,104
+			10: Clear
+				LeftColor: 212,178,108
+				RightColor: 209,173,105
+	Template@195:
+		Category: DirtRoads Straight
+		Id: 195
+		Images: Droads13.des
+		Size: 3, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 207,173,104
+				RightColor: 202,168,100
+			2: DirtRoad
+				LeftColor: 188,152,87
+				RightColor: 180,142,77
+			3: Clear
+				LeftColor: 213,178,109
+				RightColor: 211,176,107
+			4: DirtRoad
+				LeftColor: 207,173,104
+				RightColor: 204,169,101
+			5: DirtRoad
+				LeftColor: 208,174,104
+				RightColor: 203,168,100
+			7: Clear
+				LeftColor: 212,178,108
+				RightColor: 209,174,105
+	Template@196:
+		Category: DirtRoads Straight
+		Id: 196
+		Images: Droads14.des
+		Size: 5, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 197,163,97
+				RightColor: 204,169,102
+			2: DirtRoad
+				LeftColor: 181,145,81
+				RightColor: 201,164,97
+			3: DirtRoad
+				LeftColor: 182,146,84
+				RightColor: 194,160,94
+			4: DirtRoad
+				LeftColor: 173,137,75
+				RightColor: 170,133,72
+			5: DirtRoad
+				LeftColor: 194,160,94
+				RightColor: 195,160,94
+			6: DirtRoad
+				LeftColor: 178,140,77
+				RightColor: 181,140,76
+			7: DirtRoad
+				LeftColor: 199,162,94
+				RightColor: 187,149,83
+			8: DirtRoad
+				LeftColor: 202,166,98
+				RightColor: 184,144,78
+			9: DirtRoad
+				LeftColor: 205,168,99
+				RightColor: 201,163,97
+			11: DirtRoad
+				LeftColor: 196,159,91
+				RightColor: 202,165,98
+	Template@197:
+		Category: DirtRoads Straight
+		Id: 197
+		Images: Droads15.des
+		Size: 3, 5
+		Tiles:
+			1: DirtRoad
+				LeftColor: 209,175,106
+				RightColor: 208,174,105
+			2: DirtRoad
+				LeftColor: 193,158,92
+				RightColor: 178,138,74
+			3: DirtRoad
+				LeftColor: 196,161,96
+				RightColor: 201,165,98
+			4: DirtRoad
+				LeftColor: 189,153,89
+				RightColor: 194,158,92
+			5: DirtRoad
+				LeftColor: 200,165,97
+				RightColor: 195,159,93
+			6: DirtRoad
+				LeftColor: 185,150,86
+				RightColor: 178,139,75
+			7: DirtRoad
+				LeftColor: 193,157,89
+				RightColor: 205,168,101
+			9: DirtRoad
+				LeftColor: 196,161,94
+				RightColor: 176,137,73
+			10: DirtRoad
+				LeftColor: 180,143,78
+				RightColor: 201,164,97
+			13: DirtRoad
+				LeftColor: 188,150,85
+				RightColor: 194,157,91
+	Template@198:
+		Category: DirtRoads Straight
+		Id: 198
+		Images: Droads16.des
+		Size: 2, 4
+		Tiles:
+			1: Clear
+				LeftColor: 209,175,106
+				RightColor: 212,177,107
+			2: Clear
+				LeftColor: 207,173,104
+				RightColor: 206,171,103
+			3: Clear
+				LeftColor: 202,167,100
+				RightColor: 206,170,102
+			4: Clear
+				LeftColor: 205,171,102
+				RightColor: 203,168,101
+			5: Clear
+				LeftColor: 208,174,105
+				RightColor: 206,170,102
+			6: Clear
+				LeftColor: 212,177,107
+				RightColor: 211,174,105
+	Template@199:
+		Category: DirtRoads Straight
+		Id: 199
+		Images: Droads17.des
+		Size: 4, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 183,147,83
+				RightColor: 202,166,98
+			1: DirtRoad
+				LeftColor: 186,150,86
+				RightColor: 202,167,99
+			2: DirtRoad
+				LeftColor: 183,148,85
+				RightColor: 194,158,92
+			3: DirtRoad
+				LeftColor: 180,143,80
+				RightColor: 201,165,99
+			4: DirtRoad
+				LeftColor: 208,172,103
+				RightColor: 197,159,94
+			5: DirtRoad
+				LeftColor: 210,175,106
+				RightColor: 192,155,90
+			6: DirtRoad
+				LeftColor: 209,174,104
+				RightColor: 195,157,90
+			7: DirtRoad
+				LeftColor: 211,176,106
+				RightColor: 192,155,89
+	Template@200:
+		Category: DirtRoads Straight
+		Id: 200
+		Images: Droads18.des
+		Size: 4, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 193,158,92
+				RightColor: 206,171,103
+			1: DirtRoad
+				LeftColor: 184,148,84
+				RightColor: 194,157,90
+			2: DirtRoad
+				LeftColor: 182,145,80
+				RightColor: 194,159,94
+			3: DirtRoad
+				LeftColor: 187,151,86
+				RightColor: 200,165,97
+			4: DirtRoad
+				LeftColor: 204,169,101
+				RightColor: 191,154,88
+			5: DirtRoad
+				LeftColor: 208,173,103
+				RightColor: 206,170,103
+			6: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 207,171,103
+			7: DirtRoad
+				LeftColor: 209,175,105
+				RightColor: 191,154,88
+	Template@201:
+		Category: DirtRoads Straight
+		Id: 201
+		Images: Droads19.des
+		Size: 4, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 197,162,95
+				RightColor: 209,173,104
+			1: DirtRoad
+				LeftColor: 201,166,99
+				RightColor: 205,171,103
+			2: DirtRoad
+				LeftColor: 199,164,97
+				RightColor: 203,167,99
+			3: DirtRoad
+				LeftColor: 193,159,93
+				RightColor: 203,168,100
+			4: DirtRoad
+				LeftColor: 203,168,100
+				RightColor: 201,164,96
+			5: DirtRoad
+				LeftColor: 210,175,106
+				RightColor: 208,172,104
+			6: DirtRoad
+				LeftColor: 210,176,106
+				RightColor: 206,171,102
+			7: DirtRoad
+				LeftColor: 212,177,108
+				RightColor: 197,161,93
+	Template@202:
+		Category: DirtRoads Straight
+		Id: 202
+		Images: Droads20.des
+		Size: 4, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 188,152,88
+				RightColor: 203,167,99
+			1: DirtRoad
+				LeftColor: 188,152,86
+				RightColor: 205,170,102
+			2: DirtRoad
+				LeftColor: 194,159,94
+				RightColor: 200,165,97
+			3: DirtRoad
+				LeftColor: 189,152,87
+				RightColor: 205,169,101
+			4: DirtRoad
+				LeftColor: 204,169,101
+				RightColor: 187,150,85
+			5: DirtRoad
+				LeftColor: 205,168,100
+				RightColor: 187,149,86
+			6: DirtRoad
+				LeftColor: 197,161,93
+				RightColor: 181,144,81
+			7: DirtRoad
+				LeftColor: 200,164,95
+				RightColor: 187,149,82
+	Template@203:
+		Category: DirtRoads Straight
+		Id: 203
+		Images: Droads21.des
+		Size: 3, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 194,160,93
+				RightColor: 203,167,99
+			1: DirtRoad
+				LeftColor: 189,154,89
+				RightColor: 199,164,97
+			2: DirtRoad
+				LeftColor: 195,160,93
+				RightColor: 199,163,96
+			3: DirtRoad
+				LeftColor: 203,168,100
+				RightColor: 194,158,91
+			4: DirtRoad
+				LeftColor: 208,173,104
+				RightColor: 207,171,103
+			5: DirtRoad
+				LeftColor: 212,177,108
+				RightColor: 196,160,93
+	Template@204:
+		Category: DirtRoads Straight
+		Id: 204
+		Images: Droads22.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 185,150,86
+				RightColor: 204,169,100
+			1: DirtRoad
+				LeftColor: 192,155,91
+				RightColor: 199,164,97
+			2: DirtRoad
+				LeftColor: 207,172,103
+				RightColor: 187,148,82
+			3: DirtRoad
+				LeftColor: 203,167,99
+				RightColor: 192,155,89
+	Template@205:
+		Category: DirtRoads Straight
+		Id: 205
+		Images: Droads23.des
+		Size: 1, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 188,153,88
+				RightColor: 202,167,99
+			1: DirtRoad
+				LeftColor: 206,172,103
+				RightColor: 192,155,89
+	Template@206:
+		Category: DirtRoads Straight
+		Id: 206
+		Images: Droads24.des
+		Size: 1, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 191,155,89
+				RightColor: 202,166,98
+			1: DirtRoad
+				LeftColor: 202,168,99
+				RightColor: 194,159,93
+	Template@207:
+		Category: DirtRoads Straight
+		Id: 207
+		Images: Droads25.des
+		Size: 3, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 194,159,94
+				RightColor: 206,171,102
+			1: DirtRoad
+				LeftColor: 204,170,101
+				RightColor: 209,174,104
+			2: Clear
+				LeftColor: 209,174,106
+				RightColor: 213,179,109
+			3: DirtRoad
+				LeftColor: 206,171,103
+				RightColor: 189,151,87
+			4: DirtRoad
+				LeftColor: 205,170,101
+				RightColor: 202,166,98
+			5: Clear
+				LeftColor: 211,177,108
+				RightColor: 212,176,107
+	Template@208:
+		Category: DirtRoads Straight
+		Id: 208
+		Images: Droads26.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 194,159,93
+				RightColor: 208,173,104
+			1: DirtRoad
+				LeftColor: 204,169,101
+				RightColor: 211,176,106
+			2: DirtRoad
+				LeftColor: 207,171,103
+				RightColor: 199,162,94
+			3: DirtRoad
+				LeftColor: 204,169,100
+				RightColor: 202,167,98
+	Template@209:
+		Category: DirtRoads Straight
+		Id: 209
+		Images: Droads27.des
+		Size: 3, 3
+		Tiles:
+			1: Clear
+				LeftColor: 210,175,106
+				RightColor: 212,178,108
+			2: Clear
+				LeftColor: 212,178,109
+				RightColor: 212,177,107
+			3: DirtRoad
+				LeftColor: 198,163,95
+				RightColor: 211,176,107
+			4: DirtRoad
+				LeftColor: 206,173,104
+				RightColor: 206,170,102
+			5: Clear
+				LeftColor: 211,177,108
+				RightColor: 212,176,106
+			6: DirtRoad
+				LeftColor: 207,172,103
+				RightColor: 202,166,99
+			7: DirtRoad
+				LeftColor: 209,174,105
+				RightColor: 209,174,105
+	Template@210:
+		Category: DirtRoads Straight
+		Id: 210
+		Images: Droads28.des
+		Size: 3, 2
+		Tiles:
+			0: Clear
+				LeftColor: 209,175,106
+				RightColor: 210,175,106
+			1: DirtRoad
+				LeftColor: 206,171,104
+				RightColor: 204,169,101
+			2: DirtRoad
+				LeftColor: 192,157,90
+				RightColor: 200,165,98
+			3: Clear
+				LeftColor: 212,178,108
+				RightColor: 207,172,103
+			4: DirtRoad
+				LeftColor: 210,177,107
+				RightColor: 208,173,104
+			5: DirtRoad
+				LeftColor: 211,177,108
+				RightColor: 196,161,94
+	Template@211:
+		Category: DirtRoads Straight
+		Id: 211
+		Images: Droads29.des
+		Size: 2, 2
+		Tiles:
+			0: Clear
+				LeftColor: 212,178,108
+				RightColor: 209,174,105
+			1: DirtRoad
+				LeftColor: 199,165,97
+				RightColor: 205,170,102
+			2: Clear
+				LeftColor: 213,178,109
+				RightColor: 210,175,105
+			3: DirtRoad
+				LeftColor: 211,178,108
+				RightColor: 198,162,94
+	Template@212:
+		Category: DirtRoads Straight
+		Id: 212
+		Images: Droads30.des
+		Size: 2, 2
+		Tiles:
+			0: Clear
+				LeftColor: 207,173,104
+				RightColor: 211,175,105
+			1: DirtRoad
+				LeftColor: 199,165,97
+				RightColor: 206,171,102
+			2: Clear
+				LeftColor: 213,178,108
+				RightColor: 206,171,102
+			3: DirtRoad
+				LeftColor: 204,170,101
+				RightColor: 199,164,97
+	Template@213:
+		Category: DirtRoads Straight
+		Id: 213
+		Images: Droads31.des
+		Size: 4, 3
+		Tiles:
+			0: DirtRoad
+				LeftColor: 196,161,94
+				RightColor: 206,170,103
+			1: Clear
+				LeftColor: 202,167,100
+				RightColor: 213,177,108
+			4: DirtRoad
+				LeftColor: 206,171,102
+				RightColor: 192,156,89
+			5: DirtRoad
+				LeftColor: 207,173,103
+				RightColor: 194,157,91
+			6: DirtRoad
+				LeftColor: 189,154,88
+				RightColor: 205,170,103
+			7: DirtRoad
+				LeftColor: 191,157,92
+				RightColor: 202,167,100
+			10: Clear
+				LeftColor: 213,179,109
+				RightColor: 200,164,96
+			11: DirtRoad
+				LeftColor: 207,172,103
+				RightColor: 190,155,90
+	Template@214:
+		Category: DirtRoads Straight
+		Id: 214
+		Images: Droads32.des
+		Size: 4, 3
+		Tiles:
+			2: Clear
+				LeftColor: 202,168,102
+				RightColor: 205,169,101
+			3: DirtRoad
+				LeftColor: 193,158,92
+				RightColor: 204,169,101
+			4: DirtRoad
+				LeftColor: 186,151,86
+				RightColor: 204,169,101
+			5: DirtRoad
+				LeftColor: 196,162,96
+				RightColor: 197,161,94
+			6: DirtRoad
+				LeftColor: 197,162,95
+				RightColor: 195,159,93
+			7: DirtRoad
+				LeftColor: 207,172,104
+				RightColor: 190,154,89
+			8: DirtRoad
+				LeftColor: 204,170,101
+				RightColor: 198,163,96
+			9: Clear
+				LeftColor: 202,167,99
+				RightColor: 201,165,99
+	Template@215:
+		Category: DirtRoads Straight
+		Id: 215
+		Images: Droads33.des
+		Size: 4, 2
+		Tiles:
+			0: Clear
+				LeftColor: 212,178,109
+				RightColor: 209,175,106
+			1: Clear
+				LeftColor: 204,170,102
+				RightColor: 209,174,105
+			2: Clear
+				LeftColor: 210,176,107
+				RightColor: 210,175,106
+			3: Clear
+				LeftColor: 208,174,105
+				RightColor: 212,176,106
+			4: Clear
+				LeftColor: 211,177,107
+				RightColor: 210,175,106
+			5: Clear
+				LeftColor: 211,176,107
+				RightColor: 209,173,104
+			6: Clear
+				LeftColor: 211,176,107
+				RightColor: 206,171,103
+			7: Clear
+				LeftColor: 211,177,107
+				RightColor: 212,177,107
+	Template@216:
+		Category: DirtRoads Straight
+		Id: 216
+		Images: Droads34.des
+		Size: 4, 4
+		Tiles:
+			1: DirtRoad
+				LeftColor: 210,176,107
+				RightColor: 213,177,108
+			4: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 196,160,93
+			5: DirtRoad
+				LeftColor: 185,150,85
+				RightColor: 196,160,94
+			6: DirtRoad
+				LeftColor: 201,167,99
+				RightColor: 212,177,107
+			9: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 191,156,91
+			10: DirtRoad
+				LeftColor: 177,141,79
+				RightColor: 189,151,86
+			11: DirtRoad
+				LeftColor: 200,166,98
+				RightColor: 212,177,107
+			14: DirtRoad
+				LeftColor: 213,178,109
+				RightColor: 190,154,89
+			15: DirtRoad
+				LeftColor: 191,155,89
+				RightColor: 198,163,96
+	Template@217:
+		Category: DirtRoads Straight
+		Id: 217
+		Images: Droads35.des
+		Size: 4, 4
+		Tiles:
+			1: DirtRoad
+				LeftColor: 206,172,104
+				RightColor: 212,176,107
+			4: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 201,165,97
+			5: DirtRoad
+				LeftColor: 187,152,87
+				RightColor: 193,158,93
+			6: DirtRoad
+				LeftColor: 204,169,101
+				RightColor: 212,177,107
+			9: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 200,164,96
+			10: DirtRoad
+				LeftColor: 182,148,84
+				RightColor: 188,152,89
+			11: DirtRoad
+				LeftColor: 203,168,100
+				RightColor: 213,177,107
+			14: DirtRoad
+				LeftColor: 212,177,108
+				RightColor: 196,160,93
+			15: DirtRoad
+				LeftColor: 186,150,85
+				RightColor: 200,164,97
+	Template@218:
+		Category: DirtRoads Straight
+		Id: 218
+		Images: Droads36.des
+		Size: 4, 4
+		Tiles:
+			1: DirtRoad
+				LeftColor: 210,176,106
+				RightColor: 213,179,109
+			4: DirtRoad
+				LeftColor: 213,178,109
+				RightColor: 196,160,93
+			5: DirtRoad
+				LeftColor: 187,151,87
+				RightColor: 202,167,99
+			6: DirtRoad
+				LeftColor: 206,172,104
+				RightColor: 213,177,107
+			9: DirtRoad
+				LeftColor: 213,178,109
+				RightColor: 195,159,93
+			10: DirtRoad
+				LeftColor: 198,163,96
+				RightColor: 200,165,98
+			11: DirtRoad
+				LeftColor: 208,173,104
+				RightColor: 212,177,107
+			14: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 200,164,97
+			15: DirtRoad
+				LeftColor: 189,155,89
+				RightColor: 205,169,101
+	Template@219:
+		Category: DirtRoads Straight
+		Id: 219
+		Images: Droads37.des
+		Size: 4, 4
+		Tiles:
+			1: DirtRoad
+				LeftColor: 210,176,107
+				RightColor: 213,177,107
+			4: DirtRoad
+				LeftColor: 213,178,109
+				RightColor: 196,161,95
+			5: DirtRoad
+				LeftColor: 185,150,87
+				RightColor: 201,166,97
+			6: DirtRoad
+				LeftColor: 207,172,104
+				RightColor: 213,179,109
+			9: DirtRoad
+				LeftColor: 213,178,109
+				RightColor: 201,164,97
+			10: DirtRoad
+				LeftColor: 183,148,84
+				RightColor: 199,163,96
+			11: DirtRoad
+				LeftColor: 208,174,106
+				RightColor: 213,177,108
+			14: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 201,165,97
+			15: DirtRoad
+				LeftColor: 194,158,92
+				RightColor: 203,168,100
+	Template@220:
+		Category: DirtRoads Straight
+		Id: 220
+		Images: Droads38.des
+		Size: 3, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 205,170,102
+				RightColor: 212,178,109
+			3: DirtRoad
+				LeftColor: 213,178,109
+				RightColor: 201,165,97
+			4: DirtRoad
+				LeftColor: 183,148,84
+				RightColor: 191,154,88
+			5: DirtRoad
+				LeftColor: 208,174,105
+				RightColor: 212,176,107
+			7: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 201,165,97
+			8: DirtRoad
+				LeftColor: 180,145,82
+				RightColor: 196,160,94
+	Template@221:
+		Category: DirtRoads Straight
+		Id: 221
+		Images: Droads39.des
+		Size: 2, 2
+		Tiles:
+			1: DirtRoad
+				LeftColor: 207,173,105
+				RightColor: 213,177,107
+			2: DirtRoad
+				LeftColor: 213,178,109
+				RightColor: 197,161,95
+			3: DirtRoad
+				LeftColor: 189,153,88
+				RightColor: 202,167,99
+	Template@222:
+		Category: DirtRoads Straight
+		Id: 222
+		Images: Droads40.des
+		Size: 2, 2
+		Tiles:
+			1: DirtRoad
+				LeftColor: 207,173,105
+				RightColor: 213,177,108
+			2: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 194,158,92
+			3: DirtRoad
+				LeftColor: 188,153,88
+				RightColor: 194,158,91
+	Template@223:
+		Category: DirtRoads Straight
+		Id: 223
+		Images: Droads41.des
+		Size: 4, 4
+		Tiles:
+			1: DirtRoad
+				LeftColor: 204,170,102
+				RightColor: 212,176,106
+			4: DirtRoad
+				LeftColor: 213,178,108
+				RightColor: 199,164,96
+			5: DirtRoad
+				LeftColor: 191,156,90
+				RightColor: 200,164,97
+			6: DirtRoad
+				LeftColor: 206,171,102
+				RightColor: 211,176,107
+			9: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 202,167,99
+			10: DirtRoad
+				LeftColor: 205,170,102
+				RightColor: 209,174,105
+			11: Clear
+				LeftColor: 210,176,107
+				RightColor: 213,177,108
+			14: Clear
+				LeftColor: 213,179,109
+				RightColor: 209,175,106
+			15: Clear
+				LeftColor: 213,178,109
+				RightColor: 211,176,106
+	Template@224:
+		Category: DirtRoads Straight
+		Id: 224
+		Images: Droads42.des
+		Size: 4, 5
+		Tiles:
+			1: DirtRoad
+				LeftColor: 208,173,105
+				RightColor: 213,179,109
+			4: DirtRoad
+				LeftColor: 212,177,108
+				RightColor: 201,165,97
+			5: DirtRoad
+				LeftColor: 196,161,94
+				RightColor: 201,166,99
+			6: Clear
+				LeftColor: 207,173,104
+				RightColor: 212,176,107
+			9: Clear
+				LeftColor: 207,173,104
+				RightColor: 201,166,100
+			10: Clear
+				LeftColor: 204,169,101
+				RightColor: 204,168,101
+			11: Clear
+				LeftColor: 211,177,107
+				RightColor: 211,176,106
+			13: Clear
+				LeftColor: 212,178,108
+				RightColor: 207,171,102
+			14: Clear
+				LeftColor: 208,174,104
+				RightColor: 209,173,105
+			18: Clear
+				LeftColor: 212,178,108
+				RightColor: 208,173,105
+	Template@225:
+		Category: DirtRoads Straight
+		Id: 225
+		Images: Droads43.des
+		Size: 3, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 209,175,106
+				RightColor: 212,177,108
+			3: DirtRoad
+				LeftColor: 211,177,107
+				RightColor: 200,164,97
+			4: DirtRoad
+				LeftColor: 196,161,94
+				RightColor: 202,166,98
+			5: DirtRoad
+				LeftColor: 205,170,102
+				RightColor: 210,175,106
+			7: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 207,172,104
+			8: DirtRoad
+				LeftColor: 210,175,106
+				RightColor: 210,175,106
+	Template@226:
+		Category: DirtRoads Straight
+		Id: 226
+		Images: Droads44.des
+		Size: 4, 4
+		Tiles:
+			1: Clear
+				LeftColor: 208,174,105
+				RightColor: 212,178,108
+			4: Clear
+				LeftColor: 213,178,109
+				RightColor: 212,176,107
+			5: Clear
+				LeftColor: 209,175,106
+				RightColor: 206,171,103
+			6: Clear
+				LeftColor: 207,173,105
+				RightColor: 213,177,107
+			9: Clear
+				LeftColor: 211,177,107
+				RightColor: 209,173,105
+			10: DirtRoad
+				LeftColor: 198,164,97
+				RightColor: 198,163,97
+			11: DirtRoad
+				LeftColor: 201,166,98
+				RightColor: 212,178,108
+			14: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 199,163,95
+			15: DirtRoad
+				LeftColor: 193,158,91
+				RightColor: 204,167,99
+	Template@227:
+		Category: DirtRoads Straight
+		Id: 227
+		Images: Droads45.des
+		Size: 2, 3
+		Tiles:
+			0: Clear
+				LeftColor: 209,175,106
+				RightColor: 208,172,103
+			1: Clear
+				LeftColor: 208,173,104
+				RightColor: 211,176,107
+			2: Clear
+				LeftColor: 207,173,104
+				RightColor: 202,167,99
+			3: DirtRoad
+				LeftColor: 198,163,95
+				RightColor: 210,174,106
+			4: DirtRoad
+				LeftColor: 210,176,107
+				RightColor: 204,168,99
+			5: DirtRoad
+				LeftColor: 192,157,91
+				RightColor: 202,166,99
+	Template@228:
+		Category: DirtRoads Straight
+		Id: 228
+		Images: Droads46.des
+		Size: 3, 3
+		Tiles:
+			1: Clear
+				LeftColor: 209,175,106
+				RightColor: 211,176,107
+			3: Clear
+				LeftColor: 211,178,108
+				RightColor: 206,171,102
+			4: Clear
+				LeftColor: 205,171,102
+				RightColor: 208,172,103
+			5: DirtRoad
+				LeftColor: 205,170,101
+				RightColor: 213,177,108
+			7: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 208,173,104
+			8: DirtRoad
+				LeftColor: 197,162,95
+				RightColor: 202,166,99
+	Template@229:
+		Category: DirtRoads Straight
+		Id: 229
+		Images: Droads47.des
+		Size: 5, 3
+		Tiles:
+			1: DirtRoad
+				LeftColor: 205,171,103
+				RightColor: 210,175,105
+			2: Clear
+				LeftColor: 209,175,106
+				RightColor: 212,177,107
+			5: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 201,165,98
+			6: DirtRoad
+				LeftColor: 198,163,95
+				RightColor: 203,167,99
+			7: DirtRoad
+				LeftColor: 207,173,104
+				RightColor: 207,171,103
+			8: DirtRoad
+				LeftColor: 203,169,101
+				RightColor: 212,178,109
+			9: Clear
+				LeftColor: 214,180,110
+				RightColor: 213,177,108
+			11: Clear
+				LeftColor: 213,178,109
+				RightColor: 211,176,107
+			12: DirtRoad
+				LeftColor: 210,176,106
+				RightColor: 207,171,103
+			13: DirtRoad
+				LeftColor: 212,177,107
+				RightColor: 200,165,96
+			14: DirtRoad
+				LeftColor: 196,161,95
+				RightColor: 205,170,101
+	Template@230:
+		Category: DirtRoads Straight
+		Id: 230
+		Images: Droads48.des
+		Size: 3, 5
+		Tiles:
+			1: Road
+				LeftColor: 211,176,107
+				RightColor: 213,179,109
+			3: Road
+				LeftColor: 209,175,106
+				RightColor: 196,160,93
+			4: Road
+				LeftColor: 207,172,103
+				RightColor: 210,174,105
+			6: Clear
+				LeftColor: 213,178,109
+				RightColor: 209,173,105
+			7: Road
+				LeftColor: 199,164,96
+				RightColor: 204,168,100
+			8: Clear
+				LeftColor: 210,176,106
+				RightColor: 212,177,107
+			10: Road
+				LeftColor: 208,174,105
+				RightColor: 199,163,96
+			11: Road
+				LeftColor: 207,172,103
+				RightColor: 212,177,107
+			13: Clear
+				LeftColor: 213,179,109
+				RightColor: 209,173,103
+			14: Road
+				LeftColor: 200,165,98
+				RightColor: 206,170,101
+	Template@231:
+		Category: DirtRoads Straight
+		Id: 231
+		Images: Droads49.des
+		Size: 4, 4
+		Tiles:
+			1: Clear
+				LeftColor: 212,178,108
+				RightColor: 212,176,107
+			4: Clear
+				LeftColor: 212,178,108
+				RightColor: 211,175,105
+			5: DirtRoad
+				LeftColor: 207,171,103
+				RightColor: 208,172,103
+			6: Clear
+				LeftColor: 210,176,106
+				RightColor: 211,176,106
+			9: Clear
+				LeftColor: 212,178,108
+				RightColor: 207,172,103
+			10: DirtRoad
+				LeftColor: 204,169,100
+				RightColor: 212,177,108
+			11: Clear
+				LeftColor: 212,178,109
+				RightColor: 212,177,107
+			14: Clear
+				LeftColor: 213,178,109
+				RightColor: 208,172,104
+			15: Clear
+				LeftColor: 209,175,106
+				RightColor: 210,174,105
+	Template@232:
+		Category: DirtRoads Straight
+		Id: 232
+		Images: Droads50.des
+		Size: 2, 4
+		Tiles:
+			0: DirtRoad
+				LeftColor: 207,173,104
+				RightColor: 190,153,88
+			1: DirtRoad
+				LeftColor: 198,160,92
+				RightColor: 211,175,105
+			2: DirtRoad
+				LeftColor: 203,168,101
+				RightColor: 195,157,89
+			3: DirtRoad
+				LeftColor: 204,169,99
+				RightColor: 209,173,104
+			4: DirtRoad
+				LeftColor: 203,169,101
+				RightColor: 197,161,94
+			5: DirtRoad
+				LeftColor: 197,162,95
+				RightColor: 207,170,101
+			6: DirtRoad
+				LeftColor: 209,174,105
+				RightColor: 194,158,92
+			7: DirtRoad
+				LeftColor: 195,157,89
+				RightColor: 208,170,101
+	Template@233:
+		Category: DirtRoads Straight
+		Id: 233
+		Images: Droads51.des
+		Size: 2, 4
+		Tiles:
+			0: Clear
+				LeftColor: 199,164,98
+				RightColor: 190,153,88
+			1: Clear
+				LeftColor: 199,160,91
+				RightColor: 209,174,105
+			2: Clear
+				LeftColor: 190,155,88
+				RightColor: 193,155,90
+			3: Clear
+				LeftColor: 206,171,101
+				RightColor: 210,173,103
+			4: Clear
+				LeftColor: 195,160,94
+				RightColor: 195,157,90
+			5: Clear
+				LeftColor: 202,166,98
+				RightColor: 210,175,106
+			6: Clear
+				LeftColor: 205,170,102
+				RightColor: 186,148,81
+			7: Clear
+				LeftColor: 200,163,94
+				RightColor: 210,174,104
+	Template@234:
+		Category: DirtRoads Straight
+		Id: 234
+		Images: Droads52.des
+		Size: 2, 4
+		Tiles:
+			0: DirtRoad
+				LeftColor: 211,177,108
+				RightColor: 194,158,92
+			1: DirtRoad
+				LeftColor: 186,150,86
+				RightColor: 208,172,104
+			2: DirtRoad
+				LeftColor: 208,174,105
+				RightColor: 204,169,101
+			3: DirtRoad
+				LeftColor: 176,142,79
+				RightColor: 190,153,88
+			4: DirtRoad
+				LeftColor: 199,165,99
+				RightColor: 189,154,89
+			5: DirtRoad
+				LeftColor: 181,146,82
+				RightColor: 199,163,97
+			6: DirtRoad
+				LeftColor: 197,163,96
+				RightColor: 177,140,77
+			7: DirtRoad
+				LeftColor: 195,158,91
+				RightColor: 208,171,102
+	Template@235:
+		Category: DirtRoads Straight
+		Id: 235
+		Images: Droads53.des
+		Size: 2, 4
+		Tiles:
+			0: DirtRoad
+				LeftColor: 210,176,106
+				RightColor: 194,159,94
+			1: DirtRoad
+				LeftColor: 197,161,94
+				RightColor: 209,173,104
+			2: DirtRoad
+				LeftColor: 208,173,105
+				RightColor: 199,164,98
+			3: DirtRoad
+				LeftColor: 198,163,95
+				RightColor: 207,171,103
+			4: DirtRoad
+				LeftColor: 203,169,102
+				RightColor: 194,160,94
+			5: DirtRoad
+				LeftColor: 199,163,96
+				RightColor: 205,170,101
+			6: DirtRoad
+				LeftColor: 202,168,100
+				RightColor: 181,143,79
+			7: DirtRoad
+				LeftColor: 193,157,91
+				RightColor: 209,173,104
+	Template@236:
+		Category: DirtRoads Straight
+		Id: 236
+		Images: Droads54.des
+		Size: 2, 3
+		Tiles:
+			0: DirtRoad
+				LeftColor: 205,171,103
+				RightColor: 185,149,85
+			1: DirtRoad
+				LeftColor: 192,156,90
+				RightColor: 209,173,104
+			2: DirtRoad
+				LeftColor: 199,165,99
+				RightColor: 189,155,90
+			3: DirtRoad
+				LeftColor: 193,156,90
+				RightColor: 206,171,103
+			4: DirtRoad
+				LeftColor: 203,169,101
+				RightColor: 180,143,79
+			5: DirtRoad
+				LeftColor: 200,164,96
+				RightColor: 208,172,104
+	Template@237:
+		Category: DirtRoads Straight
+		Id: 237
+		Images: Droads55.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 205,172,104
+				RightColor: 189,153,88
+			1: DirtRoad
+				LeftColor: 189,153,88
+				RightColor: 208,172,103
+			2: DirtRoad
+				LeftColor: 205,170,103
+				RightColor: 185,151,87
+			3: DirtRoad
+				LeftColor: 198,161,94
+				RightColor: 208,172,104
+	Template@238:
+		Category: DirtRoads Straight
+		Id: 238
+		Images: Droads56.des
+		Size: 2, 1
+		Tiles:
+			0: DirtRoad
+				LeftColor: 207,173,104
+				RightColor: 189,154,90
+			1: DirtRoad
+				LeftColor: 187,150,84
+				RightColor: 208,172,104
+	Template@239:
+		Category: DirtRoads Straight
+		Id: 239
+		Images: Droads57.des
+		Size: 2, 1
+		Tiles:
+			0: DirtRoad
+				LeftColor: 205,171,103
+				RightColor: 182,145,81
+			1: DirtRoad
+				LeftColor: 196,159,93
+				RightColor: 210,174,105
+	Template@240:
+		Category: DirtRoads Straight
+		Id: 240
+		Images: Droads58.des
+		Size: 2, 4
+		Tiles:
+			0: Clear
+				LeftColor: 210,177,107
+				RightColor: 209,174,105
+			1: Clear
+				LeftColor: 209,175,106
+				RightColor: 211,176,107
+			2: Clear
+				LeftColor: 202,168,101
+				RightColor: 202,166,99
+			3: Clear
+				LeftColor: 205,170,102
+				RightColor: 209,173,104
+			4: DirtRoad
+				LeftColor: 194,161,95
+				RightColor: 202,167,100
+			5: DirtRoad
+				LeftColor: 206,171,103
+				RightColor: 208,174,106
+			6: DirtRoad
+				LeftColor: 202,168,100
+				RightColor: 185,149,84
+			7: DirtRoad
+				LeftColor: 201,165,97
+				RightColor: 208,172,103
+	Template@241:
+		Category: DirtRoads Straight
+		Id: 241
+		Images: Droads59.des
+		Size: 3, 3
+		Tiles:
+			0: Clear
+				LeftColor: 208,174,106
+				RightColor: 208,174,105
+			1: Clear
+				LeftColor: 211,177,109
+				RightColor: 212,177,108
+			3: DirtRoad
+				LeftColor: 201,168,100
+				RightColor: 198,163,96
+			4: DirtRoad
+				LeftColor: 198,163,96
+				RightColor: 208,173,104
+			5: Clear
+				LeftColor: 209,175,105
+				RightColor: 211,176,106
+			6: DirtRoad
+				LeftColor: 204,169,102
+				RightColor: 185,150,86
+			7: DirtRoad
+				LeftColor: 201,165,97
+				RightColor: 209,173,105
+	Template@242:
+		Category: DirtRoads Straight
+		Id: 242
+		Images: Droads60.des
+		Size: 2, 3
+		Tiles:
+			0: Clear
+				LeftColor: 209,175,105
+				RightColor: 210,175,105
+			2: Clear
+				LeftColor: 207,173,105
+				RightColor: 206,170,102
+			3: DirtRoad
+				LeftColor: 205,171,103
+				RightColor: 210,175,106
+			4: DirtRoad
+				LeftColor: 203,169,101
+				RightColor: 189,152,87
+			5: DirtRoad
+				LeftColor: 195,159,92
+				RightColor: 207,172,103
+	Template@243:
+		Category: DirtRoads Straight
+		Id: 243
+		Images: Droads61.des
+		Size: 2, 4
+		Tiles:
+			0: DirtRoad
+				LeftColor: 208,174,105
+				RightColor: 196,161,95
+			1: DirtRoad
+				LeftColor: 188,152,86
+				RightColor: 208,172,103
+			2: DirtRoad
+				LeftColor: 208,173,105
+				RightColor: 203,168,101
+			3: DirtRoad
+				LeftColor: 198,163,96
+				RightColor: 205,170,101
+			4: Clear
+				LeftColor: 207,173,104
+				RightColor: 205,170,102
+			5: Clear
+				LeftColor: 214,179,110
+				RightColor: 211,176,106
+			6: Clear
+				LeftColor: 209,174,105
+				RightColor: 209,174,104
+	Template@244:
+		Category: DirtRoads Straight
+		Id: 244
+		Images: Droads62.des
+		Size: 2, 4
+		Tiles:
+			0: DirtRoad
+				LeftColor: 206,172,104
+				RightColor: 191,156,92
+			1: DirtRoad
+				LeftColor: 191,156,90
+				RightColor: 210,174,105
+			2: DirtRoad
+				LeftColor: 207,173,104
+				RightColor: 205,169,100
+			3: DirtRoad
+				LeftColor: 197,162,95
+				RightColor: 205,168,100
+			4: DirtRoad
+				LeftColor: 210,176,106
+				RightColor: 205,170,103
+			5: Clear
+				LeftColor: 204,169,101
+				RightColor: 206,170,101
+			6: Clear
+				LeftColor: 213,178,109
+				RightColor: 213,177,108
+			7: Clear
+				LeftColor: 212,178,108
+				RightColor: 211,176,106
+	Template@245:
+		Category: DirtRoads Straight
+		Id: 245
+		Images: Droads63.des
+		Size: 2, 2
+		Tiles:
+			0: DirtRoad
+				LeftColor: 209,175,106
+				RightColor: 193,158,92
+			1: DirtRoad
+				LeftColor: 194,158,91
+				RightColor: 211,176,107
+			2: Clear
+				LeftColor: 210,175,106
+				RightColor: 209,174,104
+			3: Clear
+				LeftColor: 207,173,104
+				RightColor: 205,169,101
+	Template@246:
+		Category: DirtRoads Straight
+		Id: 246
+		Images: Droads64.des
+		Size: 3, 4
+		Tiles:
+			1: DirtRoad
+				LeftColor: 208,174,105
+				RightColor: 193,157,91
+			2: DirtRoad
+				LeftColor: 192,158,91
+				RightColor: 210,174,105
+			4: DirtRoad
+				LeftColor: 210,175,106
+				RightColor: 200,164,97
+			5: DirtRoad
+				LeftColor: 208,174,105
+				RightColor: 206,171,102
+			6: Clear
+				LeftColor: 204,170,102
+				RightColor: 207,172,103
+			7: DirtRoad
+				LeftColor: 205,171,103
+				RightColor: 208,172,103
+			9: DirtRoad
+				LeftColor: 198,164,97
+				RightColor: 186,151,88
+			10: DirtRoad
+				LeftColor: 202,167,99
+				RightColor: 209,173,105
+	Template@247:
+		Category: DirtRoads Straight
+		Id: 247
+		Images: Droads65.des
+		Size: 3, 4
+		Tiles:
+			0: DirtRoad
+				LeftColor: 212,178,108
+				RightColor: 193,157,90
+			1: DirtRoad
+				LeftColor: 186,151,85
+				RightColor: 206,170,102
+			3: Clear
+				LeftColor: 211,176,107
+				RightColor: 203,168,100
+			4: DirtRoad
+				LeftColor: 192,157,91
+				RightColor: 198,161,95
+			7: DirtRoad
+				LeftColor: 188,155,90
+				RightColor: 195,159,94
+			8: Clear
+				LeftColor: 210,176,107
+				RightColor: 211,176,106
+			10: DirtRoad
+				LeftColor: 198,163,97
+				RightColor: 178,143,80
+			11: DirtRoad
+				LeftColor: 203,166,98
+				RightColor: 211,175,105
+	Template@248:
+		Category: DirtRoads Straight
+		Id: 248
+		Images: Droads66.des
+		Size: 2, 3
+		Tiles:
+			0: Clear
+				LeftColor: 208,174,105
+				RightColor: 207,172,103
+			1: Clear
+				LeftColor: 210,175,106
+				RightColor: 212,177,107
+			2: Clear
+				LeftColor: 210,176,107
+				RightColor: 204,168,99
+			3: Clear
+				LeftColor: 202,167,99
+				RightColor: 209,174,105
+			5: Clear
+				LeftColor: 210,176,107
+				RightColor: 207,172,103
+	Template@265:
+		Category: Paved Roads
+		Id: 265
+		Images: Proad01.des, Proad01a.des, Proad01b.des, Proad01c.des, Proad01d.des, Proad01e.des
+		Size: 1, 3
+		Tiles:
+			0: Road
+				LeftColor: 83,85,87
+				RightColor: 131,132,128
+			1: Road
+				LeftColor: 67,69,66
+				RightColor: 65,67,67
+			2: Road
+				LeftColor: 125,126,124
+				RightColor: 75,79,82
+	Template@266:
+		Category: Paved Roads
+		Id: 266
+		Images: Proad02.des, Proad02a.des, Proad02b.des, Proad02c.des, Proad02d.des, Proad02e.des
+		Size: 3, 1
+		Tiles:
+			0: Road
+				LeftColor: 130,131,128
+				RightColor: 81,84,86
+			1: Road
+				LeftColor: 66,68,68
+				RightColor: 69,70,66
+			2: Road
+				LeftColor: 76,80,82
+				RightColor: 126,127,125
+	Template@267:
+		Category: Paved Roads
+		Id: 267
+		Images: Proad03.des
+		Size: 3, 3
+		Tiles:
+			0: Road
+				LeftColor: 84,87,88
+				RightColor: 82,85,87
+			1: Road
+				LeftColor: 69,73,77
+				RightColor: 71,74,77
+			2: Road
+				LeftColor: 84,88,93
+				RightColor: 93,95,94
+			3: Road
+				LeftColor: 64,70,76
+				RightColor: 65,70,76
+			4: Road
+				LeftColor: 59,64,69
+				RightColor: 68,71,73
+			5: Road
+				LeftColor: 65,71,78
+				RightColor: 67,72,77
+			6: Road
+				LeftColor: 90,92,91
+				RightColor: 83,87,90
+			7: Road
+				LeftColor: 69,73,77
+				RightColor: 65,71,77
+			8: Road
+				LeftColor: 84,88,90
+				RightColor: 87,89,91
+	Template@268:
+		Category: Paved Roads
+		Id: 268
+		Images: Proad04.des
+		Size: 3, 3
+		Tiles:
+			0: Road
+				LeftColor: 84,87,88
+				RightColor: 82,85,87
+			1: Road
+				LeftColor: 69,73,77
+				RightColor: 71,74,77
+			2: Road
+				LeftColor: 84,88,93
+				RightColor: 93,95,94
+			3: Road
+				LeftColor: 64,70,76
+				RightColor: 65,70,76
+			4: Road
+				LeftColor: 59,64,69
+				RightColor: 68,71,73
+			5: Road
+				LeftColor: 65,71,78
+				RightColor: 67,72,77
+			6: Road
+				LeftColor: 90,92,91
+				RightColor: 83,87,90
+			7: Road
+				LeftColor: 69,73,77
+				RightColor: 65,71,77
+			8: Road
+				LeftColor: 84,88,90
+				RightColor: 87,89,91
+	Template@269:
+		Category: Paved Roads
+		Id: 269
+		Images: Proad05.des
+		Size: 3, 3
+		Tiles:
+			0: Road
+				LeftColor: 84,87,88
+				RightColor: 82,85,87
+			1: Road
+				LeftColor: 69,73,77
+				RightColor: 71,74,77
+			2: Road
+				LeftColor: 84,88,93
+				RightColor: 93,95,94
+			3: Road
+				LeftColor: 64,70,76
+				RightColor: 65,70,76
+			4: Road
+				LeftColor: 59,64,69
+				RightColor: 68,71,73
+			5: Road
+				LeftColor: 65,71,78
+				RightColor: 67,72,77
+			6: Road
+				LeftColor: 90,92,91
+				RightColor: 83,87,90
+			7: Road
+				LeftColor: 69,73,77
+				RightColor: 65,71,77
+			8: Road
+				LeftColor: 84,88,90
+				RightColor: 87,89,91
+	Template@270:
+		Category: Paved Roads
+		Id: 270
+		Images: Proad06.des
+		Size: 3, 3
+		Tiles:
+			0: Road
+				LeftColor: 84,87,88
+				RightColor: 82,85,87
+			1: Road
+				LeftColor: 69,73,77
+				RightColor: 71,74,77
+			2: Road
+				LeftColor: 84,88,93
+				RightColor: 93,95,94
+			3: Road
+				LeftColor: 64,70,76
+				RightColor: 65,70,76
+			4: Road
+				LeftColor: 59,64,69
+				RightColor: 68,71,73
+			5: Road
+				LeftColor: 65,71,78
+				RightColor: 67,72,77
+			6: Road
+				LeftColor: 90,92,91
+				RightColor: 83,87,90
+			7: Road
+				LeftColor: 69,73,77
+				RightColor: 65,71,77
+			8: Road
+				LeftColor: 84,88,90
+				RightColor: 87,89,91
+	Template@271:
+		Category: Paved Roads
+		Id: 271
+		Images: Proad07.des
+		Size: 3, 3
+		Tiles:
+			0: Road
+				LeftColor: 84,87,88
+				RightColor: 82,85,87
+			1: Road
+				LeftColor: 69,73,77
+				RightColor: 71,74,77
+			2: Road
+				LeftColor: 84,88,93
+				RightColor: 93,95,94
+			3: Road
+				LeftColor: 64,70,76
+				RightColor: 65,70,76
+			4: Road
+				LeftColor: 59,64,69
+				RightColor: 68,71,73
+			5: Road
+				LeftColor: 65,71,78
+				RightColor: 67,72,77
+			6: Road
+				LeftColor: 90,92,91
+				RightColor: 83,87,90
+			7: Road
+				LeftColor: 69,73,77
+				RightColor: 65,71,77
+			8: Road
+				LeftColor: 84,88,90
+				RightColor: 87,89,91
+	Template@272:
+		Category: Paved Roads
+		Id: 272
+		Images: Proad08.des
+		Size: 3, 3
+		Tiles:
+			0: Road
+				LeftColor: 84,87,88
+				RightColor: 82,85,87
+			1: Road
+				LeftColor: 69,73,77
+				RightColor: 71,74,77
+			2: Road
+				LeftColor: 84,88,93
+				RightColor: 93,95,94
+			3: Road
+				LeftColor: 64,70,76
+				RightColor: 65,70,76
+			4: Road
+				LeftColor: 59,64,69
+				RightColor: 68,71,73
+			5: Road
+				LeftColor: 65,71,78
+				RightColor: 67,72,77
+			6: Road
+				LeftColor: 90,92,91
+				RightColor: 83,87,90
+			7: Road
+				LeftColor: 69,73,77
+				RightColor: 65,71,77
+			8: Road
+				LeftColor: 84,88,90
+				RightColor: 87,89,91
+	Template@273:
+		Category: Paved Roads
+		Id: 273
+		Images: Proad09.des
+		Size: 3, 3
+		Tiles:
+			0: Road
+				LeftColor: 84,87,88
+				RightColor: 82,85,87
+			1: Road
+				LeftColor: 69,73,77
+				RightColor: 71,74,77
+			2: Road
+				LeftColor: 84,88,93
+				RightColor: 93,95,94
+			3: Road
+				LeftColor: 64,70,76
+				RightColor: 65,70,76
+			4: Road
+				LeftColor: 59,64,69
+				RightColor: 68,71,73
+			5: Road
+				LeftColor: 65,71,78
+				RightColor: 67,72,77
+			6: Road
+				LeftColor: 90,92,91
+				RightColor: 83,87,90
+			7: Road
+				LeftColor: 69,73,77
+				RightColor: 65,71,77
+			8: Road
+				LeftColor: 84,88,90
+				RightColor: 87,89,91
+	Template@274:
+		Category: Paved Roads
+		Id: 274
+		Images: Proad10.des
+		Size: 4, 3
+		Tiles:
+			0: DirtRoad
+				LeftColor: 126,127,123
+				RightColor: 80,83,85
+			1: DirtRoad
+				LeftColor: 67,69,67
+				RightColor: 69,71,68
+			2: DirtRoad
+				LeftColor: 69,73,77
+				RightColor: 91,94,94
+			3: DirtRoad
+				LeftColor: 76,79,80
+				RightColor: 119,120,118
+			4: DirtRoad
+				LeftColor: 190,174,137
+				RightColor: 81,83,81
+			5: DirtRoad
+				LeftColor: 63,66,69
+				RightColor: 65,67,66
+			6: DirtRoad
+				LeftColor: 65,66,63
+				RightColor: 62,65,65
+			7: DirtRoad
+				LeftColor: 65,66,63
+				RightColor: 62,64,63
+			8: DirtRoad
+				LeftColor: 213,179,109
+				RightColor: 205,178,121
+			9: DirtRoad
+				LeftColor: 188,172,136
+				RightColor: 76,78,77
+			10: DirtRoad
+				LeftColor: 115,117,114
+				RightColor: 69,72,74
+			11: DirtRoad
+				LeftColor: 115,117,115
+				RightColor: 71,74,76
+	Template@275:
+		Category: Paved Roads
+		Id: 275
+		Images: Proad11.des
+		Size: 4, 3
+		Tiles:
+			0: DirtRoad
+				LeftColor: 77,79,80
+				RightColor: 120,121,118
+			1: DirtRoad
+				LeftColor: 72,74,75
+				RightColor: 126,125,118
+			2: DirtRoad
+				LeftColor: 85,86,82
+				RightColor: 196,176,134
+			3: DirtRoad
+				LeftColor: 211,182,123
+				RightColor: 214,179,109
+			4: DirtRoad
+				LeftColor: 62,64,62
+				RightColor: 61,63,63
+			5: DirtRoad
+				LeftColor: 62,64,60
+				RightColor: 62,64,62
+			6: DirtRoad
+				LeftColor: 60,62,60
+				RightColor: 59,62,65
+			7: DirtRoad
+				LeftColor: 86,86,83
+				RightColor: 198,178,136
+			8: DirtRoad
+				LeftColor: 114,116,114
+				RightColor: 70,73,76
+			9: DirtRoad
+				LeftColor: 79,81,81
+				RightColor: 64,67,70
+			10: DirtRoad
+				LeftColor: 58,61,61
+				RightColor: 59,61,58
+			11: DirtRoad
+				LeftColor: 69,72,73
+				RightColor: 122,123,118
+	Template@276:
+		Category: Paved Roads
+		Id: 276
+		Images: Proad12.des
+		Size: 4, 3
+		Tiles:
+			0: Road
+				LeftColor: 78,80,82
+				RightColor: 124,124,121
+			1: Rough
+				LeftColor: 81,74,66
+				RightColor: 136,121,97
+			2: Rough
+				LeftColor: 92,83,74
+				RightColor: 147,127,94
+			3: Road
+				LeftColor: 78,78,76
+				RightColor: 125,127,124
+			4: Road
+				LeftColor: 69,70,67
+				RightColor: 64,64,61
+			5: Rough
+				LeftColor: 48,48,47
+				RightColor: 70,69,67
+			6: Rough
+				LeftColor: 68,67,65
+				RightColor: 65,62,59
+			7: Road
+				LeftColor: 74,71,66
+				RightColor: 74,75,73
+			8: Road
+				LeftColor: 117,121,120
+				RightColor: 82,85,87
+			9: Rough
+				LeftColor: 93,90,81
+				RightColor: 66,64,61
+			10: Rough
+				LeftColor: 123,110,88
+				RightColor: 69,69,68
+			11: Road
+				LeftColor: 115,115,112
+				RightColor: 74,75,76
+	Template@277:
+		Category: Paved Roads
+		Id: 277
+		Images: Proad13.des
+		Size: 3, 4
+		Tiles:
+			0: DirtRoad
+				LeftColor: 120,121,118
+				RightColor: 77,79,80
+			1: DirtRoad
+				LeftColor: 61,63,63
+				RightColor: 62,64,62
+			2: DirtRoad
+				LeftColor: 70,73,76
+				RightColor: 115,116,114
+			3: DirtRoad
+				LeftColor: 75,77,78
+				RightColor: 72,75,76
+			4: DirtRoad
+				LeftColor: 57,59,59
+				RightColor: 60,62,60
+			5: DirtRoad
+				LeftColor: 71,73,74
+				RightColor: 112,114,112
+			6: DirtRoad
+				LeftColor: 63,64,62
+				RightColor: 60,62,60
+			7: DirtRoad
+				LeftColor: 61,64,65
+				RightColor: 59,62,63
+			8: DirtRoad
+				LeftColor: 125,120,108
+				RightColor: 150,144,127
+			9: DirtRoad
+				LeftColor: 115,117,114
+				RightColor: 73,75,77
+			10: DirtRoad
+				LeftColor: 155,145,123
+				RightColor: 121,116,104
+			11: DirtRoad
+				LeftColor: 208,178,119
+				RightColor: 208,178,117
+	Template@278:
+		Category: Paved Roads
+		Id: 278
+		Images: Proad14.des
+		Size: 3, 4
+		Tiles:
+			0: DirtRoad
+				LeftColor: 208,179,117
+				RightColor: 207,177,117
+			1: DirtRoad
+				LeftColor: 126,122,108
+				RightColor: 155,145,122
+			2: DirtRoad
+				LeftColor: 79,81,79
+				RightColor: 130,130,125
+			3: DirtRoad
+				LeftColor: 155,147,125
+				RightColor: 131,126,112
+			4: DirtRoad
+				LeftColor: 61,63,65
+				RightColor: 59,62,63
+			5: DirtRoad
+				LeftColor: 65,66,62
+				RightColor: 68,70,69
+			6: DirtRoad
+				LeftColor: 122,123,119
+				RightColor: 78,80,79
+			7: DirtRoad
+				LeftColor: 60,62,63
+				RightColor: 60,61,58
+			8: DirtRoad
+				LeftColor: 69,72,74
+				RightColor: 74,77,79
+			9: DirtRoad
+				LeftColor: 119,120,118
+				RightColor: 75,78,80
+			10: DirtRoad
+				LeftColor: 62,63,63
+				RightColor: 64,65,62
+			11: DirtRoad
+				LeftColor: 71,74,76
+				RightColor: 115,117,115
+	Template@279:
+		Category: Paved Roads
+		Id: 279
+		Images: Proad15.des
+		Size: 3, 4
+		Tiles:
+			0: Road
+				LeftColor: 111,114,113
+				RightColor: 73,80,86
+			1: Road
+				LeftColor: 57,64,68
+				RightColor: 58,64,64
+			2: Road
+				LeftColor: 62,70,77
+				RightColor: 116,120,120
+			3: Cliff
+				LeftColor: 159,136,94
+				RightColor: 90,86,79
+			4: Cliff
+				LeftColor: 76,81,87
+				RightColor: 62,68,74
+			5: Cliff
+				LeftColor: 67,73,77
+				RightColor: 98,102,100
+			6: Rough
+				LeftColor: 164,140,93
+				RightColor: 95,86,73
+			7: Rough
+				LeftColor: 70,63,57
+				RightColor: 72,72,71
+			8: Rough
+				LeftColor: 87,72,58
+				RightColor: 132,116,85
+			9: Road
+				LeftColor: 119,124,122
+				RightColor: 68,71,72
+			10: Road
+				LeftColor: 54,58,59
+				RightColor: 64,66,66
+			11: Road
+				LeftColor: 65,71,77
+				RightColor: 128,131,129
+	Template@280:
+		Category: Paved Roads
+		Id: 280
+		Images: Proad16.des
+		Size: 4, 5
+		Tiles:
+			0: Road
+				LeftColor: 84,86,87
+				RightColor: 132,133,130
+			1: Road
+				LeftColor: 100,92,83
+				RightColor: 134,134,129
+			2: Road
+				LeftColor: 89,88,85
+				RightColor: 134,134,129
+			3: Road
+				LeftColor: 84,86,88
+				RightColor: 130,132,129
+			4: Road
+				LeftColor: 72,73,67
+				RightColor: 83,77,67
+			5: Road
+				LeftColor: 122,97,63
+				RightColor: 117,95,64
+			6: Road
+				LeftColor: 111,91,62
+				RightColor: 100,85,63
+			7: Road
+				LeftColor: 96,84,65
+				RightColor: 65,68,67
+			8: Road
+				LeftColor: 125,127,124
+				RightColor: 86,84,81
+			9: Road
+				LeftColor: 156,129,91
+				RightColor: 137,107,65
+			10: Road
+				LeftColor: 164,131,84
+				RightColor: 133,105,68
+			11: Road
+				LeftColor: 154,143,123
+				RightColor: 88,85,80
+			12: DirtRoad
+				LeftColor: 201,167,99
+				RightColor: 193,158,93
+			13: DirtRoad
+				LeftColor: 178,141,78
+				RightColor: 180,142,79
+			14: DirtRoad
+				LeftColor: 202,167,100
+				RightColor: 199,163,96
+			17: DirtRoad
+				LeftColor: 204,167,99
+				RightColor: 204,167,100
+	Template@281:
+		Category: Paved Roads
+		Id: 281
+		Images: Proad17.des
+		Size: 4, 4
+		Tiles:
+			1: DirtRoad
+				LeftColor: 203,169,102
+				RightColor: 203,169,102
+			2: DirtRoad
+				LeftColor: 179,143,79
+				RightColor: 177,140,79
+			4: Road
+				LeftColor: 86,87,88
+				RightColor: 135,135,130
+			5: Road
+				LeftColor: 107,96,80
+				RightColor: 150,125,90
+			6: Road
+				LeftColor: 124,100,67
+				RightColor: 148,126,96
+			7: Road
+				LeftColor: 98,92,84
+				RightColor: 130,132,129
+			8: Road
+				LeftColor: 70,72,68
+				RightColor: 78,74,66
+			9: Road
+				LeftColor: 103,86,63
+				RightColor: 108,90,64
+			10: Road
+				LeftColor: 93,82,64
+				RightColor: 95,83,65
+			11: Road
+				LeftColor: 75,73,66
+				RightColor: 73,71,66
+			12: Road
+				LeftColor: 125,127,124
+				RightColor: 81,82,82
+			13: Road
+				LeftColor: 128,128,123
+				RightColor: 85,84,81
+			14: Road
+				LeftColor: 127,129,126
+				RightColor: 76,80,83
+			15: Road
+				LeftColor: 126,128,125
+				RightColor: 74,79,83
+	Template@282:
+		Category: Paved Roads
+		Id: 282
+		Images: Proad18.des
+		Size: 4, 5
+		Tiles:
+			1: DirtRoad
+				LeftColor: 205,171,103
+				RightColor: 182,145,81
+			2: DirtRoad
+				LeftColor: 196,159,93
+				RightColor: 210,174,105
+			4: Road
+				LeftColor: 84,86,87
+				RightColor: 132,133,130
+			5: Road
+				LeftColor: 106,96,83
+				RightColor: 164,135,95
+			6: Road
+				LeftColor: 134,107,72
+				RightColor: 137,129,114
+			7: Road
+				LeftColor: 83,86,88
+				RightColor: 130,132,129
+			8: Road
+				LeftColor: 68,71,68
+				RightColor: 79,75,65
+			9: Road
+				LeftColor: 119,95,62
+				RightColor: 114,92,63
+			10: Road
+				LeftColor: 121,96,60
+				RightColor: 107,89,63
+			11: Road
+				LeftColor: 76,74,66
+				RightColor: 64,67,68
+			12: Road
+				LeftColor: 125,127,124
+				RightColor: 78,81,82
+			13: Road
+				LeftColor: 143,126,102
+				RightColor: 128,104,70
+			14: Road
+				LeftColor: 158,135,103
+				RightColor: 80,81,82
+			15: Road
+				LeftColor: 126,128,126
+				RightColor: 74,79,83
+			17: DirtRoad
+				LeftColor: 207,173,104
+				RightColor: 189,154,90
+			18: DirtRoad
+				LeftColor: 186,150,84
+				RightColor: 208,172,104
+	Template@283:
+		Category: Paved Roads
+		Id: 283
+		Images: Proad19.des
+		Size: 5, 4
+		Tiles:
+			2: Road
+				LeftColor: 132,133,130
+				RightColor: 83,86,88
+			3: Road
+				LeftColor: 82,77,67
+				RightColor: 72,72,68
+			4: Road
+				LeftColor: 76,80,83
+				RightColor: 125,127,124
+			6: DirtRoad
+				LeftColor: 197,163,97
+				RightColor: 204,169,102
+			7: Road
+				LeftColor: 160,133,93
+				RightColor: 98,92,82
+			8: Road
+				LeftColor: 105,88,63
+				RightColor: 96,85,66
+			9: Road
+				LeftColor: 78,81,83
+				RightColor: 125,127,124
+			10: DirtRoad
+				LeftColor: 194,160,94
+				RightColor: 195,160,94
+			11: DirtRoad
+				LeftColor: 178,140,77
+				RightColor: 181,140,76
+			12: Road
+				LeftColor: 148,126,93
+				RightColor: 149,113,64
+			13: Road
+				LeftColor: 109,90,62
+				RightColor: 102,86,62
+			14: Road
+				LeftColor: 76,80,83
+				RightColor: 127,129,126
+			16: DirtRoad
+				LeftColor: 196,159,91
+				RightColor: 202,165,98
+			17: Road
+				LeftColor: 129,131,129
+				RightColor: 83,86,88
+			18: Road
+				LeftColor: 74,72,66
+				RightColor: 89,79,63
+			19: Road
+				LeftColor: 74,79,83
+				RightColor: 125,128,125
+	Template@284:
+		Category: Paved Roads
+		Id: 284
+		Images: Proad20.des
+		Size: 4, 4
+		Tiles:
+			0: Road
+				LeftColor: 132,133,130
+				RightColor: 84,87,88
+			1: Road
+				LeftColor: 80,76,69
+				RightColor: 71,72,68
+			2: Road
+				LeftColor: 79,82,84
+				RightColor: 126,127,124
+			4: Road
+				LeftColor: 133,133,130
+				RightColor: 93,92,88
+			5: Road
+				LeftColor: 96,85,70
+				RightColor: 116,99,73
+			6: Road
+				LeftColor: 143,115,79
+				RightColor: 153,129,96
+			7: DirtRoad
+				LeftColor: 189,153,88
+				RightColor: 203,167,99
+			8: Road
+				LeftColor: 134,134,129
+				RightColor: 100,95,87
+			9: Road
+				LeftColor: 86,80,70
+				RightColor: 114,96,71
+			10: Road
+				LeftColor: 97,91,83
+				RightColor: 171,141,102
+			11: DirtRoad
+				LeftColor: 206,171,103
+				RightColor: 192,155,90
+			12: Road
+				LeftColor: 129,131,129
+				RightColor: 83,86,88
+			13: Road
+				LeftColor: 64,67,68
+				RightColor: 67,69,67
+			14: Road
+				LeftColor: 74,79,83
+				RightColor: 126,128,125
+	Template@285:
+		Category: Paved Roads
+		Id: 285
+		Images: Proad21.des
+		Size: 5, 4
+		Tiles:
+			1: Road
+				LeftColor: 131,132,129
+				RightColor: 82,85,87
+			2: Road
+				LeftColor: 65,68,68
+				RightColor: 68,70,67
+			3: Road
+				LeftColor: 76,80,83
+				RightColor: 127,129,126
+			5: DirtRoad
+				LeftColor: 191,155,89
+				RightColor: 203,168,100
+			6: Road
+				LeftColor: 141,127,108
+				RightColor: 91,89,85
+			7: Road
+				LeftColor: 76,74,69
+				RightColor: 80,78,69
+			8: Road
+				LeftColor: 109,95,77
+				RightColor: 132,123,108
+			9: DirtRoad
+				LeftColor: 188,153,88
+				RightColor: 203,167,99
+			10: DirtRoad
+				LeftColor: 202,168,99
+				RightColor: 192,157,91
+			11: Road
+				LeftColor: 137,129,115
+				RightColor: 109,96,78
+			12: Road
+				LeftColor: 76,73,68
+				RightColor: 82,77,66
+			13: Road
+				LeftColor: 87,86,81
+				RightColor: 143,125,100
+			14: DirtRoad
+				LeftColor: 206,171,103
+				RightColor: 192,155,89
+			16: Road
+				LeftColor: 131,132,129
+				RightColor: 82,85,88
+			17: Road
+				LeftColor: 65,68,68
+				RightColor: 68,70,67
+			18: Road
+				LeftColor: 76,80,83
+				RightColor: 127,130,127
+	Template@286:
+		Category: Water
+		Id: 286
+		Images: Water01.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 65,67,88
+				RightColor: 65,67,88
+			1: Water
+				LeftColor: 66,69,89
+				RightColor: 66,69,89
+			2: Water
+				LeftColor: 65,67,89
+				RightColor: 66,68,89
+			3: Water
+				LeftColor: 65,68,89
+				RightColor: 66,69,89
+	Template@287:
+		Category: Water
+		Id: 287
+		Images: Water02.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 65,67,88
+				RightColor: 65,67,88
+			1: Water
+				LeftColor: 66,69,89
+				RightColor: 66,69,89
+			2: Water
+				LeftColor: 65,67,89
+				RightColor: 66,68,89
+			3: Water
+				LeftColor: 65,68,89
+				RightColor: 66,69,89
+	Template@288:
+		Category: Water
+		Id: 288
+		Images: Water03.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 65,67,88
+				RightColor: 65,67,88
+			1: Water
+				LeftColor: 66,69,89
+				RightColor: 66,69,89
+			2: Water
+				LeftColor: 65,67,89
+				RightColor: 66,68,89
+			3: Water
+				LeftColor: 65,68,89
+				RightColor: 66,69,89
+	Template@289:
+		Category: Water
+		Id: 289
+		Images: Water04.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 65,67,88
+				RightColor: 65,67,88
+			1: Water
+				LeftColor: 66,69,89
+				RightColor: 66,69,89
+			2: Water
+				LeftColor: 65,67,89
+				RightColor: 66,68,89
+			3: Water
+				LeftColor: 65,68,89
+				RightColor: 66,69,89
+	Template@290:
+		Category: Water
+		Id: 290
+		Images: Water05.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 65,67,88
+				RightColor: 65,67,88
+			1: Water
+				LeftColor: 66,69,89
+				RightColor: 66,69,89
+			2: Water
+				LeftColor: 65,67,89
+				RightColor: 66,68,89
+			3: Water
+				LeftColor: 65,68,89
+				RightColor: 66,69,89
+	Template@291:
+		Category: Water
+		Id: 291
+		Images: Water06.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 65,67,88
+				RightColor: 65,67,88
+			1: Water
+				LeftColor: 66,69,89
+				RightColor: 66,69,89
+			2: Water
+				LeftColor: 65,67,89
+				RightColor: 66,68,89
+			3: Water
+				LeftColor: 65,68,89
+				RightColor: 66,69,89
+	Template@292:
+		Category: Water
+		Id: 292
+		Images: Water07.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 65,67,88
+				RightColor: 65,67,88
+			1: Water
+				LeftColor: 66,69,89
+				RightColor: 66,69,89
+			2: Water
+				LeftColor: 65,67,89
+				RightColor: 66,68,89
+			3: Water
+				LeftColor: 65,68,89
+				RightColor: 66,69,89
+	Template@293:
+		Category: Water
+		Id: 293
+		Images: Water08.des
+		Size: 2, 2
+		Tiles:
+			0: Water
+				LeftColor: 65,67,88
+				RightColor: 65,67,88
+			1: Water
+				LeftColor: 66,69,89
+				RightColor: 66,69,89
+			2: Water
+				LeftColor: 65,67,89
+				RightColor: 66,68,89
+			3: Water
+				LeftColor: 65,68,89
+				RightColor: 66,69,89
+	Template@294:
+		Category: Water
+		Id: 294
+		Images: Water09.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 65,67,89
+				RightColor: 66,69,90
+	Template@295:
+		Category: Water
+		Id: 295
+		Images: Water10.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 65,67,89
+				RightColor: 66,69,90
+	Template@296:
+		Category: Water
+		Id: 296
+		Images: Water11.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 65,67,89
+				RightColor: 66,69,90
+	Template@297:
+		Category: Water
+		Id: 297
+		Images: Water12.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 65,67,89
+				RightColor: 66,69,90
+	Template@298:
+		Category: Water
+		Id: 298
+		Images: Water13.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 65,67,89
+				RightColor: 66,69,90
+	Template@299:
+		Category: Water
+		Id: 299
+		Images: Water14.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 65,67,89
+				RightColor: 66,69,90
+	Template@356:
+		Category: Slope Set Pieces
+		Id: 356
+		Images: RAMP01.des
+		Size: 3, 4
+		Tiles:
+			1: Clear
+				Height: 3
+				RampType: 11
+				LeftColor: 171,144,85
+				RightColor: 212,180,113
+			2: Clear
+				Height: 3
+				RampType: 4
+				LeftColor: 227,195,125
+				RightColor: 226,194,125
+			3: Cliff
+				Height: 4
+				LeftColor: 143,115,68
+				RightColor: 138,113,65
+			4: Cliff
+				Height: 3
+				RampType: 3
+				LeftColor: 156,115,68
+				RightColor: 165,131,76
+			5: Clear
+				Height: 2
+				RampType: 4
+				LeftColor: 220,186,115
+				RightColor: 208,176,109
+			6: Cliff
+				LeftColor: 211,178,108
+				RightColor: 193,140,76
+			7: Cliff
+				RampType: 1
+				LeftColor: 180,146,79
+				RightColor: 209,175,102
+			8: Clear
+				Height: 1
+				RampType: 4
+				LeftColor: 215,182,111
+				RightColor: 193,155,89
+			10: Clear
+				RampType: 8
+				LeftColor: 212,181,110
+				RightColor: 209,178,104
+			11: Clear
+				RampType: 4
+				LeftColor: 222,190,121
+				RightColor: 227,195,125
+	Template@357:
+		Category: Slope Set Pieces
+		Id: 357
+		Images: RAMP02.des
+		Size: 3, 4
+		Tiles:
+			0: Clear
+				Height: 3
+				RampType: 4
+				LeftColor: 219,187,117
+				RightColor: 214,183,115
+			1: Clear
+				Height: 3
+				RampType: 12
+				LeftColor: 171,145,93
+				RightColor: 205,172,104
+			3: Clear
+				Height: 2
+				RampType: 4
+				LeftColor: 193,164,101
+				RightColor: 156,134,85
+			4: Cliff
+				Height: 3
+				RampType: 1
+				LeftColor: 119,102,61
+				RightColor: 168,137,84
+			5: Cliff
+				Height: 4
+				LeftColor: 105,83,56
+				RightColor: 150,125,74
+			6: Clear
+				Height: 1
+				RampType: 4
+				LeftColor: 219,188,116
+				RightColor: 173,146,88
+			7: Cliff
+				RampType: 3
+				LeftColor: 149,113,60
+				RightColor: 127,102,60
+			8: Cliff
+				LeftColor: 169,140,82
+				RightColor: 142,104,62
+			9: Clear
+				RampType: 4
+				LeftColor: 226,194,124
+				RightColor: 197,169,102
+			10: Clear
+				RampType: 7
+				LeftColor: 192,165,98
+				RightColor: 197,167,97
+	Template@358:
+		Category: Slope Set Pieces
+		Id: 358
+		Images: RAMP03.des
+		Size: 4, 3
+		Tiles:
+			0: Clear
+				Height: 3
+				RampType: 3
+				LeftColor: 186,150,85
+				RightColor: 218,181,105
+			1: Clear
+				Height: 2
+				RampType: 3
+				LeftColor: 152,121,71
+				RightColor: 208,173,101
+			2: Clear
+				Height: 1
+				RampType: 3
+				LeftColor: 178,145,79
+				RightColor: 208,173,99
+			3: Clear
+				RampType: 3
+				LeftColor: 189,155,84
+				RightColor: 214,179,103
+			4: Clear
+				Height: 3
+				RampType: 10
+				LeftColor: 211,178,108
+				RightColor: 194,159,93
+			5: Cliff
+				Height: 3
+				RampType: 2
+				LeftColor: 162,128,74
+				RightColor: 152,121,72
+			6: Cliff
+				RampType: 4
+				LeftColor: 174,139,78
+				RightColor: 151,123,74
+			7: Clear
+				RampType: 7
+				LeftColor: 213,177,104
+				RightColor: 196,161,90
+			9: Cliff
+				Height: 4
+				LeftColor: 156,131,79
+				RightColor: 127,104,59
+			10: Cliff
+				LeftColor: 188,147,81
+				RightColor: 178,117,61
+	Template@359:
+		Category: Slope Set Pieces
+		Id: 359
+		Images: RAMP04.des
+		Size: 4, 3
+		Tiles:
+			1: Cliff
+				Height: 4
+				LeftColor: 129,102,60
+				RightColor: 117,92,57
+			2: Cliff
+				LeftColor: 163,130,74
+				RightColor: 169,120,69
+			4: Clear
+				Height: 3
+				RampType: 11
+				LeftColor: 196,156,88
+				RightColor: 177,148,90
+			5: Cliff
+				Height: 3
+				RampType: 4
+				LeftColor: 71,63,51
+				RightColor: 136,95,57
+			6: Cliff
+				RampType: 2
+				LeftColor: 178,144,81
+				RightColor: 148,116,65
+			7: Clear
+				RampType: 6
+				LeftColor: 191,146,78
+				RightColor: 206,174,103
+			8: Clear
+				Height: 3
+				RampType: 3
+				LeftColor: 224,187,110
+				RightColor: 212,174,99
+			9: Clear
+				Height: 2
+				RampType: 3
+				LeftColor: 219,183,107
+				RightColor: 164,136,81
+			10: Clear
+				Height: 1
+				RampType: 3
+				LeftColor: 221,184,107
+				RightColor: 146,115,70
+			11: Clear
+				RampType: 3
+				LeftColor: 223,185,109
+				RightColor: 218,180,105
+	Template@360:
+		Category: Slope Set Pieces
+		Id: 360
+		Images: RAMP05.des
+		Size: 3, 4
+		Tiles:
+			1: Clear
+				RampType: 5
+				LeftColor: 196,160,88
+				RightColor: 194,157,89
+			2: Clear
+				RampType: 2
+				LeftColor: 195,151,78
+				RightColor: 194,153,78
+			3: Cliff
+				LeftColor: 180,144,74
+				RightColor: 163,123,65
+			4: Cliff
+				LeftColor: 187,151,77
+				RightColor: 193,153,77
+			5: Clear
+				Height: 1
+				RampType: 2
+				LeftColor: 194,154,79
+				RightColor: 194,152,78
+			6: Clear
+				Height: 4
+				LeftColor: 153,126,72
+				RightColor: 129,94,50
+			7: Clear
+				Height: 3
+				RampType: 3
+				LeftColor: 174,141,76
+				RightColor: 177,131,69
+			8: Clear
+				Height: 2
+				RampType: 2
+				LeftColor: 187,151,77
+				RightColor: 168,128,66
+			10: Clear
+				Height: 3
+				RampType: 10
+				LeftColor: 204,170,100
+				RightColor: 191,155,81
+			11: Clear
+				Height: 3
+				RampType: 2
+				LeftColor: 180,148,73
+				RightColor: 183,147,74
+	Template@361:
+		Category: Slope Set Pieces
+		Id: 361
+		Images: RAMP06.des
+		Size: 3, 4
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 206,159,85
+				RightColor: 202,157,83
+			1: Clear
+				LeftColor: 208,162,89
+				RightColor: 213,174,105
+			3: Clear
+				Height: 1
+				RampType: 2
+				LeftColor: 200,152,78
+				RightColor: 202,156,82
+			4: Cliff
+				RampType: 3
+				LeftColor: 230,189,111
+				RightColor: 225,184,108
+			5: Cliff
+				LeftColor: 216,178,108
+				RightColor: 216,177,107
+			6: Clear
+				Height: 2
+				RampType: 2
+				LeftColor: 199,151,79
+				RightColor: 199,151,78
+			9: Clear
+				Height: 3
+				RampType: 2
+				LeftColor: 200,151,77
+				RightColor: 199,152,78
+	Template@362:
+		Category: Slope Set Pieces
+		Id: 362
+		Images: RAMP07.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 3
+				RampType: 1
+				LeftColor: 210,168,96
+				RightColor: 212,173,102
+			1: Cliff
+				Height: 4
+				LeftColor: 161,133,81
+				RightColor: 151,123,70
+			2: Clear
+				Height: 3
+				RampType: 9
+				LeftColor: 216,179,109
+				RightColor: 215,177,108
+	Template@363:
+		Category: Slope Set Pieces
+		Id: 363
+		Images: RAMP08.des
+		Size: 4, 3
+		Tiles:
+			1: Cliff
+				LeftColor: 182,143,77
+				RightColor: 205,171,100
+			2: Cliff
+				Height: 4
+				LeftColor: 135,103,56
+				RightColor: 142,116,68
+			4: Clear
+				RampType: 5
+				LeftColor: 206,171,101
+				RightColor: 201,163,92
+			5: Cliff
+				LeftColor: 203,164,88
+				RightColor: 202,163,87
+			6: Cliff
+				Height: 3
+				RampType: 4
+				LeftColor: 165,122,70
+				RightColor: 198,158,90
+			7: Clear
+				Height: 3
+				RampType: 12
+				LeftColor: 208,174,104
+				RightColor: 211,178,110
+			8: Clear
+				RampType: 1
+				LeftColor: 203,167,95
+				RightColor: 202,165,91
+			9: Clear
+				Height: 1
+				RampType: 1
+				LeftColor: 201,165,92
+				RightColor: 203,164,88
+			10: Clear
+				Height: 2
+				RampType: 1
+				LeftColor: 203,164,88
+				RightColor: 188,147,77
+			11: Clear
+				Height: 3
+				RampType: 1
+				LeftColor: 196,162,88
+				RightColor: 204,168,92
+	Template@364:
+		Category: Slope Set Pieces
+		Id: 364
+		Images: RAMP09.des
+		Size: 4, 3
+		Tiles:
+			0: Clear
+				RampType: 1
+				LeftColor: 218,178,104
+				RightColor: 214,174,102
+			1: Clear
+				Height: 1
+				RampType: 1
+				LeftColor: 207,166,94
+				RightColor: 206,164,89
+			2: Clear
+				Height: 2
+				RampType: 1
+				LeftColor: 205,163,87
+				RightColor: 206,163,89
+			3: Clear
+				Height: 3
+				RampType: 1
+				LeftColor: 204,163,89
+				RightColor: 206,164,89
+			4: Clear
+				RampType: 8
+				LeftColor: 220,184,112
+				RightColor: 230,193,119
+			5: Cliff
+				LeftColor: 230,195,123
+				RightColor: 232,196,125
+			9: Cliff
+				LeftColor: 216,179,108
+				RightColor: 216,178,109
+	Template@365:
+		Category: Slope Set Pieces
+		Id: 365
+		Images: RAMP10.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				Height: 3
+				RampType: 2
+				LeftColor: 210,170,100
+				RightColor: 204,162,89
+			1: Clear
+				Height: 3
+				RampType: 9
+				LeftColor: 218,180,110
+				RightColor: 215,178,108
+			2: Cliff
+				Height: 4
+				LeftColor: 151,123,71
+				RightColor: 157,127,75
+	Template@386:
+		Category: LAT Sand Rocky
+		Id: 386
+		Images: Sandy01.des, Sandy01a.des, Sandy01b.des, Sandy01c.des, Sandy01d.des, Sandy01e.des, Sandy01f.des, Sandy01g.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 190,156,96
+				RightColor: 194,161,97
+	Template@387:
+		Category: GrassRough Individual
+		Id: 387
+		Images: dlat01.des, dlat01a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@388:
+		Category: GrassRough Individual
+		Id: 388
+		Images: dlat02.des, dlat02a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@389:
+		Category: GrassRough Individual
+		Id: 389
+		Images: dlat03.des, dlat03a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@390:
+		Category: GrassRough Individual
+		Id: 390
+		Images: dlat04.des, dlat04a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@391:
+		Category: GrassRough Individual
+		Id: 391
+		Images: dlat05.des, dlat05a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@392:
+		Category: GrassRough Individual
+		Id: 392
+		Images: dlat06.des, dlat06a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@393:
+		Category: GrassRough Individual
+		Id: 393
+		Images: dlat07.des, dlat07a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@394:
+		Category: GrassRough Individual
+		Id: 394
+		Images: dlat08.des, dlat08a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@395:
+		Category: GrassRough Individual
+		Id: 395
+		Images: dlat09.des, dlat09a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@396:
+		Category: GrassRough Individual
+		Id: 396
+		Images: dlat10.des, dlat10a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@397:
+		Category: GrassRough Individual
+		Id: 397
+		Images: dlat11.des, dlat11a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@398:
+		Category: GrassRough Individual
+		Id: 398
+		Images: dlat12.des, dlat12a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@399:
+		Category: GrassRough Individual
+		Id: 399
+		Images: dlat13.des, dlat13a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@400:
+		Category: GrassRough Individual
+		Id: 400
+		Images: dlat14.des, dlat14a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@401:
+		Category: GrassRough Individual
+		Id: 401
+		Images: dlat15.des, dlat15a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@402:
+		Category: GrassRough Individual
+		Id: 402
+		Images: dlat16.des, dlat16a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 187,153,96
+				RightColor: 197,162,99
+	Template@431:
+		Category: Pavement Individual
+		Id: 431
+		Images: plat01.des, plat01a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@432:
+		Category: Pavement Individual
+		Id: 432
+		Images: plat02.des, plat02a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@433:
+		Category: Pavement Individual
+		Id: 433
+		Images: plat03.des, plat03a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@434:
+		Category: Pavement Individual
+		Id: 434
+		Images: plat04.des, plat04a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@435:
+		Category: Pavement Individual
+		Id: 435
+		Images: plat05.des, plat05a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@436:
+		Category: Pavement Individual
+		Id: 436
+		Images: plat06.des, plat06a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@437:
+		Category: Pavement Individual
+		Id: 437
+		Images: plat07.des, plat07a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@438:
+		Category: Pavement Individual
+		Id: 438
+		Images: plat08.des, plat08a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@439:
+		Category: Pavement Individual
+		Id: 439
+		Images: plat09.des, plat09a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@440:
+		Category: Pavement Individual
+		Id: 440
+		Images: plat10.des, plat10a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@441:
+		Category: Pavement Individual
+		Id: 441
+		Images: plat11.des, plat11a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@442:
+		Category: Pavement Individual
+		Id: 442
+		Images: plat12.des, plat12a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@443:
+		Category: Pavement Individual
+		Id: 443
+		Images: plat13.des, plat13a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@444:
+		Category: Pavement Individual
+		Id: 444
+		Images: plat14.des, plat14a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@445:
+		Category: Pavement Individual
+		Id: 445
+		Images: plat15.des, plat15a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@446:
+		Category: Pavement Individual
+		Id: 446
+		Images: plat16.des, plat16a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@461:
+		Category: LAT Sand Beach
+		Id: 461
+		Images: Green01.des, Green01a.des, Green01b.des, Green01c.des, Green01d.des, Green01e.des, Green01f.des, Green01g.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@462:
+		Category: Sand Individual
+		Id: 462
+		Images: glat01.des, glat01a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@463:
+		Category: Sand Individual
+		Id: 463
+		Images: glat02.des, glat02a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@464:
+		Category: Sand Individual
+		Id: 464
+		Images: glat03.des, glat03a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@465:
+		Category: Sand Individual
+		Id: 465
+		Images: glat04.des, glat04a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@466:
+		Category: Sand Individual
+		Id: 466
+		Images: glat05.des, glat05a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@467:
+		Category: Sand Individual
+		Id: 467
+		Images: glat06.des, glat06a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@468:
+		Category: Sand Individual
+		Id: 468
+		Images: glat07.des, glat07a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@469:
+		Category: Sand Individual
+		Id: 469
+		Images: glat08.des, glat08a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@470:
+		Category: Sand Individual
+		Id: 470
+		Images: glat09.des, glat09a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@471:
+		Category: Sand Individual
+		Id: 471
+		Images: glat10.des, glat10a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@472:
+		Category: Sand Individual
+		Id: 472
+		Images: glat11.des, glat11a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@473:
+		Category: Sand Individual
+		Id: 473
+		Images: glat12.des, glat12a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@474:
+		Category: Sand Individual
+		Id: 474
+		Images: glat13.des, glat13a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@475:
+		Category: Sand Individual
+		Id: 475
+		Images: glat14.des, glat14a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@476:
+		Category: Sand Individual
+		Id: 476
+		Images: glat15.des, glat15a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@477:
+		Category: Sand Individual
+		Id: 477
+		Images: glat16.des, glat16a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@478:
+		Category: Ramp edge fixup
+		Id: 478
+		Images: Rmpfx01.des, Rmpfx01a.des, Rmpfx01b.des, Rmpfx01c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 1
+				LeftColor: 207,168,96
+				RightColor: 206,166,90
+	Template@479:
+		Category: Ramp edge fixup
+		Id: 479
+		Images: Rmpfx02.des, Rmpfx02a.des, Rmpfx02b.des, Rmpfx02c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 1
+				LeftColor: 207,168,96
+				RightColor: 206,166,90
+	Template@480:
+		Category: Ramp edge fixup
+		Id: 480
+		Images: Rmpfx03.des, Rmpfx03a.des, Rmpfx03b.des, Rmpfx03c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 1
+				LeftColor: 207,168,96
+				RightColor: 206,166,90
+	Template@481:
+		Category: Ramp edge fixup
+		Id: 481
+		Images: Rmpfx04.des, Rmpfx04a.des, Rmpfx04b.des, Rmpfx04c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 198,153,78
+				RightColor: 202,162,88
+	Template@482:
+		Category: Ramp edge fixup
+		Id: 482
+		Images: Rmpfx05.des, Rmpfx05a.des, Rmpfx05b.des, Rmpfx05c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 198,153,78
+				RightColor: 202,162,88
+	Template@483:
+		Category: Ramp edge fixup
+		Id: 483
+		Images: Rmpfx06.des, Rmpfx06a.des, Rmpfx06b.des, Rmpfx06c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 198,153,78
+				RightColor: 202,162,88
+	Template@484:
+		Category: Ramp edge fixup
+		Id: 484
+		Images: Rmpfx07.des, Rmpfx07a.des, Rmpfx07b.des, Rmpfx07c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 3
+				LeftColor: 230,189,111
+				RightColor: 228,187,111
+	Template@485:
+		Category: Ramp edge fixup
+		Id: 485
+		Images: Rmpfx08.des, Rmpfx08a.des, Rmpfx08b.des, Rmpfx08c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 3
+				LeftColor: 230,189,111
+				RightColor: 228,187,111
+	Template@486:
+		Category: Ramp edge fixup
+		Id: 486
+		Images: Rmpfx09.des, Rmpfx09a.des, Rmpfx09b.des, Rmpfx09c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 3
+				LeftColor: 230,189,111
+				RightColor: 228,187,111
+	Template@487:
+		Category: Ramp edge fixup
+		Id: 487
+		Images: Rmpfx10.des, Rmpfx10a.des, Rmpfx10b.des, Rmpfx10c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 4
+				LeftColor: 232,197,125
+				RightColor: 233,198,126
+	Template@488:
+		Category: Ramp edge fixup
+		Id: 488
+		Images: Rmpfx11.des, Rmpfx11a.des, Rmpfx11b.des, Rmpfx11c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 4
+				LeftColor: 232,197,125
+				RightColor: 233,198,126
+	Template@489:
+		Category: Ramp edge fixup
+		Id: 489
+		Images: Rmpfx12.des, Rmpfx12a.des, Rmpfx12b.des, Rmpfx12c.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 4
+				LeftColor: 232,197,125
+				RightColor: 233,198,126
+	Template@502:
+		Category: LAT Sand Ruff
+		Id: 502
+		Images: Pvclr01.des, Pvclr01a.des, Pvclr01b.des, Pvclr01c.des, Pvclr01d.des, Pvclr01e.des, Pvclr01f.des, Pvclr01g.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@503:
+		Category: Paved Road Slopes
+		Id: 503
+		Images: Prslpe01.des, Prslpe01a.des, Prslpe01b.des, Prslpe01c.des, Prslpe01d.des, Prslpe01e.des
+		Size: 1, 3
+		Tiles:
+			0: Road
+				RampType: 1
+				LeftColor: 53,55,57
+				RightColor: 102,103,102
+			1: Road
+				RampType: 1
+				LeftColor: 46,48,48
+				RightColor: 48,49,44
+			2: Road
+				RampType: 1
+				LeftColor: 104,106,102
+				RightColor: 65,66,66
+	Template@504:
+		Category: Paved Road Slopes
+		Id: 504
+		Images: Prslpe02.des, Prslpe02a.des, Prslpe02b.des, Prslpe02c.des, Prslpe02d.des, Prslpe02e.des
+		Size: 3, 1
+		Tiles:
+			0: Road
+				RampType: 2
+				LeftColor: 82,83,80
+				RightColor: 35,37,36
+			1: Road
+				RampType: 2
+				LeftColor: 30,30,23
+				RightColor: 29,31,27
+			2: Road
+				RampType: 2
+				LeftColor: 47,49,46
+				RightColor: 86,87,81
+	Template@505:
+		Category: Paved Road Slopes
+		Id: 505
+		Images: Prslpe03.des, Prslpe03a.des, Prslpe03b.des, Prslpe03c.des, Prslpe03d.des, Prslpe03e.des
+		Size: 1, 3
+		Tiles:
+			0: Road
+				RampType: 3
+				LeftColor: 48,50,52
+				RightColor: 86,87,86
+			1: Road
+				RampType: 3
+				LeftColor: 46,48,48
+				RightColor: 47,49,45
+			2: Road
+				RampType: 3
+				LeftColor: 101,102,99
+				RightColor: 56,59,60
+	Template@506:
+		Category: Paved Road Slopes
+		Id: 506
+		Images: Prslpe04.des, Prslpe04a.des, Prslpe04b.des, Prslpe04c.des, Prslpe04d.des, Prslpe04e.des
+		Size: 3, 1
+		Tiles:
+			0: Road
+				RampType: 4
+				LeftColor: 137,139,138
+				RightColor: 95,98,100
+			1: Road
+				RampType: 4
+				LeftColor: 84,87,86
+				RightColor: 86,89,90
+			2: Road
+				RampType: 4
+				LeftColor: 95,98,100
+				RightColor: 135,137,136
+	Template@691:
+		Category: Sand (beach)
+		Id: 691
+		Images: Green01.des, Green01a.des, Green01b.des, Green01c.des, Green01d.des, Green01e.des, Green01f.des, Green01g.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 230,191,114
+				RightColor: 231,190,112
+	Template@692:
+		Category: Sand (beach) Transitions
+		Id: 692
+		Images: glat01.des, glat01a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@693:
+		Category: Sand (beach) Transitions
+		Id: 693
+		Images: glat02.des, glat02a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@694:
+		Category: Sand (beach) Transitions
+		Id: 694
+		Images: glat03.des, glat03a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@695:
+		Category: Sand (beach) Transitions
+		Id: 695
+		Images: glat04.des, glat04a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@696:
+		Category: Sand (beach) Transitions
+		Id: 696
+		Images: glat05.des, glat05a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@697:
+		Category: Sand (beach) Transitions
+		Id: 697
+		Images: glat06.des, glat06a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@698:
+		Category: Sand (beach) Transitions
+		Id: 698
+		Images: glat07.des, glat07a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@699:
+		Category: Sand (beach) Transitions
+		Id: 699
+		Images: glat08.des, glat08a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@700:
+		Category: Sand (beach) Transitions
+		Id: 700
+		Images: glat09.des, glat09a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@701:
+		Category: Sand (beach) Transitions
+		Id: 701
+		Images: glat10.des, glat10a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@702:
+		Category: Sand (beach) Transitions
+		Id: 702
+		Images: glat11.des, glat11a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@703:
+		Category: Sand (beach) Transitions
+		Id: 703
+		Images: glat12.des, glat12a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@704:
+		Category: Sand (beach) Transitions
+		Id: 704
+		Images: glat13.des, glat13a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@705:
+		Category: Sand (beach) Transitions
+		Id: 705
+		Images: glat14.des, glat14a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@706:
+		Category: Sand (beach) Transitions
+		Id: 706
+		Images: glat15.des, glat15a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@707:
+		Category: Sand (beach) Transitions
+		Id: 707
+		Images: glat16.des, glat16a.des
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 220,181,110
+				RightColor: 220,181,109
+	Template@726:
+		Category: Grass (No LAT)
+		Id: 726
+		Images: grassx01.des, grassx01a.des, grassx01b.des, grassx01c.des, grassx01d.des, grassx01e.des, grassx01f.des, grassx01g.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 161,149,81
+				RightColor: 162,148,79
+	Template@825:
+		Category: Pavement (No LAT)
+		Id: 825
+		Images: Pavex01.des, Pavex01a.des, Pavex01b.des, Pavex01c.des, Pavex01d.des, Pavex01e.des, Pavex01f.des, Pavex01g.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@826:
+		Category: Pavement (No LAT)
+		Id: 826
+		Images: Pavex02.des, Pavex02a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@827:
+		Category: Pavement (No LAT)
+		Id: 827
+		Images: Pavex03.des, Pavex03a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@828:
+		Category: Pavement (No LAT)
+		Id: 828
+		Images: Pavex04.des, Pavex04a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@829:
+		Category: Pavement (No LAT)
+		Id: 829
+		Images: Pavex05.des, Pavex05a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@830:
+		Category: Pavement (No LAT)
+		Id: 830
+		Images: Pavex06.des, Pavex06a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@831:
+		Category: Pavement (No LAT)
+		Id: 831
+		Images: Pavex07.des, Pavex07a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@832:
+		Category: Pavement (No LAT)
+		Id: 832
+		Images: Pavex08.des, Pavex08a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@833:
+		Category: Pavement (No LAT)
+		Id: 833
+		Images: Pavex09.des, Pavex09a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@834:
+		Category: Pavement (No LAT)
+		Id: 834
+		Images: Pavex10.des, Pavex10a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@835:
+		Category: Pavement (No LAT)
+		Id: 835
+		Images: Pavex11.des, Pavex11a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@836:
+		Category: Pavement (No LAT)
+		Id: 836
+		Images: Pavex12.des, Pavex12a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@837:
+		Category: Pavement (No LAT)
+		Id: 837
+		Images: Pavex13.des, Pavex13a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@838:
+		Category: Pavement (No LAT)
+		Id: 838
+		Images: Pavex14.des, Pavex14a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@839:
+		Category: Pavement (No LAT)
+		Id: 839
+		Images: Pavex15.des, Pavex15a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@840:
+		Category: Pavement (No LAT)
+		Id: 840
+		Images: Pavex16.des, Pavex16a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@841:
+		Category: Pavement (No LAT)
+		Id: 841
+		Images: Pavex17.des, Pavex17a.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 184,176,161
+				RightColor: 182,174,160
+	Template@924:
+		Category: Cliff Set B
+		Id: 924
+		Images: Cliffb01.des
+		Size: 2, 2
+		Tiles:
+			1: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			2: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			3: Cliff
+				Height: 4
+				LeftColor: 137,131,121
+				RightColor: 132,128,121
+	Template@925:
+		Category: Cliff Set B
+		Id: 925
+		Images: Cliffb02.des
+		Size: 2, 2
+		Tiles:
+			1: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			2: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			3: Cliff
+				Height: 4
+				LeftColor: 137,131,121
+				RightColor: 132,128,121
+	Template@926:
+		Category: Cliff Set B
+		Id: 926
+		Images: Cliffb03.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			1: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			3: Cliff
+				Height: 4
+				LeftColor: 139,134,127
+				RightColor: 140,136,132
+	Template@927:
+		Category: Cliff Set B
+		Id: 927
+		Images: Cliffb04.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			1: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			3: Cliff
+				Height: 4
+				LeftColor: 139,134,127
+				RightColor: 140,136,132
+	Template@928:
+		Category: Cliff Set B
+		Id: 928
+		Images: Cliffb05.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			2: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			3: Cliff
+				Height: 4
+				LeftColor: 135,130,124
+				RightColor: 137,133,127
+	Template@929:
+		Category: Cliff Set B
+		Id: 929
+		Images: Cliffb06.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			2: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			3: Cliff
+				Height: 4
+				LeftColor: 135,130,124
+				RightColor: 137,133,127
+	Template@930:
+		Category: Cliff Set B
+		Id: 930
+		Images: Cliffb07.des
+		Size: 2, 3
+		Tiles:
+			2: Cliff
+				LeftColor: 189,181,167
+				RightColor: 144,133,106
+			3: Cliff
+				Height: 4
+				LeftColor: 134,130,124
+				RightColor: 136,131,125
+			5: Cliff
+				LeftColor: 189,180,167
+				RightColor: 163,154,132
+	Template@931:
+		Category: Cliff Set B
+		Id: 931
+		Images: Cliffb08.des
+		Size: 2, 3
+		Tiles:
+			2: Cliff
+				LeftColor: 189,181,167
+				RightColor: 144,133,106
+			3: Cliff
+				Height: 4
+				LeftColor: 134,130,124
+				RightColor: 136,131,125
+			5: Cliff
+				LeftColor: 189,180,167
+				RightColor: 163,154,132
+	Template@932:
+		Category: Cliff Set B
+		Id: 932
+		Images: Cliffb09.des
+		Size: 3, 2
+		Tiles:
+			1: Cliff
+				LeftColor: 93,78,53
+				RightColor: 121,110,93
+			4: Cliff
+				Height: 4
+				LeftColor: 136,130,121
+				RightColor: 137,133,129
+			5: Cliff
+				LeftColor: 178,170,160
+				RightColor: 142,130,110
+	Template@933:
+		Category: Cliff Set B
+		Id: 933
+		Images: Cliffb10.des
+		Size: 3, 2
+		Tiles:
+			1: Cliff
+				LeftColor: 93,78,53
+				RightColor: 121,110,93
+			4: Cliff
+				Height: 4
+				LeftColor: 136,130,121
+				RightColor: 137,133,129
+			5: Cliff
+				LeftColor: 178,170,160
+				RightColor: 142,130,110
+	Template@934:
+		Category: Cliff Set B
+		Id: 934
+		Images: Cliffb11.des
+		Size: 2, 2
+		Tiles:
+			1: Cliff
+				Height: 4
+				LeftColor: 137,131,120
+				RightColor: 142,136,127
+			2: Cliff
+				LeftColor: 135,123,99
+				RightColor: 133,121,99
+	Template@935:
+		Category: Cliff Set B
+		Id: 935
+		Images: Cliffb12.des
+		Size: 2, 2
+		Tiles:
+			1: Cliff
+				Height: 4
+				LeftColor: 137,131,120
+				RightColor: 142,136,127
+			2: Cliff
+				LeftColor: 135,123,99
+				RightColor: 133,121,99
+	Template@936:
+		Category: Cliff Set B
+		Id: 936
+		Images: Cliffb13.des
+		Size: 2, 2
+		Tiles:
+			1: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			2: Cliff
+				Height: 4
+				LeftColor: 137,131,121
+				RightColor: 132,128,121
+	Template@937:
+		Category: Cliff Set B
+		Id: 937
+		Images: Cliffb14.des
+		Size: 2, 2
+		Tiles:
+			1: Cliff
+				LeftColor: 0,0,0
+				RightColor: 0,0,0
+			2: Cliff
+				Height: 4
+				LeftColor: 137,131,121
+				RightColor: 132,128,121
+	Template@938:
+		Category: Cliff Set B
+		Id: 938
+		Images: Cliffb15.des
+		Size: 2, 3
+		Tiles:
+			1: Cliff
+				Height: 4
+				LeftColor: 134,130,124
+				RightColor: 136,131,125
+			2: Cliff
+				Height: 4
+				LeftColor: 116,114,111
+				RightColor: 137,132,122
+			3: Cliff
+				LeftColor: 189,180,167
+				RightColor: 163,154,132
+			4: Clear
+				LeftColor: 189,181,167
+				RightColor: 144,133,106
+	Template@939:
+		Category: Cliff Set B
+		Id: 939
+		Images: Cliffb16.des
+		Size: 2, 3
+		Tiles:
+			1: Cliff
+				Height: 4
+				LeftColor: 134,130,124
+				RightColor: 136,131,125
+			2: Cliff
+				Height: 4
+				LeftColor: 116,114,111
+				RightColor: 137,132,122
+			3: Cliff
+				LeftColor: 189,180,167
+				RightColor: 163,154,132
+			4: Clear
+				LeftColor: 189,181,167
+				RightColor: 144,133,106
+	Template@940:
+		Category: Cliff Set B
+		Id: 940
+		Images: Cliffb17.des
+		Size: 3, 2
+		Tiles:
+			1: Cliff
+				Height: 4
+				LeftColor: 139,133,124
+				RightColor: 135,133,129
+			2: Clear
+				LeftColor: 93,78,53
+				RightColor: 121,110,93
+			3: Cliff
+				Height: 4
+				LeftColor: 136,130,121
+				RightColor: 137,133,129
+			4: Cliff
+				LeftColor: 178,170,160
+				RightColor: 142,130,110
+	Template@941:
+		Category: Cliff Set B
+		Id: 941
+		Images: Cliffb18.des
+		Size: 3, 2
+		Tiles:
+			1: Cliff
+				Height: 4
+				LeftColor: 139,133,124
+				RightColor: 135,133,129
+			2: Clear
+				LeftColor: 93,78,53
+				RightColor: 121,110,93
+			3: Cliff
+				Height: 4
+				LeftColor: 136,130,121
+				RightColor: 137,133,129
+			4: Cliff
+				LeftColor: 178,170,160
+				RightColor: 142,130,110
+	Template@1023:
+		Category: Wood Cliff
+		Id: 1023
+		Images: Wdclif01.des, Wdclif01a.des, Wdclif01b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1024:
+		Category: Wood Cliff
+		Id: 1024
+		Images: Wdclif02.des, Wdclif02a.des, Wdclif02b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1025:
+		Category: Wood Cliff
+		Id: 1025
+		Images: Wdclif03.des, Wdclif03a.des, Wdclif03b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1026:
+		Category: Wood Cliff
+		Id: 1026
+		Images: Wdclif04.des, Wdclif04a.des, Wdclif04b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1027:
+		Category: Wood Cliff
+		Id: 1027
+		Images: Wdclif05.des, Wdclif05a.des, Wdclif05b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1028:
+		Category: Wood Cliff
+		Id: 1028
+		Images: Wdclif06.des, Wdclif06a.des, Wdclif06b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1029:
+		Category: Wood Cliff
+		Id: 1029
+		Images: Wdclif07.des, Wdclif07a.des, Wdclif07b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1030:
+		Category: Wood Cliff
+		Id: 1030
+		Images: Wdclif08.des, Wdclif08a.des, Wdclif08b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1031:
+		Category: Wood Cliff
+		Id: 1031
+		Images: Wdclif09.des, Wdclif09a.des, Wdclif09b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1032:
+		Category: Wood Cliff
+		Id: 1032
+		Images: Wdclif10.des, Wdclif10a.des, Wdclif10b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1033:
+		Category: Wood Cliff
+		Id: 1033
+		Images: Wdclif11.des, Wdclif11a.des, Wdclif11b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1034:
+		Category: Wood Cliff
+		Id: 1034
+		Images: Wdclif12.des, Wdclif12a.des, Wdclif12b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1035:
+		Category: Wood Cliff
+		Id: 1035
+		Images: Wdclif13.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1036:
+		Category: Wood Cliff
+		Id: 1036
+		Images: Wdclif14.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1037:
+		Category: Wood Cliff
+		Id: 1037
+		Images: Wdclif15.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1038:
+		Category: Wood Cliff
+		Id: 1038
+		Images: Wdclif16.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1039:
+		Category: Wood Cliff
+		Id: 1039
+		Images: Wdclif17.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1040:
+		Category: Wood Cliff
+		Id: 1040
+		Images: Wdclif18.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1041:
+		Category: Wood Cliff
+		Id: 1041
+		Images: Wdclif19.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1042:
+		Category: Wood Cliff
+		Id: 1042
+		Images: Wdclif20.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1043:
+		Category: Wood Cliff
+		Id: 1043
+		Images: Wdclif21.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1044:
+		Category: Wood Cliff
+		Id: 1044
+		Images: Wdclif22.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1045:
+		Category: Wood Cliff
+		Id: 1045
+		Images: Wdclif23.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1046:
+		Category: Wood Cliff
+		Id: 1046
+		Images: Wdclif24.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1047:
+		Category: Wood Cliff
+		Id: 1047
+		Images: Wdclif25.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1048:
+		Category: Wood Cliff
+		Id: 1048
+		Images: Wdclif26.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1049:
+		Category: Wood Cliff
+		Id: 1049
+		Images: Wdclif27.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,95,50
+	Template@1050:
+		Category: Wood Cliff
+		Id: 1050
+		Images: Wdclif28.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 146,153,61
+				RightColor: 147,152,65
+	Template@1051:
+		Category: Wood Cliff
+		Id: 1051
+		Images: Wdclif29.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1052:
+		Category: Wood Cliff
+		Id: 1052
+		Images: Wdclif30.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1053:
+		Category: Wood Cliff
+		Id: 1053
+		Images: Wdclif31.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1054:
+		Category: Wood Cliff
+		Id: 1054
+		Images: Wdclif32.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1055:
+		Category: Wood Cliff
+		Id: 1055
+		Images: Wdclif33.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1056:
+		Category: Wood Cliff
+		Id: 1056
+		Images: Wdclif34.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1057:
+		Category: Wood Cliff
+		Id: 1057
+		Images: Wdclif35.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				Height: 1
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1058:
+		Category: Wood Cliff
+		Id: 1058
+		Images: Wdclif36.des, Wdclif36a.des, Wdclif36b.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 64,67,88
+				RightColor: 66,68,89
+	Template@1059:
+		Category: Wood Cliff
+		Id: 1059
+		Images: Wdclif37.des, Wdclif37a.des, Wdclif37b.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 64,67,88
+				RightColor: 66,68,89
+	Template@1060:
+		Category: Wood Cliff
+		Id: 1060
+		Images: Wdclif38.des, Wdclif38a.des, Wdclif38b.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 64,67,88
+				RightColor: 66,68,89
+	Template@1061:
+		Category: Wood Cliff
+		Id: 1061
+		Images: Wdclif39.des, Wdclif39a.des, Wdclif39b.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 64,67,88
+				RightColor: 66,68,89
+	Template@1062:
+		Category: Wood Cliff
+		Id: 1062
+		Images: Wdclif40.des, Wdclif40a.des, Wdclif40b.des
+		Size: 1, 1
+		Tiles:
+			0: Water
+				LeftColor: 64,67,88
+				RightColor: 66,68,89
+	Template@1063:
+		Category: Wood Cliff
+		Id: 1063
+		Images: Wdclif41.des, Wdclif41a.des, Wdclif41b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1064:
+		Category: Wood Cliff
+		Id: 1064
+		Images: Wdclif42.des, Wdclif42a.des, Wdclif42b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50
+	Template@1065:
+		Category: Wood Cliff
+		Id: 1065
+		Images: Wdclif43.des, Wdclif43a.des, Wdclif43b.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				LeftColor: 120,95,50
+				RightColor: 120,94,50

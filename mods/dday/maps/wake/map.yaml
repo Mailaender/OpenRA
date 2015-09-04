@@ -1,0 +1,85 @@
+MapFormat: 7
+
+RequiresMod: dday
+
+Title: Wake Island (4)
+
+Description: Describe your map here
+
+Author: Westwood Studios
+
+Tileset: NEWURBAN
+
+MapSize: 200,400
+
+Bounds: 2,4,196,388
+
+Visibility: Lobby
+
+Type: Conquest
+
+Videos:
+
+Options:
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: mpspawn
+		Location: 135,-45
+		Owner: Neutral
+	Actor1: mpspawn
+		Location: 210,-94
+		Owner: Neutral
+	Actor2: mpspawn
+		Location: 216,35
+		Owner: Neutral
+	Actor3: mpspawn
+		Location: 101,59
+		Owner: Neutral
+
+Smudges:
+
+Rules:
+
+Sequences:
+
+VoxelSequences:
+
+Weapons:
+
+Voices:
+
+Notifications:
+
+Translations:

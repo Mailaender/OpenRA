@@ -1,0 +1,179 @@
+Metadata:
+	Title: D-Day
+	Description: Prototype
+	Version: {DEV_VERSION}
+	Author: Migeater
+
+Folders:
+	.
+# Tiberian Sun
+	./mods/dday
+	./mods/dday/bits
+	./mods/ts/uibits
+	~^Content/dday
+# Red Alert
+	./mods/ra/uibits
+
+MapFolders:
+	./mods/dday/maps: System
+	~^maps/dday: User
+
+Packages:
+	ecachemd45.mix:CRC32
+	expandmd45.mix:CRC32
+	sidec01.mix:CRC32
+	sidec02.mix:CRC32
+	sidec03.mix:CRC32
+	sidec06.mix:CRC32
+	sidec08.mix:CRC32
+
+Rules:
+	./mods/dday/rules/palettes.yaml
+	./mods/dday/rules/world.yaml
+	./mods/dday/rules/player.yaml
+	./mods/dday/rules/misc.yaml
+
+Weapons:
+
+
+Sequences:
+	./mods/dday/sequences/misc.yaml
+
+VoxelSequences:
+
+TileSets:
+	./mods/dday/tilesets/desert.yaml
+	./mods/dday/tilesets/newurban.yaml
+
+TileSize: 48,24
+TileShape: Diamond
+SubCells:
+	Offsets: 0,0,0, -256,128,0, 0,-128,0, 256,128,0
+	DefaultIndex: 2
+MaximumTerrainHeight: 16
+
+Cursors:
+	./mods/ts/cursors.yaml
+
+Chrome:
+	./mods/ts/chrome.yaml
+
+Assemblies:
+	./mods/common/OpenRA.Mods.Common.dll
+	./mods/ra/OpenRA.Mods.RA.dll
+	./mods/cnc/OpenRA.Mods.Cnc.dll
+	./mods/ts/OpenRA.Mods.TS.dll
+
+ChromeLayout:
+	./mods/ts/chrome/install.yaml
+	./mods/ra/chrome/ingame.yaml
+	./mods/ra/chrome/ingame-chat.yaml
+	./mods/ra/chrome/ingame-diplomacy.yaml
+	./mods/ra/chrome/ingame-fmvplayer.yaml
+	./mods/ra/chrome/ingame-menu.yaml
+	./mods/ra/chrome/ingame-info.yaml
+	./mods/ra/chrome/ingame-infoscripterror.yaml
+	./mods/ra/chrome/ingame-infobriefing.yaml
+	./mods/ra/chrome/ingame-infoobjectives.yaml
+	./mods/ra/chrome/ingame-infostats.yaml
+	./mods/d2k/chrome/ingame-observer.yaml
+	./mods/ra/chrome/ingame-observerstats.yaml
+	./mods/ts/chrome/ingame-player.yaml
+	./mods/ra/chrome/ingame-perf.yaml
+	./mods/ra/chrome/ingame-debug.yaml
+	./mods/ra/chrome/mainmenu.yaml
+	./mods/ra/chrome/settings.yaml
+	./mods/ra/chrome/credits.yaml
+	./mods/ra/chrome/lobby.yaml
+	./mods/ra/chrome/lobby-mappreview.yaml
+	./mods/ra/chrome/lobby-playerbin.yaml
+	./mods/ra/chrome/lobby-dialogs.yaml
+	./mods/ts/chrome/color-picker.yaml
+	./mods/ra/chrome/map-chooser.yaml
+	./mods/ra/chrome/create-server.yaml
+	./mods/ra/chrome/serverbrowser.yaml
+	./mods/ra/chrome/connection.yaml
+	./mods/ra/chrome/directconnect.yaml
+	./mods/ra/chrome/replaybrowser.yaml
+	./mods/ts/chrome/dropdowns.yaml
+	./mods/ra/chrome/musicplayer.yaml
+	./mods/ra/chrome/tooltips.yaml
+	./mods/ra/chrome/assetbrowser.yaml
+	./mods/ra/chrome/missionbrowser.yaml
+	./mods/ra/chrome/confirmation-dialogs.yaml
+	./mods/ra/chrome/editor.yaml
+
+Voices:
+
+Notifications:
+	./mods/ts/audio/speech-generic.yaml
+	./mods/ts/audio/speech-singleplayer.yaml
+	./mods/ts/audio/sounds-generic.yaml
+
+Music:
+
+Translations:
+	./mods/ts/languages/english.yaml
+
+LoadScreen: LogoStripeLoadScreen
+	Image: ./mods/ts/uibits/loadscreen.png
+	Text: Loading ships..., Folding parachutes...
+
+ContentInstaller:
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+	LobbySettingsNotification
+	ColorValidator
+
+LobbyDefaults:
+	AllowCheats: true
+	Crates: true
+	StartingUnitsClass: none
+	FragileAlliances: false
+	Shroud: true
+	Fog: true
+
+ChromeMetrics:
+	./mods/ts/metrics.yaml
+
+Fonts:
+	Regular:
+		Font:./mods/common/FreeSans.ttf
+		Size:14
+	Bold:
+		Font:./mods/common/FreeSansBold.ttf
+		Size:14
+	Title:
+		Font:./mods/common/FreeSansBold.ttf
+		Size:32
+	MediumBold:
+		Font:./mods/common/FreeSansBold.ttf
+		Size:18
+	BigBold:
+		Font:./mods/common/FreeSansBold.ttf
+		Size:24
+	Small:
+		Font:./mods/common/FreeSans.ttf
+		Size:12
+	Tiny:
+		Font:./mods/common/FreeSans.ttf
+		Size:10
+	TinyBold:
+		Font:./mods/common/FreeSansBold.ttf
+		Size:10
+
+SupportsMapsFrom: dday
+
+SpriteFormats: ShpTS, TmpTS, ShpTD
+
+SpriteSequenceFormat: TilesetSpecificSpriteSequence
+	TilesetExtensions:
+		DESERT: .des
+		NEWURBAN: .ubn
+	TilesetCodes:
+		TEMPERATE: d
+		NEWURBAN: n
+
