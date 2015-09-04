@@ -1,0 +1,42 @@
+^BaseWorld:
+	Inherits: ^Palettes
+	AlwaysVisible:
+	ScreenMap:
+	ActorMap:
+	LoadWidgetAtGameStart:
+	TerrainGeometryOverlay:
+	Faction@Random:
+		Name: Any
+		InternalName: Random
+		RandomFactionMembers: gdi, nod
+	Faction@0:
+		Name: GDI
+		InternalName: gdi
+	Faction@1:
+		Name: Nod
+		InternalName: nod
+
+World:
+	Inherits: ^BaseWorld
+	ChatCommands:
+	DevCommands:
+	PlayerCommands:
+	HelpCommand:
+	BuildingInfluence:
+	ProductionQueueFromSelection:
+		ProductionPaletteWidget: PRODUCTION_PALETTE
+	DomainIndex:
+	PathfinderDebugOverlay:
+	SpawnMapActors:
+	PathFinder:
+	ValidateOrder:
+	DebugPauseState:
+	ScreenShaker:
+	RadarPings:
+	ObjectivesPanel:
+		PanelName: SKIRMISH_STATS
+
+EditorWorld:
+	Inherits: ^BaseWorld
+	EditorActorLayer:
+

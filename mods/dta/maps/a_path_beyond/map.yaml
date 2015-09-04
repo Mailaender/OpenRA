@@ -1,0 +1,120 @@
+MapFormat: 7
+
+RequiresMod: dta
+
+Title: A Path Beyond
+
+Description: Describe your map here
+
+Author: Westwood Studios
+
+Tileset: TEMPERATE
+
+MapSize: 101,280
+
+Bounds: 2,6,97,256
+
+Visibility: Lobby
+
+Type: Conquest
+
+Videos:
+
+Options:
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2, Multi3, Multi4, Multi5, Multi6, Multi7
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi3:
+		Name: Multi3
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi4:
+		Name: Multi4
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi5:
+		Name: Multi5
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi6:
+		Name: Multi6
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi7:
+		Name: Multi7
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: mpspawn
+		Location: 109,-41
+		Owner: Neutral
+	Actor1: mpspawn
+		Location: 143,-5
+		Owner: Neutral
+	Actor2: mpspawn
+		Location: 181,37
+		Owner: Neutral
+	Actor3: mpspawn
+		Location: 156,58
+		Owner: Neutral
+	Actor4: mpspawn
+		Location: 127,72
+		Owner: Neutral
+	Actor5: mpspawn
+		Location: 87,40
+		Owner: Neutral
+	Actor6: mpspawn
+		Location: 52,16
+		Owner: Neutral
+	Actor7: mpspawn
+		Location: 75,-12
+		Owner: Neutral
+	Actor8: waypoint
+		Location: 17,0
+		Owner: Neutral
+
+Smudges:
+
+Rules:
+
+Sequences:
+
+VoxelSequences:
+
+Weapons:
+
+Voices:
+
+Notifications:
+
+Translations:

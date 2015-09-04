@@ -1,0 +1,50 @@
+MapFormat: 7
+
+RequiresMod: dta
+
+Title: Blank
+
+Description: Placeholder
+
+Author: Matthias Mailänder
+
+Tileset: TEMPERATE
+
+MapSize: 128,128
+
+Bounds: 16,16,96,96
+
+Visibility: Shellmap
+
+Type: Shellmap
+
+Videos:
+
+Options:
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+
+Actors:
+
+Smudges:
+
+Rules:
+
+Sequences:
+
+VoxelSequences:
+
+Weapons:
+
+Voices:
+
+Notifications:
+
+Translations:

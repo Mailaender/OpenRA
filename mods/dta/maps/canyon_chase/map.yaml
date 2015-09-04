@@ -1,0 +1,89 @@
+MapFormat: 7
+
+RequiresMod: dta
+
+Title: Canyon Chase
+
+Description: Describe your map here
+
+Author: Westwood Studios
+
+Tileset: DESERT
+
+MapSize: 110,120
+
+Bounds: 7,9,96,86
+
+Visibility: Lobby
+
+Type: Conquest
+
+Videos:
+
+Options:
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: Random
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: Random
+		Enemies: Multi0, Multi1, Multi2
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi1:
+		Name: Multi1
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+	PlayerReference@Multi2:
+		Name: Multi2
+		Playable: True
+		Faction: Random
+		Enemies: Creeps
+
+Actors:
+	Actor0: mpspawn
+		Location: 32,0
+		Owner: Neutral
+	Actor1: mpspawn
+		Location: 100,-13
+		Owner: Neutral
+	Actor2: mpspawn
+		Location: 110,-77
+		Owner: Neutral
+	Actor3: waypoint
+		Location: 85,-16
+		Owner: Neutral
+	Actor4: waypoint
+		Location: 87,-20
+		Owner: Neutral
+	Actor5: waypoint
+		Location: 87,-18
+		Owner: Neutral
+	Actor6: waypoint
+		Location: 85,-18
+		Owner: Neutral
+
+Smudges:
+
+Rules:
+
+Sequences:
+
+VoxelSequences:
+
+Weapons:
+
+Voices:
+
+Notifications:
+
+Translations:

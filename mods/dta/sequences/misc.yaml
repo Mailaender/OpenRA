@@ -1,0 +1,7 @@
+mpspawn:
+	idle:
+		Length: *
+
+waypoint:
+	idle:
+		Length: *
