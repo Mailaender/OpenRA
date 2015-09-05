@@ -85,6 +85,13 @@ if [ ! -f Mono.Nat.dll ]; then
 	rm -rf Mono.Nat
 fi
 
+if [ ! -f MoonSharp.Interpreter.dll ]; then
+	echo "Fetching MoonSharp from NuGet."
+	get MoonSharp 0.9.8
+	cp MoonSharp/lib/net40-client/MoonSharp.Interpreter.dll .
+	rm -rf MoonSharp
+fi
+
 if [ ! -f FuzzyLogicLibrary.dll ]; then
 	echo "Fetching FuzzyLogicLibrary from NuGet."
 	get FuzzyLogicLibrary 1.2.0
@@ -95,9 +102,4 @@ fi
 if [ ! -f SDL2-CS.dll ]; then
 	echo "Fetching SDL2-CS from GitHub."
 	curl -s -L -O https://github.com/OpenRA/SDL2-CS/releases/download/20150709/SDL2-CS.dll
-fi
-
-if [ ! -f Eluant.dll ]; then
-	echo "Fetching Eluant from GitHub."
-	curl -s -L -O https://github.com/OpenRA/Eluant/releases/download/20140425/Eluant.dll
 fi
