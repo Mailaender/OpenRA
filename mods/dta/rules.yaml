@@ -1,0 +1,9160 @@
+# Buildings
+
+GFACT:
+	Tooltip:
+		Name: GDI Construction Yard
+	Valued:
+		Cost: 5000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 800
+	Power:
+		Amount: 10
+	Building:
+		Adjacent: 1
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NFACT:
+	Tooltip:
+		Name: Nod Construction Yard
+	Valued:
+		Cost: 5000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 800
+	Power:
+		Amount: 10
+	Building:
+		Adjacent: 1
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+AFACT:
+	Tooltip:
+		Name: Allied Construction Yard
+	Valued:
+		Cost: 5000
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: 0
+	RenderSprites:
+		Image: rafact
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SFACT:
+	Tooltip:
+		Name: Soviet Construction Yard
+	Valued:
+		Cost: 5000
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: 0
+	RenderSprites:
+		Image: rafact
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+PYLE_AI:
+	Tooltip:
+		Name: Barracks
+	Valued:
+		Cost: 225
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: pyle
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+HAND_AI:
+	Tooltip:
+		Name: Hand Of Nod
+	Valued:
+		Cost: 225
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: hand
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RATENT_AI:
+	Tooltip:
+		Name: Barracks
+	Valued:
+		Cost: 225
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: ratent
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RABARR_AI:
+	Tooltip:
+		Name: Barracks
+	Valued:
+		Cost: 225
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: rabarr
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TWR1_AI:
+	Tooltip:
+		Name: Guard Tower
+	Valued:
+		Cost: 375
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -10
+	RenderSprites:
+		Image: twr
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAPBOX1_AI:
+	Tooltip:
+		Name: Pill Box
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -15
+	RenderSprites:
+		Image: rapbox
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAFTUR1_AI:
+	Tooltip:
+		Name: Flame Turret
+	Valued:
+		Cost: 450
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: raftur
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2A_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 250
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SBAG:
+	Tooltip:
+		Name: Sandbags wall
+	Valued:
+		Cost: 125
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 25
+	Building:
+		Adjacent: 4
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BARB:
+	Tooltip:
+		Name: Barbed Wire
+	Valued:
+		Cost: 125
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 25
+	Building:
+		Adjacent: 4
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CYCL:
+	Tooltip:
+		Name: Chain Link
+	Valued:
+		Cost: 185
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 25
+	Building:
+		Adjacent: 4
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BRIK:
+	Tooltip:
+		Name: Concrete wall
+	Valued:
+		Cost: 250
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 1c0
+	Health:
+		HP: 80
+	Building:
+		Adjacent: 4
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RABRIK:
+	Tooltip:
+		Name: Concrete wall
+	Buildable:
+		Prerequisites: tech,barracks
+	Valued:
+		Cost: 250
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 1c0
+	Health:
+		HP: 80
+	RenderSprites:
+		Image: brik
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+LSRPOST:
+	Tooltip:
+		Name: Laser Fence Post
+	Buildable:
+		Prerequisites: radar,nuk2
+	Valued:
+		Cost: 200
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 500
+	Power:
+		Amount: -1
+	Building:
+		Adjacent: 4
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GGATE_A:
+	Tooltip:
+		Name: Gate
+	Valued:
+		Cost: 250
+	Armor:
+		Type: heavy
+	Health:
+		HP: 350
+	Building:
+		Adjacent: 4
+		Dimensions: 3,1
+		Footprint: xxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GGATE_B:
+	Tooltip:
+		Name: Gate
+	Valued:
+		Cost: 250
+	Armor:
+		Type: heavy
+	Health:
+		HP: 350
+	Building:
+		Adjacent: 4
+		Dimensions: 1,3
+		Footprint: x x x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUKE:
+	Tooltip:
+		Name: Power Plant
+	Buildable:
+		Prerequisites: power
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: 100
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAPOWR:
+	Tooltip:
+		Name: Power Plant
+	Buildable:
+		Prerequisites: factory
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: 100
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2:
+	Tooltip:
+		Name: Adv. Power Plant
+	Buildable:
+		Prerequisites: nuke
+	Valued:
+		Cost: 700
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 200
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2O:
+	Tooltip:
+		Name: Adv. Power Plant Tiberium Fuel
+	Buildable:
+		Prerequisites: nuk2,bioe
+	Valued:
+		Cost: 200
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 1c0
+	Power:
+		Amount: 600
+	RenderSprites:
+		Image: nuk2_up
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAAPWR:
+	Tooltip:
+		Name: Adv. Power Plant
+	Buildable:
+		Prerequisites: factory,rapowr
+	Valued:
+		Cost: 500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 700
+	Power:
+		Amount: 200
+	Building:
+		Adjacent: 1
+		Dimensions: 3,2
+		Footprint: xxx xxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+PYLE:
+	Tooltip:
+		Name: Barracks
+	Buildable:
+		Prerequisites: gfact,nuke
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -20
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+HAND:
+	Tooltip:
+		Name: Hand Of Nod
+	Buildable:
+		Prerequisites: nfact,nuke
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -20
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RATENT:
+	Tooltip:
+		Name: Barracks
+	Buildable:
+		Prerequisites: afact,rapowr
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -20
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RABARR:
+	Tooltip:
+		Name: Barracks
+	Buildable:
+		Prerequisites: sfact,rapowr
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -20
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAKENN:
+	Tooltip:
+		Name: Kennel
+	Buildable:
+		Prerequisites: sfact,rabarr
+	Valued:
+		Cost: 200
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -10
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TWR:
+	Tooltip:
+		Name: Guard Tower
+	Buildable:
+		Prerequisites: gfact,pyle
+	Valued:
+		Cost: 500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -10
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAPBOX:
+	Tooltip:
+		Name: Pill Box
+	Buildable:
+		Prerequisites: afact,ratent
+	Valued:
+		Cost: 400
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -15
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAHBOX:
+	Tooltip:
+		Name: Camouflaged Pill Box
+	Buildable:
+		Prerequisites: afact,ratent
+	Valued:
+		Cost: 600
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: -15
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GUN:
+	Tooltip:
+		Name: Nod Gun Turret
+	Buildable:
+		Prerequisites: nfact,hand
+	Valued:
+		Cost: 600
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 7c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -20
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAGUN:
+	Tooltip:
+		Name: Allied Gun Turret
+	Buildable:
+		Prerequisites: afact,ratent
+	Valued:
+		Cost: 600
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 7c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -40
+	RenderSprites:
+		Image: gun
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAFTUR:
+	Tooltip:
+		Name: Flame Turret
+	Buildable:
+		Prerequisites: sfact,rabarr
+	Valued:
+		Cost: 600
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -20
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SAM:
+	Tooltip:
+		Name: SAM Site
+	Buildable:
+		Prerequisites: nfact,hand
+	Valued:
+		Cost: 750
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -20
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RASAM:
+	Tooltip:
+		Name: SAM Site
+	Buildable:
+		Prerequisites: sfact,radome
+	Valued:
+		Cost: 750
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -20
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAAGUN:
+	Tooltip:
+		Name: Anti-aircraft Artillery
+	Buildable:
+		Prerequisites: afact,radome
+	Valued:
+		Cost: 600
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -50
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ATWR:
+	Tooltip:
+		Name: Advanced Guard Tower
+	Buildable:
+		Prerequisites: gfact,hq
+	Valued:
+		Cost: 1000
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 600
+	Power:
+		Amount: -20
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+OBLI:
+	Tooltip:
+		Name: Obelisk of Light
+	Buildable:
+		Prerequisites: nfact,hq
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 7c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -150
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RATSLA:
+	Tooltip:
+		Name: Tesla Coil
+	Buildable:
+		Prerequisites: sfact,sweap
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -150
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VMINE:
+	Tooltip:
+		Name: Land Mine
+	Buildable:
+		Prerequisites: afact,ratent,radome
+	Valued:
+		Cost: 500
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 1c0
+	Health:
+		HP: 10
+	Power:
+		Amount: 0
+	Building:
+		Adjacent: 15
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+PROC:
+	Tooltip:
+		Name: Refinery
+	Buildable:
+		Prerequisites: nuke
+	Valued:
+		Cost: 1200
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 900
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 1
+		Dimensions: 4,3
+		Footprint: xxxx xxxx xxxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAPROC:
+	Tooltip:
+		Name: Refinery
+	Buildable:
+		Prerequisites: factory,rapowr
+	Valued:
+		Cost: 1200
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 900
+	Power:
+		Amount: -10
+	Building:
+		Adjacent: 1
+		Dimensions: 4,3
+		Footprint: xxxx xxxx xxxx
+	WithMakeAnimation:
+	RenderSprites:
+		Image: proc
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SILO:
+	Tooltip:
+		Name: Tiberium Silo
+	Buildable:
+		Prerequisites: proc
+	Valued:
+		Cost: 150
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 3c0
+	Health:
+		HP: 600
+	Power:
+		Amount: -10
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RASILO:
+	Tooltip:
+		Name: Storage Silo
+	Buildable:
+		Prerequisites: factory,raproc
+	Valued:
+		Cost: 150
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 300
+	Power:
+		Amount: -10
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+WEAP:
+	Tooltip:
+		Name: Weapons Factory
+	Buildable:
+		Prerequisites: power,proc
+	Valued:
+		Cost: 2000
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 1
+		Dimensions: 4,3
+		Footprint: xxxx xxxx xxxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+AFLD:
+	Tooltip:
+		Name: Airfield
+	Buildable:
+		Prerequisites: proc
+	Valued:
+		Cost: 2000
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 1
+		Dimensions: 4,3
+		Footprint: xxxx xxxx xxxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+AWEAP:
+	Tooltip:
+		Name: War Factory
+	Buildable:
+		Prerequisites: afact,raproc
+	Valued:
+		Cost: 2000
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 1
+		Dimensions: 4,3
+		Footprint: xxxx xxxx xxxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SWEAP:
+	Tooltip:
+		Name: War Factory
+	Buildable:
+		Prerequisites: sfact,raproc
+	Valued:
+		Cost: 2000
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 1
+		Dimensions: 4,3
+		Footprint: xxxx xxxx xxxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+WEAP_AI:
+	Tooltip:
+		Name: Weapons Factory
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 1
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	WithMakeAnimation:
+	RenderSprites:
+		Image: weap
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+AFLD_AI:
+	Tooltip:
+		Name: Airfield
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 1
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	WithMakeAnimation:
+	RenderSprites:
+		Image: afld
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+AWEAP_AI:
+	Tooltip:
+		Name: War Factory
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: aweap
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SWEAP_AI:
+	Tooltip:
+		Name: War Factory
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: sweap
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+FIX:
+	Tooltip:
+		Name: Repair Facility
+	Buildable:
+		Prerequisites: barracks
+	Valued:
+		Cost: 1200
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 1
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAFIX:
+	Tooltip:
+		Name: Service Depot
+	Buildable:
+		Prerequisites: factory,rapowr
+	Valued:
+		Cost: 1200
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 1
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GSYRD:
+	Tooltip:
+		Name: GDI Naval Yard
+	Buildable:
+		Prerequisites: cabhut
+	Valued:
+		Cost: 2000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: syrd
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NSYRD:
+	Tooltip:
+		Name: Nod Naval Yard
+	Buildable:
+		Prerequisites: cabhut
+	Valued:
+		Cost: 2000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: syrd
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ASYRD:
+	Tooltip:
+		Name: Allied Naval Yard
+	Buildable:
+		Prerequisites: cabhut
+	Valued:
+		Cost: 650
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: syrd
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RASPEN:
+	Tooltip:
+		Name: Sub Pen
+	Buildable:
+		Prerequisites: cabhut
+	Valued:
+		Cost: 650
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 10
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+HQ:
+	Tooltip:
+		Name: Communications Center
+	Buildable:
+		Prerequisites: proc
+	Valued:
+		Cost: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -40
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+COMM:
+	Tooltip:
+		Name: Comm. Center
+	Buildable:
+		Prerequisites: power,proc
+	Valued:
+		Cost: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -40
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+COMM1:
+	Tooltip:
+		Name: Ion Cannon Uplink
+	Buildable:
+		Prerequisites: gfact,comm,miss
+	Valued:
+		Cost: 1800
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 1c0
+	Power:
+		Amount: -100
+	RenderSprites:
+		Image: eye_a
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NHQ:
+	Tooltip:
+		Name: Comm. Center
+	Buildable:
+		Prerequisites: radar,proc
+	Valued:
+		Cost: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -40
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RADOME:
+	Tooltip:
+		Name: Radar Dome
+	Buildable:
+		Prerequisites: factory,raproc
+	Valued:
+		Cost: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -40
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GHPAD:
+	Tooltip:
+		Name: Helipad
+	Buildable:
+		Prerequisites: power,pyle
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -10
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NHPAD:
+	Tooltip:
+		Name: Helipad
+	Buildable:
+		Prerequisites: nfact,hand
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -10
+	RenderSprites:
+		Image: hpad
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+AHPAD:
+	Tooltip:
+		Name: Helipad
+	Buildable:
+		Prerequisites: afact,ratent
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -10
+	RenderSprites:
+		Image: hpad
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ASTRP:
+	Tooltip:
+		Name: A10 Runway
+	Buildable:
+		Prerequisites: power,miss
+	Valued:
+		Cost: 500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -10
+	Building:
+		Adjacent: 1
+		Dimensions: 2,3
+		Footprint: xx xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MISS:
+	Tooltip:
+		Name: Tech Center
+	Buildable:
+		Prerequisites: power,comm
+	Valued:
+		Cost: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 2c0
+	Health:
+		HP: 400
+	Power:
+		Amount: 0
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BIOE:
+	Tooltip:
+		Name: Research Facility
+	Buildable:
+		Prerequisites: radar,nhq
+	Valued:
+		Cost: 1400
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 2c0
+	Health:
+		HP: 700
+	Power:
+		Amount: -80
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAATEK:
+	Tooltip:
+		Name: Advanced Tech Center
+	Buildable:
+		Prerequisites: afact,aweap,radome
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -200
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RASTEK:
+	Tooltip:
+		Name: Soviet Tech Center
+	Buildable:
+		Prerequisites: sfact,sweap,radome
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 600
+	Power:
+		Amount: -100
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAFCOM:
+	Tooltip:
+		Name: Forward Command Center
+	Buildable:
+		Prerequisites: sfact
+	Valued:
+		Cost: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -200
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SGEN:
+	Tooltip:
+		Name: Stealth Generator
+	Buildable:
+		Prerequisites: radar,bioe
+	Valued:
+		Cost: 2500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 600
+	Power:
+		Amount: -250
+	Building:
+		Adjacent: 2
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAGAP:
+	Tooltip:
+		Name: Gap Generator
+	Buildable:
+		Prerequisites: afact,raatek
+	Valued:
+		Cost: 1000
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 600
+	Power:
+		Amount: -60
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+EYE:
+	Tooltip:
+		Name: Advanced Communications Center
+	Buildable:
+		Prerequisites: gfact,hq
+	Valued:
+		Cost: 2800
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -200
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TMPL:
+	Tooltip:
+		Name: Temple of NOD
+	Buildable:
+		Prerequisites: radar,hq
+	Valued:
+		Cost: 3000
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 2000
+	Power:
+		Amount: -150
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAIRON:
+	Tooltip:
+		Name: Iron Curtain
+	Buildable:
+		Prerequisites: sfact,rastek
+	Valued:
+		Cost: 2800
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -200
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAPDOX:
+	Tooltip:
+		Name: Chronosphere
+	Buildable:
+		Prerequisites: afact,raatek
+	Valued:
+		Cost: 2800
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -200
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+AMSLO:
+	Tooltip:
+		Name: Missile Silo
+	Buildable:
+		Prerequisites: afact,raatek
+	Valued:
+		Cost: 2500
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -100
+	RenderSprites:
+		Image: namslo
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NAMSLO:
+	Tooltip:
+		Name: Missile Silo
+	Buildable:
+		Prerequisites: sfact,rastek
+	Valued:
+		Cost: 2500
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -100
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+KOTH:
+	Tooltip:
+		Name: King of the Hill
+	Health:
+		HP: 4000
+	RenderSprites:
+		Image: raironu
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAASTRP:
+	Tooltip:
+		Name: Runway
+	Buildable:
+		Prerequisites: sfact,radome
+	Valued:
+		Cost: 600
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 7c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: astrp
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GFACT_AIUP:
+	Valued:
+		Cost: 0
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NFACT_AIUP:
+	Valued:
+		Cost: 0
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+AFACT_AIUP:
+	Valued:
+		Cost: 0
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SFACT_AIUP:
+	Valued:
+		Cost: 0
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUKE_AI:
+	Tooltip:
+		Name: Power Plant
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 225
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: 100
+	RenderSprites:
+		Image: nuke
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAPOWR_AI:
+	Tooltip:
+		Name: Power Plant
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 187
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 400
+	Power:
+		Amount: 100
+	RenderSprites:
+		Image: rapowr
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+PYLE_AIUP:
+	Buildable:
+		Prerequisites: pyle
+	Valued:
+		Cost: -75
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+HAND_AIUP:
+	Buildable:
+		Prerequisites: hand
+	Valued:
+		Cost: -75
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RATENT_AIUP:
+	Buildable:
+		Prerequisites: ratent
+	Valued:
+		Cost: -75
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RABARR_AIUP:
+	Buildable:
+		Prerequisites: rabarr
+	Valued:
+		Cost: -75
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+PROC_AI:
+	Tooltip:
+		Name: Refinery
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 900
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: proc
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+PROC_AIUP:
+	Buildable:
+		Prerequisites: proc
+	Valued:
+		Cost: -500
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAPROC_AIUP:
+	Buildable:
+		Prerequisites: raproc
+	Valued:
+		Cost: -500
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 200
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+WEAP_AIUP:
+	Buildable:
+		Prerequisites: weap
+	Valued:
+		Cost: -500
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+AFLD_AIUP:
+	Buildable:
+		Prerequisites: afld
+	Valued:
+		Cost: -500
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2B_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 250
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2C_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Buildable:
+		Prerequisites: hand_ai
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 250
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2D_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Buildable:
+		Prerequisites: hand_ai
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 250
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2E_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 250
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2F_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 250
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAAPWR_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Valued:
+		Cost: 500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 700
+	Power:
+		Amount: 200
+	RenderSprites:
+		Image: raapwr
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GUN1_AI:
+	Tooltip:
+		Name: Gun Turret
+	Valued:
+		Cost: 450
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 7c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: gun
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TWR_AI:
+	Tooltip:
+		Name: Guard Tower
+	Valued:
+		Cost: 375
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -10
+	RenderSprites:
+		Image: twr
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GUN_AI:
+	Tooltip:
+		Name: Gun Turret
+	Valued:
+		Cost: 450
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 7c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: gun
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAPBOX_AI:
+	Tooltip:
+		Name: Pill Box
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -15
+	RenderSprites:
+		Image: rapbox
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAFTUR_AI:
+	Tooltip:
+		Name: Flame Turret
+	Valued:
+		Cost: 450
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: raftur
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SAM_AI:
+	Tooltip:
+		Name: SAM Site
+	Valued:
+		Cost: 562
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: sam
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RASAM_AI:
+	Tooltip:
+		Name: SAM Site
+	Buildable:
+		Prerequisites: radome
+	Valued:
+		Cost: 562
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: rasam
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAAGUN_AI:
+	Tooltip:
+		Name: Anti-aircraft Artillery
+	Buildable:
+		Prerequisites: radome
+	Valued:
+		Cost: 450
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -50
+	RenderSprites:
+		Image: raagun
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAHBOX_AI:
+	Tooltip:
+		Name: Camouflaged Pill Box
+	Valued:
+		Cost: 450
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: -15
+	RenderSprites:
+		Image: rahbox
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAGUN_AI:
+	Tooltip:
+		Name: Gun Turret
+	Valued:
+		Cost: 450
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 7c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -40
+	RenderSprites:
+		Image: gun
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ATWR_AI:
+	Tooltip:
+		Name: Advanced Guard Tower
+	Buildable:
+		Prerequisites: hq
+	Valued:
+		Cost: 750
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 600
+	Power:
+		Amount: -20
+	RenderSprites:
+		Image: atwr
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+OBLI_AI:
+	Tooltip:
+		Name: Obelisk of Light
+	Buildable:
+		Prerequisites: hq
+	Valued:
+		Cost: 1125
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 7c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -150
+	RenderSprites:
+		Image: obli
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RATSLA_AI:
+	Tooltip:
+		Name: Tesla Coil
+	Buildable:
+		Prerequisites: sweap_ai
+	Valued:
+		Cost: 1125
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -150
+	RenderSprites:
+		Image: ratsla
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+HQ_AIUP:
+	Buildable:
+		Prerequisites: hq
+	Valued:
+		Cost: -250
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RADOME_AIUP:
+	Buildable:
+		Prerequisites: radome
+	Valued:
+		Cost: -250
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+HPAD_AI:
+	Tooltip:
+		Name: Helipad
+	Valued:
+		Cost: 225
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -10
+	RenderSprites:
+		Image: hpad
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+AHPAD_AI:
+	Tooltip:
+		Name: Helipad
+	Buildable:
+		Prerequisites: aweap_ai,radome
+	Valued:
+		Cost: 225
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -10
+	RenderSprites:
+		Image: hpad
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ASTRP_AIUP1:
+	Buildable:
+		Prerequisites: astrp
+	Valued:
+		Cost: -125
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ASTRP_AIUP2:
+	Buildable:
+		Prerequisites: astrp
+	Valued:
+		Cost: -125
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ASTRP_AIUP3:
+	Buildable:
+		Prerequisites: astrp
+	Valued:
+		Cost: -125
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ASTRP_AIUP4:
+	Buildable:
+		Prerequisites: astrp
+	Valued:
+		Cost: -125
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAASTRP_AIUP1:
+	Buildable:
+		Prerequisites: raastrp
+	Valued:
+		Cost: -125
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAASTRP_AIUP2:
+	Buildable:
+		Prerequisites: raastrp
+	Valued:
+		Cost: -125
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAASTRP_AIUP3:
+	Buildable:
+		Prerequisites: raastrp
+	Valued:
+		Cost: -125
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAASTRP_AIUP4:
+	Buildable:
+		Prerequisites: raastrp
+	Valued:
+		Cost: -125
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+EYE_AI:
+	Tooltip:
+		Name: Advanced Communications Center
+	Buildable:
+		Prerequisites: hq
+	Valued:
+		Cost: 2100
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -200
+	RenderSprites:
+		Image: eye
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TMPL_AIUP:
+	Buildable:
+		Prerequisites: tmpl
+	Valued:
+		Cost: -750
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BIOE_AIUP:
+	Buildable:
+		Prerequisites: bioe
+	Valued:
+		Cost: -350
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAATEK_AI:
+	Tooltip:
+		Name: Advanced Tech Center
+	Buildable:
+		Prerequisites: radome
+	Valued:
+		Cost: 1125
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -200
+	RenderSprites:
+		Image: raatek
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RASTEK_AI:
+	Tooltip:
+		Name: AI Soviet Tech Center
+	Buildable:
+		Prerequisites: radome
+	Valued:
+		Cost: 1125
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 600
+	Power:
+		Amount: -100
+	RenderSprites:
+		Image: rastek
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAATEK_AIUP:
+	Buildable:
+		Prerequisites: raatek
+	Valued:
+		Cost: -375
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RASTEK_AIUP:
+	Buildable:
+		Prerequisites: rastek
+	Valued:
+		Cost: -375
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SGEN_AIUP:
+	Buildable:
+		Prerequisites: sgen
+	Valued:
+		Cost: -625
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+COMM_AIUP:
+	Buildable:
+		Prerequisites: comm
+	Valued:
+		Cost: -250
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+COMM1_AI:
+	Tooltip:
+		Name: AI Ion Cannon Uplink
+	Buildable:
+		Prerequisites: comm,miss
+	Valued:
+		Cost: 1350
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 1c0
+	Power:
+		Amount: -100
+	RenderSprites:
+		Image: eye_a
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NHQ_AIUP:
+	Buildable:
+		Prerequisites: nhq
+	Valued:
+		Cost: -250
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MISS_AIUP:
+	Buildable:
+		Prerequisites: miss
+	Valued:
+		Cost: -375
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GSYRD_AI:
+	Tooltip:
+		Name: GDI Naval Yard
+	Buildable:
+		Prerequisites: miss
+	Valued:
+		Cost: 650
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: syrd_ai
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NSYRD_AI:
+	Tooltip:
+		Name: Nod Naval Yard
+	Buildable:
+		Prerequisites: bioe
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: syrd_ai
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAMSLO_AI:
+	Tooltip:
+		Name: Missile Silo
+	Buildable:
+		Prerequisites: radome
+	Valued:
+		Cost: 1875
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -100
+	RenderSprites:
+		Image: namslo
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ASYRD_AI:
+	Tooltip:
+		Name: Allied Naval Yard
+	Buildable:
+		Prerequisites: raatek
+	Valued:
+		Cost: 650
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 400
+	Power:
+		Amount: -30
+	RenderSprites:
+		Image: syrd_ai
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RASPEN_AI:
+	Tooltip:
+		Name: Sub Pen
+	Buildable:
+		Prerequisites: rastek
+	Valued:
+		Cost: 650
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 4c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: -30
+	Building:
+		Adjacent: 10
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2G_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 200
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2H_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 250
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2I_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 250
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NUK2J_AI:
+	Tooltip:
+		Name: Adv. Power Plant
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 525
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 5c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 250
+	RenderSprites:
+		Image: nuk2
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DTERM:
+	Tooltip:
+		Name: Deployed Termite
+	Valued:
+		Cost: 1150
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 350
+	Power:
+		Amount: 0
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DMSA:
+	Tooltip:
+		Name: Deployed Sensor Array
+	Valued:
+		Cost: 950
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 0
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DMSA_AI:
+	Tooltip:
+		Name: Deployed Sensor Array
+	Buildable:
+		Prerequisites: proc_ai
+	Valued:
+		Cost: 950
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 0
+	RenderSprites:
+		Image: dmsa
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MAD:
+	Tooltip:
+		Name: Deployed M.A.D. Tank
+	Valued:
+		Cost: 2300
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 300
+	Power:
+		Amount: 0
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RAMAD:
+	Tooltip:
+		Name: Deployed M.A.D. Tank
+	Valued:
+		Cost: 2300
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 300
+	Power:
+		Amount: 1000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DCTNK:
+	Tooltip:
+		Name: Chrono Tank
+	Valued:
+		Cost: 2400
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 9c0
+	Health:
+		HP: 350
+	Power:
+		Amount: 0
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DEPCRUIS:
+	Tooltip:
+		Name: Cruiser (combat-ready)
+	Buildable:
+		Prerequisites: syrdd,miss
+	Valued:
+		Cost: 2000
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 700
+	Building:
+		Adjacent: 20
+		Dimensions: 1,3
+		Footprint: x x x
+	WithMakeAnimation:
+	RenderSprites:
+		Image: depcruis
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DEP941:
+	Tooltip:
+		Name: Project 941 (combat-ready)
+	Buildable:
+		Prerequisites: syrdd,miss
+	Valued:
+		Cost: 2500
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 3,1
+		Footprint: xxx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DEPCARR:
+	Tooltip:
+		Name: Carrier (combat-ready)
+	Buildable:
+		Prerequisites: syrdd,miss
+	Valued:
+		Cost: 5000
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 1,3
+		Footprint: x x x
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DEPFRIG:
+	Tooltip:
+		Name: Frigate (sonar active)
+	Buildable:
+		Prerequisites: asyrd,raatek
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 350
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DEPLASCO:
+	Tooltip:
+		Name: Laser Corvette (stealth mode)
+	Buildable:
+		Prerequisites: syrdd,miss
+	Valued:
+		Cost: 1500
+	Armor:
+		Type: concrete
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 350
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NODE:
+	Tooltip:
+		Name: AI Base Node
+	Armor:
+		Type: wood
+	Health:
+		HP: 600
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V01:
+	Tooltip:
+		Name: Church
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V02:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V03:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V04:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V05:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V06:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V07:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V08:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V09:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V10:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V11:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V12:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V13:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V14:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V15:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V16:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V17:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V18:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V19:
+	Tooltip:
+		Name: Oil Pump
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V20:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V21:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V22:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V23:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V24:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V25:
+	Tooltip:
+		Name: Church
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V26:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V27:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V28:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V29:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V30:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V31:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V32:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V33:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V34:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V35:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V36:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+V37:
+	Tooltip:
+		Name: Westwood Executive Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS01:
+	Tooltip:
+		Name: Church
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS02:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS03:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS04:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS05:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS06:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS07:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS08:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS09:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS10:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS11:
+	Tooltip:
+		Name: Civilian Building
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS12:
+	Tooltip:
+		Name: Iglo
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS13:
+	Tooltip:
+		Name: Iglo
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS14:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS15:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS16:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS17:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VS18:
+	Tooltip:
+		Name: Field
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+HOSP:
+	Tooltip:
+		Name: Hospital
+	Valued:
+		Cost: 500
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BIO:
+	Tooltip:
+		Name: Bio Research Lab
+	Buildable:
+		Prerequisites: cabhut
+	Valued:
+		Cost: 500
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 2c0
+	Health:
+		HP: 600
+	Power:
+		Amount: -40
+	Building:
+		Adjacent: 1
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithMakeAnimation:
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ARCO:
+	Tooltip:
+		Name: Arcology
+	Armor:
+		Type: wood
+	Health:
+		HP: 600
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+WDML:
+	Tooltip:
+		Name: Windmill
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+LHUS:
+	Tooltip:
+		Name: Lighthouse
+	Armor:
+		Type: wood
+	Health:
+		HP: 600
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0001:
+	Tooltip:
+		Name: Rade's Roadhouse
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0002:
+	Tooltip:
+		Name: Sandberg and Son's
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0003:
+	Tooltip:
+		Name: Temp Housing
+	Armor:
+		Type: light
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0004:
+	Tooltip:
+		Name: Waystation
+	Armor:
+		Type: light
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0005:
+	Tooltip:
+		Name: Ferbie's 4 Sale
+	Armor:
+		Type: light
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0006:
+	Tooltip:
+		Name: Deluxe Accomodations
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0007:
+	Tooltip:
+		Name: Field Generator
+	Armor:
+		Type: light
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0008:
+	Tooltip:
+		Name: Subterranean Dwelling
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 2,3
+		Footprint: xx xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0009:
+	Tooltip:
+		Name: Subterranean Dwelling
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0010:
+	Tooltip:
+		Name: Leary Traveller Inn
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0011:
+	Tooltip:
+		Name: Water Tank
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0012:
+	Tooltip:
+		Name: Greenhouse
+	Armor:
+		Type: light
+	Health:
+		HP: 100
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0013:
+	Tooltip:
+		Name: Water Purifier
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0014:
+	Tooltip:
+		Name: Observation Tower
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0015:
+	Tooltip:
+		Name: Port-A-Shack
+	Armor:
+		Type: light
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0016:
+	Tooltip:
+		Name: Port-A-Shack Deluxe
+	Armor:
+		Type: light
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0017:
+	Tooltip:
+		Name: Energy Transformer
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0018:
+	Tooltip:
+		Name: Solar Panel
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0019:
+	Tooltip:
+		Name: Solar Panel
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0020:
+	Tooltip:
+		Name: Solar Panel
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CA0021:
+	Tooltip:
+		Name: Solar Panel
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY01:
+	Tooltip:
+		Name: Connelly Court Apts.
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY02:
+	Tooltip:
+		Name: Lightner's Luxury Suites
+	Armor:
+		Type: wood
+	Health:
+		HP: 700
+	Building:
+		Dimensions: 1,2
+		Footprint: x x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY03:
+	Tooltip:
+		Name: Office Building
+	Armor:
+		Type: wood
+	Health:
+		HP: 500
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY04:
+	Tooltip:
+		Name: Westwood Stock Exchange
+	Armor:
+		Type: wood
+	Health:
+		HP: 600
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY05:
+	Tooltip:
+		Name: Daily Sun Times
+	Armor:
+		Type: wood
+	Health:
+		HP: 600
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY06:
+	Tooltip:
+		Name: YEO-CA Cola Corp.
+	Armor:
+		Type: heavy
+	Health:
+		HP: 500
+	Building:
+		Dimensions: 3,2
+		Footprint: xxx xxx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY07:
+	Tooltip:
+		Name: Urban Housing
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 3,1
+		Footprint: xxx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY08:
+	Tooltip:
+		Name: Yee's Discount Liquor
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY09:
+	Tooltip:
+		Name: Abandoned Warehouse
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY10:
+	Tooltip:
+		Name: Urban Storefront
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY11:
+	Tooltip:
+		Name: Ambrose Lounge
+	Armor:
+		Type: wood
+	Health:
+		HP: 500
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY12:
+	Tooltip:
+		Name: Bostic Tower
+	Armor:
+		Type: heavy
+	Health:
+		HP: 600
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY13:
+	Tooltip:
+		Name: Hewitt Hair Salon
+	Armor:
+		Type: wood
+	Health:
+		HP: 500
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY14:
+	Tooltip:
+		Name: Business Offices
+	Armor:
+		Type: wood
+	Health:
+		HP: 600
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY15:
+	Tooltip:
+		Name: 2nd National Bank
+	Armor:
+		Type: wood
+	Health:
+		HP: 500
+	Building:
+		Dimensions: 3,2
+		Footprint: xxx xxx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY16:
+	Tooltip:
+		Name: Highrise Hotel
+	Armor:
+		Type: wood
+	Health:
+		HP: 500
+	Building:
+		Dimensions: 3,1
+		Footprint: xxx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY17:
+	Tooltip:
+		Name: The Projects
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 3,2
+		Footprint: xxx xxx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY18:
+	Tooltip:
+		Name: Archer Asylum
+	Armor:
+		Type: heavy
+	Health:
+		HP: 600
+	Building:
+		Dimensions: 2,3
+		Footprint: xx xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY19:
+	Tooltip:
+		Name: Fill'er Up-Pump'N'Go
+	Armor:
+		Type: wood
+	Health:
+		HP: 500
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY20:
+	Tooltip:
+		Name: Gas Pump
+	Armor:
+		Type: wood
+	Health:
+		HP: 250
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY21:
+	Tooltip:
+		Name: Gas Station Sign
+	Armor:
+		Type: none
+	Health:
+		HP: 100
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CITY22:
+	Tooltip:
+		Name: Church
+	Armor:
+		Type: none
+	Health:
+		HP: 100
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD01:
+	Tooltip:
+		Name: Eat at Rade's Roadhouse
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD02:
+	Tooltip:
+		Name: Drink YEO-CA Cola!
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD03:
+	Tooltip:
+		Name: Hamburgers $.99
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD04:
+	Tooltip:
+		Name: Visit Scenic Las Vegas
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD05:
+	Tooltip:
+		Name: Rooms $29 a nite
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD06:
+	Tooltip:
+		Name: Kaspm's Tiberium Warhouse
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD07:
+	Tooltip:
+		Name: Alkaline's Battery Superstore
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD08:
+	Tooltip:
+		Name: Alex-gators petshop just ahead!
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD09:
+	Tooltip:
+		Name: TacticX games rock!
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD10:
+	Tooltip:
+		Name: WW Surf and Turf hits the spot!
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD11:
+	Tooltip:
+		Name: Only 11 miles to Zydeko's cafe!
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD12:
+	Tooltip:
+		Name: No escape from Archer's Asylum!
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD13:
+	Tooltip:
+		Name: Stop in at Hewitt's hair salon
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD14:
+	Tooltip:
+		Name: Billy Bob's Harvester school
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 2,1
+		Footprint: xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD15:
+	Tooltip:
+		Name: Pannullo's hacienda es bueno
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BBOARD16:
+	Tooltip:
+		Name: Join GDI: We save lives.
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CAPYR01:
+	Tooltip:
+		Name: Pyramid
+	Armor:
+		Type: heavy
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CAPYR02:
+	Tooltip:
+		Name: Pyramid
+	Armor:
+		Type: heavy
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CAPYR03:
+	Tooltip:
+		Name: Pyramid
+	Armor:
+		Type: heavy
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CAVEGA:
+	Tooltip:
+		Name: Vega's Pyramid
+	Armor:
+		Type: none
+	Health:
+		HP: 100
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BUMPR_E:
+	Tooltip:
+		Name: Bumper
+	Health:
+		HP: 2000
+	Building:
+		Adjacent: 0
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BUMPR_N:
+	Tooltip:
+		Name: Bumper
+	Health:
+		HP: 2000
+	Building:
+		Adjacent: 0
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BUMPR_NE:
+	Tooltip:
+		Name: Bumper
+	Health:
+		HP: 2000
+	Building:
+		Adjacent: 0
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BUMPR_NW:
+	Tooltip:
+		Name: Bumper
+	Health:
+		HP: 2000
+	Building:
+		Adjacent: 0
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BUMPR_S:
+	Tooltip:
+		Name: Bumper
+	Health:
+		HP: 2000
+	Building:
+		Adjacent: 0
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BUMPR_SE:
+	Tooltip:
+		Name: Bumper
+	Health:
+		HP: 2000
+	Building:
+		Adjacent: 0
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BUMPR_SW:
+	Tooltip:
+		Name: Bumper
+	Health:
+		HP: 2000
+	Building:
+		Adjacent: 0
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BUMPR_W:
+	Tooltip:
+		Name: Bumper
+	Health:
+		HP: 2000
+	Building:
+		Adjacent: 0
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CABHUT:
+	Tooltip:
+		Name: Bridge repair hut
+	Health:
+		HP: 2000
+	Building:
+		Adjacent: 0
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TSTLAMP:
+	Tooltip:
+		Name: Alpha Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 0
+	RenderSprites:
+		Palette: terraindecoration
+		Image: lite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GALITE:
+	Tooltip:
+		Name: Light Post
+	Valued:
+		Cost: 200
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 0
+	RenderSprites:
+		Palette: terraindecoration
+		Image: lite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+YELWLAMP:
+	Tooltip:
+		Name: Yellow Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 0
+	RenderSprites:
+		Palette: terraindecoration
+		Image: lite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+GRENLAMP:
+	Tooltip:
+		Name: Green Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 0
+	RenderSprites:
+		Palette: terraindecoration
+		Image: lite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BLUELAMP:
+	Tooltip:
+		Name: Blue Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 0
+	RenderSprites:
+		Palette: terraindecoration
+		Image: lite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+PURPLAMP:
+	Tooltip:
+		Name: Purple Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 0
+	RenderSprites:
+		Palette: terraindecoration
+		Image: lite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+REDLAMP:
+	Tooltip:
+		Name: Red Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 0
+	RenderSprites:
+		Palette: terraindecoration
+		Image: lite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+NEGLAMP:
+	Tooltip:
+		Name: Invisible Negative Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 1000
+	Power:
+		Amount: 0
+	RenderSpritesEditorOnly:
+		Palette: terraindecoration
+		Image: inlite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+INGALITE:
+	Tooltip:
+		Name: Invisible Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	RenderSpritesEditorOnly:
+		Palette: terraindecoration
+		Image: inlite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+INORANLAMP:
+	Tooltip:
+		Name: Invisible Orange Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 600
+	Power:
+		Amount: 0
+	RenderSpritesEditorOnly:
+		Palette: terraindecoration
+		Image: inlite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+INGRNLMP:
+	Tooltip:
+		Name: Invisible Green Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	RenderSpritesEditorOnly:
+		Palette: terraindecoration
+		Image: inlite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+INREDLMP:
+	Tooltip:
+		Name: Invisible Red Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	RenderSpritesEditorOnly:
+		Palette: terraindecoration
+		Image: inlite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+INBLULMP:
+	Tooltip:
+		Name: Invisible Blue Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	RenderSpritesEditorOnly:
+		Palette: terraindecoration
+		Image: inlite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+INYELWLAMP:
+	Tooltip:
+		Name: Invisible Yellow Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	RenderSpritesEditorOnly:
+		Palette: terraindecoration
+		Image: inlite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+INPURPLAMP:
+	Tooltip:
+		Name: Invisible Purple Light Post
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	RenderSpritesEditorOnly:
+		Palette: terraindecoration
+		Image: inlite
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBAFLD:
+	Tooltip:
+		Name: Ruined Airfield
+	Valued:
+		Cost: 500
+	Armor:
+		Type: heavy
+	Health:
+		HP: 500
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBATWR:
+	Tooltip:
+		Name: Ruined Advanced Guard Tower
+	Valued:
+		Cost: 250
+	Armor:
+		Type: light
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBBIO:
+	Tooltip:
+		Name: Ruined Bio Research Lab
+	Valued:
+		Cost: 125
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBEYE:
+	Tooltip:
+		Name: Ruined Advanced Communications Center
+	Valued:
+		Cost: 700
+	Armor:
+		Type: wood
+	Health:
+		HP: 500
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBFACT:
+	Tooltip:
+		Name: Ruined Construction Yard
+	Valued:
+		Cost: 1250
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBFIX:
+	Tooltip:
+		Name: Ruined Repair Facility
+	Valued:
+		Cost: 300
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBHAND:
+	Tooltip:
+		Name: Ruined Hand of Nod
+	Valued:
+		Cost: 75
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBHOSP:
+	Tooltip:
+		Name: Ruined Hospital
+	Valued:
+		Cost: 125
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBHPAD:
+	Tooltip:
+		Name: Ruined Helipad
+	Valued:
+		Cost: 75
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBHQ:
+	Tooltip:
+		Name: Ruined Communications Center
+	Valued:
+		Cost: 250
+	Armor:
+		Type: wood
+	Health:
+		HP: 500
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBMISS:
+	Tooltip:
+		Name: Ruined Tech Center
+	Valued:
+		Cost: 250
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBNUK2:
+	Tooltip:
+		Name: Ruined Advanced Power Plant
+	Valued:
+		Cost: 175
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBNUKE:
+	Tooltip:
+		Name: Ruined Power Plant
+	Valued:
+		Cost: 75
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBOBLI:
+	Tooltip:
+		Name: Ruined Obelisk
+	Valued:
+		Cost: 375
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBPROC:
+	Tooltip:
+		Name: Ruined Tiberium Refinery
+	Valued:
+		Cost: 500
+	Armor:
+		Type: wood
+	Health:
+		HP: 900
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBPYLE:
+	Tooltip:
+		Name: Ruined Barracks
+	Valued:
+		Cost: 75
+	Armor:
+		Type: wood
+	Health:
+		HP: 400
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBSAM:
+	Tooltip:
+		Name: Ruined SAM Site
+	Valued:
+		Cost: 125
+	Armor:
+		Type: heavy
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBSILO:
+	Tooltip:
+		Name: Ruined Tiberium Silo
+	Valued:
+		Cost: 37
+	Armor:
+		Type: wood
+	Health:
+		HP: 300
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBTMPL:
+	Tooltip:
+		Name: Ruined Temple of Nod
+	Valued:
+		Cost: 750
+	Armor:
+		Type: light
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBTWR:
+	Tooltip:
+		Name: Ruined Guard Tower
+	Valued:
+		Cost: 125
+	Armor:
+		Type: wood
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBWEAP:
+	Tooltip:
+		Name: Ruined War Factory
+	Valued:
+		Cost: 500
+	Armor:
+		Type: light
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBRAWEAP:
+	Tooltip:
+		Name: Ruined War Factory
+	Valued:
+		Cost: 500
+	Armor:
+		Type: wood
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+DBRAPROC:
+	Tooltip:
+		Name: Ruined Refinery
+	Valued:
+		Cost: 500
+	Armor:
+		Type: wood
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RABARL:
+	Tooltip:
+		Name: Oil Barrel
+	Valued:
+		Cost: 50
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 1c0
+	Health:
+		HP: 10
+	Power:
+		Amount: 0
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+RABRL3:
+	Tooltip:
+		Name: Oil Barrels
+	Valued:
+		Cost: 50
+	Armor:
+		Type: light
+	RevealsShroud:
+		Range: 1c0
+	Health:
+		HP: 10
+	Power:
+		Amount: 0
+	Building:
+		Adjacent: 1
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TIBSPRDR:
+	Tooltip:
+		Name: Invisible Tiberium Riparius Spreader
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: -1
+	RenderSpritesEditorOnly:
+		Image: tibsprdr3
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TIBSPRDRL:
+	Tooltip:
+		Name: Invisible Tiberium Riparius Spreader
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: -1
+	RenderSpritesEditorOnly:
+		Image: tibsprdr4
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TIBSPRDRH:
+	Tooltip:
+		Name: Invisible Tiberium Riparius Spreader
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: -1
+	RenderSpritesEditorOnly:
+		Image: tibsprdr6
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TIBSPRDC:
+	Tooltip:
+		Name: Invisible Tiberium Cruentus Spreader
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: -1
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TIBSPRDV:
+	Tooltip:
+		Name: Invisible Tiberium Vinifera Spreader
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: -1
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TIBSPRDA:
+	Tooltip:
+		Name: Invisible Ore Spreader
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: -1
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTRB_SPR:
+	Tooltip:
+		Name: Invisible Big Meteor spreader
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: -1
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTRS_SPR:
+	Tooltip:
+		Name: Invisible Small Meteor spreader
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: -1
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTRT_SPR:
+	Tooltip:
+		Name: Invisible Tiny Meteor spreader
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: -1
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+WOODCRATE:
+	Tooltip:
+		Name: Wood Crate
+	Armor:
+		Type: none
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+STEELCRATE:
+	Tooltip:
+		Name: Steel Crate
+	Armor:
+		Type: none
+	Health:
+		HP: 200
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+WOOD:
+	Tooltip:
+		Name: Wooden Fence
+	Valued:
+		Cost: 125
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 25
+	Building:
+		Adjacent: 4
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+FENC:
+	Tooltip:
+		Name: Barbed Wire Fence
+	Valued:
+		Cost: 125
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 25
+	Building:
+		Adjacent: 4
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+LSRFNCE:
+	Tooltip:
+		Name: Laser Fence Section
+	Valued:
+		Cost: 0
+	Armor:
+		Type: heavy
+	RevealsShroud:
+		Range: 1c0
+	Health:
+		HP: 800
+	Power:
+		Amount: -2
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTREET1:
+	Tooltip:
+		Name: Infested Tree
+	Armor:
+		Type: wood
+	Health:
+		HP: 10000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTREET2:
+	Tooltip:
+		Name: Infested Tree
+	Armor:
+		Type: wood
+	Health:
+		HP: 10000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTREEW1:
+	Tooltip:
+		Name: Infested Tree
+	Armor:
+		Type: wood
+	Health:
+		HP: 10000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTREEW2:
+	Tooltip:
+		Name: Infested Tree
+	Armor:
+		Type: wood
+	Health:
+		HP: 10000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTREED1:
+	Tooltip:
+		Name: Infested Tree
+	Armor:
+		Type: wood
+	Health:
+		HP: 10000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTREETC1:
+	Tooltip:
+		Name: Infested Tree
+	Armor:
+		Type: wood
+	Health:
+		HP: 10000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTREETC2:
+	Tooltip:
+		Name: Infested Tree
+	Armor:
+		Type: wood
+	Health:
+		HP: 10000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTREEWC1:
+	Tooltip:
+		Name: Infested Tree
+	Armor:
+		Type: wood
+	Health:
+		HP: 10000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTREEWC2:
+	Tooltip:
+		Name: Infested Tree
+	Armor:
+		Type: wood
+	Health:
+		HP: 10000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+MTREEDC1:
+	Tooltip:
+		Name: Infested Tree
+	Armor:
+		Type: wood
+	Health:
+		HP: 10000
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CRLAMP1:
+	Tooltip:
+		Name: .
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CRLAMP2:
+	Tooltip:
+		Name: .
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CRLAMP3:
+	Tooltip:
+		Name: .
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CRLAMP4:
+	Tooltip:
+		Name: .
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CRLAMP5:
+	Tooltip:
+		Name: .
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CRLAMP6:
+	Tooltip:
+		Name: .
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CRLAMP7:
+	Tooltip:
+		Name: .
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CRLAMP8:
+	Tooltip:
+		Name: .
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+CRLAMP9:
+	Tooltip:
+		Name: .
+	Armor:
+		Type: wood
+	RevealsShroud:
+		Range: 0c0
+	Health:
+		HP: 6000
+	Power:
+		Amount: 0
+	Immobile:
+ 		OccupiesSpace: False
+	RenderSpritesEditorOnly:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+# Terrain Objects
+
+T01:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T02:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T03:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T04:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T05:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T06:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T07:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T08:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T09:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T10:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T11:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T12:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T13:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T14:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T15:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T16:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T17:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+T18:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TC01:
+	Tooltip:
+		Name: Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TC02:
+	Tooltip:
+		Name: Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TC03:
+	Tooltip:
+		Name: Trees
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TC04:
+	Tooltip:
+		Name: Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TC05:
+	Tooltip:
+		Name: Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BR1:
+	Tooltip:
+		Name: Bush
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BR2:
+	Tooltip:
+		Name: Bush
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BR3:
+	Tooltip:
+		Name: Cactus
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BR4:
+	Tooltip:
+		Name: Cactus
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BR5:
+	Tooltip:
+		Name: Cactus
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BR6:
+	Tooltip:
+		Name: Bushes
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BR7:
+	Tooltip:
+		Name: Bushes
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BR8:
+	Tooltip:
+		Name: Bushes
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BR9:
+	Tooltip:
+		Name: Bushes
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST01:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST02:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST03:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST05:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST06:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST07:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST08:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST10:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST11:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST12:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST13:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST14:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST15:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST16:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+ST17:
+	Tooltip:
+		Name: Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+STC01:
+	Tooltip:
+		Name: Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+STC02:
+	Tooltip:
+		Name: Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+STC03:
+	Tooltip:
+		Name: Trees
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+STC04:
+	Tooltip:
+		Name: Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+STC05:
+	Tooltip:
+		Name: Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT01:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT02:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT03:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT05:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT06:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT07:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT10:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT11:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT12:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT13:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT14:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT15:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT16:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BT17:
+	Tooltip:
+		Name: Burned Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BTC01:
+	Tooltip:
+		Name: Burned Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BTC02:
+	Tooltip:
+		Name: Burned Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BTC03:
+	Tooltip:
+		Name: Burned Trees
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BTC04:
+	Tooltip:
+		Name: Burned Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+BTC05:
+	Tooltip:
+		Name: Burned Trees
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+		Palette: terraindecoration
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VEINTREE:
+	Tooltip:
+		Name: Veinhole Tree
+	Armor:
+		Type: None
+	Health:
+		HP: 1000
+	RenderSprites:
+		Palette: terraindecoration
+		Image: none
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TIBTREE:
+	Tooltip:
+		Name: Tiberium Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TIBTREE2:
+	Tooltip:
+		Name: Tiberium Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+TIBTREE3:
+	Tooltip:
+		Name: Tiberium Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VINTREE:
+	Tooltip:
+		Name: Vinifera Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VINTREE2:
+	Tooltip:
+		Name: Vinifera Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+VINTREE3:
+	Tooltip:
+		Name: Vinifera Tree
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+OREMINE:
+	Tooltip:
+		Name: Ore Mine
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+OREMINEA:
+	Tooltip:
+		Name: Ore Mine
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+OREMINE2:
+	Tooltip:
+		Name: Ore Mine
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+OREMINE3:
+	Tooltip:
+		Name: Ore Mine
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SROCK01:
+	Tooltip:
+		Name: Sand Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SROCK02:
+	Tooltip:
+		Name: Sand Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SROCK03:
+	Tooltip:
+		Name: Sand Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SROCK04:
+	Tooltip:
+		Name: Sand Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SROCK05:
+	Tooltip:
+		Name: Sand Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SROCK06:
+	Tooltip:
+		Name: Sand Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+SROCK07:
+	Tooltip:
+		Name: Sand Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+WROCK01:
+	Tooltip:
+		Name: Water Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+WROCK02:
+	Tooltip:
+		Name: Water Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+WROCK03:
+	Tooltip:
+		Name: Water Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+WROCK04:
+	Tooltip:
+		Name: Water Rock
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+
+IMTO:
+	Tooltip:
+		Name: Tree
+	RenderSprites:
+	WithSpriteBody:
+	AutoSelectionSize:
+	BodyOrientation:
+		UseClassicPerspectiveFudge: False
+		QuantizedFacings: 1
+	FrozenUnderFog:
+

@@ -48,12 +48,14 @@ Rules:
 	./mods/dta/rules/world.yaml
 	./mods/dta/rules/player.yaml
 	./mods/dta/rules/misc.yaml
+	./mods/dta/rules.yaml
 
 Weapons:
 
 
 Sequences:
 	./mods/dta/sequences/misc.yaml
+	./mods/dta/sequences.yaml
 
 VoxelSequences:
 
@@ -189,5 +191,7 @@ SpriteFormats: ShpTS, TmpTS, ShpTD
 SpriteSequenceFormat: TilesetSpecificSpriteSequence
 	TilesetExtensions:
 		TEMPERATE: .tem
+		DESERT: .des
 	TilesetCodes:
-		TEMPERATE: t
+		TEMPERATE: a
+		DESERT: t

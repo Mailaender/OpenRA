@@ -1,0 +1,4668 @@
+e1:
+	icon: e1icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 144
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 256
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 272
+		Length: 18
+		Facings: 0
+
+e1ra:
+	Defaults: e1
+		Tick: 80
+	icon: e1raicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 144
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 256
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 272
+		Length: 18
+		Facings: 0
+
+e2:
+	icon: e2icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 240
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 240
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 288
+		Length: 12
+		Facings: 12
+	shoot:
+		Start: 64
+		Length: 20
+		Facings: 20
+	idle1:
+		Start: 384
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 400
+		Length: 16
+		Facings: 0
+
+e2ra:
+	Defaults: e2
+		Tick: 80
+	icon: e2raicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 240
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 240
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 288
+		Length: 12
+		Facings: 12
+	shoot:
+		Start: 64
+		Length: 20
+		Facings: 20
+	idle1:
+		Start: 384
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 400
+		Length: 16
+		Facings: 0
+
+e3:
+	icon: e3icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 144
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 192
+		Length: 10
+		Facings: 10
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 272
+		Length: 17
+		Facings: 0
+	idle2:
+		Start: 289
+		Length: 15
+		Facings: 0
+
+e3ra:
+	Defaults: e3
+		Tick: 80
+	icon: e3raicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 144
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 192
+		Length: 10
+		Facings: 10
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 272
+		Length: 17
+		Facings: 0
+	idle2:
+		Start: 289
+		Length: 15
+		Facings: 0
+
+e4:
+	icon: e4icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 208
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 16
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 16
+	idle1:
+		Start: 384
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 400
+		Length: 17
+		Facings: 0
+
+e4ra:
+	icon: e4icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 208
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 16
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 16
+	idle1:
+		Start: 384
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 400
+		Length: 17
+		Facings: 0
+
+e5:
+	icon: e5icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 208
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 16
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 16
+	idle1:
+		Start: 384
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 400
+		Length: 17
+		Facings: 0
+
+shok:
+	icon: shokicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 208
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 16
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 16
+	idle1:
+		Start: 384
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 400
+		Length: 17
+		Facings: 0
+
+e6:
+	icon: e6icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 82
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 82
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 130
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 130
+		Length: 16
+		Facings: 0
+
+medic:
+	icon: medicicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 86
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 130
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 58
+		Length: 27
+		Facings: 0
+	shoot:
+		Start: 58
+		Length: 27
+		Facings: 0
+	idle1:
+		Start: 178
+		Length: 15
+		Facings: 0
+	idle2:
+		Start: 178
+		Length: 15
+		Facings: 0
+
+spy:
+	icon: spyicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 144
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 256
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 272
+		Length: 18
+		Facings: 0
+
+thief:
+	icon: thficon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 72
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 72
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 72
+		Length: 1
+		Facings: 4
+	shoot:
+		Start: 0
+		Length: 1
+		Facings: 1
+	idle1:
+		Start: 120
+		Length: 19
+		Facings: 0
+	idle2:
+		Start: 120
+		Length: 19
+		Facings: 0
+
+rmbo:
+	icon: rmboicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 112
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 112
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 4
+	shoot:
+		Start: 64
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 192
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 208
+		Length: 16
+		Facings: 0
+
+tanya:
+	icon: tanyaicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 128
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 128
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 176
+		Length: 7
+		Facings: 7
+	shoot:
+		Start: 56
+		Length: 7
+		Facings: 7
+	idle1:
+		Start: 232
+		Length: 17
+		Facings: 0
+	idle2:
+		Start: 249
+		Length: 13
+		Facings: 0
+
+volkov:
+	icon: volkovicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 104
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 104
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 152
+		Length: 4
+		Facings: 4
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 184
+		Length: 26
+		Facings: 0
+	idle2:
+		Start: 184
+		Length: 26
+		Facings: 0
+
+hijack:
+	icon: hijackicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 144
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 256
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 272
+		Length: 18
+		Facings: 0
+
+cyp:
+	icon: cypicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 64
+		Length: 1
+		Facings: 8
+	prone-run:
+		Start: 64
+		Length: 8
+		Facings: 8
+	prone-shoot:
+		Start: 175
+		Length: 4
+		Facings: 4
+	shoot:
+		Start: 143
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 127
+		Length: 8
+		Facings: 0
+	idle2:
+		Start: 135
+		Length: 7
+		Facings: 0
+
+jumpjet:
+	icon: jjeticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 164
+		Length: 6
+		Facings: 6
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 6
+	idle1:
+		Start: 56
+		Length: 15
+		Facings: 0
+	idle2:
+		Start: 71
+		Length: 15
+		Facings: 0
+
+d1:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+d2:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+c1:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+c2:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+c3:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+c4:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+c5:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+c6:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+c7:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+c8:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+c9:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+c10:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+chan:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 104
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 104
+		Length: 16
+		Facings: 0
+
+delphi:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 189
+		Length: 12
+		Facings: 0
+	idle2:
+		Start: 189
+		Length: 12
+		Facings: 0
+
+moebius:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 8
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 205
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 104
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 104
+		Length: 16
+		Facings: 0
+
+dog:
+	icon: dogicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 56
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	prone-run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-shoot:
+		Start: 104
+		Length: 14
+		Facings: 14
+	shoot:
+		Start: 104
+		Length: 14
+		Facings: 14
+	idle1:
+		Start: 216
+		Length: 8
+		Facings: 0
+	idle2:
+		Start: 224
+		Length: 11
+		Facings: 0
+
+doggier:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 90
+		Length: 1
+		Facings: 0
+	prone-run:
+		Start: 0
+		Length: 0
+		Facings: 0
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 91
+		Length: 8
+		Facings: 0
+	idle2:
+		Start: 91
+		Length: 8
+		Facings: 0
+
+doggiev:
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 90
+		Length: 1
+		Facings: 0
+	prone-run:
+		Start: 0
+		Length: 0
+		Facings: 0
+	prone-shoot:
+		Start: 0
+		Length: 0
+		Facings: 0
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 91
+		Length: 8
+		Facings: 0
+	idle2:
+		Start: 91
+		Length: 8
+		Facings: 0
+
+rapt:
+	icon: rapticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 8
+		Facings: 8
+	prone-stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	prone-run:
+		Start: 16
+		Length: 8
+		Facings: 8
+	prone-shoot:
+		Start: 80
+		Length: 8
+		Facings: 8
+	shoot:
+		Start: 80
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 80
+		Length: 8
+		Facings: 8
+	idle2:
+		Start: 0
+		Length: 1
+		Facings: 1
+
+steg:
+	icon: stegicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 8
+		Facings: 8
+	prone-stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	prone-run:
+		Start: 16
+		Length: 8
+		Facings: 8
+	prone-shoot:
+		Start: 80
+		Length: 12
+		Facings: 12
+	shoot:
+		Start: 80
+		Length: 12
+		Facings: 12
+	idle1:
+		Start: 80
+		Length: 12
+		Facings: 12
+	idle2:
+		Start: 0
+		Length: 1
+		Facings: 1
+
+tric:
+	icon: tricicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 8
+		Facings: 8
+	prone-stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	prone-run:
+		Start: 16
+		Length: 8
+		Facings: 8
+	prone-shoot:
+		Start: 80
+		Length: 12
+		Facings: 12
+	shoot:
+		Start: 80
+		Length: 12
+		Facings: 12
+	idle1:
+		Start: 80
+		Length: 12
+		Facings: 12
+	idle2:
+		Start: 0
+		Length: 1
+		Facings: 1
+
+trex:
+	icon: trexicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 8
+		Facings: 8
+	prone-stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	prone-run:
+		Start: 16
+		Length: 8
+		Facings: 8
+	prone-shoot:
+		Start: 80
+		Length: 8
+		Facings: 8
+	shoot:
+		Start: 80
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 80
+		Length: 8
+		Facings: 8
+	idle2:
+		Start: 0
+		Length: 1
+		Facings: 1
+
+weedguy:
+	icon: weaticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+
+spe1:
+	icon: e1icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 144
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 256
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 272
+		Length: 18
+		Facings: 0
+
+spe2:
+	icon: e2icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 240
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 240
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 288
+		Length: 12
+		Facings: 12
+	shoot:
+		Start: 64
+		Length: 20
+		Facings: 20
+	idle1:
+		Start: 384
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 400
+		Length: 16
+		Facings: 0
+
+spe3:
+	icon: e3icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 144
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 144
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 192
+		Length: 10
+		Facings: 10
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 272
+		Length: 17
+		Facings: 0
+	idle2:
+		Start: 289
+		Length: 15
+		Facings: 0
+
+spe4:
+	icon: e4icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 208
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 16
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 16
+	idle1:
+		Start: 384
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 400
+		Length: 17
+		Facings: 0
+
+spe5:
+	icon: e5icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 208
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 208
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 256
+		Length: 16
+		Facings: 16
+	shoot:
+		Start: 64
+		Length: 16
+		Facings: 16
+	idle1:
+		Start: 384
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 400
+		Length: 17
+		Facings: 0
+
+spe6:
+	icon: e6icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 82
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 82
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 192
+		Length: 8
+		Facings: 8
+	shoot:
+		Start: 64
+		Length: 8
+		Facings: 8
+	idle1:
+		Start: 130
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 130
+		Length: 16
+		Facings: 0
+
+spmedic:
+	icon: medicicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 0
+		Length: 1
+		Facings: 1
+	run:
+		Start: 8
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 86
+		Length: 1
+		Facings: 6
+	prone-run:
+		Start: 130
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 58
+		Length: 27
+		Facings: 0
+	shoot:
+		Start: 58
+		Length: 27
+		Facings: 0
+	idle1:
+		Start: 178
+		Length: 15
+		Facings: 0
+	idle2:
+		Start: 178
+		Length: 15
+		Facings: 0
+
+sprmbo:
+	icon: rmboicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	stand:
+		Start: 8
+		Length: 1
+		Facings: 1
+	run:
+		Start: 16
+		Length: 6
+		Facings: 6
+	prone-stand:
+		Start: 112
+		Length: 1
+		Facings: 4
+	prone-run:
+		Start: 112
+		Length: 4
+		Facings: 4
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 4
+	shoot:
+		Start: 64
+		Length: 4
+		Facings: 4
+	idle1:
+		Start: 192
+		Length: 16
+		Facings: 0
+	idle2:
+		Start: 208
+		Length: 16
+		Facings: 0
+
+depcruis:
+	Defaults:
+	idle: 
+	#make: depcrumk
+
+dep941:
+	Defaults:
+	idle: 
+	#make: dep941mk
+
+depcarr:
+	Defaults:
+	idle: 
+	#make: depcarmk
+	bib: depcarbb
+		Length: 1
+		ZOffset: -1024
+
+depfrig:
+	Defaults:
+	idle: 
+	#make: depfrimk
+
+deplasco:
+	Defaults:
+	idle: 
+	#make: deplasmk
+
+uav:
+	icon: uavicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+
+palette:
+	Defaults:
+	idle: 
+
+palunit:
+	Defaults:
+	idle: 
+
+afld:
+	Defaults:
+	icon: afldicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: afldmk
+	bib: afldbb
+		Length: 1
+		ZOffset: -1024
+
+afld_ai:
+	Defaults:
+	icon: afldicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: afldmk
+	bib: afldbb
+		Length: 1
+		ZOffset: -1024
+
+afldu:
+	Defaults:
+	icon: afldicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: afldbb
+		Length: 1
+		ZOffset: -1024
+
+arco:
+	Defaults:
+	icon: arcoicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+atwr:
+	Defaults:
+	icon: atwricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: atwrmk
+
+atwru:
+	Defaults:
+	icon: atwricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+bio:
+	Defaults:
+	icon: bioicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: biomk
+
+biou:
+	Defaults:
+	icon: bioicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+bioe:
+	Defaults:
+	icon: bioeicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: bioemk
+
+bioeu:
+	Defaults:
+	icon: bioeicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+bioe_up:
+	Defaults:
+	icon: bio1icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+eye:
+	Defaults:
+	icon: eyeicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: eyemk
+
+eyeu:
+	Defaults:
+	icon: eyeicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+comm:
+	Defaults:
+	icon: commicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: commmk
+	bib: commbb
+		Length: 1
+		ZOffset: -1024
+
+commu:
+	Defaults:
+	icon: commicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: commbb
+		Length: 1
+		ZOffset: -1024
+
+gfact:
+	Defaults:
+	icon: facticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: gfactmk
+	bib: none
+		Length: 1
+		ZOffset: -1024
+
+gfactu:
+	Defaults:
+	icon: facticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: none
+		Length: 1
+		ZOffset: -1024
+
+nfact:
+	Defaults:
+	icon: facticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: nfactmk
+	bib: none
+		Length: 1
+		ZOffset: -1024
+
+nfactu:
+	Defaults:
+	icon: facticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: none
+		Length: 1
+		ZOffset: -1024
+
+fact:
+	Defaults:
+	icon: facticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: factmk
+	bib: none
+		Length: 1
+		ZOffset: -1024
+
+factu:
+	Defaults:
+	icon: facticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: none
+		Length: 1
+		ZOffset: -1024
+
+fix:
+	Defaults:
+	icon: fixicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: fixmk
+	bib: fixbb
+		Length: 1
+		ZOffset: -1024
+
+fixu:
+	Defaults:
+	icon: fixicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: fixbb
+		Length: 1
+		ZOffset: -1024
+
+flagfly:
+	Defaults:
+	idle: 
+
+hand:
+	Defaults:
+	icon: handicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: handmk
+
+handu:
+	Defaults:
+	icon: handicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+pyle:
+	Defaults:
+	icon: pyleicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: pylemk
+
+pyleu:
+	Defaults:
+	icon: pyleicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+twr:
+	Defaults:
+	icon: gtwricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: twrmk
+
+twru:
+	Defaults:
+	icon: gtwricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+ggate_a:
+	Defaults:
+	icon: gataicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: ggate_a
+
+ggateu_a:
+	Defaults:
+	icon: gataicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+ggate_b:
+	Defaults:
+	icon: gatbicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: ggate_b
+
+ggateu_b:
+	Defaults:
+	icon: gatbicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+gun:
+	Defaults:
+	icon: gunicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: gunmk
+
+gunu:
+	Defaults:
+	icon: gunicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+sam:
+	Defaults:
+	icon: samicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: sammk
+
+samu:
+	Defaults:
+	icon: samicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+dterm:
+	Defaults:
+	idle: 
+	#make: dtermmk
+
+dtermu:
+	Defaults:
+	idle: 
+
+dctnk:
+	Defaults:
+	idle: 
+	#make: dctnkmk
+
+hosp:
+	Defaults:
+	icon: hospicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+hpad:
+	Defaults:
+	icon: hpadicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: hpadmk
+	bib: hpadbb
+		Length: 1
+		ZOffset: -1024
+
+ghpad:
+	Defaults:
+	icon: ghpadicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: hpadmk
+	bib: hpadbb
+		Length: 1
+		ZOffset: -1024
+
+hpadu:
+	Defaults:
+	icon: hpadicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: hpadbb
+		Length: 1
+		ZOffset: -1024
+
+astrp:
+	Defaults:
+	icon: astrpicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: astrpmk
+	bib: astrpbb
+		Length: 1
+		ZOffset: -1024
+
+astrpu:
+	Defaults:
+	icon: astrpicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: astrpbb
+		Length: 1
+		ZOffset: -1024
+
+hq:
+	Defaults:
+	icon: hqicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: hqmk
+
+hqu:
+	Defaults:
+	icon: hqicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+nhq:
+	Defaults:
+	icon: hqicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: hqmk
+
+nhqu:
+	Defaults:
+	icon: hqicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+miss:
+	Defaults:
+	icon: missicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: missmk
+
+missu:
+	Defaults:
+	icon: missicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+nuk2:
+	Defaults:
+	icon: nuk2icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: nuk2mk
+
+nuk2u:
+	Defaults:
+	icon: nuk2icon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+nuk2_up:
+	Defaults:
+	icon: nuk2oicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+nuk2_upd:
+	Defaults:
+	idle: 
+
+nuke:
+	Defaults:
+	icon: nukeicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: nukemk
+
+nukeu:
+	Defaults:
+	icon: nukeicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+obli:
+	Defaults:
+	icon: obliicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: oblimk
+
+obli1:
+	Defaults:
+	icon: obliicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: obli1mk
+
+obliu:
+	Defaults:
+	icon: obliicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+proc:
+	Defaults:
+	icon: procicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: procmk
+	bib: procbb
+		Length: 1
+		ZOffset: -1024
+
+procu:
+	Defaults:
+	icon: procicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: procbb
+		Length: 1
+		ZOffset: -1024
+
+raproc:
+	Defaults:
+	icon: raprocicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: raprocmk
+	bib: raprocbb
+		Length: 1
+		ZOffset: -1024
+
+raprocu:
+	Defaults:
+	icon: raprocicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: raprocbb
+		Length: 1
+		ZOffset: -1024
+
+proci:
+	Defaults:
+	icon: procicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: procmk
+	bib: procbb
+		Length: 1
+		ZOffset: -1024
+
+prociu:
+	Defaults:
+	icon: procicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: procbb
+		Length: 1
+		ZOffset: -1024
+
+raproci:
+	Defaults:
+	icon: raprocicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: raprocmk
+	bib: raprocbb
+		Length: 1
+		ZOffset: -1024
+
+raprociu:
+	Defaults:
+	icon: raprocicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: raprocbb
+		Length: 1
+		ZOffset: -1024
+
+silo:
+	Defaults:
+	icon: siloicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: silomk
+
+silou:
+	Defaults:
+	icon: siloicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+sgen:
+	Defaults:
+	icon: sgenicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: sgenmk
+
+sgenu:
+	Defaults:
+	icon: sgenicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+tmpl:
+	Defaults:
+	icon: tmplicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: tmplmk
+
+tmplu:
+	Defaults:
+	icon: tmplicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+weap:
+	Defaults:
+	icon: weapicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: weapmk
+	bib: weapbb
+		Length: 1
+		ZOffset: -1024
+
+weapu:
+	Defaults:
+	icon: weapicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: weapbb
+		Length: 1
+		ZOffset: -1024
+
+weap_ai:
+	Defaults:
+	icon: weapicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: weapmk
+	bib: weapbb
+		Length: 1
+		ZOffset: -1024
+
+syrd:
+	Defaults:
+	icon: syrdicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: syrdmk
+
+syrdu:
+	Defaults:
+	icon: syrdicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+syrd_ai:
+	Defaults:
+	icon: syrdicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: syrdaimk
+
+sbag:
+	Defaults:
+	icon: sbagicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+cycl:
+	Defaults:
+	icon: cyclicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+brik:
+	Defaults:
+	icon: brikicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+wood:
+	Defaults:
+	idle: 
+
+fenc:
+	Defaults:
+		UseTilesetExtension: true
+	icon: barbicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+barb:
+	Defaults:
+	icon: barbicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+lsrpost:
+	Defaults:
+	icon: lasricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: lsrpostmk
+
+lsrpostu:
+	Defaults:
+	icon: lasricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+lsrfnce:
+	Defaults:
+	idle: 
+
+vmine:
+	Defaults:
+	icon: vmineicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+dmsa:
+	Defaults:
+	icon: msaicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: dmsamk
+
+dmsau:
+	Defaults:
+	icon: msaicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+dmhq:
+	Defaults:
+	idle: 
+	#make: dmhqmk
+
+mad:
+	Defaults:
+	idle: 
+	#make: mademk
+
+ramad:
+	Defaults:
+	idle: 
+	#make: madmk
+
+rafact:
+	Defaults:
+	icon: rafacticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rafactmk
+
+rafactu:
+	Defaults:
+	icon: rafacticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+rapowr:
+	Defaults:
+	icon: powricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rapowrmk
+
+rapowru:
+	Defaults:
+	icon: powricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+raapwr:
+	Defaults:
+	icon: apwricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: raapwrmk
+
+raapwru:
+	Defaults:
+	icon: apwricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+rabarl:
+	Defaults:
+	idle: 
+
+rabrl3:
+	Defaults:
+	idle: 
+
+rakenn:
+	Defaults:
+	icon: kennicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rakennmk
+
+rakennu:
+	Defaults:
+	icon: kennicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+rabarr:
+	Defaults:
+	icon: barricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rabarrmk
+
+rabarru:
+	Defaults:
+	icon: barricon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+ratent:
+	Defaults:
+	icon: tenticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: ratentmk
+
+ratentu:
+	Defaults:
+	icon: tenticon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+rasilo:
+	Defaults:
+	icon: rasiloicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rasilomk
+
+rasilou:
+	Defaults:
+	icon: rasiloicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+raftur:
+	Defaults:
+	icon: fturicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rafturmk
+
+rafturu:
+	Defaults:
+	icon: fturicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+rapbox:
+	Defaults:
+	icon: pboxicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rapboxmk
+
+rapboxu:
+	Defaults:
+	icon: pboxicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+rahbox:
+	Defaults:
+	icon: hboxicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rahboxmk
+
+rahboxu:
+	Defaults:
+	icon: hboxicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+rasam:
+	Defaults:
+	icon: rasamicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rasammk
+
+rasamu:
+	Defaults:
+	icon: rasamicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+raagun:
+	Defaults:
+	icon: agunicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: raagunmk
+
+raagunu:
+	Defaults:
+	icon: agunicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+ratsla:
+	Defaults:
+	icon: tslaicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: ratslamk
+
+ratslau:
+	Defaults:
+	icon: tslaicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+ragap:
+	Defaults:
+	icon: gapicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: ragapmk
+
+ragapu:
+	Defaults:
+	icon: gapicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+radome:
+	Defaults:
+	icon: domeicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: radomemk
+
+radomeu:
+	Defaults:
+	icon: domeicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+aweap:
+	Defaults:
+	icon: raweapicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: aweapmk
+
+aweapu:
+	Defaults:
+	icon: raweapicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+sweap:
+	Defaults:
+	icon: raweapicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: sweapmk
+
+sweapu:
+	Defaults:
+	icon: raweapicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+raspen:
+	Defaults:
+	icon: spenicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: raspenmk
+
+raspenu:
+	Defaults:
+	icon: spenicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+raspen_ai:
+	Defaults:
+	icon: spenicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: raspenaimk
+
+rafcom:
+	Defaults:
+	icon: rafcomicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rafcommk
+
+rafix:
+	Defaults:
+	icon: rafixicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rafixmk
+	bib: rafixbb
+		Length: 1
+		ZOffset: -1024
+
+rafixu:
+	Defaults:
+	icon: rafixicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	bib: rafixbb
+		Length: 1
+		ZOffset: -1024
+
+raatek:
+	Defaults:
+	icon: atekicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: raatekmk
+
+raateku:
+	Defaults:
+	icon: atekicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+rastek:
+	Defaults:
+	icon: stekicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rastekmk
+
+rasteku:
+	Defaults:
+	icon: stekicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+rairon:
+	Defaults:
+	icon: ironicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: raironmk
+
+raironu:
+	Defaults:
+	icon: ironicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+namslo:
+	Defaults:
+		UseTilesetCode: true
+	icon: msloicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: namslomk
+
+namslou:
+	Defaults:
+		UseTilesetCode: true
+	icon: msloicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+rapdox:
+	Defaults:
+	icon: pdoxicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+	#make: rapdoxmk
+
+rapdoxu:
+	Defaults:
+	icon: pdoxicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+cabhut:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+v01:
+	Defaults:
+	idle: 
+	bib: v01
+		Length: 1
+		ZOffset: -1024
+
+v02:
+	Defaults:
+	idle: 
+	bib: v02
+		Length: 1
+		ZOffset: -1024
+
+v03:
+	Defaults:
+	idle: 
+
+v04:
+	Defaults:
+	idle: 
+	bib: v04
+		Length: 1
+		ZOffset: -1024
+
+v05:
+	Defaults:
+	idle: 
+	bib: v05
+		Length: 1
+		ZOffset: -1024
+
+v06:
+	Defaults:
+	idle: 
+	bib: v06
+		Length: 1
+		ZOffset: -1024
+
+v07:
+	Defaults:
+	idle: 
+
+v08:
+	Defaults:
+	idle: 
+
+v09:
+	Defaults:
+	idle: 
+
+v10:
+	Defaults:
+	idle: 
+
+v11:
+	Defaults:
+	idle: 
+
+v12:
+	Defaults:
+	idle: 
+
+v13:
+	Defaults:
+	idle: 
+
+v14:
+	Defaults:
+	idle: 
+	bib: v14
+		Length: 1
+		ZOffset: -1024
+
+v15:
+	Defaults:
+	idle: 
+	bib: v15
+		Length: 1
+		ZOffset: -1024
+
+v16:
+	Defaults:
+	idle: 
+	bib: v16
+		Length: 1
+		ZOffset: -1024
+
+v17:
+	Defaults:
+	idle: 
+	bib: v17
+		Length: 1
+		ZOffset: -1024
+
+v18:
+	Defaults:
+	idle: 
+	bib: v18
+		Length: 1
+		ZOffset: -1024
+
+v19:
+	Defaults:
+	idle: 
+	bib: v19-bb
+		Length: 1
+		ZOffset: -1024
+
+v20:
+	Defaults:
+	idle: 
+
+v21:
+	Defaults:
+	idle: 
+
+v22:
+	Defaults:
+	idle: 
+	bib: v22
+		Length: 1
+		ZOffset: -1024
+
+v23:
+	Defaults:
+	idle: 
+
+v24:
+	Defaults:
+	idle: 
+	bib: v24
+		Length: 1
+		ZOffset: -1024
+
+v25:
+	Defaults:
+	idle: 
+	bib: v25
+		Length: 1
+		ZOffset: -1024
+
+v26:
+	Defaults:
+	idle: 
+	bib: v26
+		Length: 1
+		ZOffset: -1024
+
+v27:
+	Defaults:
+	idle: 
+
+v28:
+	Defaults:
+	idle: 
+
+v29:
+	Defaults:
+	idle: 
+
+v30:
+	Defaults:
+	idle: 
+	bib: v30
+		Length: 1
+		ZOffset: -1024
+
+v31:
+	Defaults:
+	idle: 
+	bib: v31
+		Length: 1
+		ZOffset: -1024
+
+v32:
+	Defaults:
+	idle: 
+	bib: v32
+		Length: 1
+		ZOffset: -1024
+
+v33:
+	Defaults:
+	idle: 
+
+v34:
+	Defaults:
+	idle: 
+
+v35:
+	Defaults:
+	idle: 
+
+v36:
+	Defaults:
+	idle: 
+
+v37:
+	Defaults:
+	idle: 
+	bib: v37
+		Length: 1
+		ZOffset: -1024
+
+vs01:
+	Defaults:
+	idle: 
+	bib: vs01
+		Length: 1
+		ZOffset: -1024
+
+vs02:
+	Defaults:
+	idle: 
+	bib: vs02
+		Length: 1
+		ZOffset: -1024
+
+vs03:
+	Defaults:
+	idle: 
+
+vs04:
+	Defaults:
+	idle: 
+	bib: vs04
+		Length: 1
+		ZOffset: -1024
+
+vs05:
+	Defaults:
+	idle: 
+	bib: vs05
+		Length: 1
+		ZOffset: -1024
+
+vs06:
+	Defaults:
+	idle: 
+	bib: vs06
+		Length: 1
+		ZOffset: -1024
+
+vs07:
+	Defaults:
+	idle: 
+
+vs08:
+	Defaults:
+	idle: 
+
+vs09:
+	Defaults:
+	idle: 
+
+vs10:
+	Defaults:
+	idle: 
+
+vs11:
+	Defaults:
+	idle: 
+
+vs12:
+	Defaults:
+	idle: 
+
+vs13:
+	Defaults:
+	idle: 
+
+vs14:
+	Defaults:
+	idle: 
+	bib: vs14
+		Length: 1
+		ZOffset: -1024
+
+vs15:
+	Defaults:
+	idle: 
+	bib: vs15
+		Length: 1
+		ZOffset: -1024
+
+vs16:
+	Defaults:
+	idle: 
+	bib: vs16
+		Length: 1
+		ZOffset: -1024
+
+vs17:
+	Defaults:
+	idle: 
+	bib: vs17
+		Length: 1
+		ZOffset: -1024
+
+vs18:
+	Defaults:
+	idle: 
+	bib: vs18
+		Length: 1
+		ZOffset: -1024
+
+wdml:
+	Defaults:
+	idle: 
+
+lhus:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bumpr_n:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bumpr_ne:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bumpr_e:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bumpr_se:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bumpr_s:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bumpr_sw:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bumpr_w:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bumpr_nw:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard01:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard02:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard03:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard04:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard05:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard06:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard07:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard08:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard09:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard10:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard11:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard12:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard13:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard14:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard15:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bboard16:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+ca0001:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0002:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0003:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0004:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0005:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0006:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0007:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0008:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0009:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0010:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0011:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0012:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0013:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0014:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0015:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0016:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0017:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0018:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0019:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0020:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+ca0021:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+capyr01:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+capyr02:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+capyr03:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+cavega:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+city01:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city02:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city03:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city04:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city05:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city06:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city07:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city08:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city09:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city10:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city11:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city12:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city13:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city14:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city15:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city16:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city17:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city18:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city19:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city20:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city21:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+city22:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+dbafld:
+	Defaults:
+	idle: 
+
+dbatwr:
+	Defaults:
+	idle: 
+
+dbbio:
+	Defaults:
+	idle: 
+
+dbeye:
+	Defaults:
+	idle: 
+
+dbfact:
+	Defaults:
+	idle: 
+
+dbfix:
+	Defaults:
+	idle: 
+
+dbhand:
+	Defaults:
+	idle: 
+
+dbhosp:
+	Defaults:
+	idle: 
+
+dbhpad:
+	Defaults:
+	idle: 
+
+dbhq:
+	Defaults:
+	idle: 
+
+dbmiss:
+	Defaults:
+	idle: 
+
+dbnuk2:
+	Defaults:
+	idle: 
+
+dbnuke:
+	Defaults:
+	idle: 
+
+dbobli:
+	Defaults:
+	idle: 
+
+dbproc:
+	Defaults:
+	idle: 
+
+dbpyle:
+	Defaults:
+	idle: 
+
+dbsam:
+	Defaults:
+	idle: 
+
+dbsilo:
+	Defaults:
+	idle: 
+
+dbtmpl:
+	Defaults:
+	idle: 
+
+dbtwr:
+	Defaults:
+	idle: 
+
+dbweap:
+	Defaults:
+	idle: 
+
+dbraweap:
+	Defaults:
+	idle: 
+
+dbraproc:
+	Defaults:
+	idle: 
+
+lite:
+	Defaults:
+		UseTilesetExtension: true
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+inlite:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+node:
+	Defaults:
+	idle: 
+
+crlamp1:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+crlamp2:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+crlamp3:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+crlamp4:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+crlamp5:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+crlamp6:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+crlamp7:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+crlamp8:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+crlamp9:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+scandmmy:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+woodcrate:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+steelcrate:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+mtreet1:
+	Defaults:
+	idle: 
+
+mtreet2:
+	Defaults:
+	idle: 
+
+mtreew1:
+	Defaults:
+	idle: 
+
+mtreew2:
+	Defaults:
+	idle: 
+
+mtreed1:
+	Defaults:
+	idle: 
+
+mtreetc1:
+	Defaults:
+	idle: 
+
+mtreetc2:
+	Defaults:
+	idle: 
+
+mtreewc1:
+	Defaults:
+	idle: 
+
+mtreewc2:
+	Defaults:
+	idle: 
+
+mtreedc1:
+	Defaults:
+	idle: 
+
+
+
+tibsprdr3:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprdr3x:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprdr4:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprdr4x:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprdr6:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprdr6x:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprdc:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprdcx:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprdv:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprdvx:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprda:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+tibsprdax:
+	Defaults:
+		UseTilesetCode: true
+	idle: 
+
+empsfx:
+	Defaults:
+	idle: 
+
+tibtree:
+	Defaults:
+	idle: 
+
+tibtree2:
+	Defaults:
+	idle: 
+
+tibtree3:
+	Defaults:
+	idle: 
+
+vintree:
+	Defaults:
+	idle: 
+
+vintree2:
+	Defaults:
+	idle: 
+
+vintree3:
+	Defaults:
+	idle: 
+
+oremine:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+oreminea:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+oremine2:
+	Defaults:
+	idle: 
+
+oremine3:
+	Defaults:
+	idle: 
+
+br1:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+br2:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+br3:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+br4:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+br5:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+br6:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+br7:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+br8:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+br9:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t01:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t02:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t03:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t04:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t05:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t06:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t07:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t08:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t10:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t11:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t12:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t13:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t14:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t15:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t16:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t17:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+tc01:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+tc02:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+tc03:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+tc04:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+tc05:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t09:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+t18:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st01:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st02:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st03:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st04:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st05:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st06:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st07:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st08:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st10:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st11:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st12:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st13:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st14:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st15:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st16:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+st17:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+stc01:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+stc02:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+stc03:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+stc04:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+stc05:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt01:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt02:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt03:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt05:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt06:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt07:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt10:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt11:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt12:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt13:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt14:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt15:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt16:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+bt17:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+btc01:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+btc02:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+btc03:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+btc04:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+btc05:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+srock01:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+srock02:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+srock03:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+srock04:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+srock05:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+srock06:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+srock07:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+wrock01:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+wrock02:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+wrock03:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+wrock04:
+	Defaults:
+		UseTilesetExtension: true
+	idle: 
+
+icefloes:
+	Defaults:
+	idle: 
+
+mtrb_spr:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+mtrs_spr:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
+mtrt_spr:
+	Defaults:
+	icon: liteicon
+		Offset: 0,0
+		UseTilesetExtension: false
+		UseTilesetCode: false
+	idle: 
+
