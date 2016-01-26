@@ -295,6 +295,7 @@
 	Buildable:
 		Queue: Biolab
 		BuildPaletteOrder: 50
+		Prerequisites: ~disabled
 	Valued:
 		Cost: 1000
 	Tooltip:
