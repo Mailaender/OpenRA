@@ -70,6 +70,7 @@
     <Compile Include="Activities\VoxelHarvesterDockSequence.cs" />
     <Compile Include="SpriteLoaders\TmpTSLoader.cs" />
     <Compile Include="Traits\Buildings\TiberianSunRefinery.cs" />
+    <Compile Include="Traits\Render\RenderIceState.cs" />
     <Compile Include="Traits\Render\WithDockingOverlay.cs" />
     <Compile Include="Traits\Render\WithPermanentInjury.cs" />
     <Compile Include="Traits\Render\WithVoxelWalkerBody.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Traits\SupportPowers\AttackOrderPower.cs" />
     <Compile Include="UtilityCommands\LegacyTilesetImporter.cs" />
     <Compile Include="Traits\Render\WithVoxelWaterBody.cs" />
+    <Compile Include="Traits\World\IceLayer.cs" />
     <Compile Include="Traits\World\TSShroudPalette.cs" />
     <Compile Include="UtilityCommands\ImportTSMapCommand.cs" />
     <Compile Include="Player\PlaceSimpleBeacon.cs" />
