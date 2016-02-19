@@ -39,10 +39,13 @@ namespace OpenRA.Mods.Cnc.Effects
 			this.duration = duration;
 			this.delay = delay;
 
+			var world = owner.World;
+
 			if (!string.IsNullOrEmpty(beaconSequence))
 			{
-				beacon = new Animation(owner.World, beaconImage);
+				beacon = new Animation(world, beaconImage);
 				beacon.PlayRepeating(beaconSequence);
+				world.ScreenMap.Add(this, position, beacon.Image.Bounds);
 			}
 		}
 
@@ -55,7 +58,7 @@ namespace OpenRA.Mods.Cnc.Effects
 				beacon.Tick();
 
 			if (duration > 0 && duration <= tick++)
-				owner.World.AddFrameEndTask(w => w.Remove(this));
+				owner.World.AddFrameEndTask(w => { world.Remove(this); world.ScreenMap.Remove(this); });
 		}
 
 		IEnumerable<IRenderable> IEffect.Render(WorldRenderer r) { return SpriteRenderable.None; }
