@@ -20,7 +20,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.TS.Traits.Render
 {
-	public class WithVoxelWaterBodyInfo : ITraitInfo, IRenderActorPreviewVoxelsInfo, Requires<RenderVoxelsInfo>
+	public class WithVoxelWaterBodyInfo : ITraitInfo, IAutoSelectionSizeInfo, IRenderActorPreviewVoxelsInfo, Requires<RenderVoxelsInfo>
 	{
 		public readonly string WaterSequence = "water";
 		public readonly string LandSequence = "idle";

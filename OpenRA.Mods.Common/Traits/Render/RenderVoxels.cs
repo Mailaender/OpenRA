@@ -23,7 +23,7 @@ namespace OpenRA.Mods.Common.Traits.Render
 			ActorPreviewInitializer init, RenderVoxelsInfo rv, string image, WRot orientation, int facings, PaletteReference p);
 	}
 
-	public class RenderVoxelsInfo : ITraitInfo, IRenderActorPreviewInfo, Requires<BodyOrientationInfo>
+	public class RenderVoxelsInfo : ITraitInfo, IRenderInfo, IRenderActorPreviewInfo, Requires<BodyOrientationInfo>
 	{
 		[Desc("Defaults to the actor name.")]
 		public readonly string Image = null;

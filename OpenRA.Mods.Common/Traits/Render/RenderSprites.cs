@@ -25,7 +25,7 @@ namespace OpenRA.Mods.Common.Traits.Render
 	}
 
 	[Desc("Render trait fundament that won't work without additional With* render traits.")]
-	public class RenderSpritesInfo : IRenderActorPreviewInfo, ITraitInfo
+	public class RenderSpritesInfo : IRenderActorPreviewInfo, IRenderInfo, ITraitInfo
 	{
 		[Desc("The sequence name that defines the actor sprites. Defaults to the actor name.")]
 		public readonly string Image = null;
