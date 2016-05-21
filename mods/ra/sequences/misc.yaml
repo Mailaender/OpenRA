@@ -404,7 +404,7 @@ bubbles:
 		Tick: 220
 
 mpspawn:
-	idle:
+	idle: mpspawn.gif
 		Length: *
 
 waypoint:
