@@ -612,3 +612,12 @@ tuntop04:
 		Offset: 0, -13
 		UseTilesetExtension: true
 		ShadowStart: 1
+
+wa01x:
+	idle:
+		Offset: -36,60
+		UseTilesetExtension: true
+		Start: 1
+		Length: 7
+		ShadowStart: 8
+		ZOffset: 1024
