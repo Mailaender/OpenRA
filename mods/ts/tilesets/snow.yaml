@@ -14,6 +14,14 @@ Terrain:
 		Color: C7C9FA
 		TargetTypes: Ground
 		RestrictPlayerColor: true
+	TerrainType@Ice:
+		Type: Ice
+		Color: 7E93B1
+		TargetTypes: Ground
+	TerrainType@Cracked:
+		Type: Cracked
+		Color: 66729C
+		TargetTypes: Ground
 	TerrainType@Road:
 		Type: Road
 		Color: 2D2B28

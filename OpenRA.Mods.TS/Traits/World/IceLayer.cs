@@ -24,56 +24,11 @@ namespace OpenRA.Mods.TS.Traits
 
 		public readonly string ImpassableTerrainType = "Water";
 
-		public readonly Dictionary<ushort, int> StrengthPerTile = new Dictionary<ushort, int>
-		{
-			// Ice 01
-			{ 439, 5 },
+		public readonly string MaxStrengthTerrainType = "Ice";
 
-			{ 440, 4 }, { 441, 4 }, { 442, 4 }, { 443, 4 }, { 444, 4 }, { 445, 4 }, { 446, 4 }, { 447, 4 },
-			{ 448, 4 }, { 449, 4 }, { 450, 4 }, { 451, 4 }, { 452, 4 }, { 453, 4 }, { 454, 4 }, { 455, 4 },
+		public readonly string HalfStrengthTerrainType = "Cracked";
 
-			{ 456, 3 }, { 457, 3 }, { 458, 3 }, { 459, 3 }, { 460, 3 }, { 461, 3 }, { 462, 3 }, { 463, 3 },
-			{ 464, 3 }, { 465, 3 }, { 466, 3 }, { 467, 3 }, { 468, 3 }, { 469, 3 }, { 470, 3 }, { 471, 3 },
-			{ 472, 3 }, { 473, 3 }, { 474, 3 }, { 475, 3 }, { 476, 3 }, { 477, 3 }, { 478, 3 }, { 479, 3 },
-			{ 480, 3 }, { 481, 3 }, { 482, 3 }, { 483, 3 }, { 484, 3 }, { 485, 3 }, { 486, 3 },
-
-			{ 487, 2 }, { 488, 2 }, { 489, 2 }, { 490, 2 }, { 491, 2 }, { 492, 2 }, { 493, 2 }, { 494, 2 },
-			{ 495, 2 }, { 496, 2 }, { 497, 2 }, { 498, 2 }, { 499, 2 }, { 500, 2 }, { 501, 2 },
-
-			{ 502, 1 },
-
-			// Ice 02
-			{ 503, 5 },
-
-			{ 504, 4 }, { 505, 4 }, { 506, 4 }, { 507, 4 }, { 508, 4 }, { 509, 4 }, { 510, 4 }, { 511, 4 },
-			{ 512, 4 }, { 513, 4 }, { 514, 4 }, { 515, 4 }, { 516, 4 }, { 517, 4 }, { 518, 4 }, { 519, 4 },
-
-			{ 520, 3 }, { 521, 3 }, { 522, 3 }, { 523, 3 }, { 524, 3 }, { 525, 3 }, { 526, 3 }, { 527, 3 },
-			{ 528, 3 }, { 529, 3 }, { 530, 3 }, { 531, 3 }, { 532, 3 }, { 533, 3 }, { 534, 3 }, { 535, 3 },
-			{ 536, 3 }, { 537, 3 }, { 538, 3 }, { 539, 3 }, { 540, 3 }, { 541, 3 }, { 542, 3 }, { 543, 3 },
-			{ 544, 3 }, { 545, 3 }, { 546, 3 }, { 547, 3 }, { 548, 3 }, { 549, 3 }, { 550, 3 },
-
-			{ 551, 2 }, { 552, 2 }, { 553, 2 }, { 554, 2 }, { 555, 2 }, { 556, 2 }, { 557, 2 }, { 558, 2 },
-			{ 559, 2 }, { 560, 2 }, { 561, 2 }, { 562, 2 }, { 563, 2 }, { 564, 2 }, { 565, 2 },
-
-			{ 566, 1 },
-
-			// Ice 03
-			{ 567, 5 },
-
-			{ 568, 4 }, { 569, 4 }, { 570, 4 }, { 571, 4 }, { 572, 4 }, { 573, 4 }, { 574, 4 }, { 575, 4 },
-			{ 576, 4 }, { 577, 4 }, { 578, 4 }, { 579, 4 }, { 580, 4 }, { 581, 4 }, { 582, 4 }, { 583, 4 },
-
-			{ 584, 3 }, { 585, 3 }, { 586, 3 }, { 587, 3 }, { 588, 3 }, { 589, 3 }, { 590, 3 }, { 591, 3 },
-			{ 592, 3 }, { 593, 3 }, { 594, 3 }, { 595, 3 }, { 596, 3 }, { 597, 3 }, { 598, 3 }, { 599, 3 },
-			{ 600, 3 }, { 601, 3 }, { 602, 3 }, { 603, 3 }, { 604, 3 }, { 605, 3 }, { 606, 3 }, { 607, 3 },
-			{ 608, 3 }, { 609, 3 }, { 610, 3 }, { 611, 3 }, { 612, 3 }, { 613, 3 }, { 614, 3 },
-
-			{ 615, 2 }, { 616, 2 }, { 617, 2 }, { 618, 2 }, { 619, 2 }, { 620, 2 }, { 621, 2 }, { 622, 2 },
-			{ 623, 2 }, { 624, 2 }, { 625, 2 }, { 626, 2 }, { 627, 2 }, { 628, 2 }, { 629, 2 },
-
-			{ 630, 1 }
-		};
+		public int MaxStrength = 1024;
 
 		public object Create(ActorInitializer init) { return new IceLayer(init.Self, this); }
 	}
@@ -84,10 +39,63 @@ namespace OpenRA.Mods.TS.Traits
 
 		public readonly CellLayer<int> Strength;
 
+		static int max;
+
+		Dictionary<ushort, int> StrengthPerTile = new Dictionary<ushort, int>
+		{
+			// Ice 01
+			{ 439, max },
+
+			{ 440, max / 2 }, { 441, max / 2 }, { 442, max / 2 }, { 443, max / 2 }, { 444, max / 2 }, { 445, max / 2 }, { 446, max / 2 }, { 447, max / 2 },
+			{ 448, max / 2 }, { 449, max / 2 }, { 450, max / 2 }, { 451, max / 2 }, { 452, max / 2 }, { 453, max / 2 }, { 454, max / 2 }, { 455, max / 2 },
+
+			{ 456, max / 4 }, { 457, max / 4 }, { 458, max / 4 }, { 459, max / 4 }, { 460, max / 4 }, { 461, max / 4 }, { 462, max / 4 }, { 463, max / 4 },
+			{ 464, max / 4 }, { 465, max / 4 }, { 466, max / 4 }, { 467, max / 4 }, { 468, max / 4 }, { 469, max / 4 }, { 470, max / 4 }, { 471, max / 4 },
+			{ 472, max / 4 }, { 473, max / 4 }, { 474, max / 4 }, { 475, max / 4 }, { 476, max / 4 }, { 477, max / 4 }, { 478, max / 4 }, { 479, max / 4 },
+			{ 480, max / 4 }, { 481, max / 4 }, { 482, max / 4 }, { 483, max / 4 }, { 484, max / 4 }, { 485, max / 4 }, { 486, max / 4 },
+
+			{ 487, max / 8 }, { 488, max / 8 }, { 489, max / 8 }, { 490, max / 8 }, { 491, max / 8 }, { 492, max / 8 }, { 493, max / 8 }, { 494, max / 8 },
+			{ 495, max / 8 }, { 496, max / 8 }, { 497, max / 8 }, { 498, max / 8 }, { 499, max / 8 }, { 500, max / 8 }, { 501, max / 8 },
+
+			{ 502, 0 },
+
+			// Ice 02
+			{ 503, max },
+
+			{ 504, max / 2 }, { 505, max / 2 }, { 506, max / 2 }, { 507, max / 2 }, { 508, max / 2 }, { 509, max / 2 }, { 510, max / 2 }, { 511, max / 2 },
+			{ 512, max / 2 }, { 513, max / 2 }, { 514, max / 2 }, { 515, max / 2 }, { 516, max / 2 }, { 517, max / 2 }, { 518, max / 2 }, { 519, max / 2 },
+
+			{ 520, max / 4 }, { 521, max / 4 }, { 522, max / 4 }, { 523, max / 4 }, { 524, max / 4 }, { 525, max / 4 }, { 526, max / 4 }, { 527, max / 4 },
+			{ 528, max / 4 }, { 529, max / 4 }, { 530, max / 4 }, { 531, max / 4 }, { 532, max / 4 }, { 533, max / 4 }, { 534, max / 4 }, { 535, max / 4 },
+			{ 536, max / 4 }, { 537, max / 4 }, { 538, max / 4 }, { 539, max / 4 }, { 540, max / 4 }, { 541, max / 4 }, { 542, max / 4 }, { 543, max / 4 },
+			{ 544, max / 4 }, { 545, max / 4 }, { 546, max / 4 }, { 547, max / 4 }, { 548, max / 4 }, { 549, max / 4 }, { 550, max / 4 },
+
+			{ 551, max / 8 }, { 552, max / 8 }, { 553, max / 8 }, { 554, max / 8 }, { 555, max / 8 }, { 556, max / 8 }, { 557, max / 8 }, { 558, max / 8 },
+			{ 559, max / 8 }, { 560, max / 8 }, { 561, max / 8 }, { 562, max / 8 }, { 563, max / 8 }, { 564, max / 8 }, { 565, max / 8 },
+
+			{ 566, 0 },
+
+			// Ice 03
+			{ 567, max },
+
+			{ 568, max / 2 }, { 569, max / 2 }, { 570, max / 2 }, { 571, max / 2 }, { 572, max / 2 }, { 573, max / 2 }, { 574, max / 2 }, { 575, max / 2 },
+			{ 576, max / 2 }, { 577, max / 2 }, { 578, max / 2 }, { 579, max / 2 }, { 580, max / 2 }, { 581, max / 2 }, { 582, max / 2 }, { 583, max / 2 },
+
+			{ 584, max / 4 }, { 585, max / 4 }, { 586, max / 4 }, { 587, max / 4 }, { 588, max / 4 }, { 589, max / 4 }, { 590, max / 4 }, { 591, max / 4 },
+			{ 592, max / 4 }, { 593, max / 4 }, { 594, max / 4 }, { 595, max / 4 }, { 596, max / 4 }, { 597, max / 4 }, { 598, max / 4 }, { 599, max / 4 },
+			{ 600, max / 4 }, { 601, max / 4 }, { 602, max / 4 }, { 603, max / 4 }, { 604, max / 4 }, { 605, max / 4 }, { 606, max / 4 }, { 607, max / 4 },
+			{ 608, max / 4 }, { 609, max / 4 }, { 610, max / 4 }, { 611, max / 4 }, { 612, max / 4 }, { 613, max / 4 }, { 614, max / 4 },
+
+			{ 615, max / 8 }, { 616, max / 8 }, { 617, max / 8 }, { 618, max / 8 }, { 619, max / 8 }, { 620, max / 8 }, { 621, max / 8 }, { 622, max / 8 },
+			{ 623, max / 8 }, { 624, max / 8 }, { 625, max / 8 }, { 626, max / 8 }, { 627, max / 8 }, { 628, max / 8 }, { 629, max / 8 },
+
+			{ 630, 0 }
+		};
+
 		public IceLayer(Actor self, IceLayerInfo info)
 		{
 			this.info = info;
-
+			max = info.MaxStrength;
 			Strength = new CellLayer<int>(self.World.Map);
 		}
 
@@ -96,23 +104,22 @@ namespace OpenRA.Mods.TS.Traits
 			if (!info.Tilesets.Contains(w.Map.Tileset))
 				return;
 
-			var updatedCells = new List<CPos>();
-
 			var mapTiles = w.Map.Tiles;
 			foreach (var cell in w.Map.AllCells)
 			{
 				var tile = mapTiles[cell];
 				var template = w.Map.Rules.TileSet.Templates[tile.Type];
-				if (info.StrengthPerTile.ContainsKey(template.Id))
+				if (StrengthPerTile.ContainsKey(template.Id))
 				{
-					var strength = info.StrengthPerTile[template.Id];
+					var strength = StrengthPerTile[template.Id];
 					Strength[cell] = strength;
 
-					if (strength <= 2)
-					{
+					if (strength >= info.MaxStrength)
+						w.Map.CustomTerrain[cell] = w.Map.Rules.TileSet.GetTerrainIndex(info.MaxStrengthTerrainType);
+					else if (strength >= info.MaxStrength / 2)
+						w.Map.CustomTerrain[cell] = w.Map.Rules.TileSet.GetTerrainIndex(info.HalfStrengthTerrainType);
+					else if (strength <= 0)
 						w.Map.CustomTerrain[cell] = w.Map.Rules.TileSet.GetTerrainIndex(info.ImpassableTerrainType);
-						updatedCells.Add(cell);
-					}
 				}
 			}
 		}
