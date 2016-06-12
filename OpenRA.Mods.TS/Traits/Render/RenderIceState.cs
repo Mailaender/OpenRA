@@ -45,7 +45,7 @@ namespace OpenRA.Mods.TS.Traits
 			icelayer = self.Trait<IceLayer>();
 		}
 
-		public void WorldLoaded(World w, WorldRenderer wr)
+		void IWorldLoaded.WorldLoaded(World w, WorldRenderer wr)
 		{
 			var console = w.WorldActor.TraitOrDefault<ChatCommands>();
 			var help = w.WorldActor.TraitOrDefault<HelpCommand>();
@@ -57,7 +57,7 @@ namespace OpenRA.Mods.TS.Traits
 			help.RegisterHelp(CommandName, CommandDesc);
 		}
 
-		public void InvokeCommand(string name, string arg)
+		void IChatCommand.InvokeCommand(string name, string arg)
 		{
 			if (name == CommandName)
 				Enabled ^= true;
@@ -66,7 +66,7 @@ namespace OpenRA.Mods.TS.Traits
 				AllCells ^= true;
 		}
 
-		public IEnumerable<IRenderable> Render(Actor self, WorldRenderer wr)
+		IEnumerable<IRenderable> IRender.Render(Actor self, WorldRenderer wr)
 		{
 			if (!Enabled)
 				yield break;

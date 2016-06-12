@@ -99,7 +99,7 @@ namespace OpenRA.Mods.TS.Traits
 			Strength = new CellLayer<int>(self.World.Map);
 		}
 
-		public void WorldLoaded(World w, WorldRenderer wr)
+		void IWorldLoaded.WorldLoaded(World w, WorldRenderer wr)
 		{
 			if (!info.Tilesets.Contains(w.Map.Tileset))
 				return;
