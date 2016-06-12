@@ -115,10 +115,6 @@ namespace OpenRA.Mods.TS.Traits
 					}
 				}
 			}
-
-			var domainIndex = w.WorldActor.TraitOrDefault<DomainIndex>();
-			if (domainIndex != null)
-				domainIndex.UpdateCells(w, updatedCells);
 		}
 	}
 }
