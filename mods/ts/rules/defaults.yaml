@@ -256,6 +256,8 @@
 		SharesCell: true
 		TerrainSpeeds:
 			Clear: 90
+			Ice: 90
+			Cracked: 90
 			Road: 100
 			Rail: 90
 			DirtRoad: 100
@@ -422,6 +424,8 @@
 		Crushes: crate
 		TerrainSpeeds:
 			Clear: 70
+			Ice: 70
+			Cracked: 70
 			Road: 100
 			Rail: 50
 			DirtRoad: 90
@@ -490,6 +494,8 @@
 		Crushes: wall, crate, infantry
 		TerrainSpeeds:
 			Clear: 70
+			Ice: 70
+			Cracked: 70
 			Road: 100
 			Rail: 100
 			DirtRoad: 90
@@ -621,6 +627,8 @@
 		SharesCell: no
 		TerrainSpeeds:
 			Clear: 90
+			Ice: 90
+			Cracked: 90
 			Road: 100
 			Rail: 80
 			DirtRoad: 90
