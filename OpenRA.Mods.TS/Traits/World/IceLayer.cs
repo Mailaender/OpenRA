@@ -98,11 +98,11 @@ namespace OpenRA.Mods.TS.Traits
 
 			var updatedCells = new List<CPos>();
 
-			var mapTiles = w.Map.MapTiles.Value;
+			var mapTiles = w.Map.Tiles;
 			foreach (var cell in w.Map.AllCells)
 			{
 				var tile = mapTiles[cell];
-				var template = w.TileSet.Templates[tile.Type];
+				var template = w.Map.Rules.TileSet.Templates[tile.Type];
 				if (info.StrengthPerTile.ContainsKey(template.Id))
 				{
 					var strength = info.StrengthPerTile[template.Id];
@@ -110,7 +110,7 @@ namespace OpenRA.Mods.TS.Traits
 
 					if (strength <= 2)
 					{
-						w.Map.CustomTerrain[cell] = w.TileSet.GetTerrainIndex(info.ImpassableTerrainType);
+						w.Map.CustomTerrain[cell] = w.Map.Rules.TileSet.GetTerrainIndex(info.ImpassableTerrainType);
 						updatedCells.Add(cell);
 					}
 				}

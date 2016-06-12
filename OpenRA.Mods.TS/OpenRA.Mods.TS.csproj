@@ -77,7 +77,6 @@
     <Compile Include="Traits\Render\WithVoxelUnloadBody.cs" />
     <Compile Include="Traits\SupportPowers\AttackOrderPower.cs" />
     <Compile Include="UtilityCommands\LegacyTilesetImporter.cs" />
-    <Compile Include="Traits\Render\WithVoxelWaterBody.cs" />
     <Compile Include="Traits\World\IceLayer.cs" />
     <Compile Include="Traits\World\TSShroudPalette.cs" />
     <Compile Include="UtilityCommands\ImportTSMapCommand.cs" />
