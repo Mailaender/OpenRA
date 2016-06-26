@@ -28,6 +28,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		static readonly string OriginalGraphicsRenderer;
 		static readonly int2 OriginalGraphicsWindowedSize;
 		static readonly int2 OriginalGraphicsFullscreenSize;
+		static readonly bool OriginalServerDiscoverNatDevices;
 
 		readonly Dictionary<PanelType, Action> leavePanelActions = new Dictionary<PanelType, Action>();
 		readonly Dictionary<PanelType, Action> resetPanelActions = new Dictionary<PanelType, Action>();
@@ -48,6 +49,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			OriginalGraphicsRenderer = original.Graphics.Renderer;
 			OriginalGraphicsWindowedSize = original.Graphics.WindowedSize;
 			OriginalGraphicsFullscreenSize = original.Graphics.FullscreenSize;
+			OriginalServerDiscoverNatDevices = original.Server.DiscoverNatDevices;
 		}
 
 		[ObjectCreator.UseCtor]
@@ -76,7 +78,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					OriginalGraphicsMode != current.Graphics.Mode ||
 					OriginalGraphicsRenderer != current.Graphics.Renderer ||
 					OriginalGraphicsWindowedSize != current.Graphics.WindowedSize ||
-					OriginalGraphicsFullscreenSize != current.Graphics.FullscreenSize)
+					OriginalGraphicsFullscreenSize != current.Graphics.FullscreenSize ||
+					OriginalServerDiscoverNatDevices != current.Server.DiscoverNatDevices)
 					ConfirmationDialogs.ButtonPrompt(
 						title: "Restart Now?",
 						text: "Some changes will not be applied until\nthe game is restarted. Restart now?",
