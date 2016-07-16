@@ -40,7 +40,7 @@
 CSC         = dmcs
 CSFLAGS     = -nologo -warn:4 -codepage:utf8 -unsafe -warnaserror
 DEFINE      = TRACE
-COMMON_LIBS = System.dll System.Core.dll System.Data.dll System.Data.DataSetExtensions.dll System.Drawing.dll System.Xml.dll thirdparty/download/ICSharpCode.SharpZipLib.dll thirdparty/download/FuzzyLogicLibrary.dll thirdparty/download/Mono.Nat.dll thirdparty/download/MaxMind.Db.dll thirdparty/download/MaxMind.GeoIP2.dll thirdparty/download/Eluant.dll
+COMMON_LIBS = System.dll System.Core.dll System.Data.dll System.Data.DataSetExtensions.dll System.Drawing.dll System.Xml.dll thirdparty/download/ICSharpCode.SharpZipLib.dll thirdparty/download/FuzzyLogicLibrary.dll thirdparty/download/Mono.Nat.dll thirdparty/download/MaxMind.Db.dll thirdparty/download/MaxMind.GeoIP2.dll thirdparty/download/MoonSharp.Interpreter.dll
 
 DEBUG = true
 ifeq ($(DEBUG), $(filter $(DEBUG),false no n off 0))
@@ -359,7 +359,7 @@ install-core: default
 	@$(CP_R) glsl "$(DATA_INSTALL_DIR)"
 	@$(CP_R) lua "$(DATA_INSTALL_DIR)"
 	@$(CP) SDL2-CS* "$(DATA_INSTALL_DIR)"
-	@$(CP) Eluant* "$(DATA_INSTALL_DIR)"
+	@$(CP) MoonSharp.Interpreter* "$(DATA_INSTALL_DIR)"
 	@$(INSTALL_PROGRAM) ICSharpCode.SharpZipLib.dll "$(DATA_INSTALL_DIR)"
 	@$(INSTALL_PROGRAM) FuzzyLogicLibrary.dll "$(DATA_INSTALL_DIR)"
 	@$(INSTALL_PROGRAM) SharpFont.dll "$(DATA_INSTALL_DIR)"
