@@ -60,5 +60,12 @@ namespace OpenRA.Mods.Common.Scripting
 		{
 			Self.QueueActivity(new ResupplyAircraft(Self));
 		}
+
+		[ScriptActorPropertyActivity]
+		[Desc("Returns true if the aircraft is flying circles. This property is not part of the stable API.")]
+		public bool IsCircling
+		{
+			get { return Self.GetCurrentActivity() is FlyCircle; }
+		}
 	}
 }
