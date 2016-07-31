@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>OpenRA.Mods.TS</title>
+    <authors>see AUTHORS</authors>
+    <owners>OpenRA developers</owners>
+    <projectUrl>https://github.com/OpenRA/OpenRA</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Tiberian Sun mod librariy</description>
+    <copyright>Copyright 2007-2016 The OpenRA Developers</copyright>
+    <tags>openra mods ts</tags>
+  </metadata>
+</package>
