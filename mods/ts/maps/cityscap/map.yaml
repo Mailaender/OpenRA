@@ -1009,7 +1009,7 @@ Actors:
 		Owner: Neutral
 		Health: 100
 		Facing: 160
-	Actor190: locomotive
+	Locomotive1: locomotive
 		Location: 68,49
 		Owner: Neutral
 		Health: 100
@@ -1781,7 +1781,7 @@ Actors:
 	Actor397: mpspawn
 		Location: 88,66
 		Owner: Neutral
-	Actor398: waypoint
+	Waypoint1: waypoint
 		Location: 150,88
 		Owner: Neutral
 	Actor399: waypoint
@@ -1994,270 +1994,6 @@ Actors:
 	Actor468: srock05
 		Location: 64,-2
 		Owner: Neutral
-	Actor469: lobrdg_r_ne
-		Location: 102,-33
-		Owner: Neutral
-	Actor470: lobrdg_r_nw
-		Location: 131,-60
-		Owner: Neutral
-	Actor471: lobrdg_r_ne
-		Location: 104,-33
-		Owner: Neutral
-	Actor472: lobrdg_r_ne
-		Location: 103,-33
-		Owner: Neutral
-	Actor473: lobrdg_a
-		Location: 103,-32
-		Owner: Neutral
-	Actor474: lobrdg_a
-		Location: 102,-32
-		Owner: Neutral
-	Actor475: lobrdg_a
-		Location: 102,-31
-		Owner: Neutral
-	Actor476: lobrdg_b
-		Location: 133,-60
-		Owner: Neutral
-	Actor477: lobrdg_b
-		Location: 132,-60
-		Owner: Neutral
-	Actor478: lobrdg_b
-		Location: 132,-59
-		Owner: Neutral
-	Actor479: lobrdg_r_nw
-		Location: 131,-59
-		Owner: Neutral
-	Actor480: lobrdg_r_nw
-		Location: 131,-58
-		Owner: Neutral
-	Actor481: lobrdg_a
-		Location: 104,-32
-		Owner: Neutral
-	Actor482: lobrdg_a
-		Location: 104,-31
-		Owner: Neutral
-	Actor483: lobrdg_a
-		Location: 103,-31
-		Owner: Neutral
-	Actor484: lobrdg_a
-		Location: 103,-30
-		Owner: Neutral
-	Actor485: lobrdg_a
-		Location: 102,-30
-		Owner: Neutral
-	Actor486: lobrdg_a
-		Location: 102,-29
-		Owner: Neutral
-	Actor487: lobrdg_b
-		Location: 135,-60
-		Owner: Neutral
-		Health: 50
-	Actor488: lobrdg_b
-		Location: 134,-60
-		Owner: Neutral
-		Health: 50
-	Actor489: lobrdg_b
-		Location: 134,-59
-		Owner: Neutral
-		Health: 50
-	Actor490: lobrdg_b
-		Location: 133,-59
-		Owner: Neutral
-	Actor491: lobrdg_b
-		Location: 133,-58
-		Owner: Neutral
-	Actor492: lobrdg_b
-		Location: 132,-58
-		Owner: Neutral
-	Actor493: lobrdg_a
-		Location: 104,-30
-		Owner: Neutral
-	Actor494: lobrdg_a
-		Location: 104,-29
-		Owner: Neutral
-	Actor495: lobrdg_a
-		Location: 103,-29
-		Owner: Neutral
-	Actor496: lobrdg_a
-		Location: 103,-28
-		Owner: Neutral
-	Actor497: lobrdg_a
-		Location: 102,-28
-		Owner: Neutral
-	Actor498: lobrdg_a
-		Location: 102,-27
-		Owner: Neutral
-	Actor499: lobrdg_b_d
-		Location: 137,-60
-		Owner: Neutral
-	Actor500: lobrdg_b
-		Location: 136,-60
-		Owner: Neutral
-		Health: 25
-	Actor501: lobrdg_b
-		Location: 136,-59
-		Owner: Neutral
-		Health: 25
-	Actor502: lobrdg_b
-		Location: 135,-59
-		Owner: Neutral
-		Health: 50
-	Actor503: lobrdg_b
-		Location: 135,-58
-		Owner: Neutral
-		Health: 50
-	Actor504: lobrdg_b
-		Location: 134,-58
-		Owner: Neutral
-		Health: 50
-	Actor505: lobrdg_a
-		Location: 104,-28
-		Owner: Neutral
-	Actor506: lobrdg_a
-		Location: 104,-27
-		Owner: Neutral
-	Actor507: lobrdg_a
-		Location: 103,-27
-		Owner: Neutral
-	Actor508: lobrdg_a
-		Location: 103,-26
-		Owner: Neutral
-	Actor509: lobrdg_a
-		Location: 102,-26
-		Owner: Neutral
-	Actor510: lobrdg_a
-		Location: 102,-25
-		Owner: Neutral
-	Actor511: lobrdg_b
-		Location: 139,-60
-		Owner: Neutral
-		Health: 25
-	Actor512: lobrdg_b_d
-		Location: 138,-60
-		Owner: Neutral
-	Actor513: lobrdg_b_d
-		Location: 138,-59
-		Owner: Neutral
-	Actor514: lobrdg_b_d
-		Location: 137,-59
-		Owner: Neutral
-	Actor515: lobrdg_b_d
-		Location: 137,-58
-		Owner: Neutral
-	Actor516: lobrdg_b
-		Location: 136,-58
-		Owner: Neutral
-		Health: 25
-	Actor517: lobrdg_a
-		Location: 104,-26
-		Owner: Neutral
-	Actor518: lobrdg_a
-		Location: 104,-25
-		Owner: Neutral
-	Actor519: lobrdg_a
-		Location: 103,-25
-		Owner: Neutral
-	Actor520: lobrdg_a
-		Location: 103,-24
-		Owner: Neutral
-	Actor521: lobrdg_a
-		Location: 102,-24
-		Owner: Neutral
-	Actor522: lobrdg_a
-		Location: 102,-23
-		Owner: Neutral
-	Actor523: lobrdg_b
-		Location: 141,-60
-		Owner: Neutral
-	Actor524: lobrdg_b
-		Location: 140,-60
-		Owner: Neutral
-		Health: 50
-	Actor525: lobrdg_b
-		Location: 140,-59
-		Owner: Neutral
-		Health: 50
-	Actor526: lobrdg_b
-		Location: 139,-59
-		Owner: Neutral
-		Health: 25
-	Actor527: lobrdg_b
-		Location: 139,-58
-		Owner: Neutral
-		Health: 25
-	Actor528: lobrdg_b_d
-		Location: 138,-58
-		Owner: Neutral
-	Actor529: lobrdg_a
-		Location: 104,-24
-		Owner: Neutral
-	Actor530: lobrdg_a
-		Location: 104,-23
-		Owner: Neutral
-	Actor531: lobrdg_a
-		Location: 103,-23
-		Owner: Neutral
-	Actor532: lobrdg_a
-		Location: 103,-22
-		Owner: Neutral
-	Actor533: lobrdg_a
-		Location: 102,-22
-		Owner: Neutral
-	Actor534: lobrdg_r_sw
-		Location: 102,-21
-		Owner: Neutral
-	Actor535: lobrdg_b
-		Location: 143,-60
-		Owner: Neutral
-	Actor536: lobrdg_b
-		Location: 142,-60
-		Owner: Neutral
-	Actor537: lobrdg_b
-		Location: 142,-59
-		Owner: Neutral
-	Actor538: lobrdg_b
-		Location: 141,-59
-		Owner: Neutral
-	Actor539: lobrdg_b
-		Location: 141,-58
-		Owner: Neutral
-	Actor540: lobrdg_b
-		Location: 140,-58
-		Owner: Neutral
-		Health: 50
-	Actor541: lobrdg_a
-		Location: 104,-22
-		Owner: Neutral
-	Actor542: lobrdg_r_sw
-		Location: 104,-21
-		Owner: Neutral
-	Actor543: lobrdg_r_sw
-		Location: 103,-21
-		Owner: Neutral
-	Actor544: tracks10
-		Location: 198,-113
-		Owner: Neutral
-	Actor545: tracks02
-		Location: 197,-112
-		Owner: Neutral
-	Actor546: tracks12
-		Location: 196,-111
-		Owner: Neutral
-	Actor547: lobrdg_r_se
-		Location: 144,-60
-		Owner: Neutral
-	Actor548: lobrdg_r_se
-		Location: 144,-59
-		Owner: Neutral
-	Actor549: lobrdg_b
-		Location: 143,-59
-		Owner: Neutral
-	Actor550: lobrdg_b
-		Location: 143,-58
-		Owner: Neutral
-	Actor551: lobrdg_b
-		Location: 142,-58
-		Owner: Neutral
 	Actor552: tracks04
 		Location: 200,-113
 		Owner: Neutral
@@ -2269,9 +2005,6 @@ Actors:
 		Owner: Neutral
 	Actor555: tracks03
 		Location: 196,-109
-		Owner: Neutral
-	Actor556: lobrdg_r_se
-		Location: 144,-58
 		Owner: Neutral
 	Actor557: tracks04
 		Location: 202,-113
@@ -3230,9 +2963,6 @@ Actors:
 	Actor875: tracks05
 		Location: 166,-17
 		Owner: Neutral
-	Actor876: lobrdg_r_ne
-		Location: 161,-12
-		Owner: Neutral
 	Actor877: tracks04
 		Location: 143,6
 		Owner: Neutral
@@ -3250,21 +2980,6 @@ Actors:
 		Owner: Neutral
 	Actor882: tracks01
 		Location: 167,-16
-		Owner: Neutral
-	Actor883: lobrdg_r_ne
-		Location: 163,-12
-		Owner: Neutral
-	Actor884: lobrdg_r_ne
-		Location: 162,-12
-		Owner: Neutral
-	Actor885: lobrdg_a
-		Location: 162,-11
-		Owner: Neutral
-	Actor886: lobrdg_a
-		Location: 161,-11
-		Owner: Neutral
-	Actor887: lobrdg_a
-		Location: 161,-10
 		Owner: Neutral
 	Actor888: tracks04
 		Location: 145,6
@@ -3290,24 +3005,6 @@ Actors:
 	Actor895: tracks01
 		Location: 168,-15
 		Owner: Neutral
-	Actor896: lobrdg_a
-		Location: 163,-11
-		Owner: Neutral
-	Actor897: lobrdg_a
-		Location: 163,-10
-		Owner: Neutral
-	Actor898: lobrdg_a
-		Location: 162,-10
-		Owner: Neutral
-	Actor899: lobrdg_a
-		Location: 162,-9
-		Owner: Neutral
-	Actor900: lobrdg_a
-		Location: 161,-9
-		Owner: Neutral
-	Actor901: lobrdg_a
-		Location: 161,-8
-		Owner: Neutral
 	Actor902: tracks04
 		Location: 147,6
 		Owner: Neutral
@@ -3328,24 +3025,6 @@ Actors:
 		Owner: Neutral
 	Actor908: tracks01
 		Location: 169,-14
-		Owner: Neutral
-	Actor909: lobrdg_a
-		Location: 163,-9
-		Owner: Neutral
-	Actor910: lobrdg_a
-		Location: 163,-8
-		Owner: Neutral
-	Actor911: lobrdg_a
-		Location: 162,-8
-		Owner: Neutral
-	Actor912: lobrdg_a
-		Location: 162,-7
-		Owner: Neutral
-	Actor913: lobrdg_a
-		Location: 161,-7
-		Owner: Neutral
-	Actor914: lobrdg_a
-		Location: 161,-6
 		Owner: Neutral
 	Actor915: tracks06
 		Location: 149,6
@@ -3371,24 +3050,6 @@ Actors:
 	Actor922: tracks01
 		Location: 170,-13
 		Owner: Neutral
-	Actor923: lobrdg_a
-		Location: 163,-7
-		Owner: Neutral
-	Actor924: lobrdg_a
-		Location: 163,-6
-		Owner: Neutral
-	Actor925: lobrdg_a
-		Location: 162,-6
-		Owner: Neutral
-	Actor926: lobrdg_a
-		Location: 162,-5
-		Owner: Neutral
-	Actor927: lobrdg_a
-		Location: 161,-5
-		Owner: Neutral
-	Actor928: lobrdg_a
-		Location: 161,-4
-		Owner: Neutral
 	Actor929: tracks01
 		Location: 150,7
 		Owner: Neutral
@@ -3403,24 +3064,6 @@ Actors:
 		Owner: Neutral
 	Actor933: tracks01
 		Location: 171,-12
-		Owner: Neutral
-	Actor934: lobrdg_a
-		Location: 163,-5
-		Owner: Neutral
-	Actor935: lobrdg_a
-		Location: 163,-4
-		Owner: Neutral
-	Actor936: lobrdg_a
-		Location: 162,-4
-		Owner: Neutral
-	Actor937: lobrdg_a
-		Location: 162,-3
-		Owner: Neutral
-	Actor938: lobrdg_a
-		Location: 161,-3
-		Owner: Neutral
-	Actor939: lobrdg_a
-		Location: 161,-2
 		Owner: Neutral
 	Actor940: tracks01
 		Location: 151,8
@@ -3442,24 +3085,6 @@ Actors:
 		Owner: Neutral
 	Actor946: tracks01
 		Location: 172,-11
-		Owner: Neutral
-	Actor947: lobrdg_a
-		Location: 163,-3
-		Owner: Neutral
-	Actor948: lobrdg_a
-		Location: 163,-2
-		Owner: Neutral
-	Actor949: lobrdg_a
-		Location: 162,-2
-		Owner: Neutral
-	Actor950: lobrdg_a
-		Location: 162,-1
-		Owner: Neutral
-	Actor951: lobrdg_a
-		Location: 161,-1
-		Owner: Neutral
-	Actor952: lobrdg_a
-		Location: 161,0
 		Owner: Neutral
 	Actor953: tracks08
 		Location: 152,9
@@ -3500,24 +3125,6 @@ Actors:
 	Actor965: tracks01
 		Location: 173,-10
 		Owner: Neutral
-	Actor966: lobrdg_a
-		Location: 163,-1
-		Owner: Neutral
-	Actor967: lobrdg_a
-		Location: 163,0
-		Owner: Neutral
-	Actor968: lobrdg_a
-		Location: 162,0
-		Owner: Neutral
-	Actor969: lobrdg_a
-		Location: 162,1
-		Owner: Neutral
-	Actor970: lobrdg_a
-		Location: 161,1
-		Owner: Neutral
-	Actor971: lobrdg_a
-		Location: 161,2
-		Owner: Neutral
 	Actor972: tracks03
 		Location: 152,10
 		Owner: Neutral
@@ -3535,24 +3142,6 @@ Actors:
 		Owner: Neutral
 	Actor977: tracks01
 		Location: 174,-9
-		Owner: Neutral
-	Actor978: lobrdg_a
-		Location: 163,1
-		Owner: Neutral
-	Actor979: lobrdg_a
-		Location: 163,2
-		Owner: Neutral
-	Actor980: lobrdg_a
-		Location: 162,2
-		Owner: Neutral
-	Actor981: lobrdg_a
-		Location: 162,3
-		Owner: Neutral
-	Actor982: lobrdg_a
-		Location: 161,3
-		Owner: Neutral
-	Actor983: lobrdg_a
-		Location: 161,4
 		Owner: Neutral
 	Actor984: tracks03
 		Location: 152,12
@@ -3578,24 +3167,6 @@ Actors:
 	Actor991: tracks01
 		Location: 175,-8
 		Owner: Neutral
-	Actor992: lobrdg_a
-		Location: 163,3
-		Owner: Neutral
-	Actor993: lobrdg_a
-		Location: 163,4
-		Owner: Neutral
-	Actor994: lobrdg_a
-		Location: 162,4
-		Owner: Neutral
-	Actor995: lobrdg_a
-		Location: 162,5
-		Owner: Neutral
-	Actor996: lobrdg_a
-		Location: 161,5
-		Owner: Neutral
-	Actor997: lobrdg_a
-		Location: 161,6
-		Owner: Neutral
 	Actor998: tracks03
 		Location: 150,16
 		Owner: Neutral
@@ -3620,24 +3191,6 @@ Actors:
 	Actor1005: srock04
 		Location: 173,-5
 		Owner: Neutral
-	Actor1006: lobrdg_a
-		Location: 163,5
-		Owner: Neutral
-	Actor1007: lobrdg_a
-		Location: 163,6
-		Owner: Neutral
-	Actor1008: lobrdg_a
-		Location: 162,6
-		Owner: Neutral
-	Actor1009: lobrdg_a
-		Location: 162,7
-		Owner: Neutral
-	Actor1010: lobrdg_a
-		Location: 161,7
-		Owner: Neutral
-	Actor1011: lobrdg_a
-		Location: 161,8
-		Owner: Neutral
 	Actor1012: tracks03
 		Location: 150,18
 		Owner: Neutral
@@ -3656,21 +3209,6 @@ Actors:
 	Actor1017: tracks01
 		Location: 177,-6
 		Owner: Neutral
-	Actor1018: lobrdg_a
-		Location: 163,7
-		Owner: Neutral
-	Actor1019: lobrdg_a
-		Location: 163,8
-		Owner: Neutral
-	Actor1020: lobrdg_a
-		Location: 162,8
-		Owner: Neutral
-	Actor1021: lobrdg_r_sw
-		Location: 162,9
-		Owner: Neutral
-	Actor1022: lobrdg_r_sw
-		Location: 161,9
-		Owner: Neutral
 	Actor1023: tracks03
 		Location: 150,20
 		Owner: Neutral
@@ -3688,9 +3226,6 @@ Actors:
 		Owner: Neutral
 	Actor1028: tracks01
 		Location: 178,-5
-		Owner: Neutral
-	Actor1029: lobrdg_r_sw
-		Location: 163,9
 		Owner: Neutral
 	Actor1030: tracks03
 		Location: 150,22
@@ -3968,9 +3503,6 @@ Actors:
 	Actor1121: tracks04
 		Location: 198,2
 		Owner: Neutral
-	Actor1122: lobrdg_r_ne
-		Location: 187,14
-		Owner: Neutral
 	Actor1123: tracks03
 		Location: 150,50
 		Owner: Neutral
@@ -3988,21 +3520,6 @@ Actors:
 		Owner: Neutral
 	Actor1128: tracks04
 		Location: 200,2
-		Owner: Neutral
-	Actor1129: lobrdg_r_ne
-		Location: 189,14
-		Owner: Neutral
-	Actor1130: lobrdg_r_ne
-		Location: 188,14
-		Owner: Neutral
-	Actor1131: lobrdg_a
-		Location: 188,15
-		Owner: Neutral
-	Actor1132: lobrdg_a
-		Location: 187,15
-		Owner: Neutral
-	Actor1133: lobrdg_a
-		Location: 187,16
 		Owner: Neutral
 	Actor1134: tracks03
 		Location: 150,52
@@ -4024,24 +3541,6 @@ Actors:
 		Owner: Neutral
 	Actor1140: tracks04
 		Location: 202,2
-		Owner: Neutral
-	Actor1141: lobrdg_a
-		Location: 189,15
-		Owner: Neutral
-	Actor1142: lobrdg_a
-		Location: 189,16
-		Owner: Neutral
-	Actor1143: lobrdg_a
-		Location: 188,16
-		Owner: Neutral
-	Actor1144: lobrdg_a
-		Location: 188,17
-		Owner: Neutral
-	Actor1145: lobrdg_a
-		Location: 187,17
-		Owner: Neutral
-	Actor1146: lobrdg_a
-		Location: 187,18
 		Owner: Neutral
 	Actor1147: tracks03
 		Location: 150,54
@@ -4070,24 +3569,6 @@ Actors:
 	Actor1155: srock05
 		Location: 193,14
 		Owner: Neutral
-	Actor1156: lobrdg_a
-		Location: 189,17
-		Owner: Neutral
-	Actor1157: lobrdg_a
-		Location: 189,18
-		Owner: Neutral
-	Actor1158: lobrdg_a
-		Location: 188,18
-		Owner: Neutral
-	Actor1159: lobrdg_a
-		Location: 188,19
-		Owner: Neutral
-	Actor1160: lobrdg_a
-		Location: 187,19
-		Owner: Neutral
-	Actor1161: lobrdg_a
-		Location: 187,20
-		Owner: Neutral
 	Actor1162: tracks03
 		Location: 150,56
 		Owner: Neutral
@@ -4109,24 +3590,6 @@ Actors:
 	Actor1168: tracks04
 		Location: 206,2
 		Owner: Neutral
-	Actor1169: lobrdg_a
-		Location: 189,19
-		Owner: Neutral
-	Actor1170: lobrdg_a
-		Location: 189,20
-		Owner: Neutral
-	Actor1171: lobrdg_a
-		Location: 188,20
-		Owner: Neutral
-	Actor1172: lobrdg_a
-		Location: 188,21
-		Owner: Neutral
-	Actor1173: lobrdg_a
-		Location: 187,21
-		Owner: Neutral
-	Actor1174: lobrdg_a
-		Location: 187,22
-		Owner: Neutral
 	Actor1175: tracks03
 		Location: 150,58
 		Owner: Neutral
@@ -4145,24 +3608,6 @@ Actors:
 	Actor1180: tracks04
 		Location: 208,2
 		Owner: Neutral
-	Actor1181: lobrdg_a
-		Location: 189,21
-		Owner: Neutral
-	Actor1182: lobrdg_a
-		Location: 189,22
-		Owner: Neutral
-	Actor1183: lobrdg_a
-		Location: 188,22
-		Owner: Neutral
-	Actor1184: lobrdg_a
-		Location: 188,23
-		Owner: Neutral
-	Actor1185: lobrdg_a
-		Location: 187,23
-		Owner: Neutral
-	Actor1186: lobrdg_a
-		Location: 187,24
-		Owner: Neutral
 	Actor1187: tracks04
 		Location: 114,97
 		Owner: Neutral
@@ -4180,24 +3625,6 @@ Actors:
 		Owner: Neutral
 	Actor1192: tracks04
 		Location: 210,2
-		Owner: Neutral
-	Actor1193: lobrdg_a
-		Location: 189,23
-		Owner: Neutral
-	Actor1194: lobrdg_a
-		Location: 189,24
-		Owner: Neutral
-	Actor1195: lobrdg_a
-		Location: 188,24
-		Owner: Neutral
-	Actor1196: lobrdg_a
-		Location: 188,25
-		Owner: Neutral
-	Actor1197: lobrdg_a
-		Location: 187,25
-		Owner: Neutral
-	Actor1198: lobrdg_a
-		Location: 187,26
 		Owner: Neutral
 	Actor1199: tracks03
 		Location: 150,63
@@ -4219,24 +3646,6 @@ Actors:
 		Owner: Neutral
 	Actor1205: tracks04
 		Location: 212,2
-		Owner: Neutral
-	Actor1206: lobrdg_a
-		Location: 189,25
-		Owner: Neutral
-	Actor1207: lobrdg_a
-		Location: 189,26
-		Owner: Neutral
-	Actor1208: lobrdg_a
-		Location: 188,26
-		Owner: Neutral
-	Actor1209: lobrdg_a
-		Location: 188,27
-		Owner: Neutral
-	Actor1210: lobrdg_a
-		Location: 187,27
-		Owner: Neutral
-	Actor1211: lobrdg_a
-		Location: 187,28
 		Owner: Neutral
 	Actor1212: tracks03
 		Location: 150,64
@@ -4262,24 +3671,6 @@ Actors:
 	Actor1219: tracks04
 		Location: 214,2
 		Owner: Neutral
-	Actor1220: lobrdg_a
-		Location: 189,27
-		Owner: Neutral
-	Actor1221: lobrdg_a
-		Location: 189,28
-		Owner: Neutral
-	Actor1222: lobrdg_a
-		Location: 188,28
-		Owner: Neutral
-	Actor1223: lobrdg_a
-		Location: 188,29
-		Owner: Neutral
-	Actor1224: lobrdg_a
-		Location: 187,29
-		Owner: Neutral
-	Actor1225: lobrdg_a
-		Location: 187,30
-		Owner: Neutral
 	Actor1226: tracks03
 		Location: 150,66
 		Owner: Neutral
@@ -4303,24 +3694,6 @@ Actors:
 		Owner: Neutral
 	Actor1233: tracks04
 		Location: 216,2
-		Owner: Neutral
-	Actor1234: lobrdg_a
-		Location: 189,29
-		Owner: Neutral
-	Actor1235: lobrdg_a
-		Location: 189,30
-		Owner: Neutral
-	Actor1236: lobrdg_a
-		Location: 188,30
-		Owner: Neutral
-	Actor1237: lobrdg_a
-		Location: 188,31
-		Owner: Neutral
-	Actor1238: lobrdg_a
-		Location: 187,31
-		Owner: Neutral
-	Actor1239: lobrdg_a
-		Location: 187,32
 		Owner: Neutral
 	Actor1240: tracks03
 		Location: 150,68
@@ -4346,24 +3719,6 @@ Actors:
 	Actor1247: tracks04
 		Location: 218,2
 		Owner: Neutral
-	Actor1248: lobrdg_a
-		Location: 189,31
-		Owner: Neutral
-	Actor1249: lobrdg_a
-		Location: 189,32
-		Owner: Neutral
-	Actor1250: lobrdg_a
-		Location: 188,32
-		Owner: Neutral
-	Actor1251: lobrdg_a
-		Location: 188,33
-		Owner: Neutral
-	Actor1252: lobrdg_a
-		Location: 187,33
-		Owner: Neutral
-	Actor1253: lobrdg_r_sw
-		Location: 187,34
-		Owner: Neutral
 	Actor1254: tracks03
 		Location: 150,70
 		Owner: Neutral
@@ -4384,15 +3739,6 @@ Actors:
 		Owner: Neutral
 	Actor1260: tracks04
 		Location: 220,2
-		Owner: Neutral
-	Actor1261: lobrdg_a
-		Location: 189,33
-		Owner: Neutral
-	Actor1262: lobrdg_r_sw
-		Location: 189,34
-		Owner: Neutral
-	Actor1263: lobrdg_r_sw
-		Location: 188,34
 		Owner: Neutral
 	Actor1264: tracks03
 		Location: 150,72
@@ -4597,3 +3943,5 @@ Rules:
 	World:
 		GlobalLightingPaletteEffect:
 			Ambient: 0.93
+		LuaScript:
+			Scripts: train.lua
