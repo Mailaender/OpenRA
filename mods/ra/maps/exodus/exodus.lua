@@ -299,7 +299,7 @@ Tick = function()
 
 		Utils.Do(humans, function(player)
 			if player and player.HasNoRequiredUnits() then
-				soviets.MarkCompletedObjective(sovietObjective)
+				player.MarkFailedObjective(evacuateUnits)
 			end
 		end)
 	end

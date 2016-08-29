@@ -1,6 +1,7 @@
 Player:
 	MissionObjectives:
 		GameOverDelay: 10000
+		EarlyGameOver: false
 	PlayerResources:
 		DefaultCash: 5000
 
