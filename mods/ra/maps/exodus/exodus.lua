@@ -115,11 +115,9 @@ SpawnAlliedUnit = function(units)
 	end
 
 	Utils.Do(humans, function(player)
-		if player and player.IsLocalPlayer then
-			Trigger.AfterDelay(DateTime.Seconds(2), function()
-				Media.PlaySpeechNotification(player, "AlliedReinforcementsNorth")
-			end)
-		end
+		Trigger.AfterDelay(DateTime.Seconds(2), function()
+			Media.PlaySpeechNotification(player, "AlliedReinforcementsNorth")
+		end)
 	end)
 
 	if CurrentReinforcement1 < #Reinforcements1 then
