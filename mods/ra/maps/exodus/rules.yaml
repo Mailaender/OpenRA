@@ -1,4 +1,6 @@
 Player:
+	MissionObjectives:
+		GameOverDelay: 10000
 	PlayerResources:
 		DefaultCash: 5000
 
