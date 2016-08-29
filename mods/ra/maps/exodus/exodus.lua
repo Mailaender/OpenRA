@@ -141,21 +141,19 @@ end
 
 SovietGroupSize = 5
 SpawnSovietUnits = function()
-	spawnPoint = Utils.Random(SovietEntryPoints)
-	rallyPoint = Utils.Random(SovietRallyPoints)
-	route = { spawnPoint.Location, rallyPoint.Location }
+	local spawnPoint = Utils.Random(SovietEntryPoints)
+	local rallyPoint = Utils.Random(SovietRallyPoints)
+	local route = { spawnPoint.Location, rallyPoint.Location }
 
+	local units = SovietUnits1
 	if DateTime.GameTime >= SovietUnits2Ticks[Difficulty] then
 		units = SovietUnits2
-	else
-		units = SovietUnits1
 	end
 
-	unit = { Utils.Random(units) }
+	local unit = { Utils.Random(units) }
 	Reinforcements.Reinforce(soviets, unit, route)
 
-	delay = math.max(attackAtFrame - 5, minAttackAtFrame)
-
+	local delay = math.max(attackAtFrame - 5, minAttackAtFrame)
 	Trigger.AfterDelay(delay, SpawnSovietUnits)
 end
 
