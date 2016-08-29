@@ -215,20 +215,25 @@ AircraftTargets = function()
 	return targets
 end
 
-YakAttack = function(yak)
-	local targets = AircraftTargets()
-	if #targets > 0 then
-		target = Utils.Random(targets)
-	else
-		yak.Wait(DateTime.Seconds(5))
+YakAttack = function(yak, target)
+	if not target or target.IsDead or (not target.IsInWorld) then
+		local targets = AircraftTargets()
+		if #targets > 0 then
+			target = Utils.Random(targets)
+		else
+			yak.Wait(DateTime.Seconds(5))
+		end
 	end
 
-	if yak.AmmoCount() > 0 then
-		yak.Stop()
+	if target and yak.AmmoCount() > 0 then
 		yak.Attack(target)
 	else
 		yak.ReturnToBase() -- includes yak.Resupply()
 	end
+
+	yak.CallFunc(function()
+		YakAttack(yak, target)
+	end)
 end
 
 ManageSovietAircraft = function()
@@ -241,22 +246,8 @@ ManageSovietAircraft = function()
 	if #sovietYaks < maxSovietYaks then
 		soviets.Build(Yak, function(units)
 			local yak = units[1]
-			Trigger.OnIdle(yak, YakAttack)
+			YakAttack(yak)
 		end)
-	end
-
-	if #sovietYaks > 0 then
-		local circling = Utils.Where(sovietYaks, function(yak) return yak.IsCircling end)
-		if #circling > 0 then
-			Utils.Do(circling, YakAttack)
-		end
-
-		local grounded = Utils.Where(sovietYaks, function(yak)
-			return yak.CenterPosition.Z < 1 and yak.AmmoCount() == yak.MaximumAmmoCount()
-		end)
-		if #grounded > 0 then
-			Utils.Do(grounded, YakAttack)
-		end
 	end
 end
 
