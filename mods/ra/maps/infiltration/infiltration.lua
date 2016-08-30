@@ -197,7 +197,7 @@ AttackTown = function()
 end
 
 CapOre = function(player)
-	if player.Resources > player.ResourceCapacity then
+	if player.Resources > player.ResourceCapacity * 0.9 then
 		player.Resources = player.ResourceCapacity * 0.8
 	end
 end
