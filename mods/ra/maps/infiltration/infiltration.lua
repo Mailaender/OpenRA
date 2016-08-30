@@ -218,8 +218,11 @@ SetupPatrols = function()
 	end
 
 	local checkpoint = { BaseGuardTruckPos.Location }
-	Trigger.OnEnteredFootprint(checkpoint, function()
-		BaseGuard.ScriptedMove(BaseGuardMovePos.Location)
+	Trigger.OnEnteredFootprint(checkpoint, function(a, id)
+		Trigger.RemoveFootprintTrigger(id)
+		if not BaseGuard.IsDead then
+			BaseGuard.ScriptedMove(BaseGuardMovePos.Location)
+		end
 	end)
 end
 
