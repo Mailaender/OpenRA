@@ -95,6 +95,12 @@ LabInfiltrated = function()
 	local mcvs = reinforcements[2]
 
 	Trigger.OnAddedToWorld(mcvs[1], function(mcvUnloaded)
+
+		-- Don't call this twice (because of the owner change)
+		if mcvUnloaded.Owner == player1 then
+			return
+		end
+
 		mcvUnloaded.Owner = player1
 		if not player2 then
 			player1.Cash = 5000
@@ -107,6 +113,12 @@ LabInfiltrated = function()
 
 	if player2 then
 		Trigger.OnAddedToWorld(mcvs[2], function(mcvUnloaded)
+
+			-- Don't call this twice (because of the owner change)
+			if mcvUnloaded.Owner == player2 then
+				return
+			end
+
 			mcvUnloaded.Owner = player2
 			player1.Cash = 2500
 			player2.Cash = 2500
