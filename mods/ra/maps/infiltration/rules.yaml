@@ -104,7 +104,7 @@ SS:
 	Buildable:
 		Prerequisites: ~disabled
 	AutoTarget:
-		InitialStance: Defend
+		InitialStanceAI: Defend
 
 ARTY:
 	Buildable:
