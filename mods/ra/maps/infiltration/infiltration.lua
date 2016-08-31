@@ -194,8 +194,13 @@ InsertSpies = function()
 
 	-- The delay isn't purely cosmetic, but also prevents a System.InvalidOperationException
 	-- "Collection was modified after the enumerator was instantiated." in tick_activities
+	local infiltrationCount = 0
 	Trigger.OnInfiltrated(Lab, function()
-		Trigger.AfterDelay(DateTime.Seconds(3), LabInfiltrated)
+		infiltrationCount = infiltrationCount + 1
+
+		if (player2 and infiltrationCount == 2) or not player2 then
+			Trigger.AfterDelay(DateTime.Seconds(3), LabInfiltrated)
+		end
 	end)
 
 	spyActors = { "spy.strong" }
