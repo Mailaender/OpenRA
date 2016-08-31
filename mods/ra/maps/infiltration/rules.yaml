@@ -74,12 +74,11 @@ TRUK.Hijackable:
 	-SupplyTruck:
 	RenderSprites:
 		Image: TRUK
+		Palette: playerSoviets
 	RevealsShroud:
 		Range: 6c0
 	Voiced:
 		VoiceSet: SpyVoice
-	Disguise:
-		Voice: Move
 
 E7:
 	Buildable:

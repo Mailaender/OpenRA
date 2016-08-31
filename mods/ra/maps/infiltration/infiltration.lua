@@ -351,8 +351,4 @@ WorldLoaded = function()
 	AttackTown()
 	SetupPatrols()
 	SovietBaseMaintenanceSetup()
-
-	Trigger.OnCapture(HijackTruck, function(truck)
-		truck.DisguiseAs(LabTruck)
-	end)
 end
