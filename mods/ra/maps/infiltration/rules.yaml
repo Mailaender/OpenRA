@@ -33,6 +33,7 @@ LST.Unselectable.UnloadOnly:
 	Cargo:
 		MaxWeight: 0
 		PipCount: 0
+	AutoTargetIgnore:
 
 SPY.Strong:
 	Inherits: SPY
