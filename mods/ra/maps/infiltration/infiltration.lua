@@ -126,7 +126,11 @@ LabInfiltrated = function()
 	end
 
 	Utils.Do(humans, function(player)
-		Media.PlaySoundNotification(player, "AlertBuzzer")
+		for i = 0, 2 do
+			Trigger.AfterDelay(DateTime.Seconds(i), function()
+				Media.PlaySoundNotification(player, "AlertBuzzer")
+			end)
+		end
 	end)
 
 	local attackPoint = BridgeAttackPoint.CenterPosition
