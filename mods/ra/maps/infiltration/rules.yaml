@@ -73,6 +73,7 @@ TRUK.Hijackable:
 		MaxWeight: 5
 		PipCount: 5
 	AutoTargetIgnore:
+	-Huntable:
 	ExternalCapturable:
 		Type: MissionObjective
 		CaptureCompleteTime: 1
