@@ -179,6 +179,9 @@ Actors:
 	Lab: miss
 		Location: 34,30
 		Owner: Soviets
+	LabWaypoint: waypoint
+		Location: 34,30
+		Owner: Neutral
 	Actor45: brik
 		Location: 39,34
 		Owner: Soviets

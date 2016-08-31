@@ -316,7 +316,7 @@ CheckLabSecured = function()
 	end
 
 	local radius = WDist.FromCells(10)
-	local labGuards = Utils.Where(Map.ActorsInCircle(Lab.CenterPosition, radius), function(a)
+	local labGuards = Utils.Where(Map.ActorsInCircle(LabWaypoint.CenterPosition, radius), function(a)
 		return a.Owner == soviets and a.HasProperty("Move")
 	end)
 
