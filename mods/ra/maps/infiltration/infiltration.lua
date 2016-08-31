@@ -78,7 +78,9 @@ LabInfiltrated = function()
 			destroyBase = player.AddPrimaryObjective("Destroy the soviet installation.")
 			player.MarkCompletedObjective(infiltrateLab)
 			Trigger.ClearAll(Lab)
-			Trigger.OnKilled(Lab, SecureLabFailed)
+			Trigger.AfterDelay(0, function()
+				Trigger.OnKilled(Lab, SecureLabFailed)
+			end)
 		end
 	end)
 
