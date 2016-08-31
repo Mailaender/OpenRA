@@ -107,7 +107,7 @@ LabInfiltrated = function()
 		end
 		Media.PlaySpeechNotification(player, "AlliedReinforcementsSouth")
 		StartTimer()
-		HijackTruck.Kill()
+		HijackTruck.Destroy()
 		reinforcementsHaveArrived = true
 	end)
 
