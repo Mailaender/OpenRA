@@ -151,33 +151,10 @@ InfiltrateLabFailed = function()
 	end)
 end
 
-upgradeGranted = false
-GrantUpgradeInsideTruk = function(actor)
-
-	-- Loaded inside a transport
-	Trigger.OnRemovedFromWorld(actor, function()
-		if not HijackTruck.IsDead and HijackTruck.HasPassengers and not upgradeGranted then
-			upgradeGranted = true
-			HijackTruck.GrantUpgrade("mobile")
-		end
-	end)
-
-	-- Unloaded from the transport
-	Trigger.OnAddedToWorld(actor, function()
-		if not HijackTruck.IsDead and not HijackTruck.HasPassengers and upgradeGranted then
-			upgradeGranted = false
-			HijackTruck.RevokeUpgrade("mobile")
-		end
-	end)
-end
-
 ChangeOwnerOnAddedToWorld = function(actor, newOwner)
 	Trigger.OnAddedToWorld(actor, function(unloadedActor)
 		unloadedActor.Owner = newOwner
 		Trigger.Clear(unloadedActor, "OnAddedToWorld")
-		Trigger.AfterDelay(0, function()
-			GrantUpgradeInsideTruk(unloadedActor)
-		end)
 	end)
 end
 
