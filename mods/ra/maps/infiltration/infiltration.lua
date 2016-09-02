@@ -209,7 +209,9 @@ IdleHunt = function(unit)
 end
 
 StopHunt = function(unit)
-	Trigger.Clear(unit, "OnIdle")
+	if not unit.IsDead then
+		Trigger.Clear(unit, "OnIdle")
+	end
 end
 
 AttackTown = function()
