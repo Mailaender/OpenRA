@@ -16,6 +16,13 @@ World:
 			hard: Hard
 		Default: normal
 
+^Palettes:
+	FixedColorPalette@SovietTruk:
+		Base: player
+		Name: truk-soviets
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
+		Color: FE1100
+
 MISS:
 	AutoTargetIgnore:
 	Targetable:
@@ -81,7 +88,7 @@ TRUK.Hijackable:
 	-SupplyTruck:
 	RenderSprites:
 		Image: TRUK
-		Palette: playerSoviets
+		Palette: truk-soviets
 	RevealsShroud:
 		Range: 6c0
 	Voiced:
