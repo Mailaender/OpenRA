@@ -35,7 +35,7 @@ fi
 
 if [ ! -f StyleCop.dll ]; then
 	echo "Fetching StyleCop files from NuGet"
-	get StyleCop.MSBuild 4.7.49.0
+	get StyleCop.MSBuild 4.7.54.0
 	cp ./StyleCop.MSBuild/tools/StyleCop*.dll .
 	rm -rf StyleCop.MSBuild
 fi

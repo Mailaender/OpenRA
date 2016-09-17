@@ -54,7 +54,7 @@ namespace OpenRA.Server
 					// from `socket.Receive(rx)`.
 					if (!Socket.Poll(0, SelectMode.SelectRead)) break;
 
-					if (0 < (len = Socket.Receive(rx)))
+					if ((len = Socket.Receive(rx)) > 0)
 						Data.AddRange(rx.Take(len));
 					else
 					{

@@ -22,7 +22,7 @@ if (!(Test-Path "StyleCopPlus.dll"))
 if (!(Test-Path "StyleCop.dll"))
 {
 	echo "Fetching StyleCop files from NuGet."
-	./nuget.exe install StyleCop.MSBuild -Version 4.7.49.0 -ExcludeVersion
+	./nuget.exe install StyleCop.MSBuild -Version 4.7.54.0 -ExcludeVersion
 	cp StyleCop.MSBuild/tools/StyleCop*.dll .
 	rmdir StyleCop.MSBuild -Recurse
 }

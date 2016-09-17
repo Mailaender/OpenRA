@@ -114,8 +114,12 @@ namespace OpenRA.Mods.Common.FileFormats
 			var flags = (SoundFlags)s.ReadByte();
 
 			var samples = outputSize;
-			if (0 != (flags & SoundFlags.Stereo)) samples /= 2;
-			if (0 != (flags & SoundFlags._16Bit)) samples /= 2;
+			if ((flags & SoundFlags.Stereo) != 0)
+				samples /= 2;
+
+			if ((flags & SoundFlags._16Bit) != 0)
+				samples /= 2;
+
 			return samples / sampleRate;
 		}
 
