@@ -430,6 +430,11 @@ install-linux-mime:
 	@$(INSTALL_DATA) packaging/linux/openra-replays.desktop "$(DESTDIR)$(datadir)/applications"
 	@$(INSTALL_DATA) packaging/linux/openra-launch-mod.desktop "$(DESTDIR)$(datadir)/applications"
 
+install-gnome-thumbnailer:
+	@$(INSTALL_DIR) "$(DESTDIR)$(datadir)/thumbnailers/"
+	@$(INSTALL_DATA) packaging/linux/oramap.thumbnailer "$(DESTDIR)$(datadir)/thumbnailers/oramap.thumbnailer"
+	@$(INSTALL_PROGRAM) -m +rx packaging/linux/oramap-thumbnailer.sh "$(BIN_INSTALL_DIR)/oramap-thumbnailer"
+
 install-linux-appdata:
 	@$(INSTALL_DIR) "$(DESTDIR)$(datadir)/appdata/"
 	@$(INSTALL_DATA) packaging/linux/openra.appdata.xml "$(DESTDIR)$(datadir)/appdata/"

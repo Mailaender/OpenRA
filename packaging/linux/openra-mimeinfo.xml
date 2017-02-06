@@ -22,4 +22,11 @@
     <glob weight="60" pattern="openra://*"/>
   </mime-type>
 
+  <mime-type type="application/x-openra-map">
+    <icon name="openra" />
+    <generic-icon name="applications-games"/>
+    <comment>OpenRA Map</comment>
+    <glob weight="60" pattern="*.oramap"/>
+  </mime-type>
+
 </mime-info>

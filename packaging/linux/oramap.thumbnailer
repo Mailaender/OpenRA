@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=oramap-thumbnailer
+Exec=oramap-thumbnailer %u %o %s
+MimeType=application/x-openra-map;
