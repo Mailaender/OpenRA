@@ -9,15 +9,29 @@
  */
 #endregion
 
+using System.Collections.Generic;
+using System.Linq;
+using OpenRA.GameRules;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Common.Traits
 {
 	[Desc("Does a suicide attack upon deployment.")]
-	class SuicidesInfo : ITraitInfo
+	class SuicidesInfo : ITraitInfo, IRulesetLoaded
 	{
 		[VoiceReference] public readonly string Voice = "Action";
+
+		[WeaponReference]
+		public readonly string DetonationWeapon = null;
+
+		public WeaponInfo DetonationWeaponInfo { get; private set; }
+
+		public void RulesetLoaded(Ruleset rules, ActorInfo ai)
+		{
+			if (!string.IsNullOrEmpty(DetonationWeapon))
+				DetonationWeaponInfo = rules.Weapons[DetonationWeapon.ToLowerInvariant()];
+		}
 
 		public object Create(ActorInitializer init) { return new Suicides(init.Self, this); }
 	}
@@ -51,8 +65,19 @@ namespace OpenRA.Mods.Common.Traits
 
 		void IResolveOrder.ResolveOrder(Actor self, Order order)
 		{
-			if (order.OrderString == "Detonate")
+			if (order.OrderString != "Detonate")
+				return;
+
+			self.World.AddFrameEndTask(w =>
+			{
+				if (info.DetonationWeapon != null)
+				{
+					// Use .FromPos since this actor is killed. Cannot use Target.FromActor
+					info.DetonationWeaponInfo.Impact(Target.FromPos(self.CenterPosition), self, Enumerable.Empty<int>());
+				}
+
 				self.Kill(self);
+			});
 		}
 	}
 }
