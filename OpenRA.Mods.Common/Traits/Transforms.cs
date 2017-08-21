@@ -58,6 +58,8 @@ namespace OpenRA.Mods.Common.Traits
 		readonly BuildingInfo buildingInfo;
 		readonly string faction;
 
+		CPos targetLocation;
+
 		public Transforms(ActorInitializer init, TransformsInfo info)
 		{
 			self = init.Self;
@@ -99,7 +101,7 @@ namespace OpenRA.Mods.Common.Traits
 			return new Order("DeployTransform", self, false);
 		}
 
-		public void DeployTransform(bool queued)
+		public void DeployTransform(bool queued, CPos targetLocation)
 		{
 			if (!queued && !CanDeploy())
 			{
@@ -116,7 +118,7 @@ namespace OpenRA.Mods.Common.Traits
 			if (!queued)
 				self.CancelActivity();
 
-			self.QueueActivity(new Transform(self, info.IntoActor)
+			self.QueueActivity(new Transform(self, info.IntoActor, targetLocation)
 			{
 				Offset = info.Offset,
 				Facing = info.Facing,
@@ -129,7 +131,7 @@ namespace OpenRA.Mods.Common.Traits
 		public void ResolveOrder(Actor self, Order order)
 		{
 			if (order.OrderString == "DeployTransform")
-				DeployTransform(order.Queued);
+				DeployTransform(order.Queued, order.TargetLocation);
 		}
 	}
 }

@@ -21,6 +21,7 @@ namespace OpenRA.Mods.Common.Activities
 	public class Transform : Activity
 	{
 		public readonly string ToActor;
+		public readonly CPos AtLocation;
 		public CVec Offset = CVec.Zero;
 		public int Facing = 96;
 		public string[] Sounds = { };
@@ -29,9 +30,10 @@ namespace OpenRA.Mods.Common.Activities
 		public bool SkipMakeAnims = false;
 		public string Faction = null;
 
-		public Transform(Actor self, string toActor)
+		public Transform(Actor self, string toActor, CPos atLocation)
 		{
 			ToActor = toActor;
+			AtLocation = atLocation;
 		}
 
 		protected override void OnFirstRun(Actor self)
@@ -61,6 +63,13 @@ namespace OpenRA.Mods.Common.Activities
 			{
 				Cancel(self, true);
 				return NextActivity;
+			}
+
+			if (AtLocation != self.Location)
+			{
+				var movement = self.TraitOrDefault<IMove>();
+				if (movement != null)
+					ActivityUtils.SequenceActivities(movement.MoveTo(AtLocation, 0), this);
 			}
 
 			foreach (var nt in self.TraitsImplementing<INotifyTransform>())

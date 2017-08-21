@@ -37,6 +37,19 @@ namespace OpenRA.Mods.Common.Orders
 
 		public bool CanTarget(Actor self, Target target, List<Actor> othersAtTarget, ref TargetModifiers modifiers, ref string cursor)
 		{
+			if (modifiers.HasModifier(TargetModifiers.ForceMove))
+			{
+				var xy = self.World.Map.CellContaining(target.CenterPosition);
+				var positionable = self.TraitOrDefault<IPositionable>();
+				if (positionable != null && positionable.CanEnterCell(xy))
+				{
+					IsQueued = modifiers.HasModifier(TargetModifiers.ForceQueue);
+					cursor = this.cursor();
+
+					return true;
+				}
+			}
+
 			if (target.Type != TargetType.Actor)
 				return false;
 
