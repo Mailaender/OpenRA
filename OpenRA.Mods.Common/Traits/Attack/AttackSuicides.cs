@@ -17,7 +17,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Common.Traits
 {
-	[Desc("Does a suicide attack where it moves next to the target when used in combination with `Explodes`.")]
+	[Desc("Does a suicide attack where it moves next to the target and then kills itself.")]
 	class AttackSuicidesInfo : ITraitInfo, Requires<IMoveInfo>
 	{
 		[VoiceReference] public readonly string Voice = "Action";
@@ -25,7 +25,7 @@ namespace OpenRA.Mods.Common.Traits
 		public object Create(ActorInitializer init) { return new AttackSuicides(init.Self, this); }
 	}
 
-	class AttackSuicides : IIssueOrder, IResolveOrder, IOrderVoice, IIssueDeployOrder
+	class AttackSuicides : IIssueOrder, IResolveOrder, IOrderVoice
 	{
 		readonly AttackSuicidesInfo info;
 		readonly IMove move;
@@ -41,24 +41,18 @@ namespace OpenRA.Mods.Common.Traits
 			get
 			{
 				yield return new TargetTypeOrderTargeter(new HashSet<string> { "DetonateAttack" }, "DetonateAttack", 5, "attack", true, false) { ForceAttack = false };
-				yield return new DeployOrderTargeter("Detonate", 5);
 			}
 		}
 
 		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
 		{
-			if (order.OrderID != "DetonateAttack" && order.OrderID != "Detonate")
+			if (order.OrderID != "DetonateAttack")
 				return null;
 
 			if (target.Type == TargetType.FrozenActor)
 				return new Order(order.OrderID, self, queued) { ExtraData = target.FrozenActor.ID };
 
 			return new Order(order.OrderID, self, queued) { TargetActor = target.Actor };
-		}
-
-		Order IIssueDeployOrder.IssueDeployOrder(Actor self)
-		{
-			return new Order("Detonate", self, false);
 		}
 
 		public string VoicePhraseForOrder(Actor self, Order order)
@@ -83,8 +77,6 @@ namespace OpenRA.Mods.Common.Traits
 
 				self.QueueActivity(new CallFunc(() => self.Kill(self)));
 			}
-			else if (order.OrderString == "Detonate")
-				self.Kill(self);
 		}
 	}
 }
