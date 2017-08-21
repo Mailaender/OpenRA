@@ -30,10 +30,14 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 		static readonly Dictionary<byte, string> OverlayToActor = new Dictionary<byte, string>()
 		{
 			{ 0x01, "gasand" },
+
 			{ 0x03, "gawall" },
+
 			{ 0x18, "bridge1" },
 			{ 0x19, "bridge2" },
+
 			{ 0x1A, "nawall" },
+
 			{ 0x27, "tracks01" },
 			{ 0x28, "tracks02" },
 			{ 0x29, "tracks03" },
@@ -104,6 +108,8 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x7C, "lobrdg_r_ne" }, // lobrdg3
 			{ 0x7D, "lobrdg_r_sw" }, // lobrdg4
 
+
+
 			{ 0xA7, "veinhole" },
 			{ 0xA8, "srock01" },
 			{ 0xA9, "srock02" },
@@ -116,7 +122,40 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0xB0, "trock04" },
 			{ 0xB1, "trock05" },
 			{ 0xBB, "veinholedummy" },
-			{ 0xBC, "crate" }
+			{ 0xBC, "crate" },
+
+			{ 0xD7, "lobrdb_b" }, // lobrdb01
+			{ 0xD8, "lobrdb_b" }, // lobrdb02
+			{ 0xD9, "lobrdb_b" }, // lobrdb03
+			{ 0xDA, "lobrdb_b" }, // lobrdb04
+			{ 0xDB, "lobrdb_b" }, // lobrdb05
+			{ 0xDC, "lobrdb_b" }, // lobrdb06
+			{ 0xDD, "lobrdb_b" }, // lobrdb07
+			{ 0xDE, "lobrdb_b" }, // lobrdb08
+			{ 0xDF, "lobrdb_b" }, // lobrdb09
+			{ 0xE0, "lobrdb_a" }, // lobrdb10
+			{ 0xE1, "lobrdb_a" }, // lobrdb11
+			{ 0xE2, "lobrdb_a" }, // lobrdb12
+			{ 0xE3, "lobrdb_a" }, // lobrdb13
+			{ 0xE4, "lobrdb_a" }, // lobrdb14
+			{ 0xE5, "lobrdb_a" }, // lobrdb15
+			{ 0xE6, "lobrdb_a" }, // lobrdb16
+			{ 0xE7, "lobrdb_a" }, // lobrdb17
+			{ 0xE8, "lobrdb_a" }, // lobrdb18
+			{ 0xE9, "lobrdb_r_se" }, // lobrdb19
+			{ 0xEA, "lobrdb_r_se" }, // lobrdb20
+			{ 0xEB, "lobrdb_r_nw" }, // lobrdb21
+			{ 0xEC, "lobrdb_r_nw" }, // lobrdb22
+			{ 0xED, "lobrdb_r_ne" }, // lobrdb23
+			{ 0xEE, "lobrdb_r_ne" }, // lobrdb24
+			{ 0xEF, "lobrdb_r_sw" }, // lobrdb25
+			{ 0xF0, "lobrdb_r_sw" }, // lobrdb26
+			{ 0xF1, "lobrdb_b_d" }, // lobrdb27
+			{ 0xF2, "lobrdb_a_d" }, // lobrdb28
+			{ 0xF3, "lobrdb_r_se" }, // lobrdb1
+			{ 0xF4, "lobrdb_r_nw" }, // lobrdb2
+			{ 0xF5, "lobrdb_r_ne" }, // lobrdb3
+			{ 0xF6, "lobrdb_r_sw" }, // lobrdb4
 		};
 
 		static readonly Dictionary<byte, Size> OverlayShapes = new Dictionary<byte, Size>()
@@ -153,6 +192,39 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x7B, new Size(1, 3) },
 			{ 0x7C, new Size(3, 1) },
 			{ 0x7D, new Size(3, 1) },
+
+			{ 0xD7, new Size(1, 3) },
+			{ 0xD8, new Size(1, 3) },
+			{ 0xD9, new Size(1, 3) },
+			{ 0xDA, new Size(1, 3) },
+			{ 0xDB, new Size(1, 3) },
+			{ 0xDC, new Size(1, 3) },
+			{ 0xDD, new Size(1, 3) },
+			{ 0xDE, new Size(1, 3) },
+			{ 0xDF, new Size(1, 3) },
+			{ 0xE0, new Size(3, 1) },
+			{ 0xE1, new Size(3, 1) },
+			{ 0xE2, new Size(3, 1) },
+			{ 0xE3, new Size(3, 1) },
+			{ 0xE4, new Size(3, 1) },
+			{ 0xE5, new Size(3, 1) },
+			{ 0xE6, new Size(3, 1) },
+			{ 0xE7, new Size(3, 1) },
+			{ 0xE8, new Size(3, 1) },
+			{ 0xE9, new Size(1, 3) },
+			{ 0xEA, new Size(1, 3) },
+			{ 0xEB, new Size(1, 3) },
+			{ 0xEC, new Size(1, 3) },
+			{ 0xED, new Size(3, 1) },
+			{ 0xEE, new Size(3, 1) },
+			{ 0xEF, new Size(3, 1) },
+			{ 0xF0, new Size(3, 1) },
+			{ 0xF1, new Size(1, 3) },
+			{ 0xF2, new Size(3, 1) },
+			{ 0xF3, new Size(1, 3) },
+			{ 0xF4, new Size(1, 3) },
+			{ 0xF5, new Size(3, 1) },
+			{ 0xF6, new Size(3, 1) }
 		};
 
 		static readonly Dictionary<byte, DamageState> OverlayToHealth = new Dictionary<byte, DamageState>()
@@ -195,15 +267,66 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x62, DamageState.Undamaged },
 			{ 0x63, DamageState.Heavy },
 
+			// actually dead, placeholders for resurrection
+			{ 0x64, DamageState.Undamaged },
+			{ 0x65, DamageState.Undamaged },
+
 			// Ramp duplicates
 			{ 0x7A, DamageState.Undamaged },
 			{ 0x7B, DamageState.Undamaged },
 			{ 0x7C, DamageState.Undamaged },
 			{ 0x7D, DamageState.Undamaged },
 
+
+			// Red Alert 2 extra bridges
+
+			// 1,3 bridge tiles
+			{ 0xD7, DamageState.Undamaged },
+			{ 0xD8, DamageState.Undamaged },
+			{ 0xD9, DamageState.Undamaged },
+			{ 0xDA, DamageState.Undamaged },
+
+			{ 0xDB, DamageState.Heavy },
+			{ 0xDC, DamageState.Heavy },
+
+			{ 0xDD, DamageState.Heavy },
+
+			{ 0xDE, DamageState.Critical },
+			{ 0xDF, DamageState.Critical },
+
+			// 3,1 bridge tiles
+			{ 0xE0, DamageState.Undamaged },
+			{ 0xE1, DamageState.Undamaged },
+			{ 0xE2, DamageState.Undamaged },
+			{ 0xE3, DamageState.Undamaged },
+
+			{ 0xE4, DamageState.Heavy },
+			{ 0xE5, DamageState.Heavy },
+
+			{ 0xE6, DamageState.Heavy },
+
+			{ 0xE7, DamageState.Critical },
+			{ 0xE8, DamageState.Critical },
+
+			// Ramps
+			{ 0xE9, DamageState.Undamaged },
+			{ 0xEA, DamageState.Heavy },
+			{ 0xEB, DamageState.Undamaged },
+			{ 0xEC, DamageState.Heavy },
+			{ 0xED, DamageState.Undamaged },
+			{ 0xEE, DamageState.Heavy },
+			{ 0xEF, DamageState.Undamaged },
+			{ 0xF0, DamageState.Heavy },
+
 			// actually dead, placeholders for resurrection
-			{ 0x64, DamageState.Undamaged },
-			{ 0x65, DamageState.Undamaged },
+			{ 0xF1, DamageState.Undamaged },
+			{ 0xF2, DamageState.Undamaged },
+
+			// Ramp duplicates
+			{ 0xF3, DamageState.Undamaged },
+			{ 0xF4, DamageState.Undamaged },
+			{ 0xF5, DamageState.Undamaged },
+			{ 0xF6, DamageState.Undamaged }
 		};
 
 		static readonly Dictionary<byte, byte[]> ResourceFromOverlay = new Dictionary<byte, byte[]>()
