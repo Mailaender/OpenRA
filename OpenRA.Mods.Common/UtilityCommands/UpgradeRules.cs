@@ -974,6 +974,17 @@ namespace OpenRA.Mods.Common.UtilityCommands
 					}
 				}
 
+				if (engineVersion < 20170831)
+				{
+					if (node.Key.StartsWith("PlayerPaletteFromCurrentTileset"))
+					{
+						node.Value.Nodes.Add(new MiniYamlNode("Filename", ""));
+						node.Value.Nodes.Add(new MiniYamlNode("Tileset", ""));
+						RenameNodeKey(node, "PaletteFromFile");
+						Console.WriteLine("The trait PlayerPaletteFromCurrentTileset has been removed. Use PaletteFromFile with a Tileset filter.");
+					}
+				}
+
 				UpgradeActorRules(modData, engineVersion, ref node.Value.Nodes, node, depth + 1);
 			}
 
