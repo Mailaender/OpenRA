@@ -278,6 +278,8 @@ World:
 		Sequence: largecraters
 	ResourceLayer:
 	BridgeLayer:
+	BuildableAutoTerrainLayer:
+		TerrainType: Road
 	CustomTerrainDebugOverlay:
 	ResourceClaimLayer:
 	WarheadDebugOverlay:

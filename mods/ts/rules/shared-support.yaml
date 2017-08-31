@@ -53,3 +53,27 @@ NAPULS:
 		LongDesc: Fires a pulse blast which disables\nall mechanical units in the area.
 		EndChargeSpeechNotification: EmPulseCannonReady
 		SelectTargetSpeechNotification: SelectTarget
+
+GAPAVE:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Pavement
+	Valued:
+		Cost: 75
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 30
+		Prerequisites: barracks
+	Building:
+		Adjacent: 4
+		TerrainTypes: Clear, DirtRoad, Rough
+		BuildSounds: place2.aud
+		AllowInvalidPlacement: true
+		Footprint: xxxxx xxxxx xxxxx xxxxx xxxxx
+		Dimensions: 5,5
+	KillsSelf:
+		RemoveInstead: true
+	LaysAutoTerrain:
+		TerrainTypes: Clear, DirtRoad, Rough
+	RenderSprites:
