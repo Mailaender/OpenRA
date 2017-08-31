@@ -166,6 +166,11 @@ gapile:
 		UseTilesetCode: false
 		-DepthSprite:
 
+gapave:
+	icon: paveicon
+		Offset: 0, 0
+		UseTilesetCode: false
+
 gaweap:
 	Defaults:
 		Offset: -12, -42, 22
