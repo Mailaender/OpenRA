@@ -1,6 +1,8 @@
 ^Palettes:
-	PaletteFromCurrentTileset:
+	PaletteFromFile:
 		Name: terrain
+		Filename: PALETTE.BIN
+		Tileset: ARRAKIS
 	PaletteFromFile@d2k:
 		Name: d2k
 		Filename: PALETTE.BIN

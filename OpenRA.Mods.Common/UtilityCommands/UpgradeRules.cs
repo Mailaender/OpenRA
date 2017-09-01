@@ -983,6 +983,14 @@ namespace OpenRA.Mods.Common.UtilityCommands
 						RenameNodeKey(node, "PaletteFromFile");
 						Console.WriteLine("The trait PlayerPaletteFromCurrentTileset has been removed. Use PaletteFromFile with a Tileset filter.");
 					}
+
+					if (node.Key.StartsWith("PaletteFromCurrentTileset"))
+					{
+						node.Value.Nodes.Add(new MiniYamlNode("Filename", ""));
+						node.Value.Nodes.Add(new MiniYamlNode("Tileset", ""));
+						RenameNodeKey(node, "PaletteFromFile");
+						Console.WriteLine("The trait PlayerPaletteFromCurrentTileset has been removed. Use PaletteFromFile with a Tileset filter.");
+					}
 				}
 
 				UpgradeActorRules(modData, engineVersion, ref node.Value.Nodes, node, depth + 1);

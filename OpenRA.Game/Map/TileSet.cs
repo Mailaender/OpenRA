@@ -184,7 +184,6 @@ namespace OpenRA
 		public readonly string Name;
 		public readonly string Id;
 		public readonly int SheetSize = 512;
-		public readonly string Palette;
 		public readonly Color[] HeightDebugColors = new[] { Color.Red };
 		public readonly string[] EditorTemplateOrder;
 		public readonly bool IgnoreTileSpriteOffsets;
@@ -238,7 +237,6 @@ namespace OpenRA
 		{
 			Name = name;
 			Id = id;
-			Palette = palette;
 			TerrainInfo = terrainInfo;
 
 			if (TerrainInfo.Length >= byte.MaxValue)

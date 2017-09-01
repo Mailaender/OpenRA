@@ -3,9 +3,11 @@
 		Name: player
 		Filename: temperat.pal
 		ShadowIndex: 4
-	PaletteFromCurrentTileset:
+	PaletteFromFile:
 		Name: terrain
 		ShadowIndex: 3,4
+		Filename:
+		Tileset:
 	PaletteFromFile@chrome:
 		Name: chrome
 		Filename: temperat.pal

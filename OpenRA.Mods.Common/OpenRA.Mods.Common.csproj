@@ -517,7 +517,6 @@
     <Compile Include="Traits\World\LoadWidgetAtGameStart.cs" />
     <Compile Include="Traits\World\MPStartLocations.cs" />
     <Compile Include="Traits\World\MPStartUnits.cs" />
-    <Compile Include="Traits\World\PaletteFromCurrentTileset.cs" />
     <Compile Include="Traits\World\PaletteFromFile.cs" />
     <Compile Include="Traits\World\PaletteFromRGBA.cs" />
     <Compile Include="Traits\World\ValidateOrder.cs" />

@@ -194,7 +194,7 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 				{
 					if (Game.ModData.DefaultRules.Actors.ContainsKey("world"))
 					{
-						var terrainPaletteDefintion = Game.ModData.DefaultRules.Actors["world"].TraitInfos<PaletteFromCurrentTilesetInfo>();
+						var terrainPaletteDefintion = Game.ModData.DefaultRules.Actors["world"].TraitInfos<PaletteFromFileInfo>().Where(p => p.Tileset != null);
 						if (terrainPaletteDefintion.Any())
 							Console.WriteLine("\t\tPalette: " + terrainPaletteDefintion.Last().Name);
 					}

@@ -1,10 +1,54 @@
 ^Palettes:
-	PaletteFromCurrentTileset@terrain:
+	PaletteFromFile@desert:
 		Name: terrain
 		ShadowIndex: 4
-	PaletteFromCurrentTileset@static:
+		Filename: desert.pal
+		Tileset: DESERT
+	PaletteFromFile@desertstatic:
 		Name: staticterrain
 		ShadowIndex: 4
+		Filename: desert.pal
+		Tileset: DESERT
+	PaletteFromFile@jungle:
+		Name: terrain
+		ShadowIndex: 4
+		Filename: jungle.pal
+		Tileset: JUNGLE
+	PaletteFromFile@junglestatic:
+		Name: staticterrain
+		ShadowIndex: 4
+		Filename: jungle.pal
+		Tileset: JUNGLE
+	PaletteFromFile@snow:
+		Name: terrain
+		ShadowIndex: 4
+		Filename: snow.pal
+		Tileset: SNOW
+	PaletteFromFile@snowstatic:
+		Name: staticterrain
+		ShadowIndex: 4
+		Filename: snow.pal
+		Tileset: SNOW
+	PaletteFromFile@temperat:
+		Name: terrain
+		ShadowIndex: 4
+		Filename: temperat.pal
+		Tileset: TEMPERAT
+	PaletteFromFile@temperatstatic:
+		Name: staticterrain
+		ShadowIndex: 4
+		Filename: temperat.pal
+		Tileset: TEMPERAT
+	PaletteFromFile@winter:
+		Name: terrain
+		ShadowIndex: 4
+		Filename: winter.pal
+		Tileset: WINTER
+	PaletteFromFile@winterstatic:
+		Name: staticterrain
+		ShadowIndex: 4
+		Filename: winter.pal
+		Tileset: WINTER
 	PaletteFromFile@chrome:
 		Name: chrome
 		Filename: temperat.pal

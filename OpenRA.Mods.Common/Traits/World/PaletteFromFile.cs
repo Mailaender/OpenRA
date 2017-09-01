@@ -15,7 +15,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.Common.Traits
 {
-	class PaletteFromFileInfo : ITraitInfo
+	public class PaletteFromFileInfo : ITraitInfo
 	{
 		[FieldLoader.Require, PaletteDefinition]
 		[Desc("internal palette name")]
