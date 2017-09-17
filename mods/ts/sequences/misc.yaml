@@ -637,6 +637,13 @@ tuntop04:
 	idle:
 		Offset: -24, -49, 24
 
+dcliff01:
+	idle:
+		UseTilesetExtension: true
+
+dcliff02:
+	Inherits: dcliff01
+
 dig:
 	idle:
 		Length: *
