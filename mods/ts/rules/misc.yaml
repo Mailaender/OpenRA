@@ -246,12 +246,16 @@ TUNTOP04:
 
 dcliff01:
 	Inherits: ^DestroyableCliff
+	RenderTerrain:
+		Template: 717
 	Building:
 		Dimensions: 6, 4
 		Footprint: ====== ====== xxxxxx ======
 
 dcliff02:
 	Inherits: ^DestroyableCliff
+	RenderTerrain:
+		Template: 718
 	Building:
 		Dimensions: 4, 6
 		Footprint: ==x= ==x= ==x= ==x= ==x= ==x=
