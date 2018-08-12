@@ -11,7 +11,7 @@
 
 using System;
 using System.Linq;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Effects;
 using OpenRA.Scripting;
 
@@ -26,21 +26,19 @@ namespace OpenRA.Mods.Common.Scripting
 		{
 			var events = a.TraitOrDefault<ScriptTriggers>();
 			if (events == null)
-				throw new LuaException("Actor '{0}' requires the ScriptTriggers trait before attaching a trigger".F(a.Info.Name));
+				throw new ScriptRuntimeException("Actor '{0}' requires the ScriptTriggers trait before attaching a trigger".F(a.Info.Name));
 
 			return events;
 		}
 
 		[Desc("Call a function after a specified delay. The callback function will be called as func().")]
-		public void AfterDelay(int delay, LuaFunction func)
+		public void AfterDelay(int delay, Closure func)
 		{
-			var f = (LuaFunction)func.CopyReference();
 			Action doCall = () =>
 			{
 				try
 				{
-					using (f)
-						f.Call().Dispose();
+					func.Call();
 				}
 				catch (Exception e)
 				{
@@ -53,53 +51,51 @@ namespace OpenRA.Mods.Common.Scripting
 
 		[Desc("Call a function for each passenger when it enters a transport. " +
 		      "The callback function will be called as func(Actor transport, Actor passenger).")]
-		public void OnPassengerEntered(Actor a, LuaFunction func)
+		public void OnPassengerEntered(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnPassengerEntered, func, Context);
 		}
 
 		[Desc("Call a function for each passenger when it exits a transport. " +
 			"The callback function will be called as func(Actor transport, Actor passenger).")]
-		public void OnPassengerExited(Actor a, LuaFunction func)
+		public void OnPassengerExited(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnPassengerExited, func, Context);
 		}
 
 		[Desc("Call a function each tick that the actor is idle. " +
 			"The callback function will be called as func(Actor self).")]
-		public void OnIdle(Actor a, LuaFunction func)
+		public void OnIdle(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnIdle, func, Context);
 		}
 
 		[Desc("Call a function when the actor is damaged. The callback " +
 			"function will be called as func(Actor self, Actor attacker).")]
-		public void OnDamaged(Actor a, LuaFunction func)
+		public void OnDamaged(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnDamaged, func, Context);
 		}
 
 		[Desc("Call a function when the actor is killed. The callback " +
 			"function will be called as func(Actor self, Actor killer).")]
-		public void OnKilled(Actor a, LuaFunction func)
+		public void OnKilled(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnKilled, func, Context);
 		}
 
 		[Desc("Call a function when all of the actors in a group are killed. The callback " +
 			"function will be called as func().")]
-		public void OnAllKilled(Actor[] actors, LuaFunction func)
+		public void OnAllKilled(Actor[] actors, Closure func)
 		{
 			var group = actors.ToList();
-			var f = (LuaFunction)func.CopyReference();
 			Action<Actor> onMemberKilled = m =>
 			{
 				try
 				{
 					group.Remove(m);
 					if (!group.Any())
-						using (f)
-							f.Call();
+						func.Call();
 				}
 				catch (Exception e)
 				{
@@ -113,10 +109,9 @@ namespace OpenRA.Mods.Common.Scripting
 
 		[Desc("Call a function when one of the actors in a group is killed. The callback " +
 			"function will be called as func(Actor killed).")]
-		public void OnAnyKilled(Actor[] actors, LuaFunction func)
+		public void OnAnyKilled(Actor[] actors, Closure func)
 		{
 			var called = false;
-			var f = (LuaFunction)func.CopyReference();
 			Action<Actor> onMemberKilled = m =>
 			{
 				try
@@ -124,9 +119,7 @@ namespace OpenRA.Mods.Common.Scripting
 					if (called)
 						return;
 
-					using (f)
-					using (var killed = m.ToLuaValue(Context))
-						f.Call(killed).Dispose();
+					func.Call(m);
 
 					called = true;
 				}
@@ -142,67 +135,66 @@ namespace OpenRA.Mods.Common.Scripting
 
 		[Desc("Call a function when this actor produces another actor. " +
 			"The callback function will be called as func(Actor producer, Actor produced).")]
-		public void OnProduction(Actor a, LuaFunction func)
+		public void OnProduction(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnProduction, func, Context);
 		}
 
 		[Desc("Call a function when this player completes all primary objectives. " +
 			"The callback function will be called as func(Player player).")]
-		public void OnPlayerWon(Player player, LuaFunction func)
+		public void OnPlayerWon(Player player, Closure func)
 		{
 			GetScriptTriggers(player.PlayerActor).RegisterCallback(Trigger.OnPlayerWon, func, Context);
 		}
 
 		[Desc("Call a function when this player fails any primary objective. " +
 			"The callback function will be called as func(Player player).")]
-		public void OnPlayerLost(Player player, LuaFunction func)
+		public void OnPlayerLost(Player player, Closure func)
 		{
 			GetScriptTriggers(player.PlayerActor).RegisterCallback(Trigger.OnPlayerLost, func, Context);
 		}
 
 		[Desc("Call a function when this player is assigned a new objective. " +
 			"The callback function will be called as func(Player player, int objectiveID).")]
-		public void OnObjectiveAdded(Player player, LuaFunction func)
+		public void OnObjectiveAdded(Player player, Closure func)
 		{
 			GetScriptTriggers(player.PlayerActor).RegisterCallback(Trigger.OnObjectiveAdded, func, Context);
 		}
 
 		[Desc("Call a function when this player completes an objective. " +
 			"The callback function will be called as func(Player player, int objectiveID).")]
-		public void OnObjectiveCompleted(Player player, LuaFunction func)
+		public void OnObjectiveCompleted(Player player, Closure func)
 		{
 			GetScriptTriggers(player.PlayerActor).RegisterCallback(Trigger.OnObjectiveCompleted, func, Context);
 		}
 
 		[Desc("Call a function when this player fails an objective. " +
 			"The callback function will be called as func(Player player, int objectiveID).")]
-		public void OnObjectiveFailed(Player player, LuaFunction func)
+		public void OnObjectiveFailed(Player player, Closure func)
 		{
 			GetScriptTriggers(player.PlayerActor).RegisterCallback(Trigger.OnObjectiveFailed, func, Context);
 		}
 
 		[Desc("Call a function when this actor is added to the world. " +
 			"The callback function will be called as func(Actor self).")]
-		public void OnAddedToWorld(Actor a, LuaFunction func)
+		public void OnAddedToWorld(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnAddedToWorld, func, Context);
 		}
 
 		[Desc("Call a function when this actor is removed from the world. " +
 			"The callback function will be called as func(Actor self).")]
-		public void OnRemovedFromWorld(Actor a, LuaFunction func)
+		public void OnRemovedFromWorld(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnRemovedFromWorld, func, Context);
 		}
 
 		[Desc("Call a function when all of the actors in a group have been removed from the world. " +
 			"The callback function will be called as func().")]
-		public void OnAllRemovedFromWorld(Actor[] actors, LuaFunction func)
+		public void OnAllRemovedFromWorld(Actor[] actors, Closure func)
 		{
 			var group = actors.ToList();
 
-			var f = (LuaFunction)func.CopyReference();
 			Action<Actor> onMemberRemoved = m =>
 			{
 				try
@@ -211,8 +203,7 @@ namespace OpenRA.Mods.Common.Scripting
 						return;
 
 					if (!group.Any())
-						using (f)
-							f.Call().Dispose();
+						func.Call();
 				}
 				catch (Exception e)
 				{
@@ -226,18 +217,17 @@ namespace OpenRA.Mods.Common.Scripting
 
 		[Desc("Call a function when this actor is captured. The callback function " +
 			"will be called as func(Actor self, Actor captor, Player oldOwner, Player newOwner).")]
-		public void OnCapture(Actor a, LuaFunction func)
+		public void OnCapture(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnCapture, func, Context);
 		}
 
 		[Desc("Call a function when this actor is killed or captured. " +
 			"The callback function will be called as func().")]
-		public void OnKilledOrCaptured(Actor a, LuaFunction func)
+		public void OnKilledOrCaptured(Actor a, Closure func)
 		{
 			var called = false;
 
-			var f = (LuaFunction)func.CopyReference();
 			Action<Actor> onKilledOrCaptured = m =>
 			{
 				try
@@ -245,8 +235,7 @@ namespace OpenRA.Mods.Common.Scripting
 					if (called)
 						return;
 
-					using (f)
-						f.Call().Dispose();
+					func.Call();
 
 					called = true;
 				}
@@ -262,11 +251,10 @@ namespace OpenRA.Mods.Common.Scripting
 
 		[Desc("Call a function when all of the actors in a group have been killed or captured. " +
 			"The callback function will be called as func().")]
-		public void OnAllKilledOrCaptured(Actor[] actors, LuaFunction func)
+		public void OnAllKilledOrCaptured(Actor[] actors, Closure func)
 		{
 			var group = actors.ToList();
 
-			var f = (LuaFunction)func.CopyReference();
 			Action<Actor> onMemberKilledOrCaptured = m =>
 			{
 				try
@@ -275,8 +263,7 @@ namespace OpenRA.Mods.Common.Scripting
 						return;
 
 					if (!group.Any())
-						using (f)
-							f.Call().Dispose();
+						func.Call();
 				}
 				catch (Exception e)
 				{
@@ -294,18 +281,14 @@ namespace OpenRA.Mods.Common.Scripting
 		[Desc("Call a function when a ground-based actor enters this cell footprint. " +
 			"Returns the trigger id for later removal using RemoveFootprintTrigger(int id). " +
 			"The callback function will be called as func(Actor a, int id).")]
-		public int OnEnteredFootprint(CPos[] cells, LuaFunction func)
+		public int OnEnteredFootprint(CPos[] cells, Closure func)
 		{
-			// We can't easily dispose onEntry, so we'll have to rely on finalization for it.
-			var onEntry = (LuaFunction)func.CopyReference();
 			var triggerId = 0;
 			Action<Actor> invokeEntry = a =>
 			{
 				try
 				{
-					using (var luaActor = a.ToLuaValue(Context))
-					using (var id = triggerId.ToLuaValue(Context))
-						onEntry.Call(luaActor, id).Dispose();
+					func.Call(a, triggerId);
 				}
 				catch (Exception e)
 				{
@@ -321,18 +304,14 @@ namespace OpenRA.Mods.Common.Scripting
 		[Desc("Call a function when a ground-based actor leaves this cell footprint. " +
 			"Returns the trigger id for later removal using RemoveFootprintTrigger(int id). " +
 			"The callback function will be called as func(Actor a, int id).")]
-		public int OnExitedFootprint(CPos[] cells, LuaFunction func)
+		public int OnExitedFootprint(CPos[] cells, Closure func)
 		{
-			// We can't easily dispose onExit, so we'll have to rely on finalization for it.
-			var onExit = (LuaFunction)func.CopyReference();
 			var triggerId = 0;
 			Action<Actor> invokeExit = a =>
 			{
 				try
 				{
-					using (var luaActor = a.ToLuaValue(Context))
-					using (var id = triggerId.ToLuaValue(Context))
-						onExit.Call(luaActor, id).Dispose();
+					func.Call(a, triggerId);
 				}
 				catch (Exception e)
 				{
@@ -354,18 +333,14 @@ namespace OpenRA.Mods.Common.Scripting
 		[Desc("Call a function when an actor enters this range. " +
 			"Returns the trigger id for later removal using RemoveProximityTrigger(int id). " +
 			"The callback function will be called as func(Actor a, int id).")]
-		public int OnEnteredProximityTrigger(WPos pos, WDist range, LuaFunction func)
+		public int OnEnteredProximityTrigger(WPos pos, WDist range, Closure func)
 		{
-			// We can't easily dispose onEntry, so we'll have to rely on finalization for it.
-			var onEntry = (LuaFunction)func.CopyReference();
 			var triggerId = 0;
 			Action<Actor> invokeEntry = a =>
 			{
 				try
 				{
-					using (var luaActor = a.ToLuaValue(Context))
-					using (var id = triggerId.ToLuaValue(Context))
-						onEntry.Call(luaActor, id).Dispose();
+						func.Call(a, triggerId);
 				}
 				catch (Exception e)
 				{
@@ -381,18 +356,14 @@ namespace OpenRA.Mods.Common.Scripting
 		[Desc("Call a function when an actor leaves this range. " +
 			"Returns the trigger id for later removal using RemoveProximityTrigger(int id). " +
 			"The callback function will be called as func(Actor a, int id).")]
-		public int OnExitedProximityTrigger(WPos pos, WDist range, LuaFunction func)
+		public int OnExitedProximityTrigger(WPos pos, WDist range, Closure func)
 		{
-			// We can't easily dispose onExit, so we'll have to rely on finalization for it.
-			var onExit = (LuaFunction)func.CopyReference();
 			var triggerId = 0;
 			Action<Actor> invokeExit = a =>
 			{
 				try
 				{
-					using (var luaActor = a.ToLuaValue(Context))
-					using (var id = triggerId.ToLuaValue(Context))
-						onExit.Call(luaActor, id).Dispose();
+					func.Call(a, triggerId);
 				}
 				catch (Exception e)
 				{
@@ -413,7 +384,7 @@ namespace OpenRA.Mods.Common.Scripting
 
 		[Desc("Call a function when this actor is infiltrated. The callback function " +
 			"will be called as func(Actor self, Actor infiltrator).")]
-		public void OnInfiltrated(Actor a, LuaFunction func)
+		public void OnInfiltrated(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnInfiltrated, func, Context);
 		}
@@ -421,7 +392,7 @@ namespace OpenRA.Mods.Common.Scripting
 		[Desc("Call a function when this actor is discovered by an enemy or a player with a Neutral stance. " +
 			"The callback function will be called as func(Actor discovered, Player discoverer). +" +
 			"The player actor needs the 'EnemyWatcher' trait.")]
-		public void OnDiscovered(Actor a, LuaFunction func)
+		public void OnDiscovered(Actor a, Closure func)
 		{
 			GetScriptTriggers(a).RegisterCallback(Trigger.OnDiscovered, func, Context);
 		}
@@ -429,7 +400,7 @@ namespace OpenRA.Mods.Common.Scripting
 		[Desc("Call a function when this player is discovered by an enemy or neutral player. " +
 			"The callback function will be called as func(Player discovered, Player discoverer, Actor discoveredActor)." +
 			"The player actor needs the 'EnemyWatcher' trait.")]
-		public void OnPlayerDiscovered(Player discovered, LuaFunction func)
+		public void OnPlayerDiscovered(Player discovered, Closure func)
 		{
 			GetScriptTriggers(discovered.PlayerActor).RegisterCallback(Trigger.OnPlayerDiscovered, func, Context);
 		}

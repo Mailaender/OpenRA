@@ -15,7 +15,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Eluant;
+using MoonSharp.Interpreter;
+using MoonSharp.Interpreter.Platforms;
 using OpenRA.Graphics;
 using OpenRA.Primitives;
 using OpenRA.Support;
@@ -98,16 +99,13 @@ namespace OpenRA.Scripting
 			Bind(new[] { this });
 		}
 
-		protected IEnumerable<T> FilteredObjects<T>(IEnumerable<T> objects, LuaFunction filter)
+		protected IEnumerable<T> FilteredObjects<T>(IEnumerable<T> objects, Closure filter)
 		{
 			if (filter != null)
 			{
 				objects = objects.Where(a =>
 				{
-					using (var luaObject = a.ToLuaValue(Context))
-					using (var filterResult = filter.Call(luaObject))
-					using (var result = filterResult.First())
-						return result.ToBoolean();
+					return filter.Call(a).CastToBool();
 				});
 			}
 
@@ -126,14 +124,8 @@ namespace OpenRA.Scripting
 		public World World { get; private set; }
 		public WorldRenderer WorldRenderer { get; private set; }
 
-		readonly MemoryConstrainedLuaRuntime runtime;
-		readonly LuaFunction tick;
-
-		// Restrict user scripts (excluding system libraries) to 50 MB of memory use
-		const int MaxUserScriptMemory = 50 * 1024 * 1024;
-
-		// Restrict the number of instructions that will be run per map function call
-		const int MaxUserScriptInstructions = 1000000;
+		readonly MoonSharp.Interpreter.Script runtime;
+		readonly Closure tick;
 
 		readonly Type[] knownActorCommands;
 		public readonly Cache<ActorInfo, Type[]> ActorCommands;
@@ -144,7 +136,9 @@ namespace OpenRA.Scripting
 		public ScriptContext(World world, WorldRenderer worldRenderer,
 			IEnumerable<string> scripts)
 		{
-			runtime = new MemoryConstrainedLuaRuntime();
+			Script.GlobalOptions.Platform = new LimitedPlatformAccessor();
+			runtime = new MoonSharp.Interpreter.Script();
+			runtime.Options.DebugPrint = (Action<string>)LogDebugMessage;
 
 			Log.AddChannel("lua", "lua.log");
 
@@ -162,47 +156,32 @@ namespace OpenRA.Scripting
 			PlayerCommands = FilterCommands(world.Map.Rules.Actors["player"], knownPlayerCommands);
 
 			runtime.Globals["GameDir"] = Platform.GameDir;
-			runtime.DoBuffer(File.Open(Platform.ResolvePath(".", "lua", "scriptwrapper.lua"), FileMode.Open, FileAccess.Read).ReadAllText(), "scriptwrapper.lua").Dispose();
-			tick = (LuaFunction)runtime.Globals["Tick"];
+			tick = runtime.Globals.Get("Tick").Function;
 
 			// Register globals
-			using (var fn = runtime.CreateFunctionFromDelegate((Action<string>)FatalError))
-				runtime.Globals["FatalError"] = fn;
+			runtime.Globals["FatalError"] = (Action<string>)FatalError;
 
-			runtime.Globals["MaxUserScriptInstructions"] = MaxUserScriptInstructions;
+			UserData.RegisterAssembly();
 
-			using (var registerGlobal = (LuaFunction)runtime.Globals["RegisterSandboxedGlobal"])
+			var bindings = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptGlobal>();
+			foreach (var b in bindings)
 			{
-				using (var fn = runtime.CreateFunctionFromDelegate((Action<string>)LogDebugMessage))
-					registerGlobal.Call("print", fn).Dispose();
+				var ctor = b.GetConstructors(BindingFlags.Public | BindingFlags.Instance).FirstOrDefault(c => {
+					var p = c.GetParameters();
+					return p.Length == 1 && p.First().ParameterType == typeof(ScriptContext);
+				});
 
-				// Register global tables
-				var bindings = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptGlobal>();
-				foreach (var b in bindings)
-				{
-					var ctor = b.GetConstructors(BindingFlags.Public | BindingFlags.Instance).FirstOrDefault(c =>
-					{
-						var p = c.GetParameters();
-						return p.Length == 1 && p.First().ParameterType == typeof(ScriptContext);
-					});
+				if (ctor == null)
+					throw new InvalidOperationException("{0} must define a constructor that takes a ScriptContext context parameter".F(b.Name));
 
-					if (ctor == null)
-						throw new InvalidOperationException("{0} must define a constructor that takes a ScriptContext context parameter".F(b.Name));
+				var binding = (ScriptGlobal)ctor.Invoke(new[] { this });
 
-					var binding = (ScriptGlobal)ctor.Invoke(new[] { this });
-					using (var obj = binding.ToLuaValue(this))
-						registerGlobal.Call(binding.Name, obj).Dispose();
-				}
+
+				runtime.Globals[binding.Name] = UserData.Create(binding);
 			}
 
-			// System functions do not count towards the memory limit
-			runtime.MaxMemoryUse = runtime.MemoryUse + MaxUserScriptMemory;
-
-			using (var loadScript = (LuaFunction)runtime.Globals["ExecuteSandboxedScript"])
-			{
-				foreach (var s in scripts)
-					loadScript.Call(s, world.Map.Open(s).ReadAllText()).Dispose();
-			}
+			foreach (var s in scripts)
+				runtime.LoadStream(world.Map.Open(s));
 		}
 
 		void LogDebugMessage(string message)
@@ -233,14 +212,10 @@ namespace OpenRA.Scripting
 
 		public void RegisterMapActor(string name, Actor a)
 		{
-			using (var registerGlobal = (LuaFunction)runtime.Globals["RegisterSandboxedGlobal"])
-			{
-				if (runtime.Globals.ContainsKey(name))
-					throw new LuaException("The global name '{0}' is reserved, and may not be used by a map actor".F(name));
+			if (runtime.Globals.Get(name) != null)
+				throw new MoonSharp.Interpreter.DynamicExpressionException("The global name '{0}' is reserved, and may not be used by a map actor".F(name));
 
-				using (var obj = a.ToLuaValue(this))
-					registerGlobal.Call(name, obj).Dispose();
-			}
+			runtime.Globals[name] = a;
 		}
 
 		public void WorldLoaded()
@@ -248,8 +223,7 @@ namespace OpenRA.Scripting
 			if (FatalErrorOccurred)
 				return;
 
-			using (var worldLoaded = (LuaFunction)runtime.Globals["WorldLoaded"])
-				worldLoaded.Call().Dispose();
+			runtime.Globals.Get("WorldLoaded").Function.Call();
 		}
 
 		public void Tick(Actor self)
@@ -258,7 +232,7 @@ namespace OpenRA.Scripting
 				return;
 
 			using (new PerfSample("tick_lua"))
-				tick.Call().Dispose();
+				tick.Call();
 		}
 
 		public void Dispose()
@@ -267,8 +241,6 @@ namespace OpenRA.Scripting
 				return;
 
 			disposed = true;
-			if (runtime != null)
-				runtime.Dispose();
 		}
 
 		static IEnumerable<Type> ExtractRequiredTypes(Type t)
@@ -294,6 +266,6 @@ namespace OpenRA.Scripting
 				.ToArray();
 		}
 
-		public LuaTable CreateTable() { return runtime.CreateTable(); }
+		public Table CreateTable() { return new Table(runtime); }
 	}
 }

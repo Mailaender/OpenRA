@@ -13,8 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using Eluant;
-using Eluant.ObjectBinding;
+using MoonSharp.Interpreter;
 using OpenRA.Graphics;
 using OpenRA.Network;
 using OpenRA.Primitives;
@@ -34,7 +33,8 @@ namespace OpenRA
 
 	public enum WinState { Undefined, Won, Lost }
 
-	public class Player : IScriptBindable, IScriptNotifyBind, ILuaTableBinding, ILuaEqualityBinding, ILuaToStringBinding
+	[MoonSharpUserData]
+	public class Player : IScriptBindable, IScriptNotifyBind
 	{
 		struct StanceColors
 		{
@@ -222,24 +222,10 @@ namespace OpenRA
 				luaInterface = Exts.Lazy(() => new ScriptPlayerInterface(context, this));
 		}
 
-		public LuaValue this[LuaRuntime runtime, LuaValue keyValue]
+		public DynValue this[Script runtime, DynValue keyValue]
 		{
 			get { return luaInterface.Value[runtime, keyValue]; }
 			set { luaInterface.Value[runtime, keyValue] = value; }
-		}
-
-		public LuaValue Equals(LuaRuntime runtime, LuaValue left, LuaValue right)
-		{
-			Player a, b;
-			if (!left.TryGetClrValue(out a) || !right.TryGetClrValue(out b))
-				return false;
-
-			return a == b;
-		}
-
-		public LuaValue ToString(LuaRuntime runtime)
-		{
-			return "Player ({0})".F(PlayerName);
 		}
 
 		#endregion

@@ -10,14 +10,14 @@
 #endregion
 
 using System;
-using Eluant;
-using Eluant.ObjectBinding;
+using MoonSharp.Interpreter;
 using OpenRA.Scripting;
 using OpenRA.Support;
 
 namespace OpenRA
 {
-	public struct WVec : IScriptBindable, ILuaAdditionBinding, ILuaSubtractionBinding, ILuaUnaryMinusBinding, ILuaEqualityBinding, ILuaTableBinding, IEquatable<WVec>
+	[MoonSharpUserData]
+	public struct WVec : IScriptBindable, IEquatable<WVec>
 	{
 		public readonly int X, Y, Z;
 
@@ -109,55 +109,23 @@ namespace OpenRA
 
 		#region Scripting interface
 
-		public LuaValue Add(LuaRuntime runtime, LuaValue left, LuaValue right)
-		{
-			WVec a, b;
-			if (!left.TryGetClrValue(out a) || !right.TryGetClrValue(out b))
-				throw new LuaException("Attempted to call WVec.Add(WVec, WVec) with invalid arguments ({0}, {1})".F(left.WrappedClrType().Name, right.WrappedClrType().Name));
-
-			return new LuaCustomClrObject(a + b);
-		}
-
-		public LuaValue Subtract(LuaRuntime runtime, LuaValue left, LuaValue right)
-		{
-			WVec a, b;
-			if (!left.TryGetClrValue(out a) || !right.TryGetClrValue(out b))
-				throw new LuaException("Attempted to call WVec.Subtract(WVec, WVec) with invalid arguments ({0}, {1})".F(left.WrappedClrType().Name, right.WrappedClrType().Name));
-
-			return new LuaCustomClrObject(a - b);
-		}
-
-		public LuaValue Minus(LuaRuntime runtime)
-		{
-			return new LuaCustomClrObject(-this);
-		}
-
-		public LuaValue Equals(LuaRuntime runtime, LuaValue left, LuaValue right)
-		{
-			WVec a, b;
-			if (!left.TryGetClrValue(out a) || !right.TryGetClrValue(out b))
-				return false;
-
-			return a == b;
-		}
-
-		public LuaValue this[LuaRuntime runtime, LuaValue key]
+		public DynValue this[Script runtime, DynValue key]
 		{
 			get
 			{
 				switch (key.ToString())
 				{
-					case "X": return X;
-					case "Y": return Y;
-					case "Z": return Z;
-					case "Facing": return Yaw.Facing;
-					default: throw new LuaException("WVec does not define a member '{0}'".F(key));
+					case "X": return DynValue.FromObject(runtime, X);
+					case "Y": return DynValue.FromObject(runtime, Y);
+					case "Z": return DynValue.FromObject(runtime, Z);
+					case "Facing": return DynValue.FromObject(runtime, Yaw.Facing);
+					default: throw new ScriptRuntimeException("WVec does not define a member '{0}'".F(key));
 				}
 			}
 
 			set
 			{
-				throw new LuaException("WVec is read-only. Use WVec.New to create a new value");
+				throw new ScriptRuntimeException("WVec is read-only. Use WVec.New to create a new value");
 			}
 		}
 

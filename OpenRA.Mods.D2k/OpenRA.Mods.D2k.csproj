@@ -59,9 +59,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
-    <Reference Include="Eluant">
-      <HintPath>..\thirdparty\download\Eluant.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="MoonSharp.Interpreter">
+      <HintPath>..\thirdparty\download\MoonSharp.Interpreter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

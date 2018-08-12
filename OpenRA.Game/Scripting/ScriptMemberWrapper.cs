@@ -13,13 +13,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Eluant;
+using MoonSharp.Interpreter;
 
 namespace OpenRA.Scripting
 {
 	public class ScriptMemberWrapper
 	{
-		readonly ScriptContext context;
 		public readonly object Target;
 		public readonly MemberInfo Member;
 
@@ -29,7 +28,6 @@ namespace OpenRA.Scripting
 
 		public ScriptMemberWrapper(ScriptContext context, object target, MemberInfo mi)
 		{
-			this.context = context;
 			Target = target;
 			Member = mi;
 
@@ -43,82 +41,70 @@ namespace OpenRA.Scripting
 				IsMethod = true;
 		}
 
-		LuaValue Invoke(LuaVararg args)
+		object Invoke(DynValue[] args)
 		{
 			object[] clrArgs = null;
 			try
 			{
 				if (!IsMethod)
-					throw new LuaException("Trying to invoke a ScriptMemberWrapper that isn't a method!");
+					throw new ScriptRuntimeException("Trying to invoke a ScriptMemberWrapper that isn't a method!");
 
 				var mi = (MethodInfo)Member;
 				var pi = mi.GetParameters();
 
 				clrArgs = new object[pi.Length];
 
-				var argCount = args.Count;
+				var argLength = args.Length;
 				for (var i = 0; i < pi.Length; i++)
 				{
-					if (i >= argCount)
+					if (i >= argLength)
 					{
 						if (!pi[i].IsOptional)
-							throw new LuaException("Argument '{0}' of '{1}' is not optional.".F(pi[i].LuaDocString(), Member.LuaDocString()));
+							throw new ScriptRuntimeException("Argument '{0}' of '{1}' is not optional.".F(pi[i].LuaDocString(), Member.LuaDocString()));
 
 						clrArgs[i] = pi[i].DefaultValue;
 						continue;
 					}
-
-					if (!args[i].TryGetClrValue(pi[i].ParameterType, out clrArgs[i]))
-						throw new LuaException("Unable to convert parameter {0} to {1}".F(i, pi[i].ParameterType.Name));
 				}
 
-				return mi.Invoke(Target, clrArgs).ToLuaValue(context);
+				return mi.Invoke(Target, clrArgs);
 			}
 			finally
 			{
-				// Clean up all the Lua arguments that were given to us.
-				foreach (var arg in args)
-					arg.Dispose();
-				args.Dispose();
-
 				// If we created any arrays of LuaValues to pass around, we need to dispose those too.
 				if (clrArgs != null)
 				{
 					foreach (var arg in clrArgs)
 					{
-						if (!(arg is LuaValue[]))
+						if (!(arg is DynValue[]))
 							continue;
-						foreach (var value in (LuaValue[])arg)
-							value.Dispose();
 					}
 				}
 			}
 		}
 
-		public LuaValue Get(LuaRuntime runtime)
+		public DynValue Get(Script runtime)
 		{
 			if (IsMethod)
-				return runtime.CreateFunctionFromDelegate((Func<LuaVararg, LuaValue>)Invoke);
+				return DynValue.FromObject(runtime, (Func<DynValue[], object>)Invoke);
 
 			if (IsGetProperty)
-				return ((PropertyInfo)Member).GetValue(Target, null).ToLuaValue(context);
+				return DynValue.FromObject(runtime, ((PropertyInfo)Member).GetValue(Target, null));
 
-			throw new LuaException("The property '{0}' is write-only".F(Member.Name));
+			throw new ScriptRuntimeException("The property '{0}' is write-only".F(Member.Name));
 		}
 
-		public void Set(LuaRuntime runtime, LuaValue value)
+		public void Set(Script runtime, DynValue value)
 		{
 			if (IsSetProperty)
 			{
 				var pi = (PropertyInfo)Member;
-				object clrValue;
-				if (!value.TryGetClrValue(pi.PropertyType, out clrValue))
-					throw new LuaException("Unable to convert '{0}' to Clr type '{1}'".F(value.WrappedClrType().Name, pi.PropertyType));
+				object clrValue = value.UserData.Object;
 
 				pi.SetValue(Target, clrValue, null);
 			}
 			else
-				throw new LuaException("The property '{0}' is read-only".F(Member.Name));
+				throw new ScriptRuntimeException("The property '{0}' is read-only".F(Member.Name));
 		}
 
 		public static IEnumerable<MemberInfo> WrappableMembers(Type t)

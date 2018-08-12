@@ -10,7 +10,7 @@
 #endregion
 
 using System.Drawing;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Graphics;
 using OpenRA.Scripting;
 
@@ -47,7 +47,7 @@ namespace OpenRA.Mods.Common.Scripting.Global
 			if (HSLColor.TryParseRGB(value, out rgb))
 				return new HSLColor(rgb);
 
-			throw new LuaException("Invalid rrggbb[aa] hex string.");
+			throw new ScriptRuntimeException("Invalid rrggbb[aa] hex string.");
 		}
 
 		public HSLColor Aqua { get { return new HSLColor(Color.Aqua); } }

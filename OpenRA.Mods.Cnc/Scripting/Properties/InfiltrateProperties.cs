@@ -11,7 +11,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Mods.Cnc.Activities;
 using OpenRA.Mods.Cnc.Traits;
 using OpenRA.Scripting;
@@ -36,7 +36,7 @@ namespace OpenRA.Mods.Cnc.Scripting
 			var infiltrates = infiltratesTraits.FirstOrDefault(x => !x.IsTraitDisabled && x.Info.Types.Overlaps(target.GetEnabledTargetTypes()));
 
 			if (infiltrates == null)
-				throw new LuaException("{0} tried to infiltrate invalid target {1}!".F(Self, target));
+				throw new ScriptRuntimeException("{0} tried to infiltrate invalid target {1}!".F(Self, target));
 
 			Self.QueueActivity(new Infiltrate(Self, target, infiltrates));
 		}

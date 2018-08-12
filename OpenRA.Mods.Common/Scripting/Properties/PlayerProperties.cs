@@ -11,7 +11,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Scripting;
@@ -79,7 +79,7 @@ namespace OpenRA.Mods.Common.Scripting
 
 			ActorInfo ai;
 			if (!Context.World.Map.Rules.Actors.TryGetValue(type, out ai))
-				throw new LuaException("Unknown actor type '{0}'".F(type));
+				throw new ScriptRuntimeException("Unknown actor type '{0}'".F(type));
 
 			result.AddRange(Player.World.Actors
 				.Where(actor => actor.Owner == Player && !actor.IsDead && actor.IsInWorld && actor.Info.Name == ai.Name));
@@ -94,7 +94,7 @@ namespace OpenRA.Mods.Common.Scripting
 
 			foreach (var type in types)
 				if (!Context.World.Map.Rules.Actors.ContainsKey(type))
-					throw new LuaException("Unknown actor type '{0}'".F(type));
+					throw new ScriptRuntimeException("Unknown actor type '{0}'".F(type));
 
 			result.AddRange(Player.World.Actors
 				.Where(actor => actor.Owner == Player && !actor.IsDead && actor.IsInWorld && types.Contains(actor.Info.Name)));
@@ -107,7 +107,7 @@ namespace OpenRA.Mods.Common.Scripting
 		{
 			var tt = Player.PlayerActor.TraitOrDefault<TechTree>();
 			if (tt == null)
-				throw new LuaException("Missing TechTree trait on player {0}!".F(Player));
+				throw new ScriptRuntimeException("Missing TechTree trait on player {0}!".F(Player));
 
 			return tt.HasPrerequisites(type);
 		}

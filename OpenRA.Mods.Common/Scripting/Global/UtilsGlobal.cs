@@ -11,7 +11,7 @@
 
 using System.Collections;
 using System.Linq;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Scripting;
 using OpenRA.Traits;
 using OpenRA.Widgets;
@@ -22,79 +22,75 @@ namespace OpenRA.Mods.Common.Scripting
 	public class UtilsGlobal : ScriptGlobal
 	{
 		public UtilsGlobal(ScriptContext context)
-			: base(context) { }
+			: base(context)	{ }
 
 		[Desc("Calls a function on every element in a collection.")]
-		public void Do(LuaValue[] collection, LuaFunction func)
+		public void Do(DynValue[] collection, Closure func)
 		{
 			foreach (var c in collection)
-				func.Call(c).Dispose();
+				func.Call(c);
 		}
 
 		[Desc("Returns true if func returns true for any element in a collection.")]
-		public bool Any(LuaValue[] collection, LuaFunction func)
+		public bool Any(DynValue[] collection, Closure func)
 		{
 			foreach (var c in collection)
-				using (var ret = func.Call(c))
-				using (var result = ret.FirstOrDefault())
-					if (result != null && result.ToBoolean())
-						return true;
+				if (func.Call(c).CastToBool())
+					return true;
 
 			return false;
 		}
 
 		[Desc("Returns true if func returns true for all elements in a collection.")]
-		public bool All(LuaValue[] collection, LuaFunction func)
+		public bool All(DynValue[] collection, Closure func)
 		{
 			foreach (var c in collection)
-				using (var ret = func.Call(c))
-				using (var result = ret.FirstOrDefault())
-					if (result == null || !result.ToBoolean())
-						return false;
+				if (func.Call(c).CastToBool())
+					return false;
 
 			return true;
 		}
 
 		[Desc("Returns the original collection filtered with the func.")]
-		public LuaTable Where(LuaValue[] collection, LuaFunction func)
+		public Table Where(DynValue[] collection, Closure func)
 		{
 			var t = Context.CreateTable();
 
 			foreach (var c in collection)
-				using (var ret = func.Call(c))
-				using (var result = ret.FirstOrDefault())
-					if (result != null && result.ToBoolean())
-						t.Add(t.Count + 1, c);
+			{
+				var result = func.Call(c);
+				if (result != null && result.CastToBool())
+					t.Set(t.Length + 1, c);
+			}
 
 			return t;
 		}
 
 		[Desc("Returns the first n values from a collection.")]
-		public LuaValue[] Take(int n, LuaValue[] source)
+		public DynValue[] Take(int n, DynValue[] source)
 		{
-			return source.Take(n).Select(v => v.CopyReference()).ToArray();
+			return source.Take(n).ToArray();
 		}
 
 		[Desc("Skips over the first numElements members of a table and return the rest.")]
-		public LuaTable Skip(LuaTable table, int numElements)
+		public Table Skip(Table table, int numElements)
 		{
 			var t = Context.CreateTable();
 
-			for (var i = numElements; i <= table.Count; i++)
-				using (LuaValue key = t.Count + 1, value = table[i])
-					t.Add(key, value);
+			for (var i = numElements; i <= table.Length; i++)
+				t.Set(t.Length + 1, table.Get(i));
 
 			return t;
 		}
 
 		[Desc("Returns a random value from a collection.")]
-		public LuaValue Random(LuaValue[] collection)
+		public DynValue Random(DynValue[] collection)
 		{
-			return collection.Random(Context.World.SharedRandom).CopyReference();
+			return collection.Random(Context.World.SharedRandom);
 		}
 
 		[Desc("Returns the collection in a random order.")]
-		public LuaValue[] Shuffle(LuaValue[] collection)
+		public DynValue[] Shuffle(DynValue[] collection)
 		{
 			return collection.Shuffle(Context.World.SharedRandom).ToArray();
 		}

@@ -10,12 +10,11 @@
 #endregion
 
 using System.Collections.Generic;
-using Eluant;
-using Eluant.ObjectBinding;
+using MoonSharp.Interpreter;
 
 namespace OpenRA.Scripting
 {
-	public abstract class ScriptObjectWrapper : IScriptBindable, ILuaTableBinding
+	public abstract class ScriptObjectWrapper : IScriptBindable
 	{
 		protected abstract string DuplicateKeyError(string memberName);
 		protected abstract string MemberNotFoundError(string memberName);
@@ -37,7 +36,7 @@ namespace OpenRA.Scripting
 				foreach (var m in wrappable)
 				{
 					if (members.ContainsKey(m.Name))
-						throw new LuaException(DuplicateKeyError(m.Name));
+						throw new ScriptRuntimeException(DuplicateKeyError(m.Name));
 
 					members.Add(m.Name, new ScriptMemberWrapper(Context, obj, m));
 				}
@@ -46,14 +45,14 @@ namespace OpenRA.Scripting
 
 		public bool ContainsKey(string key) { return members.ContainsKey(key); }
 
-		public LuaValue this[LuaRuntime runtime, LuaValue keyValue]
+		public DynValue this[Script runtime, DynValue keyValue]
 		{
 			get
 			{
 				var name = keyValue.ToString();
 				ScriptMemberWrapper wrapper;
 				if (!members.TryGetValue(name, out wrapper))
-					throw new LuaException(MemberNotFoundError(name));
+					throw new ScriptRuntimeException(MemberNotFoundError(name));
 
 				return wrapper.Get(runtime);
 			}
@@ -63,7 +62,7 @@ namespace OpenRA.Scripting
 				var name = keyValue.ToString();
 				ScriptMemberWrapper wrapper;
 				if (!members.TryGetValue(name, out wrapper))
-					throw new LuaException(MemberNotFoundError(name));
+					throw new ScriptRuntimeException(MemberNotFoundError(name));
 
 				wrapper.Set(runtime, value);
 			}

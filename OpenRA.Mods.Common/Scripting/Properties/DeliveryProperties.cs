@@ -10,7 +10,7 @@
 #endregion
 
 using System.Drawing;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Scripting;
@@ -57,7 +57,7 @@ namespace OpenRA.Mods.Common.Scripting
 		{
 			var targetGainsExperience = target.TraitOrDefault<GainsExperience>();
 			if (targetGainsExperience == null)
-				throw new LuaException("Actor '{0}' cannot gain experience!".F(target));
+				throw new ScriptRuntimeException("Actor '{0}' cannot gain experience!".F(target));
 
 			if (targetGainsExperience.Level == targetGainsExperience.MaxLevel)
 				return;

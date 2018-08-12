@@ -11,7 +11,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Scripting;
@@ -51,7 +51,7 @@ namespace OpenRA.Mods.Common.Scripting
 			if (externalInfo != null && externalCapturable != null && externalInfo.CaptureTypes.Overlaps(externalCapturable.Types))
 				Self.QueueActivity(new ExternalCaptureActor(Self, Target.FromActor(target)));
 			else
-				throw new LuaException("Actor '{0}' cannot capture actor '{1}'!".F(Self, target));
+				throw new ScriptRuntimeException("Actor '{0}' cannot capture actor '{1}'!".F(Self, target));
 		}
 	}
 }

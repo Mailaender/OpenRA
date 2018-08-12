@@ -12,7 +12,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Activities;
 using OpenRA.Effects;
 using OpenRA.Mods.Common.Activities;
@@ -38,7 +38,7 @@ namespace OpenRA.Mods.Common.Scripting
 		{
 			ActorInfo ai;
 			if (!Context.World.Map.Rules.Actors.TryGetValue(actorType, out ai))
-				throw new LuaException("Unknown actor type '{0}'".F(actorType));
+				throw new ScriptRuntimeException("Unknown actor type '{0}'".F(actorType));
 
 			var initDict = new TypeDictionary();
 
@@ -74,12 +74,11 @@ namespace OpenRA.Mods.Common.Scripting
 			"it will be executed once a unit has reached its destination. actionFunc " +
 			"will be called as actionFunc(Actor actor). " +
 			"Returns a table containing the deployed units.")]
-		public Actor[] Reinforce(Player owner, string[] actorTypes, CPos[] entryPath, int interval = 25, LuaFunction actionFunc = null)
+		public Actor[] Reinforce(Player owner, string[] actorTypes, CPos[] entryPath, int interval = 25, Closure actionFunc = null)
 		{
 			var actors = new List<Actor>();
 			for (var i = 0; i < actorTypes.Length; i++)
 			{
-				var af = actionFunc != null ? (LuaFunction)actionFunc.CopyReference() : null;
 				var actor = CreateActor(owner, actorTypes[i], false, entryPath[0], entryPath.Length > 1 ? entryPath[1] : (CPos?)null);
 				actors.Add(actor);
 
@@ -90,13 +89,11 @@ namespace OpenRA.Mods.Common.Scripting
 					for (var j = 1; j < entryPath.Length; j++)
 						Move(actor, entryPath[j]);
 
-					if (af != null)
+					if (actionFunc != null)
 					{
 						actor.QueueActivity(new CallFunc(() =>
 						{
-							using (af)
-							using (var a = actor.ToLuaValue(Context))
-								af.Call(a);
+							actionFunc.Call(actor);
 						}));
 					}
 				};
@@ -119,8 +116,8 @@ namespace OpenRA.Mods.Common.Scripting
 			"if the actual destination is blocked (if the transport is an aircraft). " +
 			"Returns a table in which the first value is the transport, " +
 			"and the second a table containing the deployed units.")]
-		public LuaTable ReinforceWithTransport(Player owner, string actorType, string[] cargoTypes, CPos[] entryPath, CPos[] exitPath = null,
-			LuaFunction actionFunc = null, LuaFunction exitFunc = null, int dropRange = 3)
+		public Table ReinforceWithTransport(Script runtime, Player owner, string actorType, string[] cargoTypes, CPos[] entryPath, CPos[] exitPath = null,
+			Closure actionFunc = null, Closure exitFunc = null, int dropRange = 3)
 		{
 			var transport = CreateActor(owner, actorType, true, entryPath[0], entryPath.Length > 1 ? entryPath[1] : (CPos?)null);
 			var cargo = transport.TraitOrDefault<Cargo>();
@@ -141,12 +138,9 @@ namespace OpenRA.Mods.Common.Scripting
 
 			if (actionFunc != null)
 			{
-				var af = (LuaFunction)actionFunc.CopyReference();
 				transport.QueueActivity(new CallFunc(() =>
 				{
-					using (af)
-					using (LuaValue t = transport.ToLuaValue(Context), p = passengers.ToArray().ToLuaValue(Context))
-						af.Call(t, p);
+					actionFunc.Call(transport, passengers);
 				}));
 			}
 			else
@@ -206,12 +200,9 @@ namespace OpenRA.Mods.Common.Scripting
 
 			if (exitFunc != null)
 			{
-				var ef = (LuaFunction)exitFunc.CopyReference();
 				transport.QueueActivity(new CallFunc(() =>
 				{
-					using (ef)
-					using (var t = transport.ToLuaValue(Context))
-						ef.Call(t);
+					exitFunc.Call(transport);
 				}));
 			}
 			else if (exitPath != null)
@@ -223,15 +214,8 @@ namespace OpenRA.Mods.Common.Scripting
 			}
 
 			var ret = Context.CreateTable();
-			using (LuaValue
-				tKey = 1,
-				tValue = transport.ToLuaValue(Context),
-				pKey = 2,
-				pValue = passengers.ToArray().ToLuaValue(Context))
-			{
-				ret.Add(tKey, tValue);
-				ret.Add(pKey, pValue);
-			}
+			ret.Set(1, DynValue.FromObject(runtime, transport));
+			ret.Set(2, DynValue.FromObject(runtime, passengers.ToArray()));
 
 			return ret;
 		}

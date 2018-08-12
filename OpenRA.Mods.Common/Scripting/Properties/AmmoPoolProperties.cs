@@ -10,7 +10,7 @@
 #endregion
 
 using System.Linq;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Scripting;
 using OpenRA.Traits;
@@ -35,7 +35,7 @@ namespace OpenRA.Mods.Common.Scripting
 		{
 			var pool = ammoPools.FirstOrDefault(a => a.Info.Name == poolName);
 			if (pool == null)
-				throw new LuaException("Invalid ammopool name {0} queried on actor {1}.".F(poolName, self));
+				throw new ScriptRuntimeException("Invalid ammopool name {0} queried on actor {1}.".F(poolName, self));
 
 			return pool.GetAmmoCount();
 		}
@@ -45,7 +45,7 @@ namespace OpenRA.Mods.Common.Scripting
 		{
 			var pool = ammoPools.FirstOrDefault(a => a.Info.Name == poolName);
 			if (pool == null)
-				throw new LuaException("Invalid ammopool name {0} queried on actor {1}.".F(poolName, self));
+				throw new ScriptRuntimeException("Invalid ammopool name {0} queried on actor {1}.".F(poolName, self));
 
 			return pool.Info.Ammo;
 		}
@@ -56,7 +56,7 @@ namespace OpenRA.Mods.Common.Scripting
 		{
 			var pool = ammoPools.FirstOrDefault(a => a.Info.Name == poolName);
 			if (pool == null)
-				throw new LuaException("Invalid ammopool name {0} queried on actor {1}.".F(poolName, self));
+				throw new ScriptRuntimeException("Invalid ammopool name {0} queried on actor {1}.".F(poolName, self));
 
 			if (amount > 0)
 				pool.GiveAmmo(self, amount);

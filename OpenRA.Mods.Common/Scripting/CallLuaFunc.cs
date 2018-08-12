@@ -10,7 +10,7 @@
 #endregion
 
 using System;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Activities;
 using OpenRA.Scripting;
 
@@ -19,11 +19,11 @@ namespace OpenRA.Mods.Common.Activities
 	public sealed class CallLuaFunc : Activity, IDisposable
 	{
 		readonly ScriptContext context;
-		LuaFunction function;
+		Closure function;
 
-		public CallLuaFunc(LuaFunction function, ScriptContext context)
+		public CallLuaFunc(Closure function, ScriptContext context)
 		{
-			this.function = (LuaFunction)function.CopyReference();
+			this.function = function;
 			this.context = context;
 		}
 
@@ -32,7 +32,7 @@ namespace OpenRA.Mods.Common.Activities
 			try
 			{
 				if (function != null)
-					function.Call().Dispose();
+					function.Call();
 			}
 			catch (Exception ex)
 			{
@@ -57,7 +57,6 @@ namespace OpenRA.Mods.Common.Activities
 			if (function == null)
 				return;
 
-			function.Dispose();
 			function = null;
 		}
 	}

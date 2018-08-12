@@ -52,13 +52,12 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Eluant">
-      <HintPath>..\thirdparty\download\Eluant.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>..\thirdparty\download\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="MoonSharp.Interpreter">
+      <HintPath>..\thirdparty\download\MoonSharp.Interpreter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

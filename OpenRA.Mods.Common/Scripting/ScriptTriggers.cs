@@ -11,7 +11,7 @@
 
 using System;
 using System.Collections.Generic;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Scripting;
@@ -48,22 +48,16 @@ namespace OpenRA.Mods.Common.Scripting
 
 		readonly List<Triggerable>[] triggerables = Exts.MakeArray(Enum.GetValues(typeof(Trigger)).Length, _ => new List<Triggerable>());
 
-		struct Triggerable : IDisposable
+		struct Triggerable
 		{
-			public readonly LuaFunction Function;
+			public readonly Closure Function;
 			public readonly ScriptContext Context;
-			public readonly LuaValue Self;
-			public Triggerable(LuaFunction function, ScriptContext context, Actor self)
+			public readonly Actor Self;
+			public Triggerable(Closure function, ScriptContext context, Actor self)
 			{
-				Function = (LuaFunction)function.CopyReference();
+				Function = function;
 				Context = context;
-				Self = self.ToLuaValue(Context);
-			}
-
-			public void Dispose()
-			{
-				Function.Dispose();
-				Self.Dispose();
+				Self = self;
 			}
 		}
 
@@ -78,7 +72,7 @@ namespace OpenRA.Mods.Common.Scripting
 			return triggerables[(int)trigger];
 		}
 
-		public void RegisterCallback(Trigger trigger, LuaFunction func, ScriptContext context)
+		public void RegisterCallback(Trigger trigger, Closure func, ScriptContext context)
 		{
 			Triggerables(trigger).Add(new Triggerable(func, context, self));
 		}
@@ -97,7 +91,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					f.Function.Call(f.Self).Dispose();
+					f.Function.Call(f.Self);
 				}
 				catch (Exception ex)
 				{
@@ -116,8 +110,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var b = e.Attacker.ToLuaValue(f.Context))
-						f.Function.Call(f.Self, b).Dispose();
+					f.Function.Call(f.Self, e.Attacker);
 				}
 				catch (Exception ex)
 				{
@@ -137,8 +130,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var b = e.Attacker.ToLuaValue(f.Context))
-						f.Function.Call(f.Self, b).Dispose();
+					f.Function.Call(f.Self, e.Attacker);
 				}
 				catch (Exception ex)
 				{
@@ -161,8 +153,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var b = other.ToLuaValue(f.Context))
-						f.Function.Call(f.Self, b).Dispose();
+					f.Function.Call(f.Self, other);
 				}
 				catch (Exception ex)
 				{
@@ -184,8 +175,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var a = player.ToLuaValue(f.Context))
-						f.Function.Call(a).Dispose();
+					f.Function.Call(player);
 				}
 				catch (Exception ex)
 				{
@@ -204,8 +194,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var a = player.ToLuaValue(f.Context))
-						f.Function.Call(a).Dispose();
+					f.Function.Call(player);
 				}
 				catch (Exception ex)
 				{
@@ -224,9 +213,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var a = player.ToLuaValue(f.Context))
-					using (var b = id.ToLuaValue(f.Context))
-						f.Function.Call(a, b).Dispose();
+					f.Function.Call(player, id);
 				}
 				catch (Exception ex)
 				{
@@ -245,9 +232,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var a = player.ToLuaValue(f.Context))
-					using (var b = id.ToLuaValue(f.Context))
-						f.Function.Call(a, b).Dispose();
+					f.Function.Call(player, id);
 				}
 				catch (Exception ex)
 				{
@@ -266,9 +251,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var a = player.ToLuaValue(f.Context))
-					using (var b = id.ToLuaValue(f.Context))
-						f.Function.Call(a, b).Dispose();
+					f.Function.Call(player, id);
 				}
 				catch (Exception ex)
 				{
@@ -287,10 +270,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var b = captor.ToLuaValue(f.Context))
-					using (var c = oldOwner.ToLuaValue(f.Context))
-					using (var d = newOwner.ToLuaValue(f.Context))
-						f.Function.Call(f.Self, b, c, d).Dispose();
+					f.Function.Call(f.Self, captor, oldOwner, newOwner);
 				}
 				catch (Exception ex)
 				{
@@ -312,8 +292,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var b = infiltrator.ToLuaValue(f.Context))
-						f.Function.Call(f.Self, b).Dispose();
+					f.Function.Call(f.Self, infiltrator);
 				}
 				catch (Exception ex)
 				{
@@ -332,7 +311,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					f.Function.Call(f.Self).Dispose();
+					f.Function.Call(f.Self);
 				}
 				catch (Exception ex)
 				{
@@ -352,7 +331,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					f.Function.Call(f.Self).Dispose();
+					f.Function.Call(f.Self);
 				}
 				catch (Exception ex)
 				{
@@ -375,7 +354,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					f.Function.Call(f.Self).Dispose();
+					f.Function.Call(f.Self);
 				}
 				catch (Exception ex)
 				{
@@ -395,7 +374,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					f.Function.Call(f.Self).Dispose();
+					f.Function.Call(f.Self);
 				}
 				catch (Exception ex)
 				{
@@ -415,9 +394,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var a = producee.ToLuaValue(f.Context))
-					using (var b = produced.ToLuaValue(f.Context))
-						f.Function.Call(a, b).Dispose();
+					f.Function.Call(producee, produced);
 				}
 				catch (Exception ex)
 				{
@@ -439,8 +416,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var b = discoverer.ToLuaValue(f.Context))
-						f.Function.Call(f.Self, b).Dispose();
+					f.Function.Call(f.Self, discoverer);
 				}
 				catch (Exception ex)
 				{
@@ -453,9 +429,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var a = self.Owner.ToLuaValue(f.Context))
-					using (var b = discoverer.ToLuaValue(f.Context))
-						f.Function.Call(a, b, f.Self).Dispose();
+					f.Function.Call(self.Owner, discoverer, f.Self);
 				}
 				catch (Exception ex)
 				{
@@ -474,9 +448,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var trans = self.ToLuaValue(f.Context))
-					using (var pass = passenger.ToLuaValue(f.Context))
-						f.Function.Call(trans, pass).Dispose();
+					f.Function.Call(self, passenger);
 				}
 				catch (Exception ex)
 				{
@@ -495,9 +467,7 @@ namespace OpenRA.Mods.Common.Scripting
 			{
 				try
 				{
-					using (var trans = self.ToLuaValue(f.Context))
-					using (var pass = passenger.ToLuaValue(f.Context))
-						f.Function.Call(trans, pass).Dispose();
+					f.Function.Call(self, passenger);
 				}
 				catch (Exception ex)
 				{
@@ -512,8 +482,6 @@ namespace OpenRA.Mods.Common.Scripting
 			world.AddFrameEndTask(w =>
 			{
 				var triggerables = Triggerables(trigger);
-				foreach (var f in triggerables)
-					f.Dispose();
 				triggerables.Clear();
 			});
 		}

@@ -11,7 +11,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Scripting;
 
@@ -35,14 +35,14 @@ namespace OpenRA.Mods.Common.Scripting
 		}
 
 		[Desc("Returns a table of all actors within the requested region, filtered using the specified function.")]
-		public Actor[] ActorsInCircle(WPos location, WDist radius, LuaFunction filter = null)
+		public Actor[] ActorsInCircle(WPos location, WDist radius, Closure filter = null)
 		{
 			var actors = Context.World.FindActorsInCircle(location, radius);
 			return FilteredObjects(actors, filter).ToArray();
 		}
 
 		[Desc("Returns a table of all actors within the requested rectangle, filtered using the specified function.")]
-		public Actor[] ActorsInBox(WPos topLeft, WPos bottomRight, LuaFunction filter = null)
+		public Actor[] ActorsInBox(WPos topLeft, WPos bottomRight, Closure filter = null)
 		{
 			var actors = Context.World.ActorMap.ActorsInBox(topLeft, bottomRight);
 			return FilteredObjects(actors, filter).ToArray();
@@ -90,7 +90,7 @@ namespace OpenRA.Mods.Common.Scripting
 
 		[Desc("Returns the first cell on the visible border of the map from the given cell,",
 			"matching the filter function called as function(CPos cell).")]
-		public CPos ClosestMatchingEdgeCell(CPos givenCell, LuaFunction filter)
+		public CPos ClosestMatchingEdgeCell(CPos givenCell, Closure filter)
 		{
 			return FilteredObjects(Context.World.Map.AllEdgeCells.OrderBy(c => (givenCell - c).Length), filter).FirstOrDefault();
 		}
@@ -111,7 +111,7 @@ namespace OpenRA.Mods.Common.Scripting
 		public bool IsSinglePlayer { get { return Context.World.LobbyInfo.NonBotPlayers.Count() == 1; } }
 
 		[Desc("Returns the value of a `ScriptLobbyDropdown` selected in the game lobby.")]
-		public LuaValue LobbyOption(string id)
+		public DynValue LobbyOption(string id)
 		{
 			var option = Context.World.WorldActor.TraitsImplementing<ScriptLobbyDropdown>()
 				.FirstOrDefault(sld => sld.Info.ID == id);
@@ -119,7 +119,7 @@ namespace OpenRA.Mods.Common.Scripting
 			if (option == null)
 				throw new YamlException("A ScriptLobbyDropdown with ID `" + id + "` was not found.");
 
-			return option.Value;
+			return DynValue.NewString(option.Value);
 		}
 
 		[Desc("Returns a table of all the actors that were specified in the map file.")]

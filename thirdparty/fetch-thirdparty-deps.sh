@@ -101,13 +101,11 @@ if [ ! -f OpenAL-CS.dll -o ! -f OpenAL-CS.dll.config ]; then
 	fi
 fi
 
-if [ ! -f Eluant.dll ]; then
-	echo "Fetching Eluant from GitHub."
-	if command -v curl >/dev/null 2>&1; then
-		curl -s -L -O https://github.com/OpenRA/Eluant/releases/download/20160124/Eluant.dll
-	else
-		wget -cq https://github.com/OpenRA/Eluant/releases/download/20160124/Eluant.dll
-	fi
+if [ ! -f MoonSharp.Interpreter.dll ]; then
+	echo "Fetching MoonSharp from NuGet."
+	../noget.sh MoonSharp 2.0.0
+	cp MoonSharp/lib/net40-client/MoonSharp.Interpreter.dll .
+	rm -rf MoonSharp
 fi
 
 if [ ! -f rix0rrr.BeaconLib.dll ]; then

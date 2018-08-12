@@ -9,7 +9,7 @@
  */
 #endregion
 
-using Eluant;
+using MoonSharp.Interpreter;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;
@@ -121,7 +121,7 @@ namespace OpenRA.Mods.Common.Scripting
 			get
 			{
 				if (facing == null)
-					throw new LuaException("Actor '{0}' doesn't define a facing".F(Self));
+					throw new ScriptRuntimeException("Actor '{0}' doesn't define a facing".F(Self));
 
 				return facing.Facing;
 			}
@@ -136,7 +136,7 @@ namespace OpenRA.Mods.Common.Scripting
 
 		[ScriptActorPropertyActivity]
 		[Desc("Run an arbitrary Lua function.")]
-		public void CallFunc(LuaFunction func)
+		public void CallFunc(Closure func)
 		{
 			Self.QueueActivity(new CallLuaFunc(func, Context));
 		}
@@ -179,7 +179,7 @@ namespace OpenRA.Mods.Common.Scripting
 
 				UnitStance stance;
 				if (!Enum<UnitStance>.TryParse(value, true, out stance))
-					throw new LuaException("Unknown stance type '{0}'".F(value));
+					throw new ScriptRuntimeException("Unknown stance type '{0}'".F(value));
 
 				autotarget.PredictedStance = stance;
 				autotarget.SetStance(Self, stance);
