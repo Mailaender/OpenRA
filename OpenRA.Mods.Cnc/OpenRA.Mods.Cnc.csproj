@@ -160,6 +160,7 @@
     <Compile Include="Traits\TransferTimedExternalConditionOnTransform.cs" />
     <Compile Include="Traits\Buildings\LaysAutoTerrain.cs" />
     <Compile Include="Traits\World\BuildableAutoTerrainLayer.cs" />
+    <Compile Include="Player\BuildableAutoTerrainRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OpenRA.Game\OpenRA.Game.csproj">

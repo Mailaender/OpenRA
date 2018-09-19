@@ -66,12 +66,14 @@ GAPAVE:
 		BuildPaletteOrder: 30
 		Prerequisites: barracks
 	Building:
-		Adjacent: 4
 		TerrainTypes: Clear, DirtRoad, Rough
 		BuildSounds: place2.aud
 		AllowInvalidPlacement: true
 		Footprint: xxxxx xxxxx xxxxx xxxxx xxxxx
 		Dimensions: 5,5
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 4
 	KillsSelf:
 		RemoveInstead: true
 	LaysAutoTerrain:

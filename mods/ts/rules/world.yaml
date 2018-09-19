@@ -280,6 +280,7 @@ World:
 	BridgeLayer:
 	BuildableAutoTerrainLayer:
 		TerrainType: Road
+	BuildableAutoTerrainRenderer:
 	CustomTerrainDebugOverlay:
 	ResourceClaimLayer:
 	WarheadDebugOverlay:
