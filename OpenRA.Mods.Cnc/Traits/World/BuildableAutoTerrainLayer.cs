@@ -9,6 +9,7 @@
  */
 #endregion
 
+using OpenRA.Graphics;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Cnc.Traits
@@ -19,15 +20,21 @@ namespace OpenRA.Mods.Cnc.Traits
 		[Desc("The terrain type to place.")]
 		[FieldLoader.Require] public readonly string TerrainType = null;
 
+		[Desc("Palette to render the layer sprites in.")]
+		public readonly string Palette = TileSet.TerrainPaletteInternalName;
+
 		public object Create(ActorInitializer init) { return new BuildableAutoTerrainLayer(init.Self, this); }
 	}
 
-	public class BuildableAutoTerrainLayer
+	public class BuildableAutoTerrainLayer : IWorldLoaded, INotifyActorDisposing
 	{
 		public readonly CellLayer<bool> Terrain;
 
 		readonly BuildableAutoTerrainLayerInfo info;
 		readonly Map map;
+
+		public TerrainSpriteLayer Render;
+		public Theater Theater;
 
 		public BuildableAutoTerrainLayer(Actor self, BuildableAutoTerrainLayerInfo info)
 		{
@@ -36,10 +43,27 @@ namespace OpenRA.Mods.Cnc.Traits
 			Terrain = new CellLayer<bool>(map);
 		}
 
+		void IWorldLoaded.WorldLoaded(World w, WorldRenderer wr)
+		{
+			Theater = wr.Theater;
+			System.Console.WriteLine("WOrldLoaded");
+			Render = new TerrainSpriteLayer(w, wr, Theater.Sheet, BlendMode.Alpha, wr.Palette(info.Palette), wr.World.Type != WorldType.Editor);
+		}
+
 		public void Add(CPos cell)
 		{
 			Terrain[cell] = true;
 			map.CustomTerrain[cell] = map.Rules.TileSet.GetTerrainIndex(info.TerrainType);
+		}
+
+		bool disposed;
+		void INotifyActorDisposing.Disposing(Actor self)
+		{
+			if (disposed)
+				return;
+
+			Render.Dispose();
+			disposed = true;
 		}
 	}
 }

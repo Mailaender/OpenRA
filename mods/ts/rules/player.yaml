@@ -64,6 +64,7 @@ Player:
 		CheckboxDisplayOrder: 8
 	Shroud:
 		FogCheckboxDisplayOrder: 3
+	BuildableAutoTerrainRenderer:
 	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
 		ID: factundeploy
 		Label: Redeployable MCVs

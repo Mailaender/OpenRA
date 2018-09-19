@@ -19,35 +19,24 @@ namespace OpenRA.Mods.Cnc.Traits
 	[Desc("Attach this to the player actor. Required for `LaysAutoTerrain` to work.")]
 	public class BuildableAutoTerrainRendererInfo : ITraitInfo
 	{
-		[Desc("Palette to render the layer sprites in.")]
-		public readonly string Palette = TileSet.TerrainPaletteInternalName;
-
 		public object Create(ActorInitializer init) { return new BuildableAutoTerrainRenderer(init.Self, this); }
 	}
 
-	public class BuildableAutoTerrainRenderer : IRenderOverlay, IWorldLoaded, ITickRender, INotifyActorDisposing
+	public class BuildableAutoTerrainRenderer : IRenderOverlay, ITickRender
 	{
-		readonly BuildableAutoTerrainRendererInfo info;
+		readonly Actor self;
 		readonly Dictionary<CPos, Sprite> dirty = new Dictionary<CPos, Sprite>();
 		readonly World world;
 		readonly BuildableAutoTerrainLayer layer;
 
-		TerrainSpriteLayer render;
-		Theater theater;
-
 		public BuildableAutoTerrainRenderer(Actor self, BuildableAutoTerrainRendererInfo info)
 		{
-			this.info = info;
+			this.self = self;
 
 			world = self.World;
-			layer = self.Trait<BuildableAutoTerrainLayer>();
-		}
 
-		void IWorldLoaded.WorldLoaded(World w, WorldRenderer wr)
-		{
-			theater = wr.Theater;
-			System.Console.WriteLine("WOrldLoaded");
-			render = new TerrainSpriteLayer(w, wr, theater.Sheet, BlendMode.Alpha, wr.Palette(info.Palette), wr.World.Type != WorldType.Editor);
+			layer = world.WorldActor.Trait<BuildableAutoTerrainLayer>();
+			layer.Terrain.CellEntryChanged += Update;
 		}
 
 		[Flags]
@@ -100,7 +89,7 @@ namespace OpenRA.Mods.Cnc.Traits
 			return ret;
 		}
 
-		public void Add(CPos cell)
+		public void Update(CPos cell)
 		{
 			UpdateRenderedSprite(cell);
 			foreach (var direction in CVec.Directions)
@@ -115,8 +104,7 @@ namespace OpenRA.Mods.Cnc.Traits
 			if (!layer.Terrain[cell])
 				return;
 
-			var viewer = world.RenderPlayer ?? world.LocalPlayer;
-			if (!viewer.Shroud.IsVisible(cell))
+			if (!self.Owner.Shroud.IsVisible(cell))
 				return;
 
 			var clear = FindClearSides(cell);
@@ -126,7 +114,7 @@ namespace OpenRA.Mods.Cnc.Traits
 			var template = world.Map.Rules.TileSet.Templates[tile];
 			var index = Game.CosmeticRandom.Next(template.TilesCount);
 
-			var s = theater.TileSprite(new TerrainTile(template.Id, (byte)index));
+			var s = layer.Theater.TileSprite(new TerrainTile(template.Id, (byte)index));
 			var offset = new float3(0, 0, -6);
 			dirty[cell] = new Sprite(s.Sheet, s.Bounds, 1, s.Offset + offset, s.Channel, s.BlendMode);
 		}
@@ -138,7 +126,7 @@ namespace OpenRA.Mods.Cnc.Traits
 			{
 				if (!self.World.FogObscures(kv.Key))
 				{
-					render.Update(kv.Key, kv.Value);
+					layer.Render.Update(kv.Key, kv.Value);
 					remove.Add(kv.Key);
 				}
 			}
@@ -149,17 +137,9 @@ namespace OpenRA.Mods.Cnc.Traits
 
 		void IRenderOverlay.Render(WorldRenderer wr)
 		{
-			render.Draw(wr.Viewport);
+			layer.Render.Draw(wr.Viewport);
 		}
 
-		bool disposed;
-		void INotifyActorDisposing.Disposing(Actor self)
-		{
-			if (disposed || render == null)
-				return;
 
-			render.Dispose();
-			disposed = true;
-		}
 	}
 }
