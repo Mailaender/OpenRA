@@ -252,6 +252,8 @@ ART2:
 	WithVoxelTurret@deployed:
 		Turret: deployed
 		RequiresCondition: deployed
+	AttackDeploys:
+		RequiresCondition: !deployed
 	AttackTurreted@deployed:
 		Voice: Attack
 		Armaments: deployed

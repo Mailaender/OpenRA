@@ -916,6 +916,7 @@
     <Compile Include="Lint\CheckUnknownTraitFields.cs" />
     <Compile Include="Lint\CheckUnknownWeaponFields.cs" />
     <Compile Include="Widgets\Logic\PlayerProfileLogic.cs" />
+    <Compile Include="Traits\Attack\AttackDeploys.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild">
