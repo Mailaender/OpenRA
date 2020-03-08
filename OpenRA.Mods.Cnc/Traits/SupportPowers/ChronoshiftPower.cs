@@ -44,6 +44,9 @@ namespace OpenRA.Mods.Cnc.Traits
 
 		public readonly bool KillCargo = true;
 
+		[Desc("Allow teleportations into certain death.")]
+		public readonly bool SafetiesOff = true;
+
 		[Desc("Cursor sequence to use when selecting targets for the chronoshift.")]
 		public readonly string SelectionCursor = "chrono-select";
 
@@ -84,7 +87,7 @@ namespace OpenRA.Mods.Cnc.Traits
 
 				var targetCell = target.Location + targetDelta;
 
-				if (self.Owner.Shroud.IsExplored(targetCell) && cs.CanChronoshiftTo(target, targetCell))
+				if (self.Owner.Shroud.IsExplored(targetCell) && cs.CanChronoshiftTo(target, targetCell, info.SafetiesOff))
 					cs.Teleport(target, targetCell, info.Duration, info.KillCargo, self);
 			}
 		}
@@ -249,7 +252,7 @@ namespace OpenRA.Mods.Cnc.Traits
 			IEnumerable<Order> OrderInner(CPos xy)
 			{
 				// Cannot chronoshift into unexplored location
-				if (IsValidTarget(xy))
+				if (manager.Self.Owner.Shroud.IsExplored(xy))
 					yield return new Order(order, manager.Self, Target.FromCell(manager.Self.World, xy), false)
 					{
 						ExtraLocation = sourceLocation,
@@ -277,6 +280,8 @@ namespace OpenRA.Mods.Cnc.Traits
 					yield return new SpriteRenderable(tile, wr.World.Map.CenterOfCell(t + delta), WVec.Zero, -511, palette, 1f, true);
 				}
 
+				var powerInfo = (ChronoshiftPowerInfo)power.Info;
+
 				// Unit previews
 				foreach (var unit in power.UnitsInRange(sourceLocation))
 				{
@@ -284,7 +289,7 @@ namespace OpenRA.Mods.Cnc.Traits
 					{
 						var targetCell = unit.Location + (xy - sourceLocation);
 						var canEnter = manager.Self.Owner.Shroud.IsExplored(targetCell) &&
-							unit.Trait<Chronoshiftable>().CanChronoshiftTo(unit, targetCell);
+							unit.Trait<Chronoshiftable>().CanChronoshiftTo(unit, targetCell, powerInfo.SafetiesOff);
 						var tile = canEnter ? validTile : invalidTile;
 						yield return new SpriteRenderable(tile, wr.World.Map.CenterOfCell(targetCell), WVec.Zero, -511, palette, 1f, true);
 					}
@@ -317,7 +322,7 @@ namespace OpenRA.Mods.Cnc.Traits
 					yield return new SpriteRenderable(sourceTile, wr.World.Map.CenterOfCell(t), WVec.Zero, -511, palette, 1f, true);
 			}
 
-			bool IsValidTarget(CPos xy)
+			bool IsValidTarget(CPos xy, bool safetiesOff)
 			{
 				// Don't teleport if there are no units in range (either all moved out of range, or none yet moved into range)
 				var unitsInRange = power.UnitsInRange(sourceLocation);
@@ -328,7 +333,7 @@ namespace OpenRA.Mods.Cnc.Traits
 				foreach (var unit in unitsInRange)
 				{
 					var targetCell = unit.Location + (xy - sourceLocation);
-					if (manager.Self.Owner.Shroud.IsExplored(targetCell) && unit.Trait<Chronoshiftable>().CanChronoshiftTo(unit, targetCell))
+					if (manager.Self.Owner.Shroud.IsExplored(targetCell) && unit.Trait<Chronoshiftable>().CanChronoshiftTo(unit, targetCell, safetiesOff))
 					{
 						canTeleport = true;
 						break;
@@ -337,10 +342,11 @@ namespace OpenRA.Mods.Cnc.Traits
 
 				if (!canTeleport)
 				{
+					var powerInfo = (ChronoshiftPowerInfo)power.Info;
 					// Check the terrain types. This will allow chronoshifts to occur on empty terrain to terrain of
 					// a similar type. This also keeps the cursor from changing in non-visible property, alerting the
 					// chronoshifter of enemy unit presence
-					canTeleport = power.SimilarTerrain(sourceLocation, xy);
+					canTeleport = powerInfo.SafetiesOff ? true : power.SimilarTerrain(sourceLocation, xy);
 				}
 
 				return canTeleport;
@@ -349,7 +355,7 @@ namespace OpenRA.Mods.Cnc.Traits
 			protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 			{
 				var powerInfo = (ChronoshiftPowerInfo)power.Info;
-				return IsValidTarget(cell) ? powerInfo.TargetCursor : powerInfo.TargetBlockedCursor;
+				return IsValidTarget(cell, powerInfo.SafetiesOff) ? powerInfo.TargetCursor : powerInfo.TargetBlockedCursor;
 			}
 		}
 	}

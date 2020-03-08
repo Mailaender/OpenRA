@@ -105,10 +105,12 @@ namespace OpenRA.Mods.Cnc.Traits
 		}
 
 		// Can't be used in synced code, except with ignoreVis.
-		public virtual bool CanChronoshiftTo(Actor self, CPos targetLocation)
+		public virtual bool CanChronoshiftTo(Actor self, CPos targetLocation, bool safetiesOff)
 		{
-			// TODO: Allow enemy units to be chronoshifted into bad terrain to kill them
-			return !IsTraitDisabled && iPositionable != null && iPositionable.CanEnterCell(targetLocation);
+			if (safetiesOff)
+				return true;
+			else
+				return !IsTraitDisabled && iPositionable != null && iPositionable.CanEnterCell(targetLocation);
 		}
 
 		public virtual bool Teleport(Actor self, CPos targetLocation, int duration, bool killCargo, Actor chronosphere)

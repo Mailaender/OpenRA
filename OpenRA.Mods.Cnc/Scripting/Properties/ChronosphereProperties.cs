@@ -40,7 +40,7 @@ namespace OpenRA.Mods.Cnc.Scripting
 				var cs = actor.TraitsImplementing<Chronoshiftable>()
 					.FirstEnabledTraitOrDefault();
 
-				if (cs != null && cs.CanChronoshiftTo(actor, cell))
+				if (cs != null && cs.CanChronoshiftTo(actor, cell, false))
 					cs.Teleport(actor, cell, duration, killCargo, Self);
 			}
 		}
