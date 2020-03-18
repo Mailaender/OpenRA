@@ -28,8 +28,13 @@ namespace OpenRA.Mods.Common.Activities
 			this.info = info;
 			IsInterruptible = false;
 			aircraft = self.Trait<Aircraft>();
+
+
 			if (info.Spins)
-				acceleration = self.World.SharedRandom.Next(2) * 2 - 1;
+			{
+				spin = info.InitialSpin;
+				acceleration = info.SpinAcceleration;
+			}
 		}
 
 		public override bool Tick(Actor self)

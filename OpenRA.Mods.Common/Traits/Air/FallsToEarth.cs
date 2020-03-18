@@ -21,7 +21,15 @@ namespace OpenRA.Mods.Common.Traits
 		[WeaponReference]
 		public readonly string Explosion = "UnitExplode";
 
-		public readonly bool Spins = true;
+		[Desc("Will the actor rotate when falling to the ground.")]
+		public readonly bool Spins = false;
+
+		[Desc("Spin velocity at the start of the descent.")]
+		public readonly int InitialSpin = 10;
+
+		[Desc("How fast the spinning will increase upon descent.")]
+		public readonly int SpinAcceleration = 1;
+
 		public readonly bool Moves = false;
 		public readonly WDist Velocity = new WDist(43);
 
