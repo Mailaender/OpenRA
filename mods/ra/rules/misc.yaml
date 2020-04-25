@@ -335,6 +335,7 @@ powerproxy.sonarpulse:
 		SelectTargetSpeechNotification: SelectTarget
 		Actor: sonar
 		Terrain: Water
+		AllowUnderShroud: false
 		LifeTime: 250
 		DeploySound: sonpulse.aud
 		EffectImage: moveflsh

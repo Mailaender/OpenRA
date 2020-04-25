@@ -34,6 +34,8 @@ namespace OpenRA.Mods.Common.Traits
 		[Desc("Only allow this to be spawned on this terrain.")]
 		public readonly string[] Terrain = null;
 
+		public readonly bool AllowUnderShroud = true;
+
 		public readonly string DeploySound = null;
 
 		public readonly string EffectImage = null;
@@ -124,6 +126,9 @@ namespace OpenRA.Mods.Common.Traits
 			if (!world.Map.Contains(cell))
 				yield break;
 
+			if (!info.AllowUnderShroud && world.ShroudObscures(cell))
+				yield break;
+
 			if (info.Terrain != null && !info.Terrain.Contains(world.Map.GetTerrainInfo(cell).Type))
 				yield break;
 
@@ -144,6 +149,9 @@ namespace OpenRA.Mods.Common.Traits
 		protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (!world.Map.Contains(cell))
+				return info.BlockedCursor;
+
+			if (!info.AllowUnderShroud && world.ShroudObscures(cell))
 				return info.BlockedCursor;
 
 			if (info.Terrain != null && !info.Terrain.Contains(world.Map.GetTerrainInfo(cell).Type))
