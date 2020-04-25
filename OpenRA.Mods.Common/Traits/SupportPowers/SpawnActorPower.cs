@@ -9,8 +9,12 @@
  */
 #endregion
 
+using System.Collections.Generic;
+using System.Linq;
+using OpenRA.Graphics;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Effects;
+using OpenRA.Mods.Common.Orders;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
@@ -27,6 +31,9 @@ namespace OpenRA.Mods.Common.Traits
 		[Desc("Amount of time to keep the actor alive in ticks. Value < 0 means this actor will not remove itself.")]
 		public readonly int LifeTime = 250;
 
+		[Desc("Only allow this to be spawned on this terrain.")]
+		public readonly string[] Terrain = null;
+
 		public readonly string DeploySound = null;
 
 		public readonly string EffectImage = null;
@@ -36,6 +43,9 @@ namespace OpenRA.Mods.Common.Traits
 
 		[PaletteReference]
 		public readonly string EffectPalette = null;
+
+		[Desc("Cursor to display when the location is unsuitable.")]
+		public readonly string BlockedCursor = "move-blocked";
 
 		public override object Create(ActorInitializer init) { return new SpawnActorPower(init.Self, this); }
 	}
@@ -74,6 +84,72 @@ namespace OpenRA.Mods.Common.Traits
 					}
 				});
 			}
+		}
+
+		public override void SelectTarget(Actor self, string order, SupportPowerManager manager)
+		{
+			Game.Sound.PlayToPlayer(SoundType.UI, manager.Self.Owner, Info.SelectTargetSound);
+			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech",
+				Info.SelectTargetSpeechNotification, self.Owner.Faction.InternalName);
+			self.World.OrderGenerator = new SelectSpawnActorPowerTarget(order, manager, this, MouseButton.Left);
+		}
+	}
+
+	public class SelectSpawnActorPowerTarget : OrderGenerator
+	{
+		readonly SpawnActorPowerInfo info;
+		readonly SupportPowerManager manager;
+		readonly string order;
+		readonly MouseButton expectedButton;
+
+		public string OrderKey { get { return order; } }
+
+		public SelectSpawnActorPowerTarget(string order, SupportPowerManager manager, SpawnActorPower power, MouseButton button)
+		{
+			// Clear selection if using Left-Click Orders
+			if (Game.Settings.Game.UseClassicMouseStyle)
+				manager.Self.World.Selection.Clear();
+
+			this.manager = manager;
+			this.order = order;
+			expectedButton = button;
+
+			info = (SpawnActorPowerInfo)power.Info;
+		}
+
+		protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		{
+			world.CancelInputMode();
+
+			if (!world.Map.Contains(cell))
+				yield break;
+
+			if (info.Terrain != null && !info.Terrain.Contains(world.Map.GetTerrainInfo(cell).Type))
+				yield break;
+
+			if (mi.Button == expectedButton)
+				yield return new Order(order, manager.Self, Target.FromCell(world, cell), false) { SuppressVisualFeedback = true };
+		}
+
+		protected override void Tick(World world)
+		{
+			// Cancel the OG if we can't use the power
+			if (!manager.Powers.ContainsKey(order))
+				world.CancelInputMode();
+		}
+
+		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world) { yield break; }
+		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world) { yield break; }
+		protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world) { yield break; }
+		protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		{
+			if (!world.Map.Contains(cell))
+				return info.BlockedCursor;
+
+			if (info.Terrain != null && !info.Terrain.Contains(world.Map.GetTerrainInfo(cell).Type))
+				return info.BlockedCursor;
+
+			return info.Cursor;
 		}
 	}
 }
