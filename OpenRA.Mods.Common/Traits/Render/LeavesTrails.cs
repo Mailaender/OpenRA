@@ -20,9 +20,10 @@ namespace OpenRA.Mods.Common.Traits.Render
 	[Desc("Renders a sprite effect when leaving a cell.")]
 	public class LeavesTrailsInfo : ConditionalTraitInfo
 	{
+		[Desc("Defaults to the actor name.")]
 		public readonly string Image = null;
 
-		[SequenceReference("Image")]
+		[SequenceReference("Image", false, true)]
 		public readonly string[] Sequences = { "idle" };
 
 		[PaletteReference]
@@ -65,6 +66,8 @@ namespace OpenRA.Mods.Common.Traits.Render
 
 	public class LeavesTrails : ConditionalTrait<LeavesTrailsInfo>, ITick
 	{
+		readonly string image;
+
 		BodyOrientation body;
 		IFacing facing;
 		WAngle cachedFacing;
@@ -73,6 +76,7 @@ namespace OpenRA.Mods.Common.Traits.Render
 		public LeavesTrails(Actor self, LeavesTrailsInfo info)
 			: base(info)
 		{
+			image = info.Image ?? self.Info.Name;
 			cachedInterval = Info.StartDelay;
 		}
 
@@ -127,7 +131,7 @@ namespace OpenRA.Mods.Common.Traits.Render
 
 				var spawnFacing = Info.SpawnAtLastPosition ? cachedFacing : (facing != null ? facing.Facing : WAngle.Zero);
 
-				if ((Info.TerrainTypes.Count == 0 || Info.TerrainTypes.Contains(type)) && !string.IsNullOrEmpty(Info.Image))
+				if (Info.TerrainTypes.Count == 0 || Info.TerrainTypes.Contains(type))
 					self.World.AddFrameEndTask(w => w.Add(new SpriteEffect(pos, spawnFacing, self.World, Info.Image,
 						Info.Sequences.Random(Game.CosmeticRandom), Info.Palette, Info.VisibleThroughFog)));
 
