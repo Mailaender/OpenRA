@@ -675,3 +675,21 @@ podring:
 	idle:
 		Frames: 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
 		Length: *
+
+caryland:
+	idle: podring
+		Length: *
+		Tick: 50
+		ZOffset: -512
+		ZRamp: 1
+		Offset: 0, 0, 1
+		BlendMode: Translucent
+
+dropland:
+	idle: podring
+		Length: *
+		Tick: 90
+		ZOffset: -512
+		ZRamp: 1
+		Offset: 0, 0, 1
+		BlendMode: Translucent

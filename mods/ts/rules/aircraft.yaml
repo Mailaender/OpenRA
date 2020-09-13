@@ -291,6 +291,9 @@ ORCATRAN:
 	SpawnActorOnDeath@EMP:
 		Actor: ORCATRAN.Husk.EMP
 		RequiresCondition: empdisable
+	WithAircraftDustEffect:
+		Image: dropland
+		LandingDelay: 30
 
 TRNSPORT:
 	Inherits: ^EMPableAircraft
@@ -334,6 +337,9 @@ TRNSPORT:
 	SpawnActorOnDeath@EMP:
 		Actor: TRNSPORT.Husk.EMP
 		RequiresCondition: empdisable
+	WithAircraftDustEffect:
+		Image: caryland
+		LandingDelay: 25
 
 SCRIN:
 	Inherits: ^EMPableAircraft
