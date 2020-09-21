@@ -172,6 +172,12 @@ namespace OpenRA.Mods.Common.Server
 				return false;
 			}
 
+			if (server.LobbyInfo.Clients.Any(c => c.Slot == s))
+			{
+				Log.Write("server", "Slot {0} is already taken.".F(s));
+				return false;
+			}
+
 			var slot = server.LobbyInfo.Slots[s];
 
 			if (slot.Closed || server.LobbyInfo.ClientInSlot(s) != null)
