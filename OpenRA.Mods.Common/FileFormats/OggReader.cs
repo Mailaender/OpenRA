@@ -10,17 +10,13 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using NVorbis;
-using OpenRA.Primitives;
 
 namespace OpenRA.Mods.Common.FileFormats
 {
 	public static class OggReader
 	{
-		private const int SampleSizeBytes = 4;
-
 		public static bool LoadSound(Stream s, out Func<Stream> result, out short channels, out int sampleBits, out int sampleRate, out int length)
 		{
 			result = null;
@@ -35,56 +31,21 @@ namespace OpenRA.Mods.Common.FileFormats
 			if (signature != "OggS")
 				return false;
 
-			using (var vorbis = new VorbisReader(s, closeOnDispose: false))
-			{
-				channels = (short)vorbis.Channels;
-				sampleRate = vorbis.SampleRate;
-				sampleBits = vorbis.NominalBitrate / 8;
-				length = (int)vorbis.TotalTime.TotalSeconds;
-			}
+			var vorbis = new VorbisReader(s, closeOnDispose: false);
 
-			result = () => { return new OggStream(s); };
+			channels = (short)vorbis.Channels;
+			sampleRate = vorbis.SampleRate;
+			sampleBits = vorbis.NominalBitrate;
+			length = (int)vorbis.TotalTime.TotalSeconds;
+
+			var buffer = new float[vorbis.TotalSamples];
+			var count = vorbis.ReadSamples(buffer, 0, buffer.Length);
+			var byteArray = new byte[buffer.Length * sizeof(float)];
+			Buffer.BlockCopy(buffer, 0, byteArray, 0, byteArray.Length);
+
+			result = () => { return new MemoryStream(byteArray); };
 
 			return true;
-		}
-
-		sealed class OggStream : ReadOnlyAdapterStream
-		{
-			public OggStream(Stream stream)
-				: base(stream) { }
-
-			protected override bool BufferData(Stream baseStream, Queue<byte> data)
-			{
-				var samplesRead = 0;
-				var samples = new List<float>();
-				using (var vorbis = new VorbisReader(baseStream, closeOnDispose: false))
-				{
-					var bufferSize = vorbis.Channels * vorbis.SampleRate / 5;
-					System.Console.WriteLine("bufferSize " + bufferSize);
-
-					var buffer = new float[bufferSize];
-
-					while ((samplesRead = vorbis.ReadSamples(buffer, 0, buffer.Length)) > 0)
-					{
-						System.Console.WriteLine(samplesRead);
-
-						if (samplesRead != buffer.Length)
-							Array.Resize(ref buffer, samplesRead);
-
-						samples.AddRange(buffer);
-						var samplesArray = samples.ToArray();
-
-						buffer = new float[bufferSize];
-						var sampleDatas = new byte[samplesArray.Length * SampleSizeBytes];
-						Buffer.BlockCopy(samplesArray, 0, sampleDatas, 0, sampleDatas.Length);
-
-						foreach (var sampleData in sampleDatas)
-							data.Enqueue(sampleData);
-					}
-				}
-
-				return true;
-			}
 		}
 	}
 }
