@@ -26,7 +26,7 @@ namespace OpenRA
 	{
 		IPlatformWindow CreateWindow(Size size, WindowMode windowMode, float scaleModifier, int batchSize, int videoDisplay, GLProfile profile);
 		ISoundEngine CreateSound(string device);
-		IFont CreateFont(byte[] data);
+		IFont CreateFont(bool isTrueType, byte[] data);
 	}
 
 	public interface IHardwareCursor : IDisposable { }

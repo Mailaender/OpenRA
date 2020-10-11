@@ -34,9 +34,12 @@ namespace OpenRA.Platforms.Default
 			}
 		}
 
-		public IFont CreateFont(byte[] data)
+		public IFont CreateFont(bool isTrueType, byte[] data)
 		{
-			return new FreeTypeFont(data);
+			if (isTrueType)
+				return new FreeTypeFont(data);
+			else
+				return new WestwoodFont(data); // TODO move this mod code
 		}
 	}
 }

@@ -38,7 +38,7 @@ namespace OpenRA.Graphics
 			this.size = size;
 			this.builder = builder;
 
-			font = Game.Renderer.CreateFont(data);
+			font = Game.Renderer.CreateFont(name.EndsWith(".ttf"), data);
 			glyphs = new Cache<char, GlyphInfo>(CreateGlyph);
 			contrastGlyphs = new Cache<(char, int), Sprite>(CreateContrastGlyph);
 			dilationElements = new Cache<int, float[]>(CreateCircularWeightMap);

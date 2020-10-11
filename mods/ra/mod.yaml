@@ -173,37 +173,37 @@ ChromeMetrics:
 
 Fonts:
 	Tiny:
-		Font: common|FreeSans.ttf
+		Font: vcr.fnt
 		Size: 10
-		Ascender: 8
+		Ascender: -8
 	TinyBold:
-		Font: common|FreeSansBold.ttf
+		Font: vcr.fnt
 		Size: 10
-		Ascender: 8
+		Ascender: -8
 	Small:
-		Font: common|FreeSans.ttf
+		Font: vcr.fnt
 		Size: 12
-		Ascender: 9
+		Ascender: -9
 	Regular:
-		Font: common|FreeSans.ttf
-		Size: 14
+		Font: vcr.fnt
+		Size: -14
 		Ascender: 11
 	Bold:
-		Font: common|FreeSansBold.ttf
+		Font: vcr.fnt
 		Size: 14
-		Ascender: 11
+		Ascender: -11
 	MediumBold:
-		Font: common|FreeSansBold.ttf
+		Font: vcr.fnt
 		Size: 18
-		Ascender: 14
+		Ascender: -14
 	BigBold:
-		Font: common|FreeSansBold.ttf
+		Font: vcr.fnt
 		Size: 24
-		Ascender: 18
+		Ascender: -18
 	Title:
-		Font: ra|ZoodRangmah.ttf
+		Font: vcr.fnt
 		Size: 48
-		Ascender: 26
+		Ascender: -26
 
 Missions:
 	ra|missions.yaml

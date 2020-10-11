@@ -483,9 +483,9 @@ namespace OpenRA
 			get { return Context.GLVersion; }
 		}
 
-		public IFont CreateFont(byte[] data)
+		public IFont CreateFont(bool isTrueType, byte[] data)
 		{
-			return platform.CreateFont(data);
+			return platform.CreateFont(isTrueType, data);
 		}
 
 		public int DisplayCount
