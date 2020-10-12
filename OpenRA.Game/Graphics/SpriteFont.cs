@@ -27,6 +27,7 @@ namespace OpenRA.Graphics
 		readonly Cache<(char C, int Radius), Sprite> contrastGlyphs;
 		readonly Cache<int, float[]> dilationElements;
 
+		bool isTrueType;
 		float deviceScale;
 
 		public SpriteFont(string name, byte[] data, int size, int ascender, float scale, SheetBuilder builder)
@@ -38,7 +39,8 @@ namespace OpenRA.Graphics
 			this.size = size;
 			this.builder = builder;
 
-			font = Game.Renderer.CreateFont(name.EndsWith(".ttf"), data);
+			isTrueType = name.EndsWith(".ttf");
+			font = Game.Renderer.CreateFont(isTrueType, data);
 			glyphs = new Cache<char, GlyphInfo>(CreateGlyph);
 			contrastGlyphs = new Cache<(char, int), Sprite>(CreateContrastGlyph);
 			dilationElements = new Cache<int, float[]>(CreateCircularWeightMap);
@@ -89,10 +91,15 @@ namespace OpenRA.Graphics
 				if (g.Sprite != null)
 				{
 					var contrastSprite = contrastGlyphs[(s, screenContrast)];
-					Game.Renderer.RgbaSpriteRenderer.DrawSpriteWithTint(contrastSprite,
-						(screen + g.Offset - contrastVector) / deviceScale,
-						contrastSprite.Size / deviceScale,
-						tint);
+					if (isTrueType)
+						Game.Renderer.RgbaSpriteRenderer.DrawSpriteWithTint(contrastSprite,
+							(screen + g.Offset - contrastVector) / deviceScale,
+							contrastSprite.Size / deviceScale,
+							tint);
+					else
+						Game.Renderer.RgbaSpriteRenderer.DrawSprite(contrastSprite,
+							(screen + g.Offset - contrastVector) / deviceScale,
+							contrastSprite.Size / deviceScale);
 				}
 
 				screen += new int2((int)(g.Advance + 0.5f), 0);
@@ -120,10 +127,17 @@ namespace OpenRA.Graphics
 
 				// Convert screen coordinates back to UI coordinates for drawing
 				if (g.Sprite != null)
-					Game.Renderer.RgbaSpriteRenderer.DrawSpriteWithTint(g.Sprite,
-					(screen + g.Offset).ToFloat2() / deviceScale,
-					g.Sprite.Size / deviceScale,
-					tint);
+				{
+					if (isTrueType)
+						Game.Renderer.RgbaSpriteRenderer.DrawSpriteWithTint(g.Sprite,
+							(screen + g.Offset).ToFloat2() / deviceScale,
+							g.Sprite.Size / deviceScale,
+							tint);
+					else
+						Game.Renderer.RgbaSpriteRenderer.DrawSprite(g.Sprite,
+							(screen + g.Offset).ToFloat2() / deviceScale,
+							g.Sprite.Size / deviceScale);
+				}
 
 				screen += new int2((int)(g.Advance + 0.5f), 0);
 			}
@@ -172,12 +186,19 @@ namespace OpenRA.Graphics
 
 					// Offset rotated glyph to align the top-left corner with the screen pixel grid
 					var screenOffset = new float2((int)(ra.X * deviceScale + 0.5f), (int)(ra.Y * deviceScale + 0.5f)) / deviceScale - ra;
-					Game.Renderer.RgbaSpriteRenderer.DrawSpriteWithTint(g.Sprite,
-						ra + screenOffset,
-						rb + screenOffset,
-						rc + screenOffset,
-						rd + screenOffset,
-						tint);
+					if (isTrueType)
+						Game.Renderer.RgbaSpriteRenderer.DrawSpriteWithTint(g.Sprite,
+							ra + screenOffset,
+							rb + screenOffset,
+							rc + screenOffset,
+							rd + screenOffset,
+							tint);
+					else
+						Game.Renderer.RgbaSpriteRenderer.DrawSprite(g.Sprite,
+							ra + screenOffset,
+							rb + screenOffset,
+							rc + screenOffset,
+							rd + screenOffset);
 				}
 
 				p += new float2(g.Advance / deviceScale, 0);
