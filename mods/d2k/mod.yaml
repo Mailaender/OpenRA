@@ -194,6 +194,8 @@ SoundFormats: Aud, Wav
 
 SpriteFormats: R8, ShpTD, TmpRA
 
+TerrainFormat: DefaultTerrain
+
 SpriteSequenceFormat: DefaultSpriteSequence
 
 ModelSequenceFormat: PlaceholderModelSequence

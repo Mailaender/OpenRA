@@ -29,6 +29,7 @@ namespace OpenRA
 		public readonly IPackageLoader[] PackageLoaders;
 		public readonly ISoundLoader[] SoundLoaders;
 		public readonly ISpriteLoader[] SpriteLoaders;
+		public readonly ITerrainLoader TerrainLoader;
 		public readonly ISpriteSequenceLoader SpriteSequenceLoader;
 		public readonly IModelSequenceLoader ModelSequenceLoader;
 		public readonly HotkeyManager Hotkeys;
@@ -72,6 +73,14 @@ namespace OpenRA
 			SoundLoaders = ObjectCreator.GetLoaders<ISoundLoader>(Manifest.SoundFormats, "sound");
 			SpriteLoaders = ObjectCreator.GetLoaders<ISpriteLoader>(Manifest.SpriteFormats, "sprite");
 
+			var terrainFormat = Manifest.Get<TerrainFormat>();
+			var terrainLoader = ObjectCreator.FindType(terrainFormat.Type + "Loader");
+			var terrainCtor = terrainLoader?.GetConstructor(new[] { typeof(ModData) });
+			if (terrainLoader == null || !terrainLoader.GetInterfaces().Contains(typeof(ITerrainLoader)) || terrainCtor == null)
+				throw new InvalidOperationException("Unable to find a terrain loader for type '{0}'.".F(terrainFormat.Type));
+
+			TerrainLoader = (ITerrainLoader)terrainCtor.Invoke(new[] { this });
+
 			var sequenceFormat = Manifest.Get<SpriteSequenceFormat>();
 			var sequenceLoader = ObjectCreator.FindType(sequenceFormat.Type + "Loader");
 			var sequenceCtor = sequenceLoader != null ? sequenceLoader.GetConstructor(new[] { typeof(ModData) }) : null;
@@ -98,7 +107,7 @@ namespace OpenRA
 
 				foreach (var file in Manifest.TileSets)
 				{
-					var t = new TileSet(DefaultFileSystem, file);
+					var t = TerrainLoader.ParseTerrain(DefaultFileSystem, file);
 					items.Add(t.Id, t);
 				}
 
