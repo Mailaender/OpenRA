@@ -486,10 +486,11 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 				foreach (var prefix in source.RegistryPrefixes)
 				{
-					var path = Microsoft.Win32.Registry.GetValue(prefix + source.RegistryKey, source.RegistryValue, null) as string;
-					if (path == null)
+					var value = Microsoft.Win32.Registry.GetValue(prefix + source.RegistryKey, source.RegistryValue, null) as string;
+					if (value == null)
 						continue;
 
+					var path = Path.GetDirectoryName(value);
 					return IsValidSourcePath(path, source) ? path : null;
 				}
 
