@@ -312,8 +312,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 			isLoadError = false;
 
-			try
-			{
+	
 				currentPackage = package;
 				currentFilename = filename;
 				var prefix = "";
@@ -349,15 +348,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					frameSlider.MaximumValue = (float)currentSprites.Length - 1;
 					frameSlider.Ticks = currentSprites.Length;
 				}
-			}
-			catch (Exception ex)
-			{
-				isLoadError = true;
-				Log.AddChannel("assetbrowser", "assetbrowser.log");
-				Log.Write("assetbrowser", "Error reading {0}:{3} {1}{3}{2}", filename, ex.Message, ex.StackTrace, Environment.NewLine);
+			
 
-				return false;
-			}
 
 			return true;
 		}

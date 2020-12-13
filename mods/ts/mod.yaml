@@ -248,7 +248,7 @@ SupportsMapsFrom: ts
 
 SoundFormats: Aud, Wav
 
-SpriteFormats: ShpTS, TmpTS, ShpTD
+SpriteFormats: ShpTS, TmpTS, ShpTD, Pcx
 
 SpriteSequenceFormat: TilesetSpecificSpriteSequence
 	TilesetExtensions:
@@ -261,7 +261,7 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 ModelSequenceFormat: VoxelModelSequence
 
 AssetBrowser:
-	SupportedExtensions: .shp, .tem, .sno, .vqa
+	SupportedExtensions: .shp, .tem, .sno, .vqa, .pcx
 
 GameSpeeds:
 	slowest:
