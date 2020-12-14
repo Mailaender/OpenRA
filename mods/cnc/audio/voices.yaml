@@ -5,7 +5,7 @@ GenericVoice:
 	Voices:
 		Select: await1,ready,report1,yessir1
 		Action: ackno,affirm1,noprob,ritaway,roger,ugotit
-		Die: nuyell1,nuyell4,nuyell5,nuyell6
+		Die: nuyell1
 		Burned: yell1
 		Zapped: nuyell3
 		Poisoned: nuyell12
@@ -24,7 +24,7 @@ CivilianMaleVoice:
 	Voices:
 		Select: guyyeah1
 		Action: guyokay1
-		Die: nuyell1,nuyell4,nuyell5,nuyell6
+		Die: nuyell1
 		Burned: yell1
 		Zapped: nuyell3
 		Poisoned: nuyell12
@@ -33,7 +33,7 @@ CivilianFemaleVoice:
 	Voices:
 		Select: girlyeah
 		Action: girlokay
-		Die: nuyell1,nuyell4,nuyell5,nuyell6
+		Die: nuyell1
 		Burned: yell1
 		Zapped: nuyell3
 		Poisoned: nuyell12
@@ -43,7 +43,7 @@ MoebiusVoice:
 		Select: mcomnd1,mhello1,myes1,mhmmm1,mthanks1
 		Move: myesyes1,mplan3,mtiber1,mcourse1
 		Action: myesyes1,mplan3,mtiber1,mcourse1
-		Die: nuyell1,nuyell4,nuyell5,nuyell6
+		Die: nuyell1
 		Burned: yell1
 		Zapped: nuyell3
 		Poisoned: nuyell12
