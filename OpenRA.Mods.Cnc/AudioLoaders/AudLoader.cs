@@ -54,7 +54,7 @@ namespace OpenRA.Mods.Cnc.AudioLoaders
 	public sealed class AudFormat : ISoundFormat
 	{
 		public int Channels { get { return 1; } }
-		public int SampleBits { get { return 16; } }
+		public int SampleBits { get { return sampleBits; } }
 		public int SampleRate { get { return sampleRate; } }
 		public float LengthInSeconds { get { return AudReader.SoundLength(sourceStream); } }
 		public Stream GetPCMInputStream() { return audStreamFactory(); }
@@ -62,13 +62,14 @@ namespace OpenRA.Mods.Cnc.AudioLoaders
 
 		readonly Stream sourceStream;
 		readonly Func<Stream> audStreamFactory;
+		readonly int sampleBits;
 		readonly int sampleRate;
 
 		public AudFormat(Stream stream)
 		{
 			sourceStream = stream;
 
-			if (!AudReader.LoadSound(stream, out audStreamFactory, out sampleRate))
+			if (!AudReader.LoadSound(stream, out audStreamFactory, out sampleRate, out sampleBits))
 				throw new InvalidDataException();
 		}
 	}
