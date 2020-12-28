@@ -31,6 +31,9 @@ namespace OpenRA
 		[Desc("Automatically start playing the given map.")]
 		public string Map;
 
+		[Desc("Run map scripts in a sandbox environment for safety. Disable for improved debugging.")]
+		public bool LuaSandbox = true;
+
 		public LaunchArguments(Arguments args)
 		{
 			if (args == null)

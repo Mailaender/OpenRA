@@ -171,7 +171,7 @@ namespace OpenRA.Scripting
 
 			runtime.Globals["MaxUserScriptInstructions"] = MaxUserScriptInstructions;
 
-			using (var registerGlobal = (LuaFunction)runtime.Globals["RegisterSandboxedGlobal"])
+			using (var registerGlobal = (LuaFunction)runtime.Globals["RegisterGlobal"])
 			{
 				using (var fn = runtime.CreateFunctionFromDelegate((Action<string>)LogDebugMessage))
 					registerGlobal.Call("print", fn).Dispose();
@@ -198,10 +198,11 @@ namespace OpenRA.Scripting
 			// System functions do not count towards the memory limit
 			runtime.MaxMemoryUse = runtime.MemoryUse + MaxUserScriptMemory;
 
-			using (var loadScript = (LuaFunction)runtime.Globals["ExecuteSandboxedScript"])
+			using (var loadScript = (LuaFunction)runtime.Globals["ExecuteScript"])
 			{
+				var sandboxed = Game.ModData.LoadScreen.Launch.LuaSandbox;
 				foreach (var s in scripts)
-					loadScript.Call(s, world.Map.Open(s).ReadAllText()).Dispose();
+					loadScript.Call(s, world.Map.Open(s).ReadAllText(), sandboxed).Dispose();
 			}
 		}
 
@@ -233,7 +234,7 @@ namespace OpenRA.Scripting
 
 		public void RegisterMapActor(string name, Actor a)
 		{
-			using (var registerGlobal = (LuaFunction)runtime.Globals["RegisterSandboxedGlobal"])
+			using (var registerGlobal = (LuaFunction)runtime.Globals["RegisterGlobal"])
 			{
 				if (runtime.Globals.ContainsKey(name))
 					throw new LuaException("The global name '{0}' is reserved, and may not be used by a map actor".F(name));

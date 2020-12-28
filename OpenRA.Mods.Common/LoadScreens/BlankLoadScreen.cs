@@ -21,8 +21,8 @@ namespace OpenRA.Mods.Common.LoadScreens
 {
 	public class BlankLoadScreen : ILoadScreen
 	{
-		public LaunchArguments Launch;
 		protected ModData ModData { get; private set; }
+		public LaunchArguments Launch { get; private set; }
 
 		bool initialized;
 

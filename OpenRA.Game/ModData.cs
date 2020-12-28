@@ -185,6 +185,9 @@ namespace OpenRA
 
 	public interface ILoadScreen : IDisposable
 	{
+		/// <summary>Command line parameters that are not persisted.</summary>
+		LaunchArguments Launch { get; }
+
 		/// <summary>Initializes the loadscreen with yaml data from the LoadScreen block in mod.yaml.</summary>
 		void Init(ModData m, Dictionary<string, string> info);
 
