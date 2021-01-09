@@ -36,7 +36,9 @@ namespace OpenRA.Mods.Common.Traits
 
 		readonly HashSet<CPos> dirty = new HashSet<CPos>();
 		readonly Queue<CPos> cleanDirty = new Queue<CPos>();
-		TerrainSpriteLayer spriteLayer;
+		readonly Dictionary<PaletteReference, TerrainSpriteLayer> spriteLayers = new Dictionary<PaletteReference, TerrainSpriteLayer>();
+
+		Dictionary<int, ResourceType> resources;
 
 		public ResourceRenderer(Actor self, ResourceRendererInfo info)
 		{
@@ -56,23 +58,33 @@ namespace OpenRA.Mods.Common.Traits
 
 		void IWorldLoaded.WorldLoaded(World w, WorldRenderer wr)
 		{
-			var resources = w.WorldActor.TraitsImplementing<ResourceType>()
+			resources = w.WorldActor.TraitsImplementing<ResourceType>()
 				.ToDictionary(r => r.Info.ResourceType, r => r);
 
 			foreach (var r in resources)
 			{
-				if (spriteLayer == null)
+				var spriteSequence = r.Value.Variants.First().Value;
+				var layer = spriteLayers.GetOrAdd(r.Value.Palette, pal =>
 				{
-					var first = r.Value.Variants.First().Value.GetSprite(0);
-					var emptySprite = new Sprite(first.Sheet, Rectangle.Empty, TextureChannel.Alpha);
-					spriteLayer = new TerrainSpriteLayer(w, wr, emptySprite, first.BlendMode, wr.World.Type != WorldType.Editor);
-				}
+					var sprite = spriteSequence.GetSprite(0);
+					var emptySprite = new Sprite(sprite.Sheet, Rectangle.Empty, TextureChannel.Alpha);
+					return new TerrainSpriteLayer(w, wr, emptySprite, sprite.BlendMode, wr.World.Type != WorldType.Editor);
+				});
 
 				// All resources must share a sheet and blend mode
 				var sprites = r.Value.Variants.Values.SelectMany(v => Exts.MakeArray(v.Length, x => v.GetSprite(x)));
-				if (sprites.Any(s => s.BlendMode != spriteLayer.BlendMode))
+				if (sprites.Any(s => spriteLayers.Any(sl => sl.Value.BlendMode != s.BlendMode)))
 					throw new InvalidDataException("Resource sprites specify different blend modes. "
 						+ "Try using different ResourceRenderer traits for resource types that use different blend modes.");
+
+				if (spriteSequence.ShadowStart > 0)
+				{
+					var shadowLayer = spriteLayers.GetOrAdd(r.Value.ShadowPalette, pal =>
+					{
+						var shadow = spriteSequence.GetShadow(0, WAngle.Zero);
+						return new TerrainSpriteLayer(w, wr, shadow, shadow.BlendMode, wr.World.Type != WorldType.Editor);
+					});
+				}
 			}
 
 			// Initialize the RenderContent with the initial map state
@@ -92,16 +104,25 @@ namespace OpenRA.Mods.Common.Traits
 
 		protected void UpdateSpriteLayers(CPos cell, ISpriteSequence sequence, int frame, PaletteReference palette)
 		{
-			// resource.Type is meaningless (and may be null) if resource.Sequence is null
-			if (sequence != null)
-				spriteLayer.Update(cell, sequence, palette, frame);
-			else
-				spriteLayer.Clear(cell);
+			foreach (var kv in spriteLayers)
+			{
+				// resource.Type is meaningless (and may be null) if resource.Sequence is null
+				if (sequence == null || palette == null)
+					kv.Value.Clear(cell);
+				else if (palette == kv.Key)
+				{
+					if (sequence.ShadowStart > 0 && resources.Any(r => r.Value.ShadowPalette == kv.Key))
+						kv.Value.Update(cell, sequence.GetShadow(frame, WAngle.Zero), palette, sequence.IgnoreWorldTint);
+					else
+						kv.Value.Update(cell, sequence.GetSprite(frame), palette, sequence.IgnoreWorldTint);
+				}
+			}
 		}
 
 		void IRenderOverlay.Render(WorldRenderer wr)
 		{
-			spriteLayer.Draw(wr.Viewport);
+			foreach (var spriteLayer in spriteLayers)
+				spriteLayer.Value.Draw(wr.Viewport);
 		}
 
 		void ITickRender.TickRender(WorldRenderer wr, Actor self)
@@ -155,6 +176,9 @@ namespace OpenRA.Mods.Common.Traits
 				var frame = int2.Lerp(0, sprites.Length - 1, density, maxDensity);
 
 				UpdateSpriteLayers(cell, sprites, frame, type.Palette);
+
+				if (sprites.ShadowStart > 0)
+					UpdateSpriteLayers(cell, sprites, frame, type.ShadowPalette);
 			}
 			else
 				UpdateSpriteLayers(cell, null, 0, null);
@@ -166,7 +190,8 @@ namespace OpenRA.Mods.Common.Traits
 			if (disposed)
 				return;
 
-			spriteLayer.Dispose();
+			foreach (var spriteLayer in spriteLayers)
+				spriteLayer.Value.Dispose();
 
 			ResourceLayer.CellChanged -= AddDirtyCell;
 
