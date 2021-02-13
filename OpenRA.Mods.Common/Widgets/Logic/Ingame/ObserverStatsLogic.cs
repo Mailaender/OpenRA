@@ -305,6 +305,9 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			var armyText = new CachedTransform<int, string>(i => "$" + i);
 			template.Get<LabelWidget>("ARMY_VALUE").GetText = () => armyText.Update(stats.ArmyValue);
 
+			var visionText = new CachedTransform<int, string>(i => Vision(i));
+			template.Get<LabelWidget>("VISION").GetText = () => visionText.Update(player.Shroud.RevealedCells);
+
 			return template;
 		}
 
@@ -531,6 +534,11 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		string AverageOrdersPerMinute(double orders)
 		{
 			return (world.WorldTick == 0 ? 0 : orders / (world.WorldTick / 1500.0)).ToString("F1");
+		}
+
+		string Vision(int revealedCells)
+		{
+			return (revealedCells / (float)world.Map.ProjectedCells.Length * 100).ToString("F0") + "%";
 		}
 
 		static Color GetPowerColor(PowerState state)

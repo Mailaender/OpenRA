@@ -68,6 +68,7 @@ namespace OpenRA.Traits
 	{
 		public enum SourceType : byte { PassiveVisibility, Shroud, Visibility }
 		public event Action<PPos> OnShroudChanged;
+		public int RevealedCells { get; private set; }
 
 		enum ShroudCellType : byte { Shroud, Fog, Visible }
 		class ShroudSource
@@ -82,7 +83,6 @@ namespace OpenRA.Traits
 			}
 		}
 
-		readonly Actor self;
 		readonly ShroudInfo info;
 		readonly Map map;
 
@@ -130,7 +130,6 @@ namespace OpenRA.Traits
 
 		public Shroud(Actor self, ShroudInfo info)
 		{
-			this.self = self;
 			this.info = info;
 			map = self.World.Map;
 
@@ -200,6 +199,14 @@ namespace OpenRA.Traits
 					var uv = touched.PPosFromIndex(index);
 					if (map.Contains(uv))
 						OnShroudChanged(uv);
+
+					if (type == ShroudCellType.Visible)
+						RevealedCells++;
+					else if (oldResolvedType == ShroudCellType.Visible)
+						RevealedCells--;
+
+					if (self.Owner.WinState == WinState.Lost)
+						RevealedCells = 0;
 				}
 			}
 
