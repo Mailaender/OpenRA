@@ -280,12 +280,14 @@ saboteur:
 	Demolition:
 		DetonationDelay: 0
 		Flashes: 0
-		EnterBehaviour: Suicide
+		EnterBehaviour: Dispose
 	-RevealOnFire:
 	GrantChargeDrainCondition:
+		MaxChargePoints: 125
+		ChargeTicksPerPoint: 10
+		DrainTicksPerPoint: 3
+		MinActivationPoints: 125
 		DeployedCondition: deployed
-		ChargeTicks: 1250
-		DrainTicks: 375
 	Cloak:
 		RequiresCondition: deployed
 		InitialDelay: 0
