@@ -120,8 +120,8 @@ PBOX:
 	Valued:
 		Cost: 10000
 	Tooltip:
-		Name: Super Tank
-		GenericName: Super Tank
+		Name: supertank
+		GenericName: tank
 	Health:
 		HP: 2000000
 	Armor:

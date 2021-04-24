@@ -39,7 +39,8 @@ namespace OpenRA.Mods.Common.Widgets
 
 		public LabelWidget()
 		{
-			GetText = () => Text;
+			var translation = new CachedTransform<string, string>(c => Ui.Translate(c));
+			GetText = () => translation.Update(Text);
 			GetColor = () => TextColor;
 			GetContrastColorDark = () => ContrastColorDark;
 			GetContrastColorLight = () => ContrastColorLight;

@@ -155,6 +155,10 @@ Hotkeys:
 	common|hotkeys/viewport.yaml
 	cnc|hotkeys.yaml
 
+Translations:
+	common|languages/en.ftl
+	common|languages/de.ftl
+
 LoadScreen: CncLoadScreen
 	Image: cnc|uibits/chrome.png
 	Image2x: cnc|uibits/chrome-2x.png

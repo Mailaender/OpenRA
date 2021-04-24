@@ -445,3 +445,5 @@ Actors:
 Rules: ra|rules/campaign-rules.yaml, ra|rules/campaign-tooltips.yaml, ra|rules/campaign-palettes.yaml, rules.yaml
 
 Weapons: weapons.yaml
+
+Translations: en.ftl, de.ftl

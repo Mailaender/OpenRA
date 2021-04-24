@@ -169,7 +169,8 @@ namespace OpenRA.Mods.Common.Widgets
 				if (group.Length > 0 && headerTemplate != null)
 				{
 					var header = ScrollItemWidget.Setup(headerTemplate, () => true, () => { });
-					header.Get<LabelWidget>("LABEL").GetText = () => group;
+					var text = Ui.Translate(group);
+					header.Get<LabelWidget>("LABEL").GetText = () => text;
 					panel.AddChild(header);
 				}
 

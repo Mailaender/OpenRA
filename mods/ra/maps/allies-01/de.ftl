@@ -1,0 +1,10 @@
+tanya-rules-of-engagement = Die Einsatzregeln besagen, dass ich einen expliziten Befehl zum Feuern benötige, Commander.
+extract-einstein-helicopter = Warten Sie auf den Helikopter und extrahieren Sie Einstein.
+find-einstein = Finden Sie Einstein.
+tanya-survive = Tanya muss überleben.
+einstein-surive = Einstein muss überleben.
+protect-civilians = Beschützen Sie alle Zivilisten.
+objective-failed = Einsatzziel fehlgeschlagen
+objective-completed = Einsatzziel abgeschlossen
+new-primary-objective = Neues Primärziel
+new-secondary-objective = Neues Sekundärziel

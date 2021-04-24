@@ -1,0 +1,10 @@
+tanya-rules-of-engagement = According to the rules of engagement I need your explicit orders to fire, Commander!
+extract-einstein-helicopter = Wait for the helicopter and extract Einstein.
+find-einstein = Find Einstein.
+tanya-survive = Tanya must survive.
+einstein-surive = Einstein must survive.
+protect-civilians = Protect all civilians.
+objective-failed = Objective failed
+objective-completed = Objective completed
+new-primary-objective = New primary objective
+new-secondary-objective = New secondary objective

@@ -1010,7 +1010,7 @@ WEAP:
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: War Factory
+		Name: war-factory
 	Building:
 		Footprint: xxx xxx ===
 		Dimensions: 3,3
@@ -1676,7 +1676,7 @@ STEK:
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Soviet Tech Center
+		Name: soviet-tech-center
 	ProvidesPrerequisite:
 		Prerequisite: techcenter
 	Building:
@@ -1960,7 +1960,7 @@ FIX:
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: Service Depot
+		Name: service-depot
 	Building:
 		Footprint: _+_ +++ _+_
 		Dimensions: 3,3

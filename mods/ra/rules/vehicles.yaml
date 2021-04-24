@@ -189,12 +189,12 @@ V2RL:
 		Queue: Vehicle
 		BuildPaletteOrder: 320
 		Prerequisites: fix, stek, ~vehicles.soviet, ~techlevel.high
-		Description: Big and slow tank, with anti-air capability.\nCan crush concrete walls.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Nothing
+		Description: mammoth-description
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Mammoth Tank
-		GenericName: Tank
+		Name: mammoth
+		GenericName: tank
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:

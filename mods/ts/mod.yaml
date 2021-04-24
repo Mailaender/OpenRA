@@ -198,6 +198,10 @@ Hotkeys:
 	common|hotkeys/viewport.yaml
 	ts|hotkeys.yaml
 
+Translations:
+	common|languages/en.ftl
+	common|languages/de.ftl
+
 LoadScreen: LogoStripeLoadScreen
 	Image: ts|uibits/loadscreen.png
 	Text: Updating EVA installation..., Changing perspective...

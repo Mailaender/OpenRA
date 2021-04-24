@@ -201,7 +201,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					() => client.Faction == factionId,
 					() => orderManager.IssueOrder(Order.Command("faction {0} {1}".F(client.Index, factionId))));
 				var faction = factions[factionId];
-				item.Get<LabelWidget>("LABEL").GetText = () => faction.Name;
+				var factionName = Ui.Translate(faction.Name);
+				item.Get<LabelWidget>("LABEL").GetText = () => factionName;
 				var flag = item.Get<ImageWidget>("FLAG");
 				flag.GetImageCollection = () => "flags";
 				flag.GetImageName = () => factionId;
