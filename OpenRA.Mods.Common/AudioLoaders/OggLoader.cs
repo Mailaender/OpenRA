@@ -51,7 +51,7 @@ namespace OpenRA.Mods.Common.AudioLoaders
 		public int Channels { get { return channels; } }
 		public int SampleBits { get { return sampleBits; } }
 		public int SampleRate { get { return sampleRate; } }
-		public float LengthInSeconds { get { return OggReader.SoundLength(sourceStream); } }
+		public float LengthInSeconds { get { return length; } }
 		public Stream GetPCMInputStream() { return oggStreamFactory(); }
 		public void Dispose() { sourceStream.Dispose(); }
 
@@ -60,12 +60,13 @@ namespace OpenRA.Mods.Common.AudioLoaders
 		readonly short channels;
 		readonly int sampleBits;
 		readonly int sampleRate;
+		readonly float length;
 
 		public OggFormat(Stream stream)
 		{
 			sourceStream = stream;
 
-			if (!OggReader.LoadSound(stream, out oggStreamFactory, out channels, out sampleBits, out sampleRate))
+			if (!OggReader.LoadSound(stream, out oggStreamFactory, out channels, out sampleBits, out sampleRate, out length))
 				throw new InvalidDataException();
 		}
 	}

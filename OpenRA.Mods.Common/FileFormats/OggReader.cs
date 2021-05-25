@@ -19,12 +19,13 @@ namespace OpenRA.Mods.Common.FileFormats
 {
 	public static class OggReader
 	{
-		public static bool LoadSound(Stream s, out Func<Stream> result, out short channels, out int sampleBits, out int sampleRate)
+		public static bool LoadSound(Stream s, out Func<Stream> result, out short channels, out int sampleBits, out int sampleRate, out float length)
 		{
 			result = null;
 			channels = -1;
 			sampleBits = -1;
 			sampleRate = -1;
+			length = -1;
 
 			var start = s.Position;
 			var signature = s.ReadASCII(4);
@@ -36,43 +37,100 @@ namespace OpenRA.Mods.Common.FileFormats
 			channels = (short)vorbis.Channels;
 			sampleRate = vorbis.SampleRate;
 			sampleBits = vorbis.NominalBitrate;
+			length = (float)vorbis.TotalTime.TotalSeconds;
 
 			result = () =>
 			{
-				s.Seek(0, SeekOrigin.Begin);
-				var audioStream = SegmentStream.CreateWithoutOwningStream(s, 0, (int)s.Length);
-				return new OggStream(s);
+				return new OggStream(vorbis);
 			};
 
 			return true;
 		}
 
-		public static float SoundLength(Stream s)
+		public class OggStream : Stream
 		{
-			var vorbis = new VorbisReader(s);
-			return (float)vorbis.TotalTime.TotalSeconds;
-		}
+			readonly VorbisReader reader;
+			float[] conversionBuffer;
 
-		sealed class OggStream : ReadOnlyAdapterStream
-		{
-			const int DefaultBufferSize = 2;
-			const int DefaultBufferCount = 1;
-
-			readonly float[] readSampleBuffer;
-
-			public OggStream(Stream stream)
-				: base(stream)
+			public OggStream(VorbisReader reader)
 			{
-				readSampleBuffer = new float[DefaultBufferSize];
+				this.reader = reader;
 			}
 
-			protected override bool BufferData(Stream baseStream, Queue<byte> data)
+			public override bool CanRead => !reader.IsEndOfStream;
+			public override bool CanSeek => false;
+			public override bool CanWrite => false;
+
+			public override long Length => reader.TotalSamples;
+
+			public override long Position
 			{
-				var reader = new VorbisReader(baseStream);
-				var readSamples = reader.ReadSamples(readSampleBuffer, 0, DefaultBufferCount);
-				foreach (var buffer in readSampleBuffer)
-					data.Enqueue((byte)buffer);
-				return readSamples == 0;
+				get => reader.SamplePosition;
+				set => throw new NotImplementedException();
+			}
+
+			public override int Read(byte[] buffer, int offset, int count)
+			{
+				// adjust count so it is in floats instead of bytes
+				count /= sizeof(float);
+
+				// make sure we don't have an odd count
+				count -= count % reader.Channels;
+
+				// get the buffer, creating a new one if none exists or the existing one is too small
+				var cb = conversionBuffer ?? (conversionBuffer = new float[count]);
+				if (cb.Length < count)
+				{
+					cb = (conversionBuffer = new float[count]);
+				}
+
+				// let Read(float[], int, int) do the actual reading; adjust count back to bytes
+				int cnt = Read(cb, 0, count) * sizeof(float);
+
+				// move the data back to the request buffer
+				Buffer.BlockCopy(cb, 0, buffer, offset, cnt);
+
+
+				System.Console.WriteLine(cnt);
+
+				// done!
+				return cnt;
+			}
+
+			public int Read(float[] buffer, int offset, int count)
+			{
+				var cnt = reader.ReadSamples(buffer, offset, count);
+				if (cnt == 0)
+				{
+					if (reader.IsEndOfStream)
+					{
+						if (reader.StreamIndex < reader.Streams.Count - 1)
+						{
+							if (reader.SwitchStreams(reader.StreamIndex + 1))
+							{
+								return 0;
+							}
+							else
+							{
+								return Read(buffer, offset, count);
+							}
+						}
+					}
+				}
+
+				return cnt;
+			}
+
+			public override void Flush() { throw new NotImplementedException(); }
+			public override long Seek(long offset, SeekOrigin origin) { throw new NotImplementedException(); }
+			public override void SetLength(long value) { throw new NotImplementedException(); }
+			public override void Write(byte[] buffer, int offset, int count) { throw new NotImplementedException(); }
+
+			protected override void Dispose(bool disposing)
+			{
+				if (disposing)
+					reader.Dispose();
+				base.Dispose(disposing);
 			}
 		}
 	}
