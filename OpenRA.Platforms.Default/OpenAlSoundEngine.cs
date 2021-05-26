@@ -498,30 +498,37 @@ namespace OpenRA.Platforms.Default
 
 			playTask = Task.Run(async () =>
 			{
-				MemoryStream memoryStream;
+				MemoryStream memoryStream = null;
 				using (stream)
 				{
 					try
 					{
 						memoryStream = new MemoryStream((int)stream.Length);
 					}
-					catch (NotSupportedException)
+					catch (Exception e)
 					{
 						// Fallback for stream types that don't support Length.
-						memoryStream = new MemoryStream();
+						if (e is NotSupportedException)
+							memoryStream = new MemoryStream();
+						else
+							System.Console.WriteLine(e);
 					}
 
 					try
 					{
 						await stream.CopyToAsync(memoryStream, 81920, cts.Token);
 					}
-					catch (TaskCanceledException)
+					catch (Exception e)
 					{
-						// Sound was stopped early, cleanup the unused buffer and exit.
+						if (e is TaskCanceledException){
+// Sound was stopped early, cleanup the unused buffer and exit.
 						AL10.alSourceStop(source);
 						AL10.alSourcei(source, AL10.AL_BUFFER, 0);
 						silentSource.Dispose();
 						return;
+						} else
+							System.Console.WriteLine(e);
+
 					}
 				}
 

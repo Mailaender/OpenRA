@@ -42,7 +42,7 @@ namespace OpenRA.Mods.Common.AudioLoaders
 		public int Channels => reader.Channels;
 		public int SampleRate => reader.SampleRate;
 		public float LengthInSeconds => (float)reader.TotalTime.TotalSeconds;
-		public Stream GetPCMInputStream() { return new OggStream(stream); }
+		public Stream GetPCMInputStream() { return new OggStream(new OggFormat(this)); }
 		public void Dispose() { reader.Dispose(); }
 
 		readonly VorbisReader reader;
@@ -50,34 +50,38 @@ namespace OpenRA.Mods.Common.AudioLoaders
 
 		public OggFormat(Stream stream)
 		{
-			if (stream.ReadASCII(4) != "OggS")
-				throw new InvalidDataException("Ogg header not recognized");
-
-			stream.Position = 0;
 			this.stream = stream;
+			reader = new VorbisReader(stream);
+		}
+
+		OggFormat(OggFormat cloneFrom)
+		{
+			stream = SegmentStream.CreateWithoutOwningStream(cloneFrom.stream, 0, (int)cloneFrom.stream.Length);
 			reader = new VorbisReader(stream);
 		}
 
 		public class OggStream : Stream
 		{
-			readonly VorbisReader reader;
-			readonly Stream clone;
+			readonly OggFormat format;
 
-			public OggStream(Stream stream)
+			// This buffer can be static because it can only be used by 1 instance per thread
+        [ThreadStatic]
+        static float[] conversionBuffer = null;
+
+			public OggStream(OggFormat format)
 			{
-				clone = SegmentStream.CreateWithoutOwningStream(stream, 0, (int)stream.Length);
-				reader = new VorbisReader(clone);
+				this.format = format;
 			}
 
-			public override bool CanRead => !reader.IsEndOfStream;
+			public override bool CanRead => !format.reader.IsEndOfStream;
 			public override bool CanSeek => false;
 			public override bool CanWrite => false;
 
-			public override long Length => reader.TotalSamples;
+			public override long Length => format.reader.TotalSamples;
 
 			public override long Position
 			{
-				get => reader.SamplePosition;
+				get => format.reader.SamplePosition;
 				set => throw new NotImplementedException();
 			}
 
@@ -87,11 +91,14 @@ namespace OpenRA.Mods.Common.AudioLoaders
 				count /= sizeof(float);
 
 				// make sure we don't have an odd count
-				count -= count % reader.Channels;
+				count -= count % format.reader.Channels;
 
 				// get the buffer, creating a new one if none exists or the existing one is too small
-				var cb = new float[count];
-
+				var cb = conversionBuffer ?? (conversionBuffer = new float[count]);
+				if (cb.Length < count)
+				{
+					cb = (conversionBuffer = new float[count]);
+				}
 
 				// let Read(float[], int, int) do the actual reading; adjust count back to bytes
 				var cnt = Read(cb, 0, count) * sizeof(float);
@@ -105,8 +112,25 @@ namespace OpenRA.Mods.Common.AudioLoaders
 
 			public int Read(float[] buffer, int offset, int count)
 			{
-				var cnt = reader.ReadSamples(buffer, offset, count);
-				return cnt;
+				var cnt = format.reader.ReadSamples(buffer, offset, count);
+				if (cnt == 0)
+				{
+					if (format.reader.IsEndOfStream)
+					{
+						if (format.reader.StreamIndex < format.reader.Streams.Count - 1)
+						{
+							if (format.reader.SwitchStreams(format.reader.StreamIndex + 1))
+							{
+								return 0;
+							}
+							else
+							{
+								return Read(buffer, offset, count);
+							}
+						}
+					}
+				}
+            return cnt;
 			}
 
 			public override void Flush() { throw new NotImplementedException(); }
@@ -117,7 +141,7 @@ namespace OpenRA.Mods.Common.AudioLoaders
 			protected override void Dispose(bool disposing)
 			{
 				if (disposing)
-					reader.Dispose();
+					format.reader.Dispose();
 				base.Dispose(disposing);
 			}
 		}
