@@ -3,6 +3,7 @@
     <ProjectReference Include="..\OpenRA.Game\OpenRA.Game.csproj">
       <Private>False</Private>
     </ProjectReference>
+    <PackageReference Include="Concentus" Version="1.1.7" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
     <PackageReference Include="OpenRA-FuzzyLogicLibrary" Version="1.0.1" />
     <PackageReference Include="DiscordRichPresence" Version="1.0.150" />
