@@ -209,6 +209,31 @@ namespace OpenRA.Mods.Common
 			return world.SharedRandom.Next(range[0], range[1]);
 		}
 
+		public static WDist RandomDistance(World world, WDist[] distance)
+		{
+			if (distance.Length == 0)
+				return WDist.Zero;
+
+			if (distance.Length == 1)
+				return distance[0];
+
+			return new WDist(world.SharedRandom.Next(distance[0].Length, distance[1].Length));
+		}
+
+		public static WVec RandomVector(World world, WVec[] vector)
+		{
+			if (vector.Length == 0)
+				return WVec.Zero;
+
+			if (vector.Length == 1)
+				return vector[0];
+
+			var x = world.SharedRandom.Next(vector[0].X, vector[1].X);
+			var y = world.SharedRandom.Next(vector[0].Y, vector[1].Y);
+			var z = world.SharedRandom.Next(vector[0].Z, vector[1].Z);
+			return new WVec(x, y, z);
+		}
+
 		public static string FriendlyTypeName(Type t)
 		{
 			if (t.IsGenericType && t.GetGenericTypeDefinition() == typeof(HashSet<>))

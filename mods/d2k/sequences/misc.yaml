@@ -313,6 +313,13 @@ smoke_m:
 		Length: 3
 		BlendMode: Additive
 
+smoke3:
+	Defaults:
+		ZOffset: 511
+	particles: DATA.R8
+		Start: 3747
+		Length: 7
+
 bombs:
 	idle: DATA.R8
 		Start: 3528
