@@ -38,7 +38,7 @@ namespace OpenRA.Mods.Common.AudioLoaders
 
 	public sealed class OggFormat : ISoundFormat
 	{
-		public int SampleBits => reader.NominalBitrate;
+		public int SampleBits => 16;	// hardcode to 16-bit samples
 		public int Channels => reader.Channels;
 		public int SampleRate => reader.SampleRate;
 		public float LengthInSeconds => (float)reader.TotalTime.TotalSeconds;
@@ -57,7 +57,11 @@ namespace OpenRA.Mods.Common.AudioLoaders
 		OggFormat(OggFormat cloneFrom)
 		{
 			stream = SegmentStream.CreateWithoutOwningStream(cloneFrom.stream, 0, (int)cloneFrom.stream.Length);
-			reader = new VorbisReader(stream);
+			reader = new VorbisReader(stream)
+			{
+				// tell NVorbis to clip samples so we don't have to range-check in Read(byte[], int, int)
+				ClipSamples = true
+			};
 		}
 
 		public class OggStream : Stream
@@ -65,8 +69,8 @@ namespace OpenRA.Mods.Common.AudioLoaders
 			readonly OggFormat format;
 
 			// This buffer can be static because it can only be used by 1 instance per thread
-        [ThreadStatic]
-        static float[] conversionBuffer = null;
+			[ThreadStatic]
+			static float[] conversionBuffer = null;
 
 			public OggStream(OggFormat format)
 			{
@@ -87,8 +91,8 @@ namespace OpenRA.Mods.Common.AudioLoaders
 
 			public override int Read(byte[] buffer, int offset, int count)
 			{
-				// adjust count so it is in floats instead of bytes
-				count /= sizeof(float);
+				// adjust count so it is in 16-bit samples instead of bytes
+				count /= 2;
 
 				// make sure we don't have an odd count
 				count -= count % format.reader.Channels;
@@ -101,13 +105,18 @@ namespace OpenRA.Mods.Common.AudioLoaders
 				}
 
 				// let Read(float[], int, int) do the actual reading; adjust count back to bytes
-				var cnt = Read(cb, 0, count) * sizeof(float);
+				var cnt = Read(cb, 0, count);
 
-				// move the data back to the request buffer
-				Buffer.BlockCopy(cb, 0, buffer, offset, cnt);
+				// move the data back to the request buffer and convert to 16-bit signed samples
+				for (var i = 0; i < cnt; i++)
+				{
+					var val = (short)(cb[i] * 32767);
+					buffer[offset++] = (byte)(val & 255);
+					buffer[offset++] = (byte)(val >> 8);
+				}
 
 				// done!
-				return cnt;
+				return cnt * 2;
 			}
 
 			public int Read(float[] buffer, int offset, int count)
@@ -130,7 +139,8 @@ namespace OpenRA.Mods.Common.AudioLoaders
 						}
 					}
 				}
-            return cnt;
+
+				return cnt;
 			}
 
 			public override void Flush() { throw new NotImplementedException(); }
