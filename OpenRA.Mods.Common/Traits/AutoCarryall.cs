@@ -43,14 +43,14 @@ namespace OpenRA.Mods.Common.Traits
 
 			if (ReserveCarryable(self, carryable))
 			{
-				self.QueueActivity(false, new FerryUnit(self, carryable));
+				self.QueueActivity(false, new FerryUnit(carryable));
 				return true;
 			}
 
 			return false;
 		}
 
-		bool IsBestAutoCarryallForCargo(Actor self, Actor candidateCargo)
+		static bool IsBestAutoCarryallForCargo(Actor self, Actor candidateCargo)
 		{
 			// Find carriers
 			var carriers = self.World.ActorsHavingTrait<AutoCarryall>(c => !c.busy)
@@ -96,7 +96,7 @@ namespace OpenRA.Mods.Common.Traits
 				if (IsBestAutoCarryallForCargo(self, p.Actor) && ReserveCarryable(self, p.Actor))
 				{
 					busy = true;
-					self.QueueActivity(false, new FerryUnit(self, p.Actor));
+					self.QueueActivity(false, new FerryUnit(p.Actor));
 					break;
 				}
 			}
@@ -106,7 +106,7 @@ namespace OpenRA.Mods.Common.Traits
 		{
 			readonly Actor cargo;
 
-			public FerryUnit(Actor self, Actor cargo)
+			public FerryUnit(Actor cargo)
 			{
 				this.cargo = cargo;
 			}

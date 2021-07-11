@@ -115,6 +115,7 @@ ChromeLayout:
 	common|chrome/replaybrowser.yaml
 	common|chrome/gamesave-browser.yaml
 	common|chrome/gamesave-loading.yaml
+	d2k|chrome/encyclopedia.yaml
 
 Weapons:
 	d2k|weapons/debris.yaml
