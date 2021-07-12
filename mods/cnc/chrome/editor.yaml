@@ -584,6 +584,17 @@ Container@EDITOR_WORLD_ROOT:
 					Height: 25
 					Text: History
 					Font: Bold
+		Button@SAVE_BUTTON:
+			X: WINDOW_RIGHT - 1130
+			Y: 5
+			Width: 100
+			Height: 25
+			Text: Save
+			Font: Bold
+			Key: s ctrl
+			TooltipTemplate: BUTTON_TOOLTIP
+			TooltipText: Quick Save
+			TooltipContainer: TOOLTIP_CONTAINER
 		Button@BUILDABLE_BUTTON:
 			X: WINDOW_RIGHT - 1020
 			Y: 5

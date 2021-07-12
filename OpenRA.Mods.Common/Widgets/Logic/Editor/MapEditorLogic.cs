@@ -9,7 +9,9 @@
  */
 #endregion
 
+using System;
 using System.Linq;
+using OpenRA.FileSystem;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Lint;
 using OpenRA.Mods.Common.Traits;
@@ -26,6 +28,31 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		public MapEditorLogic(Widget widget, World world, WorldRenderer worldRenderer)
 		{
 			var editorViewport = widget.Get<EditorViewportControllerWidget>("MAP_EDITOR");
+
+			var saveButton = widget.GetOrNull<ButtonWidget>("SAVE_BUTTON");
+			if (saveButton != null)
+			{
+				saveButton.OnClick = () =>
+				{
+					try
+					{
+						var map = worldRenderer.World.Map;
+						map.Save((IReadWritePackage)map.Package);
+						TextNotificationsManager.Debug("Saved current map");
+					}
+					catch (Exception e)
+					{
+						Log.Write("debug", $"Failed to save map: {e.Message}");
+						Log.Write("debug", e.StackTrace);
+
+						ConfirmationDialogs.ButtonPrompt(
+							title: "Failed to save map",
+							text: "See debug.log for details.",
+							onConfirm: () => { },
+							confirmText: "Ok");
+					}
+				};
+			}
 
 			var gridButton = widget.GetOrNull<ButtonWidget>("GRID_BUTTON");
 			if (gridButton != null)

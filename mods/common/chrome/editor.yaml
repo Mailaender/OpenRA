@@ -557,13 +557,23 @@ Container@EDITOR_WORLD_ROOT:
 			MenuContainer: INGAME_MENU
 			HideIngameUI: true
 			Pause: true
-			Width: 160
+			Width: 60
 			Height: 25
 			Text: Menu
 			TooltipText: Menu
 			TooltipContainer: TOOLTIP_CONTAINER
 			Font: Bold
 			Key: escape
+		Button@SAVE_BUTTON:
+			X: 70
+			Width: 50
+			Height: 25
+			Text: Save
+			Font: Bold
+			Key: s ctrl
+			TooltipTemplate: BUTTON_TOOLTIP
+			TooltipText: Quick Save
+			TooltipContainer: TOOLTIP_CONTAINER
 		Button@COPYPASTE_BUTTON:
 			X: 170
 			Width: 90
