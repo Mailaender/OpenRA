@@ -412,6 +412,10 @@ Container@EDITOR_WORLD_ROOT:
 							Height: PARENT_BOTTOM - 48
 							TopBottomSpacing: 4
 							ItemSpacing: 4
+							ScrollUpKey: PageUp
+							ScrollDownKey: PageDown
+							NextItemKey: Tab
+							PreviousItemKey: Tab SHIFT
 							Children:
 								ScrollItem@TILEPREVIEW_TEMPLATE:
 									Visible: false
@@ -438,6 +442,8 @@ Container@EDITOR_WORLD_ROOT:
 							Height: PARENT_BOTTOM
 							TopBottomSpacing: 4
 							ItemSpacing: 4
+							NextItemKey: Tab
+							PreviousItemKey: Tab SHIFT
 							Children:
 								ScrollItem@LAYERPREVIEW_TEMPLATE:
 									Visible: false
@@ -508,6 +514,10 @@ Container@EDITOR_WORLD_ROOT:
 							Height: PARENT_BOTTOM - 50
 							TopBottomSpacing: 4
 							ItemSpacing: 4
+							ScrollUpKey: PageUp
+							ScrollDownKey: PageDown
+							NextItemKey: Tab
+							PreviousItemKey: Tab SHIFT
 							Children:
 								ScrollItem@ACTORPREVIEW_TEMPLATE:
 									Visible: false
@@ -538,6 +548,10 @@ Container@EDITOR_WORLD_ROOT:
 							CollapseHiddenChildren: True
 							TopBottomSpacing: 4
 							ItemSpacing: 4
+							ScrollUpKey: PageUp
+							ScrollDownKey: PageDown
+							NextItemKey: Tab
+							PreviousItemKey: Tab SHIFT
 							Children:
 								ScrollItem@HISTORY_TEMPLATE:
 									X: 4
@@ -566,24 +580,40 @@ Container@EDITOR_WORLD_ROOT:
 					Height: 25
 					Text: Tiles
 					Font: Bold
+					Key: t ctrl
+					TooltipTemplate: BUTTON_TOOLTIP
+					TooltipText: Terrain Tiles
+					TooltipContainer: TOOLTIP_CONTAINER
 				Button@OVERLAYS_TAB:
 					X: 70
 					Width: 80
 					Height: 25
 					Text: Overlays
 					Font: Bold
+					Key: o ctrl
+					TooltipTemplate: BUTTON_TOOLTIP
+					TooltipText: Resource Overlays
+					TooltipContainer: TOOLTIP_CONTAINER
 				Button@ACTORS_TAB:
 					X: 149
 					Width: 71
 					Height: 25
 					Text: Actors
 					Font: Bold
+					Key: a ctrl
+					TooltipTemplate: BUTTON_TOOLTIP
+					TooltipText: Actor Palette
+					TooltipContainer: TOOLTIP_CONTAINER
 				Button@HISTORY_TAB:
 					X: 219
 					Width: 71
 					Height: 25
 					Text: History
 					Font: Bold
+					Key: h ctrl
+					TooltipTemplate: BUTTON_TOOLTIP
+					TooltipText: Undo Action Log
+					TooltipContainer: TOOLTIP_CONTAINER
 		Button@SAVE_BUTTON:
 			X: WINDOW_RIGHT - 1130
 			Y: 5
