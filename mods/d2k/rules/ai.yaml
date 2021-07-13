@@ -71,7 +71,7 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 50
 		ExcessPowerIncreaseThreshold: 4
-		MaxBaseRadius: 40
+		MaximumBaseRadius: 40
 		ConstructionYardTypes: construction_yard
 		RefineryTypes: refinery
 		PowerTypes: wind_trap
@@ -121,7 +121,7 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 50
 		ExcessPowerIncreaseThreshold: 4
-		MaxBaseRadius: 40
+		MaximumBaseRadius: 40
 		ConstructionYardTypes: construction_yard
 		RefineryTypes: refinery
 		PowerTypes: wind_trap
@@ -171,7 +171,7 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 50
 		ExcessPowerIncreaseThreshold: 4
-		MaxBaseRadius: 40
+		MaximumBaseRadius: 40
 		ConstructionYardTypes: construction_yard
 		RefineryTypes: refinery
 		PowerTypes: wind_trap
