@@ -17,7 +17,7 @@ using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Common.Widgets.Logic
 {
-	public enum IngameInfoPanel { AutoSelect, Map, Objectives, Debug, Chat }
+	public enum IngameInfoPanel { AutoSelect, Map, Objectives, Debug, Chat, Players }
 
 	class GameInfoLogic : ChromeLogic
 	{
