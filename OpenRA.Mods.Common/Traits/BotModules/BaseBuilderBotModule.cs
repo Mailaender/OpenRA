@@ -9,7 +9,6 @@
  */
 #endregion
 
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Traits;
@@ -72,6 +71,12 @@ namespace OpenRA.Mods.Common.Traits
 
 		[Desc("Number of refineries to build additionally after building a barracks.")]
 		public readonly int AdditionalMinimumRefineryCount = 1;
+
+		[Desc("Minimum distance in cells for resource patches when checking for building placement.")]
+		public readonly int ResourceDistance = 0;
+
+		[Desc("Place at least one cell apart to the next building.")]
+		public readonly bool BaseSpacing = false;
 
 		[Desc("Additional delay (in ticks) between structure production checks when there is no active production.",
 			"StructureProductionRandomBonusDelay is added to this.")]
@@ -155,7 +160,7 @@ namespace OpenRA.Mods.Common.Traits
 		CPos initialBaseCenter;
 		CPos defenseCenter;
 
-		List<BaseBuilderQueueManager> builders = new List<BaseBuilderQueueManager>();
+		readonly List<BaseBuilderQueueManager> builders = new List<BaseBuilderQueueManager>();
 
 		public BaseBuilderBotModule(Actor self, BaseBuilderBotModuleInfo info)
 			: base(info)

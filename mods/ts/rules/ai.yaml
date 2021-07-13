@@ -15,6 +15,7 @@ Player:
 		MaximumExcessPower: 200
 		ExcessPowerIncrement: 30
 		ExcessPowerIncreaseThreshold: 4
+		BaseSpacing: true
 		ConstructionYardTypes: gacnst
 		RefineryTypes: proc
 		PowerTypes: gapowr, gapowrup, napowr, naapwr
