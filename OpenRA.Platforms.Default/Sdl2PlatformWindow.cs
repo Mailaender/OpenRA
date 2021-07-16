@@ -31,7 +31,7 @@ namespace OpenRA.Platforms.Default
 		bool disposed;
 
 		readonly object syncObject = new object();
-		Size windowSize;
+		readonly Size windowSize;
 		Size surfaceSize;
 		float windowScale = 1f;
 		int2? lockedMousePosition;
@@ -363,6 +363,12 @@ namespace OpenRA.Platforms.Default
 			}
 			else
 				SDL.SDL_ShowCursor((int)SDL.SDL_bool.SDL_FALSE);
+		}
+
+		public void SetApplicationTitle(string title)
+		{
+			VerifyThreadAffinity();
+			SDL.SDL_SetWindowTitle(window, title);
 		}
 
 		public void SetRelativeMouseMode(bool mode)
