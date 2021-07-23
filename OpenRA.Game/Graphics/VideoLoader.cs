@@ -15,15 +15,15 @@ namespace OpenRA.Video
 {
 	public interface IVideoLoader
 	{
-		bool TryParseVideo(Stream s, out IVideo video);
+		bool TryParseVideo(Stream s, string filename, out IVideo video);
 	}
 
 	public static class VideoLoader
 	{
-		public static IVideo GetVideo(Stream stream, IVideoLoader[] loaders)
+		public static IVideo GetVideo(Stream stream, string filename, IVideoLoader[] loaders)
 		{
 			foreach (var loader in loaders)
-				if (loader.TryParseVideo(stream, out var video))
+				if (loader.TryParseVideo(stream, filename, out var video))
 					return video;
 
 			return null;

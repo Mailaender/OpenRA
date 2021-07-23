@@ -11,6 +11,7 @@
 
 using System;
 using System.IO;
+using System.IO.Enumeration;
 using Eluant;
 using OpenRA.Effects;
 using OpenRA.GameRules;
@@ -175,8 +176,8 @@ namespace OpenRA.Mods.Common.Scripting
 				return false;
 			}
 
-			AsyncLoader l = new AsyncLoader(Media.LoadVideo);
-			IAsyncResult ar = l.BeginInvoke(s, null, null);
+			var l = new AsyncLoader(Media.LoadVideo);
+			var ar = l.BeginInvoke(s, movie, null, null);
 			Action onLoadComplete = () =>
 			{
 				Media.StopFMVInRadar();
@@ -228,6 +229,6 @@ namespace OpenRA.Mods.Common.Scripting
 			world.AddFrameEndTask(w => w.Add(new FloatingText(position, c, text, duration)));
 		}
 
-		public delegate IVideo AsyncLoader(Stream s);
+		public delegate IVideo AsyncLoader(Stream s, string filename);
 	}
 }

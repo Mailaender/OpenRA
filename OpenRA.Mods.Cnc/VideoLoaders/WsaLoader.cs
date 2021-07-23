@@ -18,9 +18,12 @@ namespace OpenRA.Mods.Cnc.VideoLoaders
 {
 	public class WsaLoader : IVideoLoader
 	{
-		public bool TryParseVideo(Stream s, out IVideo video)
+		public bool TryParseVideo(Stream s, string filename, out IVideo video)
 		{
 			video = null;
+
+			if (!filename.EndsWith(".wsa"))
+				return false;
 
 			if (!IsWsa(s))
 				return false;
@@ -29,7 +32,7 @@ namespace OpenRA.Mods.Cnc.VideoLoaders
 			return true;
 		}
 
-		bool IsWsa(Stream s)
+		static bool IsWsa(Stream s)
 		{
 			var start = s.Position;
 

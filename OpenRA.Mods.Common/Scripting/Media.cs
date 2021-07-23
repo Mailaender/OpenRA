@@ -78,9 +78,9 @@ namespace OpenRA.Mods.Common.Scripting
 			player.Stop();
 		}
 
-		public static IVideo LoadVideo(Stream s)
+		public static IVideo LoadVideo(Stream s, string filename)
 		{
-			return VideoLoader.GetVideo(s, Game.ModData.VideoLoaders);
+			return VideoLoader.GetVideo(s, filename, Game.ModData.VideoLoaders);
 		}
 	}
 }

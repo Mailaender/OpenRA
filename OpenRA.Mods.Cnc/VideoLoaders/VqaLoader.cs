@@ -17,9 +17,12 @@ namespace OpenRA.Mods.Cnc.VideoLoaders
 {
 	public class VqaLoader : IVideoLoader
 	{
-		public bool TryParseVideo(Stream s, out IVideo video)
+		public bool TryParseVideo(Stream s, string filename, out IVideo video)
 		{
 			video = null;
+
+			if (!filename.EndsWith(".vqa"))
+				return false;
 
 			if (!IsWestwoodVqa(s))
 				return false;

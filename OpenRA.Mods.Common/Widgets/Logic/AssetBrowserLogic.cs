@@ -397,7 +397,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 						prefix += "|";
 				}
 
-				var video = VideoLoader.GetVideo(Game.ModData.DefaultFileSystem.Open(filename), Game.ModData.VideoLoaders);
+				var video = VideoLoader.GetVideo(Game.ModData.DefaultFileSystem.Open(filename), filename, Game.ModData.VideoLoaders);
 				if (video != null)
 				{
 					player = panel.Get<VideoPlayerWidget>("PLAYER");
