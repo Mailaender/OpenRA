@@ -20,6 +20,7 @@ namespace OpenRA.Mods.Common.SpriteLoaders
 {
 	public class GifLoader : ISpriteLoader
 	{
+		[Flags]
 		enum BlockTypes
 		{
 			ImageDescriptor = 0x2C,
@@ -40,6 +41,13 @@ namespace OpenRA.Mods.Common.SpriteLoaders
 			BitDepthMask = 0x70,
 		}
 
+		[Flags]
+		enum ControlFlags
+		{
+			HasTransparency = 0x01,
+			DisposalMask = 0x0C
+		}
+
 		static readonly int[] PowerOfTwo = { 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096 };
 
 		public class GifFrame : ISpriteFrame
@@ -51,6 +59,7 @@ namespace OpenRA.Mods.Common.SpriteLoaders
 			public float2 Offset { get; private set; }
 			public byte[] Data { get; set; }
 			public bool DisableExportPadding => false;
+			public uint TransparentIndex;
 
 			public GifFrame(Stream s, Size size, Color[] globalColorTable)
 			{
@@ -151,29 +160,50 @@ namespace OpenRA.Mods.Common.SpriteLoaders
 						switch (type)
 						{
 							case BlockTypes.GraphicExtensionBlock:
-								var lengthG = s.ReadUInt8();
-								if (lengthG == 4)
-									s.Position += 5;
+								var blockSize = s.ReadByte();
+								if (blockSize != 0x04)
+									throw new InvalidDataException($"Invalid extension block size {blockSize}");
+								var controlFlags = (ControlFlags)s.ReadByte();
+								s.ReadUInt16(); // delay
+								var transparentColor = s.ReadByte();
+								s.ReadByte(); // terminator (0x00)
+
+								if (controlFlags.HasFlag(ControlFlags.HasTransparency))
+									TransparentIndex = transparentColor;
 								else
-									s.Position -= 2;
-								break;
-							case BlockTypes.CommentExtensionBlock:
-								SkipSubblocks(s);
-								break;
-							case BlockTypes.PlainTextExtension:
-								var lengthP = s.ReadUInt8();
-								s.Position += lengthP;
-								SkipSubblocks(s);
-								break;
-							case BlockTypes.ApplicationExtensionBlock:
-								s.ReadByte(); // extensionIntroducer
-								s.ReadByte(); // applicationLabel
-								var lengthA = s.ReadByte();
-								s.Position += lengthA;
-								SkipSubblocks(s);
-								break;
+									TransparentIndex = NoTransparency;
+
+								// dispose of current image
+
+								switch( (Disposal)( controlFlags & ControlFlags.DisposalMask ) )
+								{
+									default:
+									case Disposal.None:
+									case Disposal.DoNotDispose:
+										// remember current image in case we need to "return to previous"
+										PreviousImage = Output;
+										break;
+
+									case Disposal.RestoreBackground:
+										// empty image - don't track
+										Output = new Color32[ Width * Height ];
+										break;
+
+									case Disposal.ReturnToPrevious:
+
+										// return to previous image
+
+										Output = new Color32[ Width * Height ];
+
+										if( PreviousImage != null )
+										{
+											Array.Copy( PreviousImage, Output, Output.Length );
+										}
+
+										break;
+								}
 							default:
-								SkipSubblocks(s);
+								SkipBlocks(s);
 								break;
 						}
 
@@ -204,21 +234,27 @@ namespace OpenRA.Mods.Common.SpriteLoaders
 			return palette;
 		}
 
-		static void SkipSubblocks(Stream s)
+		void ReadExtensionBlock(Stream s)
 		{
-			while (true)
-			{
-				var size = s.ReadUInt8();
-				if (size == 0)
-					break;
 
-				s.Position += size;
+		}
+
+		static void SkipBlocks(Stream s)
+		{
+			var blockSize = s.ReadUInt8();
+			while (blockSize != 0x00)
+			{
+				s.Position += blockSize;
+				blockSize = s.ReadUInt8();
 			}
 		}
 
 		public bool TryParseSprite(Stream s, string filename, out ISpriteFrame[] frames, out TypeDictionary metadata)
 		{
+			var start = s.Position;
+
 			metadata = null;
+
 			if (!IsGif(s))
 			{
 				frames = null;
@@ -227,6 +263,11 @@ namespace OpenRA.Mods.Common.SpriteLoaders
 
 			frames = ParseFrames(s);
 			System.Console.WriteLine("frames: " + frames.Length);
+			// TODO
+			//if (palettes.Any())
+			//	metadata = new TypeDictionary { new EmbeddedSpritePalette(framePalettes: palettes) };
+
+			s.Position = start;
 
 			return true;
 		}
