@@ -9,11 +9,13 @@
  */
 #endregion
 
+using System;
 using OpenRA.Scripting;
 
 namespace OpenRA.Mods.Common.Scripting.Global
 {
 	[ScriptGlobal("Facing")]
+	[Obsolete("The Facing table is deprecated. Use Angle instead.")]
 	public class FacingGlobal : ScriptGlobal
 	{
 		public FacingGlobal(ScriptContext context)
@@ -24,13 +26,28 @@ namespace OpenRA.Mods.Common.Scripting.Global
 			TextNotificationsManager.Debug("The Facing table is deprecated. Use Angle instead.");
 		}
 
+		[Obsolete("Use Angle.North instead.")]
 		public int North { get { Deprecated(); return 0; } }
+
+		[Obsolete("Use Angle.NorthWest instead.")]
 		public int NorthWest { get { Deprecated(); return 32; } }
+
+		[Obsolete("Use Angle.West instead.")]
 		public int West { get { Deprecated(); return 64; } }
+
+		[Obsolete("Use Angle.SouthWest instead.")]
 		public int SouthWest { get { Deprecated(); return 96; } }
+
+		[Obsolete("Use Angle.South instead.")]
 		public int South { get { Deprecated(); return 128; } }
+
+		[Obsolete("Use Angle.SouthEast instead.")]
 		public int SouthEast { get { Deprecated(); return 160; } }
+
+		[Obsolete("Use Angle.East instead.")]
 		public int East { get { Deprecated(); return 192; } }
+
+		[Obsolete("Use Angle.NorthEast instead.")]
 		public int NorthEast { get { Deprecated(); return 224; } }
 	}
 }

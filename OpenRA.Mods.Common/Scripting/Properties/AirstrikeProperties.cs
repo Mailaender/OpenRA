@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Scripting;
@@ -34,6 +35,7 @@ namespace OpenRA.Mods.Common.Scripting
 		}
 
 		[Desc("Activate the actor's Airstrike Power. DEPRECATED! Will be removed.")]
+		[Obsolete("SendAirstrike is deprecated. Use TargetAirstrike instead.")]
 		public void SendAirstrike(WPos target, bool randomize = true, int facing = 0)
 		{
 			TextNotificationsManager.Debug("SendAirstrike is deprecated. Use TargetAirstrike instead.");
@@ -41,6 +43,7 @@ namespace OpenRA.Mods.Common.Scripting
 		}
 
 		[Desc("Activate the actor's Airstrike Power. DEPRECATED! Will be removed.")]
+		[Obsolete("SendAirstrikeFrom is deprecated. Use TargetAirstrike instead.")]
 		public void SendAirstrikeFrom(CPos from, CPos to)
 		{
 			TextNotificationsManager.Debug("SendAirstrikeFrom is deprecated. Use TargetAirstrike instead.");

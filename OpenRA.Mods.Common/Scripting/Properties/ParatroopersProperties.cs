@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System;
 using System.Linq;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Scripting;
@@ -34,10 +35,11 @@ namespace OpenRA.Mods.Common.Scripting
 			return actors.Aircraft;
 		}
 
+		[Obsolete("ActivateParatroopers is deprecated. Use TargetParatroopers instead.")]
 		[Desc("Activate the actor's Paratroopers Power. Returns the aircraft that will drop the reinforcements. DEPRECATED! Will be removed.")]
 		public Actor[] ActivateParatroopers(WPos target, int facing = -1)
 		{
-			TextNotificationsManager.Debug("SendParatroopersFrom is deprecated. Use TargetParatroopers instead.");
+			TextNotificationsManager.Debug("ActivateParatroopers is deprecated. Use TargetParatroopers instead.");
 			var actors = pp.SendParatroopers(Self, target, facing == -1 ? (WAngle?)null : WAngle.FromFacing(facing));
 			return actors.Aircraft;
 		}
