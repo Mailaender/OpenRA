@@ -1,0 +1,9 @@
+Player:
+	MissionObjectives:
+		Cooperative: True
+	PlayerResources:
+		DefaultCash: 5000
+
+World:
+	MissionData:
+		Briefing: The war effort requires you to conquer new fuel reserves in the south. Invade the failed state and capture the oil reserves. Intelligence suggests little to no resistance. Expect few partisans in defensive positions. As troops are needed on the main battlefield, you will only get access to a small strike force. Air support will likely be key to success here.

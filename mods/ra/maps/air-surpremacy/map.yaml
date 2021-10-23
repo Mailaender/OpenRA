@@ -1,0 +1,120 @@
+MapFormat: 11
+
+RequiresMod: ra
+
+Title: Air Supremacy
+
+Author: Mailaender
+
+Tileset: DESERT
+
+MapSize: 130,130
+
+Bounds: 1,1,128,128
+
+Visibility: MissionSelector, Lobby
+
+Categories: Mission
+
+Translations:
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: england
+	PlayerReference@Invaders:
+		Name: Invaders
+		Enemies: Partisans
+		AllowBots: False
+		Playable: True
+		LockFaction: True
+		Faction: soviet
+		LockColor: True
+		Color: A1EF8C
+		LockSpawn: True
+		LockTeam: True
+	PlayerReference@Partisans:
+		Name: Partisans
+		Faction: allies
+		Color: 5CC1A3
+		Enemies: Invaders
+		Bot: campaign
+
+Actors:
+	Actor0: mcv
+		Owner: Invaders
+		Facing: 384
+		Location: 63,15
+	Actor1: afld
+		Owner: Invaders
+		Location: 69,16
+	Actor2: afld
+		Owner: Invaders
+		Location: 71,14
+	Actor3: afld
+		Owner: Invaders
+		Location: 73,12
+	Actor4: proc
+		Owner: Invaders
+		Location: 51,8
+	Actor5: mine
+		Owner: Neutral
+		Location: 52,16
+	Actor6: oilb
+		Owner: Invaders
+		Location: 65,8
+	Actor7: oilb
+		Owner: Partisans
+		Location: 87,83
+	Actor8: oilb
+		Owner: Partisans
+		Location: 107,113
+	Actor9: oilb
+		Owner: Partisans
+		Location: 58,108
+	Actor10: oilb
+		Owner: Partisans
+		Location: 35,89
+	Actor11: oilb
+		Owner: Partisans
+		Location: 15,119
+	Actor12: agun
+		Owner: Partisans
+		Location: 89,86
+	Actor13: pbox
+		Owner: Partisans
+		Location: 85,78
+	Actor14: pbox
+		Owner: Partisans
+		Location: 78,80
+	Actor15: pbox
+		Owner: Partisans
+		Location: 70,84
+	Actor16: pbox
+		Owner: Partisans
+		Location: 91,74
+	Actor17: pbox
+		Owner: Partisans
+		Location: 98,71
+	Actor18: pbox
+		Owner: Partisans
+		Location: 105,73
+	Actor19: pbox
+		Owner: Partisans
+		Location: 111,77
+	Actor20: pbox
+		Owner: Partisans
+		Location: 118,81
+	Actor21: agun
+		Owner: Partisans
+		Location: 78,89
+	Actor22: agun
+		Owner: Partisans
+		Location: 98,82
+	Actor23: agun
+		Owner: Partisans
+		Location: 108,84
+
+Rules: ra|rules/campaign-rules.yaml, ra|rules/campaign-tooltips.yaml, ra|rules/campaign-palettes.yaml, rules.yaml
