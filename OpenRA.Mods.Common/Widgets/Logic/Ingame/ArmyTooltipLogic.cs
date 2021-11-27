@@ -45,7 +45,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 				var nameSize = font.Measure(name);
 
-				descLabel.Text = buildable.Description.Replace("\\n", "\n");
+				// TODO: Remove Replace() after all strings are converted to Fluent
+				descLabel.Text = Ui.Translate(buildable.Description).Replace("\\n", "\n");
 				var descSize = descFont.Measure(descLabel.Text);
 				descLabel.Bounds.Width = descSize.X;
 				descLabel.Bounds.Height = descSize.Y + descLabelPadding;

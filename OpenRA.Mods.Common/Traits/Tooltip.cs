@@ -10,6 +10,7 @@
 #endregion
 
 using OpenRA.Traits;
+using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Common.Traits
 {
@@ -35,13 +36,13 @@ namespace OpenRA.Mods.Common.Traits
 		public readonly bool GenericStancePrefix = true;
 
 		[Desc("Prefix to display in the tooltip for allied units.")]
-		public readonly string AllyPrefix = "Allied";
+		public readonly string AllyPrefix = "allied-tooltip";
 
 		[Desc("Prefix to display in the tooltip for neutral units.")]
-		public readonly string NeutralPrefix = null;
+		public readonly string NeutralPrefix = "neutral-tooltip";
 
 		[Desc("Prefix to display in the tooltip for enemy units.")]
-		public readonly string EnemyPrefix = "Enemy";
+		public readonly string EnemyPrefix = "enemy-tooltip";
 
 		[Desc("Player stances that the generic name should be shown to.")]
 		public readonly PlayerRelationship GenericVisibility = PlayerRelationship.None;
@@ -51,21 +52,25 @@ namespace OpenRA.Mods.Common.Traits
 
 		public override object Create(ActorInitializer init) { return new Tooltip(init.Self, this); }
 
-		public string TooltipForPlayerStance(PlayerRelationship relationship)
+		public string TooltipForPlayerStance(PlayerRelationship relationship, Map map)
 		{
 			if (relationship == PlayerRelationship.None || !GenericVisibility.HasRelationship(relationship))
-				return Name;
+				return map.Translate(Name);
+
+			var genericName = GenericName.ToLowerInvariant();
+			var gender = Ui.TranslationAttribute(genericName, "gender");
+			var arguments = Translation.Arguments("gender", gender, "generic-name", map.Translate(genericName));
 
 			if (GenericStancePrefix && !string.IsNullOrEmpty(AllyPrefix) && relationship == PlayerRelationship.Ally)
-				return AllyPrefix + " " + GenericName;
+				return map.Translate(AllyPrefix, arguments);
 
 			if (GenericStancePrefix && !string.IsNullOrEmpty(NeutralPrefix) && relationship == PlayerRelationship.Neutral)
-				return NeutralPrefix + " " + GenericName;
+				return map.Translate(NeutralPrefix, arguments);
 
 			if (GenericStancePrefix && !string.IsNullOrEmpty(EnemyPrefix) && relationship == PlayerRelationship.Enemy)
-				return EnemyPrefix + " " + GenericName;
+				return map.Translate(EnemyPrefix, arguments);
 
-			return GenericName;
+			return map.Translate(genericName);
 		}
 
 		public bool IsOwnerRowVisible => ShowOwnerRow;

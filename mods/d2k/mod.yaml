@@ -146,6 +146,10 @@ Hotkeys:
 	common|hotkeys/chat.yaml
 	d2k|hotkeys.yaml
 
+Translations:
+	common|languages/en.ftl
+	common|languages/de.ftl
+
 LoadScreen: LogoStripeLoadScreen
 	Image: d2k|uibits/loadscreen.png
 	Image2x: d2k|uibits/loadscreen-2x.png

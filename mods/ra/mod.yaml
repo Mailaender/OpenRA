@@ -156,7 +156,11 @@ Music:
 	ra|audio/music.yaml
 
 Translations:
-	ra|languages/english.yaml
+	common|languages/en.ftl
+	common|languages/de.ftl
+	ra|languages/de.ftl
+	ra|languages/en.ftl
+	ra|languages/pl.ftl
 
 Hotkeys:
 	common|hotkeys/game.yaml

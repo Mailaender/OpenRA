@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections.Generic;
+using OpenRA.Widgets;
 
 namespace OpenRA.Traits
 {
@@ -18,11 +19,8 @@ namespace OpenRA.Traits
 	[Desc("Required for shroud and fog visibility checks. Add this to the player actor.")]
 	public class ShroudInfo : TraitInfo, ILobbyOptions
 	{
-		[Desc("Descriptive label for the fog checkbox in the lobby.")]
-		public readonly string FogCheckboxLabel = "Fog of War";
-
-		[Desc("Tooltip description for the fog checkbox in the lobby.")]
-		public readonly string FogCheckboxDescription = "Line of sight is required to view enemy forces";
+		[Desc("Translation ID for the fog checkbox in the lobby.")]
+		public readonly string FogCheckbox = "fog-checkbox";
 
 		[Desc("Default value of the fog checkbox in the lobby.")]
 		public readonly bool FogCheckboxEnabled = true;
@@ -36,11 +34,8 @@ namespace OpenRA.Traits
 		[Desc("Display order for the fog checkbox in the lobby.")]
 		public readonly int FogCheckboxDisplayOrder = 0;
 
-		[Desc("Descriptive label for the explored map checkbox in the lobby.")]
-		public readonly string ExploredMapCheckboxLabel = "Explored Map";
-
-		[Desc("Tooltip description for the explored map checkbox in the lobby.")]
-		public readonly string ExploredMapCheckboxDescription = "Initial map shroud is revealed";
+		[Desc("Translation ID for the explored map checkbox in the lobby.")]
+		public readonly string ExploredMapCheckbox = "explored-map-checkbox";
 
 		[Desc("Default value of the explore map checkbox in the lobby.")]
 		public readonly bool ExploredMapCheckboxEnabled = false;
@@ -56,9 +51,14 @@ namespace OpenRA.Traits
 
 		IEnumerable<LobbyOption> ILobbyOptions.LobbyOptions(MapPreview map)
 		{
-			yield return new LobbyBooleanOption("explored", ExploredMapCheckboxLabel, ExploredMapCheckboxDescription,
+			var exploredMapCheckboxLabel = Ui.Translate(ExploredMapCheckbox, attribute: "label");
+			var exploredMapCheckboxDescription = Ui.Translate(ExploredMapCheckbox, attribute: "description");
+			yield return new LobbyBooleanOption("explored", exploredMapCheckboxLabel, exploredMapCheckboxDescription,
 				ExploredMapCheckboxVisible, ExploredMapCheckboxDisplayOrder, ExploredMapCheckboxEnabled, ExploredMapCheckboxLocked);
-			yield return new LobbyBooleanOption("fog", FogCheckboxLabel, FogCheckboxDescription,
+
+			var fogCheckboxLabel = Ui.Translate(FogCheckbox, attribute: "label");
+			var fogCheckboxDescription = Ui.Translate(FogCheckbox, attribute: "description");
+			yield return new LobbyBooleanOption("fog", fogCheckboxLabel, fogCheckboxDescription,
 				FogCheckboxVisible, FogCheckboxDisplayOrder, FogCheckboxEnabled, FogCheckboxLocked);
 		}
 

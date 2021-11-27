@@ -76,7 +76,8 @@ namespace OpenRA.Mods.Common.Widgets
 		{
 			ModRules = modData.DefaultRules;
 
-			GetText = () => Text;
+			var translation = new CachedTransform<string, string>(c => Ui.Translate(c));
+			GetText = () => translation.Update(Text);
 			GetColor = () => TextColor;
 			GetColorDisabled = () => TextColorDisabled;
 			GetContrastColorDark = () => ContrastColorDark;

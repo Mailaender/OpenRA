@@ -25,7 +25,7 @@ SendInsertionHelicopter = function()
 	local tanya = passengers[1]
 	Trigger.OnKilled(tanya, TanyaKilledInAction)
 	Trigger.AfterDelay(DateTime.Seconds(4), function()
-		Media.DisplayMessage("According to the rules of engagement I need your explicit orders to fire, Commander!", "Tanya")
+		Media.DisplayMessage(UserInterface.Translate("tanya-rules-of-engagement"), "Tanya")
 	end)
 end
 
@@ -151,7 +151,7 @@ CreateEinstein = function()
 	einstein = Actor.Create(EinsteinType, true, { Location = EinsteinSpawnPoint.Location, Owner = Greece })
 	einstein.Scatter()
 	Trigger.OnKilled(einstein, RescueFailed)
-	ExtractObjective = Greece.AddObjective("Wait for the helicopter and extract Einstein.")
+	ExtractObjective = Greece.AddObjective(UserInterface.Translate("extract-einstein-helicopter"))
 	Trigger.AfterDelay(DateTime.Seconds(1), function() Media.PlaySpeechNotification(Greece, "TargetFreed") end)
 end
 
@@ -190,10 +190,10 @@ WorldLoaded = function()
 
 	InitObjectives(Greece)
 
-	FindEinsteinObjective = Greece.AddObjective("Find Einstein.")
-	TanyaSurviveObjective = Greece.AddObjective("Tanya must survive.")
-	EinsteinSurviveObjective = Greece.AddObjective("Einstein must survive.")
-	CivilProtectionObjective = Greece.AddObjective("Protect all civilians.", "Secondary", false)
+	FindEinsteinObjective = Greece.AddObjective(UserInterface.Translate("find-einstein"))
+	TanyaSurviveObjective = Greece.AddObjective(UserInterface.Translate("tanya-survive"))
+	EinsteinSurviveObjective = Greece.AddObjective(UserInterface.Translate("einstein-surive"))
+	CivilProtectionObjective = Greece.AddObjective(UserInterface.Translate("protect-civilians"), "Secondary", false)
 
 	RunInitialActivities()
 

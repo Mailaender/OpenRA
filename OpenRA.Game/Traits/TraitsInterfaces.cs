@@ -197,7 +197,7 @@ namespace OpenRA.Traits
 
 	public interface ITooltipInfo : ITraitInfoInterface
 	{
-		string TooltipForPlayerStance(PlayerRelationship stance);
+		string TooltipForPlayerStance(PlayerRelationship stance, Map map);
 		bool IsOwnerRowVisible { get; }
 	}
 

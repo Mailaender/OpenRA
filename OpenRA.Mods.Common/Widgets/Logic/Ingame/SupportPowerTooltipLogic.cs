@@ -56,7 +56,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				nameLabel.Text = sp.Info.Description;
 				var nameSize = nameFont.Measure(nameLabel.Text);
 
-				descLabel.Text = sp.Info.LongDesc.Replace("\\n", "\n");
+				// TODO: Remove Replace() after all strings are converted to Fluent
+				descLabel.Text = Ui.Translate(sp.Info.LongDesc).Replace("\\n", "\n");
 				var descSize = descFont.Measure(descLabel.Text);
 
 				var customLabel = sp.TooltipTimeTextOverride();
