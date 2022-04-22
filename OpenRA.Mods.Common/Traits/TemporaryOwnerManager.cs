@@ -9,12 +9,13 @@
  */
 #endregion
 
+using OpenRA.Mods.Common.Warheads;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.Common.Traits
 {
-	[Desc("Interacts with the ChangeOwner warhead.",
+	[Desc("Interacts with the " + nameof(ChangeOwnerWarhead),
 		"Displays a bar how long this actor is affected and reverts back to the old owner on temporary changes.")]
 	public class TemporaryOwnerManagerInfo : TraitInfo
 	{
@@ -27,7 +28,10 @@ namespace OpenRA.Mods.Common.Traits
 	{
 		readonly TemporaryOwnerManagerInfo info;
 
+		[Sync]
 		Player originalOwner;
+
+		[Sync]
 		Player changingOwner;
 
 		[Sync]

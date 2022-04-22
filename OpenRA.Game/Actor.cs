@@ -49,6 +49,7 @@ namespace OpenRA
 
 		public readonly uint ActorID;
 
+		[Sync]
 		public Player Owner { get; internal set; }
 
 		public bool IsInWorld { get; internal set; }
