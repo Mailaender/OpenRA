@@ -58,20 +58,21 @@ namespace OpenRA.Mods.Common.UtilityCommands
 					Console.WriteLine($"--- {obsolete.Message}");
 				}
 
-				Console.WriteLine(name + " = { }");
-				Console.WriteLine();
+				Console.WriteLine(name + " = {");
 
 				var members = ScriptMemberWrapper.WrappableMembers(t);
 				foreach (var member in members.OrderBy(m => m.Name))
 				{
-					var body = "";
+					Console.WriteLine();
+
+					var parameterString = "";
 
 					var propertyInfo = member as PropertyInfo;
 					if (propertyInfo != null)
 					{
 						var attributes = propertyInfo.GetCustomAttributes(false);
 						foreach (var obsolete in attributes.OfType<ObsoleteAttribute>())
-							Console.WriteLine($"---@deprecated {obsolete.Message}");
+							Console.WriteLine($"    ---@deprecated {obsolete.Message}");
 					}
 
 					var methodInfo = member as MethodInfo;
@@ -79,31 +80,31 @@ namespace OpenRA.Mods.Common.UtilityCommands
 					{
 						var parameters = methodInfo.GetParameters();
 						foreach (var parameter in parameters)
-							Console.WriteLine($"---@param {parameter.EmmyLuaString()}");
+							Console.WriteLine($"    ---@param {parameter.EmmyLuaString()}");
 
-						body = parameters.Select(p => p.Name).JoinWith(", ");
+						parameterString = parameters.Select(p => p.Name).JoinWith(", ");
 
 						var attributes = methodInfo.GetCustomAttributes(false);
 						foreach (var obsolete in attributes.OfType<ObsoleteAttribute>())
-							Console.WriteLine($"---@deprecated {obsolete.Message}");
+							Console.WriteLine($"    ---@deprecated {obsolete.Message}");
 
 						var returnType = methodInfo.ReturnType.EmmyLuaString();
-						Console.WriteLine($"---@return {returnType}");
+						Console.WriteLine($"    ---@return {returnType}");
 					}
 
 					if (member.HasAttribute<DescAttribute>())
 					{
 						var lines = member.GetCustomAttributes<DescAttribute>(true).First().Lines;
 						foreach (var line in lines)
-							Console.WriteLine($"--- {line}");
+							Console.WriteLine($"    --- {line}");
 					}
 
-					Console.WriteLine($"function {name}.{member.Name}({body}) end");
-					Console.WriteLine();
+					Console.WriteLine($"    {member.Name} = function({parameterString}) end;");
 				}
+
+				Console.WriteLine("}");
+				Console.WriteLine();
 			}
-
-
 
 			var actorProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptActorProperties>();
 			WriteScriptProperties(typeof(Actor), actorProperties);
@@ -117,8 +118,7 @@ namespace OpenRA.Mods.Common.UtilityCommands
 			var className = $"{type.Name}Instance";
 			var tableName = $"{type.Name.ToLowerInvariant()}Instance";
 			Console.WriteLine($"---@class {className}");
-			Console.WriteLine("local " + tableName + " = { }");
-			Console.WriteLine();
+			Console.WriteLine("local " + tableName + " = {");
 
 			var properties = implementingTypes.SelectMany(t =>
 			{
@@ -128,6 +128,8 @@ namespace OpenRA.Mods.Common.UtilityCommands
 
 			foreach (var property in properties)
 			{
+				Console.WriteLine();
+
 				var body = "";
 				var isActivity = false;
 
@@ -136,16 +138,16 @@ namespace OpenRA.Mods.Common.UtilityCommands
 				{
 					var parameters = methodInfo.GetParameters();
 					foreach (var parameter in parameters)
-						Console.WriteLine($"---@param {parameter.EmmyLuaString()}");
+						Console.WriteLine($"    ---@param {parameter.EmmyLuaString()}");
 
 					body = parameters.Select(p => p.Name).JoinWith(", ");
 
 					var attributes = methodInfo.GetCustomAttributes(false);
 					foreach (var obsolete in attributes.OfType<ObsoleteAttribute>())
-						Console.WriteLine($"---@deprecated {obsolete.Message}");
+						Console.WriteLine($"    ---@deprecated {obsolete.Message}");
 
 					var returnType = methodInfo.ReturnType.EmmyLuaString();
-					Console.WriteLine($"---@return {returnType}");
+					Console.WriteLine($"    ---@return {returnType}");
 
 					isActivity = methodInfo.HasAttribute<ScriptActorPropertyActivityAttribute>();
 				}
@@ -153,8 +155,8 @@ namespace OpenRA.Mods.Common.UtilityCommands
 				var propertyInfo = property.memberInfo as PropertyInfo;
 				if (propertyInfo != null)
 				{
-					Console.WriteLine($"---@class {className}");
-					Console.Write($"---@field {propertyInfo.EmmyLuaString()} ");
+					Console.WriteLine($"    ---@class {className}");
+					Console.Write($"    ---@field {propertyInfo.EmmyLuaString()} ");
 				}
 
 				if (property.memberInfo.HasAttribute<DescAttribute>())
@@ -165,20 +167,21 @@ namespace OpenRA.Mods.Common.UtilityCommands
 						Console.WriteLine(lines.JoinWith(" "));
 					else
 						foreach (var line in lines)
-							Console.WriteLine($"--- {line}");
+							Console.WriteLine($"    --- {line}");
 				}
 
 				if (isActivity)
-					Console.WriteLine("--- *Queued Activity*");
+					Console.WriteLine("    --- *Queued Activity*");
 
 				if (property.required.Any())
-						Console.WriteLine($"--- **Requires {(property.required.Length == 1 ? "Trait" : "Traits")}:** {property.required.Select(GetDocumentationUrl).JoinWith(", ")}");
+						Console.WriteLine($"    --- **Requires {(property.required.Length == 1 ? "Trait" : "Traits")}:** {property.required.Select(GetDocumentationUrl).JoinWith(", ")}");
 
 				if (methodInfo != null)
-					Console.WriteLine($"function {tableName}.{methodInfo.Name}({body}) end");
-
-				Console.WriteLine();
+					Console.WriteLine($"    {methodInfo.Name} = function({body}) end;");
 			}
+
+			Console.WriteLine("}");
+			Console.WriteLine();
 		}
 
 		static string GetDocumentationUrl(string trait)
