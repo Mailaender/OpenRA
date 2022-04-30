@@ -37,8 +37,43 @@ namespace OpenRA.Mods.Common.UtilityCommands
 			Console.WriteLine($"-- This is an automatically generated Lua API definition generated for {version} of OpenRA.");
 			Console.WriteLine("-- https://wiki.openra.net/Utility was used with the --emmy-lua-api parameter.");
 			Console.WriteLine("-- See https://docs.openra.net/en/latest/release/lua/ for human readable documentation.");
+
+			Console.WriteLine();
+			Console.WriteLine();
+			Console.WriteLine("--");
+			Console.WriteLine("-- SECTION Manually added:");
+			Console.WriteLine("--");
+			Console.WriteLine();
 			Console.WriteLine();
 
+			WriteManual();
+
+			Console.WriteLine();
+			Console.WriteLine("--");
+			Console.WriteLine("-- SECTION Script API global methods:");
+			Console.WriteLine("--");
+			Console.WriteLine();
+			Console.WriteLine();
+
+			var globalTables = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptGlobal>().OrderBy(t => t.Name);
+			WriteGlobals(globalTables);
+
+			Console.WriteLine();
+			Console.WriteLine("--");
+			Console.WriteLine("-- SECTION Script API object properties:");
+			Console.WriteLine("--");
+			Console.WriteLine();
+			Console.WriteLine();
+
+			var actorProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptActorProperties>();
+			WriteScriptProperties(typeof(Actor), actorProperties);
+
+			var playerProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptPlayerProperties>();
+			WriteScriptProperties(typeof(Player), playerProperties);
+		}
+
+		void WriteManual()
+		{
 			Console.WriteLine("--- This function is triggered once, after the map is loaded.");
 			Console.WriteLine("function WorldLoaded() end");
 			Console.WriteLine();
@@ -46,14 +81,61 @@ namespace OpenRA.Mods.Common.UtilityCommands
 			Console.WriteLine("function Tick() end");
 			Console.WriteLine();
 
-			var globalTables = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptGlobal>().OrderBy(t => t.Name);
-			WriteGlobals(globalTables);
+			Console.WriteLine("---@alias Color HSLColor");
+			Console.WriteLine();
 
-			var actorProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptActorProperties>();
-			WriteScriptProperties(typeof(Actor), actorProperties);
-
-			var playerProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptPlayerProperties>();
-			WriteScriptProperties(typeof(Player), playerProperties);
+			// TODO: Maybe get all ActorInits and generate this from them? But are they all supported?
+			Console.WriteLine("---A subset of all ActorInit implementations.");
+			Console.WriteLine("---@class initTable");
+			Console.WriteLine("---@field Location CPos");
+			Console.WriteLine("---@field Owner PlayerInstance");
+			Console.WriteLine("---@field Facing WAngle");
+			Console.WriteLine("---@field CreationActivityDelay integer");
+			Console.WriteLine("---@field CenterPosition WPos");
+			Console.WriteLine("---@field Faction string");
+			Console.WriteLine("---@field EffectiveOwner PlayerInstance");
+			Console.WriteLine("---@field Stance UnitStance");
+			Console.WriteLine("---@field FreeActor boolean");
+			Console.WriteLine("---@field ParentActor ActorInitActorReference");
+			Console.WriteLine("---@field LineBuildDirection LineBuildDirection");
+			Console.WriteLine("---@field LineBuildParent string[]");
+			Console.WriteLine("---@field RuntimeCargo ActorInstance[]");
+			Console.WriteLine("---@field Cargo string[]");
+			Console.WriteLine("---@field DeployState DeployState");
+			Console.WriteLine("---@field Experience integer");
+			Console.WriteLine("---@field Health integer");
+			Console.WriteLine("---@field HuskSpeed integer");
+			Console.WriteLine("---@field Plug string");
+			Console.WriteLine("---@field ProductionSpawnLocation CPos");
+			Console.WriteLine("---@field ScriptTags string[]");
+			Console.WriteLine("---@field TurretFacing WAngle");
+			Console.WriteLine("---@field SpawnedByMap string");
+			Console.WriteLine("---@field BodyAnimationFrame integer");
+			Console.WriteLine();
+			Console.WriteLine("---@class CPos");
+			Console.WriteLine("---@field X integer");
+			Console.WriteLine("---@field Y integer");
+			Console.WriteLine();
+			Console.WriteLine("---@class WPos");
+			Console.WriteLine("---@field X integer");
+			Console.WriteLine("---@field Y integer");
+			Console.WriteLine("---@field Z integer");
+			Console.WriteLine();
+			Console.WriteLine("---@class WAngle");
+			Console.WriteLine("---@field Angle integer");
+			Console.WriteLine();
+			Console.WriteLine("---@class WDist");
+			Console.WriteLine("---@field Length integer");
+			Console.WriteLine();
+			Console.WriteLine("---@class WVec");
+			Console.WriteLine("---@field X integer");
+			Console.WriteLine("---@field Y integer");
+			Console.WriteLine("---@field Z integer");
+			Console.WriteLine();
+			Console.WriteLine("---@class CVec");
+			Console.WriteLine("---@field X integer");
+			Console.WriteLine("---@field Y integer");
+			Console.WriteLine();
 		}
 
 		void WriteGlobals(IEnumerable<Type> globalTables)
@@ -229,7 +311,14 @@ namespace OpenRA.Mods.Common.UtilityCommands
 		public static string EmmyLuaString(this ParameterInfo parameterInfo)
 		{
 			var optional = parameterInfo.IsOptional ? "?" : "";
-			return $"{parameterInfo.Name}{optional} {parameterInfo.ParameterType.EmmyLuaString()}";
+
+			var parameterType = parameterInfo.ParameterType.EmmyLuaString();
+
+			// A hack for ActorGlobal.Create().
+			if (parameterInfo.Name == "initTable")
+				parameterType = "initTable";
+
+			return $"{parameterInfo.Name}{optional} {parameterType}";
 		}
 
 		public static string EmmyLuaString(this PropertyInfo propertyInfo)
