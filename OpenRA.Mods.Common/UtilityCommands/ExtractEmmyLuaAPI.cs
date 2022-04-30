@@ -50,7 +50,7 @@ namespace OpenRA.Mods.Common.UtilityCommands
 			foreach (var t in tables)
 			{
 				var name = t.GetCustomAttributes<ScriptGlobalAttribute>(true).First().Name;
-				Console.WriteLine($"---Global variable provided by the game scripting engine.");
+				Console.WriteLine("---Global variable provided by the game scripting engine.");
 
 				foreach (var obsolete in t.GetCustomAttributes(false).OfType<ObsoleteAttribute>())
 				{
@@ -103,33 +103,29 @@ namespace OpenRA.Mods.Common.UtilityCommands
 				}
 			}
 
-			var actorProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptActorProperties>().SelectMany(type =>
-			{
-				var required = ScriptMemberWrapper.RequiredTraitNames(type);
-				return ScriptMemberWrapper.WrappableMembers(type).Select(memberInfo => (memberInfo, required));
-			});
 
-			var actor = nameof(Actor).ToLowerInvariant();
-			Console.WriteLine($"---@class {nameof(Actor)}");
-			Console.WriteLine("local " + actor + " = { }");
-			Console.WriteLine();
+
+			var actorProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptActorProperties>();
 			WriteScriptProperties(typeof(Actor), actorProperties);
 
-			var playerProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptPlayerProperties>().SelectMany(type =>
-			{
-				var required = ScriptMemberWrapper.RequiredTraitNames(type);
-				return ScriptMemberWrapper.WrappableMembers(type).Select(memberInfo => (memberInfo, required));
-			});
-
-			var player = nameof(Player).ToLowerInvariant();
-			Console.WriteLine($"---@class {nameof(Player)}");
-			Console.WriteLine("local " + player + " = { }");
-			Console.WriteLine();
+			var playerProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptPlayerProperties>();
 			WriteScriptProperties(typeof(Player), playerProperties);
 		}
 
-		public void WriteScriptProperties(Type type, IEnumerable<(MemberInfo memberInfo, string[] required)> properties)
+		public void WriteScriptProperties(Type type, IEnumerable<Type> implementingTypes)
 		{
+			var className = $"{type.Name}Instance";
+			var tableName = $"{type.Name.ToLowerInvariant()}Instance";
+			Console.WriteLine($"---@class {className}");
+			Console.WriteLine("local " + tableName + " = { }");
+			Console.WriteLine();
+
+			var properties = implementingTypes.SelectMany(t =>
+			{
+				var required = ScriptMemberWrapper.RequiredTraitNames(t);
+				return ScriptMemberWrapper.WrappableMembers(t).Select(memberInfo => (memberInfo, required));
+			});
+
 			foreach (var property in properties)
 			{
 				var body = "";
@@ -157,7 +153,7 @@ namespace OpenRA.Mods.Common.UtilityCommands
 				var propertyInfo = property.memberInfo as PropertyInfo;
 				if (propertyInfo != null)
 				{
-					Console.WriteLine($"---@class {type.Name}");
+					Console.WriteLine($"---@class {className}");
 					Console.Write($"---@field {propertyInfo.EmmyLuaString()} ");
 				}
 
@@ -176,10 +172,10 @@ namespace OpenRA.Mods.Common.UtilityCommands
 					Console.WriteLine("--- *Queued Activity*");
 
 				if (property.required.Any())
-						Console.WriteLine($"--- **Requires {(property.required.Length == 1 ? "Trait" : "Traits")}:** {property.required.Select(r => GetDocumentationUrl(r)).JoinWith(", ")}");
+						Console.WriteLine($"--- **Requires {(property.required.Length == 1 ? "Trait" : "Traits")}:** {property.required.Select(GetDocumentationUrl).JoinWith(", ")}");
 
 				if (methodInfo != null)
-					Console.WriteLine($"function {type.Name.ToLowerInvariant()}.{methodInfo.Name}({body}) end");
+					Console.WriteLine($"function {tableName}.{methodInfo.Name}({body}) end");
 
 				Console.WriteLine();
 			}
@@ -200,10 +196,15 @@ namespace OpenRA.Mods.Common.UtilityCommands
 			{ "String", "string" },
 			{ "String[]", "string[]" },
 			{ "Boolean", "boolean" },
+			{ "Object", "any" },
 			{ "LuaTable", "table" },
 			{ "LuaValue", "any" },
 			{ "LuaValue[]", "table" },
 			{ "LuaFunction", "function" },
+			{ "Actor", "ActorInstance" },
+			{ "Actor[]", "ActorInstance[]" },
+			{ "Player", "PlayerInstance" },
+			{ "Player[]", "PlayerInstance[]" },
 		};
 
 		public static string EmmyLuaString(this Type type)
