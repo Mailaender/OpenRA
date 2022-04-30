@@ -61,10 +61,6 @@ namespace OpenRA.Mods.Common.UtilityCommands
 				Console.WriteLine(name + " = { }");
 				Console.WriteLine();
 
-				Console.WriteLine($"---@class {name}");
-				Console.WriteLine("local " + name.ToLowerInvariant() + " = { }");
-				Console.WriteLine();
-
 				var members = ScriptMemberWrapper.WrappableMembers(t);
 				foreach (var member in members.OrderBy(m => m.Name))
 				{
