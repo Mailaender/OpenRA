@@ -46,8 +46,19 @@ namespace OpenRA.Mods.Common.UtilityCommands
 			Console.WriteLine("function Tick() end");
 			Console.WriteLine();
 
-			var tables = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptGlobal>().OrderBy(t => t.Name);
-			foreach (var t in tables)
+			var globalTables = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptGlobal>().OrderBy(t => t.Name);
+			WriteGlobals(globalTables);
+
+			var actorProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptActorProperties>();
+			WriteScriptProperties(typeof(Actor), actorProperties);
+
+			var playerProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptPlayerProperties>();
+			WriteScriptProperties(typeof(Player), playerProperties);
+		}
+
+		void WriteGlobals(IEnumerable<Type> globalTables)
+		{
+			foreach (var t in globalTables)
 			{
 				var name = t.GetCustomAttributes<ScriptGlobalAttribute>(true).First().Name;
 				Console.WriteLine("---Global variable provided by the game scripting engine.");
@@ -105,15 +116,9 @@ namespace OpenRA.Mods.Common.UtilityCommands
 				Console.WriteLine("}");
 				Console.WriteLine();
 			}
-
-			var actorProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptActorProperties>();
-			WriteScriptProperties(typeof(Actor), actorProperties);
-
-			var playerProperties = Game.ModData.ObjectCreator.GetTypesImplementing<ScriptPlayerProperties>();
-			WriteScriptProperties(typeof(Player), playerProperties);
 		}
 
-		public void WriteScriptProperties(Type type, IEnumerable<Type> implementingTypes)
+		void WriteScriptProperties(Type type, IEnumerable<Type> implementingTypes)
 		{
 			var className = $"{type.Name}Instance";
 			var tableName = $"{type.Name.ToLowerInvariant()}Instance";
