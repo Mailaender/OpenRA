@@ -55,10 +55,10 @@ namespace OpenRA.Mods.Common.Widgets
 
 		public void Open(IVideo video)
 		{
+			this.video = video;
+
 			if (video == null)
 				return;
-
-			this.video = video;
 
 			stopped = true;
 			paused = true;
