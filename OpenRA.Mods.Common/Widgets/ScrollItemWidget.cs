@@ -17,8 +17,8 @@ namespace OpenRA.Mods.Common.Widgets
 {
 	public class ScrollItemWidget : ButtonWidget
 	{
-		public new readonly string Background = "scrollitem";
 		public readonly bool EnableChildMouseOver = false;
+
 		public string ItemKey;
 
 		readonly CachedTransform<(bool, bool, bool, bool, bool), Sprite[]> getPanelCache;

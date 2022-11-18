@@ -81,13 +81,20 @@ namespace OpenRA.Mods.Common.Widgets
 
 		public readonly Dictionary<string, ProductionTabGroup> Groups;
 
+		[ChromeReference]
 		public string ArrowButton = "button";
+
+		[ChromeReference]
 		public string TabButton = "button";
 
+		[ChromeReference]
 		public string Background = "panel-black";
+
+		[ChromeReference]
 		public string Decorations = "scrollpanel-decorations";
 		public readonly string DecorationScrollLeft = "left";
 		public readonly string DecorationScrollRight = "right";
+
 		CachedTransform<(bool Disabled, bool Pressed, bool Hover, bool Focused, bool Highlighted), Sprite> getLeftArrowImage;
 		CachedTransform<(bool Disabled, bool Pressed, bool Hover, bool Focused, bool Highlighted), Sprite> getRightArrowImage;
 
@@ -107,6 +114,9 @@ namespace OpenRA.Mods.Common.Widgets
 		[ObjectCreator.UseCtor]
 		public ProductionTabsWidget(World world)
 		{
+			if (world == null)
+				return;
+
 			this.world = world;
 
 			Groups = world.Map.Rules.Actors.Values.SelectMany(a => a.TraitInfos<ProductionQueueInfo>())
@@ -195,8 +205,8 @@ namespace OpenRA.Mods.Common.Widgets
 			var rightHover = Ui.MouseOverWidget == this && rightButtonRect.Contains(Viewport.LastMousePos);
 
 			WidgetUtils.DrawPanel(Background, rb);
-			ButtonWidget.DrawBackground(ArrowButton, leftButtonRect, leftDisabled, leftPressed, leftHover, false);
-			ButtonWidget.DrawBackground(ArrowButton, rightButtonRect, rightDisabled, rightPressed, rightHover, false);
+			WidgetUtils.DrawBackground(ArrowButton, leftButtonRect, leftDisabled, leftPressed, leftHover, false);
+			WidgetUtils.DrawBackground(ArrowButton, rightButtonRect, rightDisabled, rightPressed, rightHover, false);
 
 			var leftArrowImage = getLeftArrowImage.Update((leftDisabled, leftPressed, leftHover, false, false));
 			WidgetUtils.DrawSprite(leftArrowImage,
@@ -216,7 +226,7 @@ namespace OpenRA.Mods.Common.Widgets
 				var rect = new Rectangle(origin.X + contentWidth, origin.Y, TabWidth, rb.Height);
 				var hover = !leftHover && !rightHover && Ui.MouseOverWidget == this && rect.Contains(Viewport.LastMousePos);
 				var highlighted = tab.Queue == CurrentQueue;
-				ButtonWidget.DrawBackground(TabButton, rect, false, false, hover, highlighted);
+				WidgetUtils.DrawBackground(TabButton, rect, false, false, hover, highlighted);
 				contentWidth += TabWidth - 1;
 
 				var textSize = font.Measure(tab.Name);

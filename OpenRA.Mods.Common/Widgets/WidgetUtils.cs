@@ -20,12 +20,29 @@ namespace OpenRA.Mods.Common.Widgets
 {
 	public static class WidgetUtils
 	{
+		public static readonly string SuffixHighlighted = "-highlighted";
+		public static readonly string SuffixDisabled = "-disabled";
+		public static readonly string SuffixFocused = "-focused";
+		public static readonly string SuffixPressed = "-pressed";
+		public static readonly string SuffixHover = "-hover";
+
+		public static void DrawBackground(string baseName, Rectangle rect, bool disabled, bool pressed, bool hover, bool highlighted)
+		{
+			if (string.IsNullOrEmpty(baseName))
+				return;
+
+			var variantName = highlighted ? baseName + SuffixHighlighted : baseName;
+			var imageName = GetStatefulImageName(variantName, disabled, pressed, hover);
+
+			DrawPanel(imageName, rect);
+		}
+
 		public static string GetStatefulImageName(string baseName, bool disabled = false, bool pressed = false, bool hover = false, bool focused = false)
 		{
-			var suffix = disabled ? "-disabled" :
-				focused ? "-focused" :
-				pressed ? "-pressed" :
-				hover ? "-hover" :
+			var suffix = disabled ? SuffixDisabled : // TODO
+				focused ? SuffixFocused :
+				pressed ? SuffixPressed :
+				hover ? SuffixHover :
 				"";
 
 			return baseName + suffix;
@@ -36,7 +53,7 @@ namespace OpenRA.Mods.Common.Widgets
 			return new CachedTransform<(bool, bool, bool, bool, bool), Sprite>(
 				((bool Disabled, bool Pressed, bool Hover, bool Focused, bool Highlighted) args) =>
 					{
-						var collectionName = collection + (args.Highlighted ? "-highlighted" : "");
+						var collectionName = collection + (args.Highlighted ? SuffixHighlighted : "");
 						var variantImageName = GetStatefulImageName(imageName, args.Disabled, args.Pressed, args.Hover, args.Focused);
 						return ChromeProvider.TryGetImage(collectionName, variantImageName) ?? ChromeProvider.GetImage(collectionName, imageName);
 					});
@@ -48,7 +65,7 @@ namespace OpenRA.Mods.Common.Widgets
 			return new CachedTransform<(bool, bool, bool, bool, bool), Sprite[]>(
 				((bool Disabled, bool Pressed, bool Hover, bool Focused, bool Highlighted) args) =>
 					{
-						var collectionName = collection + (args.Highlighted ? "-highlighted" : "");
+						var collectionName = collection + (args.Highlighted ? SuffixHighlighted : "");
 						var variantCollectionName = GetStatefulImageName(collectionName, args.Disabled, args.Pressed, args.Hover, args.Focused);
 						return ChromeProvider.TryGetPanelImages(variantCollectionName) ?? ChromeProvider.GetPanelImages(collectionName);
 					});

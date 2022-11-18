@@ -20,8 +20,12 @@ namespace OpenRA.Mods.Common.Widgets
 		public readonly string TooltipTemplate;
 		public readonly string TooltipContainer;
 
+		[ChromeReference]
 		public string ImageCollection = "";
+
+
 		public string ImageName = "";
+
 		public bool ClickThrough = true;
 		public Func<string> GetImageName;
 		public Func<string> GetImageCollection;

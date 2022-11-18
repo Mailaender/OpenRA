@@ -12,7 +12,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Graphics;
-using OpenRA.Mods.Common.Lint;
 using OpenRA.Traits;
 using OpenRA.Widgets;
 

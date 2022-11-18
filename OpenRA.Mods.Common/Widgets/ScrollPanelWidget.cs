@@ -46,12 +46,22 @@ namespace OpenRA.Mods.Common.Widgets
 		public int ButtonDepth = ChromeMetrics.Get<int>("ButtonDepth");
 		public string ClickSound = ChromeMetrics.Get<string>("ClickSound");
 		public string ClickDisabledSound = ChromeMetrics.Get<string>("ClickDisabledSound");
+
+		[ChromeReference]
 		public string Background = "scrollpanel-bg";
+
+		[ChromeReference]
 		public string ScrollBarBackground = "scrollpanel-bg";
+
+		[ChromeReference]
 		public string Button = "scrollpanel-button";
+
+		[ChromeReference]
 		public string Decorations = "scrollpanel-decorations";
+
 		public readonly string DecorationScrollUp = "up";
 		public readonly string DecorationScrollDown = "down";
+
 		readonly CachedTransform<(bool Disabled, bool Pressed, bool Hover, bool Focused, bool Highlighted), Sprite> getUpArrowImage;
 		readonly CachedTransform<(bool Disabled, bool Pressed, bool Hover, bool Focused, bool Highlighted), Sprite> getDownArrowImage;
 		public int ContentHeight;
@@ -202,11 +212,11 @@ namespace OpenRA.Mods.Common.Widgets
 
 				var thumbHover = Ui.MouseOverWidget == this && thumbRect.Contains(Viewport.LastMousePos);
 				WidgetUtils.DrawPanel(ScrollBarBackground, scrollbarRect);
-				ButtonWidget.DrawBackground(Button, upButtonRect, upDisabled, upPressed, upHover, false);
-				ButtonWidget.DrawBackground(Button, downButtonRect, downDisabled, downPressed, downHover, false);
+				WidgetUtils.DrawBackground(Button, upButtonRect, upDisabled, upPressed, upHover, false);
+				WidgetUtils.DrawBackground(Button, downButtonRect, downDisabled, downPressed, downHover, false);
 
 				if (thumbHeight > 0)
-					ButtonWidget.DrawBackground(Button, thumbRect, false, HasMouseFocus && thumbHover, thumbHover, false);
+					WidgetUtils.DrawBackground(Button, thumbRect, false, HasMouseFocus && thumbHover, thumbHover, false);
 
 				var upOffset = !upPressed || upDisabled ? 4 : 4 + ButtonDepth;
 				var downOffset = !downPressed || downDisabled ? 4 : 4 + ButtonDepth;

@@ -20,10 +20,18 @@ namespace OpenRA.Mods.Common.Widgets
 {
 	public class DropDownButtonWidget : ButtonWidget
 	{
+		[ChromeReference]
 		public readonly string Decorations = "dropdown-decorations";
+
+		[ChromeReference]
 		public readonly string DecorationMarker = "marker";
+
+		[ChromeReference]
 		public readonly string Separators = "dropdown-separators";
+
+		[ChromeReference]
 		public readonly string SeparatorImage = "separator";
+
 		public readonly TextAlign PanelAlign = TextAlign.Left;
 		public string PanelRoot;
 

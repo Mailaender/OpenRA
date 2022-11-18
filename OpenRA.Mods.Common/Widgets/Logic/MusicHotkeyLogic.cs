@@ -10,7 +10,6 @@
 #endregion
 
 using System.Collections.Generic;
-using OpenRA.Mods.Common.Lint;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Widgets;
 

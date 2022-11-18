@@ -18,6 +18,8 @@ namespace OpenRA.Mods.Common.Widgets
 	{
 		public readonly bool ClickThrough = false;
 		public readonly bool Draggable = false;
+
+		[ChromeReference]
 		public string Background = "dialog";
 
 		public override void Draw()

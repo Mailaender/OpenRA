@@ -21,8 +21,25 @@ namespace OpenRA.Mods.Common.Widgets
 		public event Action<float> OnChange = _ => { };
 		public int Ticks = 0;
 		public int TrackHeight = 5;
+
+		[ChromeReferenceSuffix(nameof(Thumb))]
+		public static readonly string SuffixHover = "-hover";
+
+		[ChromeReferenceSuffix(nameof(Thumb))]
+		public static readonly string SuffixPressed = "-pressed";
+
+		[ChromeReferenceSuffix(nameof(Thumb))]
+		public static readonly string SuffixDisabled = "-disabled";
+
+		[ChromeReference]
 		public string Thumb = "slider-thumb";
+
+		[ChromeReference]
 		public string Track = "slider-track";
+
+		[ChromeReference]
+		public string Slider = "slider";
+
 		public float MinimumValue = 0;
 		public float MaximumValue = 1;
 		public float Value = 0;
@@ -124,7 +141,7 @@ namespace OpenRA.Mods.Common.Widgets
 			var trackRect = new Rectangle(trackOrigin - 1, rb.Y + (rb.Height - TrackHeight) / 2, trackWidth + 2, TrackHeight);
 
 			// Tickmarks
-			var tick = ChromeProvider.GetImage("slider", "tick");
+			var tick = ChromeProvider.GetImage(Slider, "tick");
 			for (var i = 0; i < Ticks; i++)
 			{
 				var tickPos = new float2(
@@ -139,7 +156,7 @@ namespace OpenRA.Mods.Common.Widgets
 
 			// Thumb
 			var thumbHover = Ui.MouseOverWidget == this && tr.Contains(Viewport.LastMousePos);
-			ButtonWidget.DrawBackground(Thumb, tr, IsDisabled(), isMoving, thumbHover, false);
+			WidgetUtils.DrawBackground(Thumb, tr, IsDisabled(), isMoving, thumbHover, false);
 		}
 	}
 }

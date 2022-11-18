@@ -18,7 +18,10 @@ namespace OpenRA.Mods.Common.Widgets
 {
 	public class ProgressBarWidget : Widget
 	{
+		[ChromeReference]
 		public string Background = "progressbar-bg";
+
+		[ChromeReference]
 		public string Bar = "progressbar-thumb";
 		public Size BarMargin = new(2, 2);
 

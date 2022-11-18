@@ -25,6 +25,8 @@ namespace OpenRA.Mods.Common.Widgets
 
 		public CachedTransform<(float, float), string> TooltipTextCached;
 		public ResourceBarOrientation Orientation = ResourceBarOrientation.Vertical;
+
+		[ChromeReference]
 		public string IndicatorCollection = "sidebar-bits";
 		public string IndicatorImage = "indicator";
 

@@ -18,8 +18,15 @@ namespace OpenRA.Mods.Common.Widgets
 {
 	public class CheckboxWidget : ButtonWidget
 	{
+		[ChromeReference]
 		public new string Background = "checkbox";
+
+		[ChromeReferenceSuffix(nameof(ImageCollectionPrefix))]
 		public string Checkmark = "tick";
+
+		[ChromeReferencePrefix(nameof(Checkmark))]
+		public string ImageCollectionPrefix = "checkmark-";
+
 		public Func<string> GetCheckmark;
 		public Func<bool> IsChecked = () => false;
 
@@ -65,7 +72,7 @@ namespace OpenRA.Mods.Common.Widgets
 			var text = GetText();
 			var rect = new Rectangle(RenderBounds.Location, new Size(Bounds.Height, Bounds.Height));
 
-			DrawBackground(Background, rect, disabled, Depressed, hover, IsHighlighted());
+			WidgetUtils.DrawBackground(Background, rect, disabled, Depressed, hover, IsHighlighted());
 
 			var textPosition = new float2(RenderBounds.Left + RenderBounds.Height * 1.5f, RenderOrigin.Y + (Bounds.Height - font.Measure(text).Y - font.TopOffset) / 2);
 			if (Contrast)

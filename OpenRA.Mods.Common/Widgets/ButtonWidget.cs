@@ -29,7 +29,22 @@ namespace OpenRA.Mods.Common.Widgets
 		public TextAlign Align = TextAlign.Center;
 		public int LeftMargin = 5;
 		public int RightMargin = 5;
+
+		[ChromeReference]
 		public string Background = "button";
+
+		[ChromeReferenceSuffix(nameof(Background))]
+		public static readonly string SuffixHighlighted = "-highlighted";
+
+		[ChromeReferenceSuffix(nameof(Background))]
+		public static readonly string SuffixDisabled = "-disabled";
+
+		[ChromeReferenceSuffix(nameof(Background))]
+		public static readonly string SuffixPressed = "-pressed";
+
+		[ChromeReferenceSuffix(nameof(Background))]
+		public static readonly string SuffixHover = "-hover";
+
 		public bool Depressed = false;
 		public int VisualHeight = ChromeMetrics.Get<int>("ButtonDepth");
 		public string Font = ChromeMetrics.Get<string>("ButtonFont");
@@ -275,18 +290,7 @@ namespace OpenRA.Mods.Common.Widgets
 
 		public virtual void DrawBackground(Rectangle rect, bool disabled, bool pressed, bool hover, bool highlighted)
 		{
-			DrawBackground(Background, rect, disabled, pressed, hover, highlighted);
-		}
-
-		public static void DrawBackground(string baseName, Rectangle rect, bool disabled, bool pressed, bool hover, bool highlighted)
-		{
-			if (string.IsNullOrEmpty(baseName))
-				return;
-
-			var variantName = highlighted ? baseName + "-highlighted" : baseName;
-			var imageName = WidgetUtils.GetStatefulImageName(variantName, disabled, pressed, hover);
-
-			WidgetUtils.DrawPanel(imageName, rect);
+			WidgetUtils.DrawBackground(Background, rect, disabled, pressed, hover, highlighted);
 		}
 	}
 }
