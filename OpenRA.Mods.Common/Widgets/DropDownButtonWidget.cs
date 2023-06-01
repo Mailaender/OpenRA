@@ -23,7 +23,6 @@ namespace OpenRA.Mods.Common.Widgets
 		[ChromeReference]
 		public readonly string Decorations = "dropdown-decorations";
 
-		[ChromeReference]
 		public readonly string DecorationMarker = "marker";
 
 		[ChromeReference]

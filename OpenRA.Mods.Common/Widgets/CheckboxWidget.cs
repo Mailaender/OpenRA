@@ -21,7 +21,7 @@ namespace OpenRA.Mods.Common.Widgets
 		[ChromeReference]
 		public new string Background = "checkbox";
 
-		[ChromeReferenceSuffix(nameof(ImageCollectionPrefix))]
+		[ChromeReference]
 		public string Checkmark = "tick";
 
 		[ChromeReferencePrefix(nameof(Checkmark))]

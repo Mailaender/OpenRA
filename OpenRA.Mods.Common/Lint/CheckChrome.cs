@@ -13,8 +13,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using OpenRA.Traits;
 using OpenRA.Mods.Common.Widgets;
+using OpenRA.Traits;
 using OpenRA.Widgets;
 
 namespace OpenRA.Mods.Common.Lint
@@ -44,59 +44,82 @@ namespace OpenRA.Mods.Common.Lint
 			foreach (var widgetType in modData.ObjectCreator.GetTypesImplementing<Widget>())
 			{
 				System.Console.WriteLine(widgetType.Name);
+
 				var fields = widgetType.GetFields().Concat(widgetType.BaseType.GetFields());
 				foreach (var field in fields)
 				{
-					var chromeReferencePrefix = field.GetCustomAttributes<ChromeReferencePrefixAttribute>(true).FirstOrDefault();
-					if (chromeReferencePrefix != null)
-					{
-						var prefixedInstance = CreateWidgetInstance(modData, widgetType);
-						var prefix = (string)field.GetValue(prefixedInstance);
-						var chromeField = fields.First(f => f.Name == chromeReferencePrefix.ChromeReference);
-						var baseName = (string)chromeField.GetValue(prefixedInstance);
-						chromeWidgetReferences.Add(prefix + baseName);
-						continue;
-					}
-
-					var chromeReferenceSuffix = field.GetCustomAttributes<ChromeReferenceSuffixAttribute>(true).FirstOrDefault();
-					if (chromeReferenceSuffix != null)
-					{
-						var suffixedInstance = CreateWidgetInstance(modData, widgetType);
-						var suffix = (string)field.GetValue(suffixedInstance);
-						var chromeField = fields.First(f => f.Name == chromeReferenceSuffix.ChromeReference);
-						var baseName = (string)chromeField.GetValue(suffixedInstance);
-						chromeWidgetReferences.Add(baseName + suffix);
-						System.Console.WriteLine("\t"+baseName + suffix);
-						continue;
-					}
-
 					var chromeReference = field.GetCustomAttributes<ChromeReferenceAttribute>(true).FirstOrDefault();
 					if (chromeReference == null)
 						continue;
 
-					if (field.Name == nameof(ImageWidget.ImageCollection))
-					foreach (var filename in modData.Manifest.ChromeLayout)
-						ExtractChromeLayout(MiniYaml.FromStream(modData.DefaultFileSystem.Open(filename), filename), field.Name);
-
-
 					var instance = CreateWidgetInstance(modData, widgetType);
-					var key = (string)field.GetValue(instance);
-
-
-					var logic = fields.First(f => f.Name == "Logic");
-					var logics = (string[])logic.GetValue(instance);
-					if (logics.Any(l => l == "AddFactionSuffixLogic"))
+					var baseKey = (string)field.GetValue(instance);
+					if (string.IsNullOrWhiteSpace(baseKey))
 					{
-						foreach (var faction in factions)
-							if (!ChromeMetrics.TryGet<string>("FactionSuffix-" + faction, out var factionSuffix))
-								key = key + "-" + factionSuffix;
+						System.Console.WriteLine($"{field.Name} has an empty base key.");
+						continue;
 					}
 
-					System.Console.WriteLine("\t"+key);
-					chromeWidgetReferences.Add(key);
+					chromeWidgetReferences.Add(baseKey);
 
+					var prefix = GetPrefix(field, fields, modData, widgetType);
+					if (!string.IsNullOrEmpty(prefix))
+					{
+						System.Console.WriteLine($"PREFIX {prefix}");
+						chromeWidgetReferences.Add(prefix + baseKey);
+					}
+
+
+					var suffixes = GetSuffixes(field, fields, modData, widgetType);
+					foreach (var suffix in suffixes)
+						chromeWidgetReferences.Add(baseKey + suffix);
+
+					foreach (var filename in modData.Manifest.ChromeLayout)
+						ExtractChromeLayout(MiniYaml.FromStream(modData.DefaultFileSystem.Open(filename), filename), field.Name, factions, prefix, suffixes);
 				}
 			}
+		}
+
+		static string GetPrefix(FieldInfo fieldInfo, IEnumerable<FieldInfo> fields, ModData modData, Type widgetType)
+		{
+			foreach (var field in fields)
+			{
+				var chromeReferencePrefix = field.GetCustomAttributes<ChromeReferencePrefixAttribute>(true).FirstOrDefault();
+				if (chromeReferencePrefix == null)
+					continue;
+
+				System.Console.WriteLine($"{chromeReferencePrefix.ChromeReference} vs {fieldInfo.Name}");
+
+				if (chromeReferencePrefix.ChromeReference == fieldInfo.Name)
+				{
+					var prefixedInstance = CreateWidgetInstance(modData, widgetType);
+					var prefix = (string)field.GetValue(prefixedInstance);
+					return prefix;
+				}
+			}
+
+			return string.Empty;
+		}
+
+		static IEnumerable<string> GetSuffixes(FieldInfo fieldInfo, IEnumerable<FieldInfo> fields, ModData modData, Type widgetType)
+		{
+			var suffixes = new List<string>();
+
+			foreach (var field in fields)
+			{
+				var chromeReferenceSuffix = field.GetCustomAttributes<ChromeReferenceSuffixAttribute>(true).FirstOrDefault();
+				if (chromeReferenceSuffix == null)
+					continue;
+
+				if (chromeReferenceSuffix.ChromeReference == fieldInfo.Name)
+				{
+					var suffixedInstance = CreateWidgetInstance(modData, widgetType);
+					var suffix = (string)field.GetValue(suffixedInstance);
+					suffixes.Add(suffix);
+				}
+			}
+
+			return suffixes;
 		}
 
 		static Widget CreateWidgetInstance(ModData modData, Type widgetType)
@@ -132,9 +155,8 @@ namespace OpenRA.Mods.Common.Lint
 			}
 		}
 
-		void ExtractChromeLayout(List<MiniYamlNode> nodes, string key)
+		void ExtractChromeLayout(List<MiniYamlNode> nodes, string key, IEnumerable<string> factions, string prefix, IEnumerable<string> suffixes)
 		{
-			//System.Console.WriteLine($"Checking {key}");
 			foreach (var node in nodes)
 			{
 				if (node.Value == null)
@@ -142,13 +164,60 @@ namespace OpenRA.Mods.Common.Lint
 
 				if (node.Key == key)
 				{
-					chromeWidgetReferences.Add(node.Value.Value);
-					Console.WriteLine($"\t\t{node.Value.Value}");
+					if (IsFactionSuffixed(nodes))
+					{
+						foreach (var faction in factions)
+						{
+							if (faction == "Random")
+								continue;
+
+							var chromeReference = node.Value.Value;
+							chromeReference = node.Value.Value;
+							chromeReference = chromeReference + "-" + faction;
+
+							if (!string.IsNullOrEmpty(prefix))
+								chromeReference = prefix + chromeReference;
+
+							if (suffixes.Any())
+								foreach (var suffix in suffixes)
+									chromeWidgetReferences.Add(chromeReference + suffix);
+							else
+								chromeWidgetReferences.Add(chromeReference);
+						}
+					}
+					else
+					{
+						var chromeReference = node.Value.Value;
+
+						if (!string.IsNullOrEmpty(prefix))
+							chromeReference = prefix + chromeReference;
+
+						if (suffixes.Any())
+								foreach (var suffix in suffixes)
+									chromeWidgetReferences.Add(chromeReference + suffix);
+						else
+							chromeWidgetReferences.Add(chromeReference);
+					}
 				}
 
 				if (node.Value.Nodes != null)
-					ExtractChromeLayout(node.Value.Nodes, key);
+					ExtractChromeLayout(node.Value.Nodes, key, factions, prefix, suffixes);
+
+				//Console.WriteLine($"\t\t{node.Value.Value}");
 			}
+		}
+
+		static bool IsFactionSuffixed(List<MiniYamlNode> nodes)
+		{
+			var factionSuffixed = false;
+
+			foreach (var node in nodes)
+			{
+				if (node.Key == "Logic" && node.Value.Value == "AddFactionSuffixLogic")
+					factionSuffixed = true;
+			}
+
+			return factionSuffixed;
 		}
 	}
 }
