@@ -44,20 +44,20 @@ namespace OpenRA.Graphics
 				return mutable.AsReadOnly();
 			if (palettes.TryGetValue(name, out var immutable))
 				return immutable;
-			throw new InvalidOperationException($"Palette `{name}` does not exist");
+			throw new InvalidOperationException($"Palette `{name}` does not exist.");
 		}
 
 		public int GetPaletteIndex(string name)
 		{
 			if (!indices.TryGetValue(name, out var ret))
-				throw new InvalidOperationException($"Palette `{name}` does not exist");
+				throw new InvalidOperationException($"Palette `{name}` does not exist.");
 			return ret;
 		}
 
 		public void AddPalette(string name, ImmutablePalette p, bool allowModifiers)
 		{
 			if (palettes.ContainsKey(name))
-				throw new InvalidOperationException($"Palette {name} has already been defined");
+				throw new InvalidOperationException($"Palette {name} has already been defined.");
 
 			// PERF: the first row in the palette textures is reserved as a placeholder for non-indexed sprites
 			// that do not have a color-shift applied. This provides a quick shortcut to avoid querying the

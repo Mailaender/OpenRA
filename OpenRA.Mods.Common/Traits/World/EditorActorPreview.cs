@@ -288,7 +288,7 @@ namespace OpenRA.Mods.Common.Traits
 				throw new InvalidDataException($"Actor {ID} must define Location or CenterPosition");
 		}
 
-		void UpdateRadarColor()
+		public void UpdateRadarColor()
 		{
 			RadarColor = terrainRadarColorInfo == null ? Owner.Color : terrainRadarColorInfo.GetColorFromTerrain(worldRenderer.World);
 		}

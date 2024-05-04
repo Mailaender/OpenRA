@@ -39,7 +39,7 @@ namespace OpenRA.Mods.Common.Traits
 	public class EditorActorLayer : IWorldLoaded, ITickRender, IRender, IRadarSignature, ICreatePlayers, IRenderAnnotations
 	{
 		readonly EditorActorLayerInfo info;
-		readonly List<EditorActorPreview> previews = new();
+		public readonly List<EditorActorPreview> Previews = new();
 		readonly Dictionary<CPos, List<EditorActorPreview>> cellMap = new();
 
 		SpatiallyPartitioned<EditorActorPreview> screenMap;
@@ -83,7 +83,7 @@ namespace OpenRA.Mods.Common.Traits
 				Add(kv.Key, new ActorReference(kv.Value.Value, kv.Value.ToDictionary()), true);
 
 			// Update neighbours in one pass
-			foreach (var p in previews)
+			foreach (var p in Previews)
 				UpdateNeighbours(p.Footprint);
 		}
 
@@ -92,7 +92,7 @@ namespace OpenRA.Mods.Common.Traits
 			if (wr.World.Type != WorldType.Editor)
 				return;
 
-			foreach (var p in previews)
+			foreach (var p in Previews)
 				p.Tick();
 		}
 
@@ -143,7 +143,7 @@ namespace OpenRA.Mods.Common.Traits
 
 		public void Add(EditorActorPreview preview, bool initialSetup = false)
 		{
-			previews.Add(preview);
+			Previews.Add(preview);
 			if (!preview.Bounds.IsEmpty)
 				screenMap.Add(preview, preview.Bounds);
 
@@ -168,7 +168,7 @@ namespace OpenRA.Mods.Common.Traits
 
 		public void Remove(EditorActorPreview preview)
 		{
-			previews.Remove(preview);
+			Previews.Remove(preview);
 			screenMap.Remove(preview);
 
 			// Fallback to the actor's CenterPosition for the ActorMap if it has no Footprint
@@ -196,7 +196,7 @@ namespace OpenRA.Mods.Common.Traits
 
 		void SyncMultiplayerCount()
 		{
-			var newCount = previews.Count(p => p.Info.Name == "mpspawn");
+			var newCount = Previews.Count(p => p.Info.Name == "mpspawn");
 			var mp = Players.Players.Where(p => p.Key.StartsWith("Multi", StringComparison.Ordinal)).ToList();
 			foreach (var kv in mp)
 			{
@@ -302,10 +302,10 @@ namespace OpenRA.Mods.Common.Traits
 
 		string NextActorName()
 		{
-			var id = previews.Count;
+			var id = Previews.Count;
 			var possibleName = "Actor" + id.ToStringInvariant();
 
-			while (previews.Any(p => p.ID == possibleName))
+			while (Previews.Any(p => p.ID == possibleName))
 			{
 				id++;
 				possibleName = "Actor" + id.ToStringInvariant();
@@ -317,7 +317,7 @@ namespace OpenRA.Mods.Common.Traits
 		public List<MiniYamlNode> Save()
 		{
 			var nodes = new List<MiniYamlNode>();
-			foreach (var a in previews)
+			foreach (var a in Previews)
 				nodes.Add(new MiniYamlNode(a.ID, a.Save()));
 
 			return nodes;
@@ -332,7 +332,7 @@ namespace OpenRA.Mods.Common.Traits
 
 		public EditorActorPreview this[string id]
 		{
-			get { return previews.FirstOrDefault(p => p.ID.Equals(id, StringComparison.OrdinalIgnoreCase)); }
+			get { return Previews.FirstOrDefault(p => p.ID.Equals(id, StringComparison.OrdinalIgnoreCase)); }
 		}
 	}
 }
