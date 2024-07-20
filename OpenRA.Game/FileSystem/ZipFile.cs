@@ -12,8 +12,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
-using ICSharpCode.SharpZipLib.Zip;
 
 namespace OpenRA.FileSystem
 {
@@ -24,7 +24,7 @@ namespace OpenRA.FileSystem
 		public class ReadOnlyZipFile : IReadOnlyPackage
 		{
 			public string Name { get; protected set; }
-			protected ZipFile pkg;
+			protected ZipArchive pkg;
 
 			// Dummy constructor for use with ReadWriteZipFile
 			protected ReadOnlyZipFile() { }
@@ -32,7 +32,7 @@ namespace OpenRA.FileSystem
 			public ReadOnlyZipFile(Stream s, string filename)
 			{
 				Name = filename;
-				pkg = new ZipFile(s);
+				pkg = new ZipArchive(s, ZipArchiveMode.Read);
 			}
 
 			public Stream GetStream(string filename)
@@ -41,22 +41,23 @@ namespace OpenRA.FileSystem
 				if (entry == null)
 					return null;
 
-				using (var z = pkg.GetInputStream(entry))
-				{
-					var ms = new MemoryStream((int)entry.Size);
+				var ms = new MemoryStream();
+				using (var z = entry.Open())
 					z.CopyTo(ms);
-					ms.Seek(0, SeekOrigin.Begin);
-					return ms;
-				}
+
+				ms.Seek(0, SeekOrigin.Begin);
+				return ms;
 			}
 
 			public IEnumerable<string> Contents
 			{
 				get
 				{
-					foreach (ZipEntry entry in pkg)
-						if (entry.IsFile)
-							yield return entry.Name;
+					foreach (var entry in pkg.Entries)
+					{
+						if (!string.IsNullOrEmpty(entry.Name))
+							yield return entry.FullName;
+					}
 				}
 			}
 
@@ -67,7 +68,7 @@ namespace OpenRA.FileSystem
 
 			public void Dispose()
 			{
-				pkg?.Close();
+				pkg?.Dispose();
 				GC.SuppressFinalize(this);
 			}
 
@@ -78,10 +79,9 @@ namespace OpenRA.FileSystem
 				if (entry == null)
 					return null;
 
-				if (entry.IsDirectory)
+				if (entry.FullName.EndsWith("/", StringComparison.InvariantCulture))
 					return new ZipFolder(this, filename);
 
-				// Other package types can be loaded normally
 				var s = GetStream(filename);
 				if (s == null)
 					return null;
@@ -100,19 +100,12 @@ namespace OpenRA.FileSystem
 
 			public ReadWriteZipFile(string filename, bool create = false)
 			{
-				// SharpZipLib breaks when asked to update archives loaded from outside streams or files
-				// We can work around this by creating a clean in-memory-only file, cutting all outside references
 				if (!create)
-				{
 					using (var copy = new MemoryStream(File.ReadAllBytes(filename)))
-					{
-						pkgStream.Capacity = (int)copy.Length;
 						copy.CopyTo(pkgStream);
-					}
-				}
 
 				pkgStream.Position = 0;
-				pkg = new ZipFile(pkgStream);
+				pkg = new ZipArchive(pkgStream, ZipArchiveMode.Update);
 				Name = filename;
 			}
 
@@ -123,17 +116,21 @@ namespace OpenRA.FileSystem
 
 			public void Update(string filename, byte[] contents)
 			{
-				pkg.BeginUpdate();
-				pkg.Add(new StaticStreamDataSource(new MemoryStream(contents)), filename);
-				pkg.CommitUpdate();
+				var entry = pkg.GetEntry(filename);
+				entry?.Delete();
+
+				entry = pkg.CreateEntry(filename);
+				using (var entryStream = entry.Open())
+				using (var contentStream = new MemoryStream(contents))
+					contentStream.CopyTo(entryStream);
+
 				Commit();
 			}
 
 			public void Delete(string filename)
 			{
-				pkg.BeginUpdate();
-				pkg.Delete(filename);
-				pkg.CommitUpdate();
+				var entry = pkg.GetEntry(filename);
+				entry?.Delete();
 				Commit();
 			}
 		}
@@ -186,20 +183,6 @@ namespace OpenRA.FileSystem
 			}
 
 			public void Dispose() { /* nothing to do */ }
-		}
-
-		sealed class StaticStreamDataSource : IStaticDataSource
-		{
-			readonly Stream s;
-			public StaticStreamDataSource(Stream s)
-			{
-				this.s = s;
-			}
-
-			public Stream GetSource()
-			{
-				return s;
-			}
 		}
 
 		public bool TryParsePackage(Stream s, string filename, FileSystem context, out IReadOnlyPackage package)

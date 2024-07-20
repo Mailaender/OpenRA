@@ -12,9 +12,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
-using ICSharpCode.SharpZipLib.Zip.Compression;
-using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 
 namespace OpenRA.Mods.Common.FileFormats
 {
@@ -96,7 +95,6 @@ namespace OpenRA.Mods.Common.FileFormats
 			var folder = folders[file.FolderIndex];
 			stream.Seek(folder.BlockOffset, SeekOrigin.Begin);
 
-			var inflater = new Inflater(true);
 			var buffer = new byte[4096];
 			var decompressedBytes = 0;
 			for (var i = 0; i < folder.BlockCount; i++)
@@ -109,7 +107,7 @@ namespace OpenRA.Mods.Common.FileFormats
 				stream.Position += 4;
 
 				using (var batch = new MemoryStream(stream.ReadBytes(blockLength - 2)))
-				using (var inflaterStream = new InflaterInputStream(batch, inflater))
+				using (var inflaterStream = new DeflateStream(batch, CompressionMode.Decompress))
 				{
 					int n;
 					while ((n = inflaterStream.Read(buffer, 0, buffer.Length)) > 0)
@@ -122,8 +120,6 @@ namespace OpenRA.Mods.Common.FileFormats
 						decompressedBytes += n;
 					}
 				}
-
-				inflater.Reset();
 			}
 		}
 

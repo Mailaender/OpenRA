@@ -12,12 +12,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
+using System.IO.Hashing;
 using System.Linq;
 using System.Net;
 using System.Text;
-using ICSharpCode.SharpZipLib.Checksum;
-using ICSharpCode.SharpZipLib.Zip.Compression;
-using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using OpenRA.Graphics;
 using OpenRA.Primitives;
 
@@ -134,7 +133,7 @@ namespace OpenRA.FileFormats
 						{
 							using (var ns = new MemoryStream(data.ToArray()))
 							{
-								using (var ds = new InflaterInputStream(ns))
+								using (var ds = new DeflateStream(ns, CompressionMode.Decompress))
 								{
 									var pxStride = PixelStride;
 									var rowStride = Width * pxStride;
@@ -308,16 +307,17 @@ namespace OpenRA.FileFormats
 			input.Position = 0;
 
 			var typeBytes = Encoding.ASCII.GetBytes(type);
-			output.Write(IPAddress.HostToNetworkOrder((int)input.Length));
+			output.Write(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((int)input.Length)));
 			output.Write(typeBytes);
 
 			var data = input.ReadAllBytes();
 			output.Write(data);
 
 			var crc32 = new Crc32();
-			crc32.Update(typeBytes);
-			crc32.Update(data);
-			output.Write(IPAddress.NetworkToHostOrder((int)crc32.Value));
+			crc32.Append(typeBytes);
+			crc32.Append(data);
+			var crcValue = crc32.GetCurrentHash();
+			output.Write(crcValue.Reverse().ToArray());
 		}
 
 		public byte[] Save()
@@ -327,8 +327,8 @@ namespace OpenRA.FileFormats
 				output.Write(Signature);
 				using (var header = new MemoryStream())
 				{
-					header.Write(IPAddress.HostToNetworkOrder(Width));
-					header.Write(IPAddress.HostToNetworkOrder(Height));
+					header.Write(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(Width)));
+					header.Write(BitConverter.GetBytes(IPAddress.HostToNetworkOrder(Height)));
 					header.WriteByte(8); // Bit depth
 
 					var colorType = Type == SpriteFrameType.Indexed8 ? PngColorType.Indexed | PngColorType.Color :
@@ -372,7 +372,7 @@ namespace OpenRA.FileFormats
 
 				using (var data = new MemoryStream())
 				{
-					using (var compressed = new DeflaterOutputStream(data, new Deflater(Deflater.BEST_COMPRESSION)))
+					using (var compressed = new DeflateStream(data, CompressionLevel.Optimal))
 					{
 						var rowStride = Width * PixelStride;
 						for (var y = 0; y < Height; y++)
@@ -384,10 +384,9 @@ namespace OpenRA.FileFormats
 						}
 
 						compressed.Flush();
-						compressed.Finish();
-
-						WritePngChunk(output, "IDAT", data);
 					}
+
+					WritePngChunk(output, "IDAT", data);
 				}
 
 				foreach (var kv in EmbeddedData)

@@ -13,8 +13,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
-using ICSharpCode.SharpZipLib.Zip.Compression;
 
 namespace OpenRA.Mods.Common.FileFormats
 {
@@ -268,24 +268,22 @@ namespace OpenRA.Mods.Common.FileFormats
 			{
 				if (file.Flags.HasFlag(CABFlags.FileCompressed))
 				{
-					var inf = new Inflater(true);
-					var buffer = new byte[165535];
+					var inf = new DeflateStream(currentVolume, CompressionMode.Decompress, true);
+					var buffer = new byte[65535];
 					do
 					{
 						var bytesToExtract = currentVolume.ReadUInt16();
 						remainingInArchive -= 2;
 						toExtract -= 2;
-						inf.SetInput(GetBytes(bytesToExtract));
+						inf.Read(GetBytes(bytesToExtract), 0, bytesToExtract);
 						toExtract -= bytesToExtract;
-						while (!inf.IsNeedingInput)
+						while (!inf.CanRead)
 						{
 							onProgress?.Invoke((int)(100 * output.Position / file.ExpandedSize));
 
-							var inflated = inf.Inflate(buffer);
+							var inflated = inf.Read(buffer, 0, buffer.Length);
 							output.Write(buffer, 0, inflated);
 						}
-
-						inf.Reset();
 					}
 					while (toExtract > 0);
 				}

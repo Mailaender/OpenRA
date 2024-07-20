@@ -15,7 +15,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Numerics;
-using ICSharpCode.SharpZipLib.Zip;
+using System.IO.Compression;
 
 namespace OpenRA.Network
 {
@@ -120,10 +120,12 @@ namespace OpenRA.Network
 
 			try
 			{
-				using (var z = new ZipFile(databasePath))
+				using (var archive = ZipFile.OpenRead(databasePath))
 				{
-					var entry = z.FindEntry("IP2LOCATION-LITE-DB1.IPV6.BIN", false);
-					database = new IP2LocationReader(z.GetInputStream(entry));
+					var entry = archive.Entries.FirstOrDefault(e => e.FullName.Equals("IP2LOCATION-LITE-DB1.IPV6.BIN", StringComparison.OrdinalIgnoreCase));
+					if (entry != null)
+						using (var entryStream = entry.Open())
+							database = new IP2LocationReader(entryStream);
 				}
 			}
 			catch (Exception e)

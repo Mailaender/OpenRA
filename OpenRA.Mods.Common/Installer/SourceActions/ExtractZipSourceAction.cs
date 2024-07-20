@@ -12,7 +12,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using ICSharpCode.SharpZipLib.Zip;
+using System.IO.Compression;
 using OpenRA.Mods.Common.Widgets.Logic;
 using FS = OpenRA.FileSystem.FileSystem;
 
@@ -27,7 +27,7 @@ namespace OpenRA.Mods.Common.Installer
 				? Platform.ResolvePath(actionYaml.Value)
 				: FS.ResolveCaseInsensitivePath(Path.Combine(path, actionYaml.Value));
 
-			using (var zipFile = new ZipFile(File.OpenRead(zipPath)))
+			using (var zipFile = ZipFile.OpenRead(zipPath))
 			{
 				foreach (var node in actionYaml.Nodes)
 				{
@@ -45,7 +45,14 @@ namespace OpenRA.Mods.Common.Installer
 
 					Directory.CreateDirectory(Path.GetDirectoryName(targetPath));
 
-					var sourceStream = zipFile.GetInputStream(zipFile.GetEntry(sourcePath));
+					var entry = zipFile.GetEntry(sourcePath);
+					if (entry == null)
+					{
+						Log.Write("install", $"Entry {sourcePath} not found in ZIP archive.");
+						continue;
+					}
+
+					using (var sourceStream = entry.Open())
 					using (var targetStream = File.OpenWrite(targetPath))
 						sourceStream.CopyTo(targetStream);
 

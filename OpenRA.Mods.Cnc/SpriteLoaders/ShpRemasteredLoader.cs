@@ -12,9 +12,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text.RegularExpressions;
-using ICSharpCode.SharpZipLib.Zip;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.SpriteLoaders;
 using OpenRA.Primitives;
@@ -60,58 +60,60 @@ namespace OpenRA.Mods.Cnc.SpriteLoaders
 
 		public ShpRemasteredSprite(Stream stream)
 		{
-			var container = new ZipFile(stream);
-
-			string framePrefix = null;
-			var frameCount = 0;
-			foreach (ZipEntry entry in container)
+			using (var container = new ZipArchive(stream, ZipArchiveMode.Read))
 			{
-				var match = FilenameRegex.Match(entry.Name);
-				if (!match.Success)
-					continue;
-
-				var prefix = match.Groups["prefix"].Value;
-				framePrefix ??= prefix;
-
-				if (prefix != framePrefix)
-					throw new InvalidDataException($"Frame prefix mismatch: `{prefix}` != `{framePrefix}`");
-
-				frameCount = Math.Max(frameCount, Exts.ParseInt32Invariant(match.Groups["frame"].Value) + 1);
-			}
-
-			var frames = new ISpriteFrame[frameCount];
-			for (var i = 0; i < frames.Length; i++)
-			{
-				var tgaEntry = container.GetEntry($"{framePrefix}{i:D4}.tga");
-
-				// Blank frame
-				if (tgaEntry == null)
+				string framePrefix = null;
+				var frameCount = 0;
+				foreach (var entry in container.Entries)
 				{
-					frames[i] = new TgaSprite.TgaFrame();
-					continue;
+					var match = FilenameRegex.Match(entry.FullName);
+					if (!match.Success)
+						continue;
+
+					var prefix = match.Groups["prefix"].Value;
+					framePrefix ??= prefix;
+
+					if (prefix != framePrefix)
+						throw new InvalidDataException($"Frame prefix mismatch: `{prefix}` != `{framePrefix}`");
+
+					frameCount = Math.Max(frameCount, Exts.ParseInt32Invariant(match.Groups["frame"].Value) + 1);
 				}
 
-				var metaEntry = container.GetEntry($"{framePrefix}{i:D4}.meta");
-				using (var tgaStream = container.GetInputStream(tgaEntry))
+				var frames = new ISpriteFrame[frameCount];
+				for (var i = 0; i < frames.Length; i++)
 				{
-					var metaStream = metaEntry != null ? container.GetInputStream(metaEntry) : null;
-					if (metaStream != null)
+					var tgaEntry = container.GetEntry($"{framePrefix}{i:D4}.tga");
+
+					// Blank frame
+					if (tgaEntry == null)
 					{
-						var meta = MetaRegex.Match(metaStream.ReadAllText());
-						var crop = Rectangle.FromLTRB(
-							ParseGroup(meta, "left"), ParseGroup(meta, "top"),
-							ParseGroup(meta, "right"), ParseGroup(meta, "bottom"));
-
-						var frameSize = new Size(ParseGroup(meta, "width"), ParseGroup(meta, "height"));
-						frames[i] = new TgaSprite.TgaFrame(tgaStream, frameSize, crop);
-						metaStream.Dispose();
+						frames[i] = new TgaSprite.TgaFrame();
+						continue;
 					}
-					else
-						frames[i] = new TgaSprite.TgaFrame(tgaStream);
-				}
-			}
 
-			Frames = frames;
+					var metaEntry = container.GetEntry($"{framePrefix}{i:D4}.meta");
+					using (var tgaStream = tgaEntry.Open())
+					{
+						if (metaEntry != null)
+						{
+							using (var metaStream = new StreamReader(metaEntry.Open()))
+							{
+								var meta = MetaRegex.Match(metaStream.ReadToEnd());
+								var crop = Rectangle.FromLTRB(
+									ParseGroup(meta, "left"), ParseGroup(meta, "top"),
+									ParseGroup(meta, "right"), ParseGroup(meta, "bottom"));
+
+								var frameSize = new Size(ParseGroup(meta, "width"), ParseGroup(meta, "height"));
+								frames[i] = new TgaSprite.TgaFrame(tgaStream, frameSize, crop);
+							}
+						}
+						else
+							frames[i] = new TgaSprite.TgaFrame(tgaStream);
+					}
+				}
+
+				Frames = frames;
+			}
 		}
 	}
 }
