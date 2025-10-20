@@ -121,12 +121,14 @@ jobs:
 
       - name: Upload Installer
         id: unsigned-artifact
+        if: github.repository == 'openra/openra'
         uses: actions/upload-artifact@v4
         with:
           path: build/windows/*.exe
 
       - name: Microsoft Authenticode
         id: signpath
+        if: github.repository == 'openra/openra'
         uses: signpath/github-action-submit-signing-request@v1
         with:
           api-token: '${{ secrets.SIGNPATH_API_TOKEN }}'
@@ -139,10 +141,20 @@ jobs:
           parameters: |
             version: ${{ toJSON(github.ref_name) }}
 
-      - name: Upload Packages
+      - name: Upload Signed Packages
+        if: github.repository == 'openra/openra'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
           gh release upload ${{ github.ref_name }} build/windows/*.zip
           gh release upload ${{ github.ref_name }} build/windows/signed/*.exe
+
+      - name: Upload Unsigned Packages
+        if: github.repository != 'openra/openra'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          gh release upload ${{ github.ref_name }} build/windows/*.zip
+          gh release upload ${{ github.ref_name }} build/windows/*.exe
